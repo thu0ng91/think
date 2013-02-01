@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>{$title}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+        <style type="text/css">
+            <!--
+            body {background: #fcfdff}
+            -->
+        </style>
+    </head>
+    <body>
+        <div id="rightTop">
+            <ul class="subnav">
+                <li><a href="?s=admin/msg/add" class="btn1">新建</a></li>
+                <li><a href="?s=admin/msg/show" class="btn1">管理</a></li>
+            </ul>
+        </div>
+        <div class="mrightTop">
+            <div class="fontr"></div>
+        </div>
+        <div class="info">
+            <form action="?s=admin/msg/{$action}" method="post">
+                <input type="hidden" name="is_sys_msg" value="{$msg.is_sys_msg}" />
+                <input type="hidden" name="msg_to" value="{$msg.msg_to}" />
+                <input type="hidden" name="msg_from" value="{$msg.msg_from}" />
+                <p><label>短信标题：</label><input type="text" name="msg_title" value="{$msg.msg_title}"/></p>
+                <p><label>接收人:</label>{$msg.msg_to}</p>
+                <p><label>回复内容:</label><textarea name="msg_content" rows="6" cols="20">{$msg.msg_content}</textarea></p>
+                <p class="submit">
+                    <input type="submit" value="发送" class="formbtn" />
+                    <input type="button" value="返回" class="formbtn" onclick="javascript:history.go(-1);" />
+                </p>
+            </form>
+        </div>
+    </body>
+</html>

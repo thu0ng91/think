@@ -1,0 +1,840 @@
+.screentwo {
+	margin: 0px auto; width: 950px; height: 478px; overflow: hidden
+}
+.screentwo .tleft {
+	height: 478px; overflow: hidden
+}
+.screentwo .tright {
+	height: 478px; overflow: hidden
+}
+.screentwo .tleft {
+	width: 750px; float: left
+}
+.screentwo .tleft .tjzq {
+	text-align: right; line-height: 40px; background: url(../images/screens_02.gif) no-repeat; height: 40px; color: #3d7aae; overflow: hidden
+}
+.screentwo .tleft .tjzq a:link {
+	color: #3d7aae
+}
+.screentwo .tleft .tjzq a:visited {
+	color: #3d7aae
+}
+.screentwo .tleft .tjzq a:hover {
+	color: #3d7aae
+}
+.screentwo .tleft .tjzq a:active {
+	color: #3d7aae
+}
+.tjzqnr {
+	border-left: #a0bdd0 1px solid; width: 748px; background: #e2ecf4; height: 435px; clear: both; overflow: hidden; border-right: #a0bdd0 1px solid
+}
+.bzjptj {
+	margin-top: 8px; width: 182px; float: left; height: 420px; overflow: hidden
+}
+.bzjptj_01 {
+	line-height: 31px; text-indent: 10px; width: 182px; background: url(../images/screens_07.gif) no-repeat; height: 31px; clear: both; overflow: hidden; font-weight: bold
+}
+.bzjptj_02 {
+	width: 182px; background: #ffffff; height: 387px; clear: both; overflow: hidden
+}
+.bzjptj_03 {
+	line-height: 1px; margin: 0px auto; width: 180px; background: #ffffff; height: 1px; overflow: hidden
+}
+.bzjptj_04 {
+	line-height: 1px; margin: 0px auto; width: 178px; background: #ffffff; height: 1px; overflow: hidden
+}
+.rmzp {
+	margin: 8px 0 0 10px; width: 545px; float: left; height: 420px; overflow: hidden
+}
+.rmzp_01 {
+	line-height: 31px; text-indent: 10px; width: 545px; background: url(../images/screens_08.gif) no-repeat; height: 31px; clear: both; overflow: hidden; font-weight: bold
+}
+.rmzp_02 {
+	width: 545px; background: #ffffff; height: 387px; clear: both; overflow: hidden
+}
+.rmzp_03 {
+	line-height: 1px; margin: 0px auto; width: 543px; background: #ffffff; height: 1px; overflow: hidden
+}
+.rmzp_04 {
+	line-height: 1px; margin: 0px auto; width: 541px; background: #ffffff; height: 1px; overflow: hidden
+}
+.rmzpnr {
+	margin: 0px auto; width: 525px; height: 378px; overflow: hidden
+}
+.rmzpnr_l {
+	width: 258px; float: left; height: 120px; overflow: hidden; margin-bottom: 6px;
+}
+.rmzpnr_r {
+	width: 258px; float: right; height: 120px; overflow: hidden; margin-bottom: 6px;
+}
+.rmzpnr_ul {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 255px; padding-right: 0px; height: 120px; padding-top: 0px
+}
+.rmzpnr_ul li {
+	padding-bottom: 0px; padding-left: 0px; padding-right: 0px; float: left; padding-top: 0px
+}
+.rmzpnr_ul li.feng {
+	border: #cccccc 1px solid;; width: 98px; background: #ffffff; float: left; height: 118px; overflow: hidden; margin-right: 4px;
+}
+.rmzpnr_ul li.feng img {
+	border: #ffffff 4px solid; width: 90px; height: 110px; overflow: hidden;
+}
+.rmzpnr_ul li.break {
+	width: 8px; float: left; overflow: hidden
+}
+.rmzpnr_ul li.js {
+	width: 145px; float: left; height: 120px; overflow: hidden
+}
+.rmzpnr_ul li.js a:link {
+	color: #000000; text-decoration: none
+}
+.rmzpnr_ul li.js a:visited {
+	color: #000000; text-decoration: none
+}
+.rmzpnr_ul li.js a:hover {
+	color: #000000; text-decoration: underline
+}
+.rmzpnr_ul li.js a:active {
+	color: #000000; text-decoration: none
+}
+.zpjs_01 {
+	width: 145px; height: 20px; overflow: hidden; font-weight: bold
+}
+.zpjs_02 {
+	width: 145px; height: 20px; color: #ff6600; overflow: hidden
+}
+.zpjs_03 {
+	line-height: 20px; width: 145px; height: 75px; overflow: hidden
+}
+.bz_break01 {
+	width: 7px; float: left; overflow: hidden
+}
+.paihanglb {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 160px; padding-right: 0px; height: 20px; clear: both; padding-top: 0px
+}
+.paihanglb li {
+	line-height: 20px; float: left; height: 20px; color: #999999; margin-right: 8px
+}
+.paihanglb li a:link {
+	color: #000000; text-decoration: none
+}
+.paihanglb li a:visited {
+	color: #000000; text-decoration: none
+}
+.paihanglb li a:hover {
+	color: #000000; text-decoration: underline
+}
+.paihanglb li a:active {
+	color: #000000; text-decoration: none
+}
+.paihanglb01 {
+	padding: 0px; list-style-type: none; margin: 0px auto; width: 166px; height: 20px; clear: both;
+}
+.paihanglb01 li {
+	line-height: 20px; float: left; height: 20px; color: #999999; overflow: hidden;
+}
+.paihanglb01 li.hui { margin-right: 8px; }
+.paihanglb01 li.hui a:link {
+	color: #999999; text-decoration: none;
+}
+.paihanglb01 li.hui a:visited {
+	color: #999999; text-decoration: none;
+}
+.paihanglb01 li.hui a:hover {
+	color: #999999; text-decoration: underline
+}
+.paihanglb01 li.hui a:active {
+	color: #999999; text-decoration: none
+}
+.paihanglb01 li.blue {
+	width: 95px; overflow: hidden; 
+}
+.paihanglb01 li.blue a:link {
+	color: #0063dc; text-decoration: none
+}
+.paihanglb01 li.blue a:visited {
+	color: #0063dc; text-decoration: none
+}
+.paihanglb01 li.blue a:hover {
+	color: #0063dc; text-decoration: underline
+}
+.paihanglb01 li.blue a:active {
+	color: #0063dc; text-decoration: none
+}
+.paihanglb02 {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 174px; padding-right: 0px; height: 20px; clear: both; overflow: hidden; padding-top: 0px
+}
+.paihanglb02 li {
+	padding-bottom: 0px; line-height: 20px; padding-left: 0px; padding-right: 0px; float: left; height: 20px; color: #999999; overflow: hidden; margin-right: 8px; padding-top: 0px
+}
+.paihanglb02 li.hui2 a:link {
+	color: #999999; text-decoration: none
+}
+.paihanglb02 li.hui2 a:visited {
+	color: #999999; text-decoration: none
+}
+.paihanglb02 li.hui2 a:hover {
+	color: #999999; text-decoration: underline
+}
+.paihanglb02 li.hui2 a:active {
+	color: #999999; text-decoration: none
+}
+.paihanglb02 li.hei2 {
+	width: 100px; overflow: hidden
+}
+.paihanglb02 li.hei2 a:link {
+	color: #000000; text-decoration: none
+}
+.paihanglb02 li.hei2 a:visited {
+	color: #000000; text-decoration: none
+}
+.paihanglb02 li.hei2 a:hover {
+	color: #000000; text-decoration: underline
+}
+.paihanglb02 li.hei2 a:active {
+	color: #000000; text-decoration: none
+}
+.paihanglb03 {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 175px; padding-right: 0px; height: 20px; clear: both; padding-top: 0px
+}
+.paihanglb03 li {
+	padding-bottom: 0px; line-height: 20px; padding-left: 0px; padding-right: 0px; float: left; height: 20px; color: #999999; overflow: hidden; margin-right: 8px; padding-top: 0px
+}
+.paihanglb03 li.hui3 a:link {
+	color: #999999; text-decoration: none
+}
+.paihanglb03 li.hui3 a:visited {
+	color: #999999; text-decoration: none
+}
+.paihanglb03 li.hui3 a:hover {
+	color: #999999; text-decoration: underline
+}
+.paihanglb03 li.hui3 a:active {
+	color: #999999; text-decoration: none
+}
+.paihanglb03 li.hei3 {
+	width: 100px; overflow: hidden
+}
+.paihanglb03 li.hei3 a:link {
+	color: #000000; text-decoration: none
+}
+.paihanglb03 li.hei3 a:visited {
+	color: #000000; text-decoration: none
+}
+.paihanglb03 li.hei3 a:hover {
+	color: #000000; text-decoration: underline
+}
+.paihanglb03 li.hei3 a:active {
+	color: #000000; text-decoration: none
+}
+.paihanglb04 {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 174px; padding-right: 0px; height: 20px; clear: both; overflow: hidden; padding-top: 0px
+}
+.paihanglb04 li {
+	line-height: 20px; float: left; height: 20px; color: #98bee3; overflow: hidden; margin-right: 8px
+}
+.paihanglb04 li.hui4 a:link {
+	color: #98bee3; text-decoration: none
+}
+.paihanglb04 li.hui4 a:visited {
+	color: #98bee3; text-decoration: none
+}
+.paihanglb04 li.hui4 a:hover {
+	color: #98bee3; text-decoration: underline
+}
+.paihanglb04 li.hui4 a:active {
+	color: #98bee3; text-decoration: none
+}
+.paihanglb04 li.blue2 {
+	width: 100px; overflow: hidden
+}
+.paihanglb04 li.blue2 a:link {
+	color: #0063dc; text-decoration: none
+}
+.paihanglb04 li.blue2 a:visited {
+	color: #0063dc; text-decoration: none
+}
+.paihanglb04 li.blue2 a:hover {
+	color: #0063dc; text-decoration: underline
+}
+.paihanglb04 li.blue2 a:active {
+	color: #0063dc; text-decoration: none
+}
+.paihanglb05 {
+	border-bottom: #eeeeee 1px solid; padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 174px; padding-right: 0px; height: 19px; clear: both; overflow: hidden; padding-top: 0px
+}
+.paihanglb05 li {
+	line-height: 20px; float: left; height: 20px; color: #bfbfbf; margin-right: 8px
+}
+.paihanglb05 li.hui5 a:link {
+	color: #bfbfbf; text-decoration: none
+}
+.paihanglb05 li.hui5 a:visited {
+	color: #bfbfbf; text-decoration: none
+}
+.paihanglb05 li.hui5 a:hover {
+	color: #bfbfbf; text-decoration: underline
+}
+.paihanglb05 li.hui5 a:active {
+	color: #bfbfbf; text-decoration: none
+}
+.paihanglb05 li.blue3 {
+	width: 100px; overflow: hidden
+}
+.paihanglb05 li.blue3 a:link {
+	color: #0063dc; text-decoration: none
+}
+.paihanglb05 li.blue3 a:visited {
+	color: #0063dc; text-decoration: none
+}
+.paihanglb05 li.blue3 a:hover {
+	color: #0063dc; text-decoration: underline
+}
+.paihanglb05 li.blue3 a:active {
+	color: #0063dc; text-decoration: none
+}
+.fangtan01 {
+	line-height: 20px; margin: 0px auto; width: 170px; height: 118px; overflow: hidden
+}
+.fangtan01 .t_a {
+	width: 170px; height: 52px; overflow: hidden
+}
+.fangtan01 .t_a .eng {
+	border-bottom: #cccccc 1px solid; border-left: #cccccc 1px solid; width: 50px; float: left; height: 50px; overflow: hidden; border-top: #cccccc 1px solid; border-right: #cccccc 1px solid
+}
+.fangtan01 .t_a .eng img {
+	border-bottom: #ffffff 1px solid; border-left: #ffffff 1px solid; width: 48px; height: 48px; overflow: hidden; border-top: #ffffff 1px solid; border-right: #ffffff 1px solid
+}
+.fangtan01 .t_a .sum {
+	text-align: left; width: 110px; float: right; height: 52px; color: #000099; overflow: hidden; font-weight: bold
+}
+.fangtan01 .t_a .sum a:link {
+	color: #ff3300; text-decoration: none
+}
+.fangtan01 .t_a .sum a:visited {
+	color: #ff3300; text-decoration: none
+}
+.fangtan01 .t_a .sum a:hover {
+	color: #ff3300; text-decoration: underline
+}
+.fangtan01 .t_a .sum a:active {
+	color: #ff3300; text-decoration: none
+}
+.fangtan01 .t_a .sum .sm {
+	width: 110px; height: 20px; overflow: hidden
+}
+.fangtan01 .t_a .sum .zz {
+	line-height: 16px; text-indent: 5px; width: 105px; height: 16px; overflow: hidden
+}
+.fangtan01 .t_b {
+	width: 170px; height: 40px; overflow: hidden
+}
+.fangtan01 .t_b a:link {
+	color: #000000; text-decoration: none
+}
+.fangtan01 .t_b a:visited {
+	color: #000000; text-decoration: none
+}
+.fangtan01 .t_b a:hover {
+	color: #000000; text-decoration: underline
+}
+.fangtan01 .t_b a:active {
+	color: #000000; text-decoration: none
+}
+.fangtan01 .t_c {
+	text-align: right; width: 160px; height: 18px; color: #ff3300; overflow: hidden
+}
+.fangtan01 .t_c a:link {
+	color: #ff3300; text-decoration: none
+}
+.fangtan01 .t_c a:visited {
+	color: #ff3300; text-decoration: none
+}
+.fangtan01 .t_c a:hover {
+	color: #ff3300; text-decoration: underline
+}
+.fangtan01 .t_c a:active {
+	color: #ff3300; text-decoration: none
+}
+.screentwo .tright {
+	width: 190px; float: right
+}
+.xhb_aa {
+	width: 190px; background: url(../images/screens_05.gif) no-repeat; height: 40px
+}
+.xhb_break {
+	height: 5px; clear: both; overflow: hidden
+}
+.xianhua {
+	margin: 0px auto; width: 180px; height: 35px; clear: both
+}
+.xianhua_break {
+	width: 5px; float: left; overflow: hidden
+}
+.xianhua div.checked { background: url(../images/screens_05a.gif) no-repeat; color: #004499; }
+.xianhua_fw {
+	text-align: center; line-height: 35px; width: 86px; float: left; height: 35px; overflow: hidden; cursor: pointer;
+}
+.xhb_bb {
+	border-left: #a0bdd0 1px solid; width: 188px; height: 435px; overflow: hidden; border-right: #a0bdd0 1px solid
+}
+.xhb_bb ul {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 175px; padding-right: 0px; height: 300px; overflow: hidden; padding-top: 0px
+}
+.xhb_bb ul li {
+	padding-bottom: 0px; padding-left: 0px; padding-right: 0px; float: left; height: 20px; overflow: hidden; padding-top: 0px
+}
+.xhb_bb ul li.zp {
+	width: 120px
+}
+.xhb_bb ul li.zp a:link {
+	color: #000000; text-decoration: none
+}
+.xhb_bb ul li.zp a:visited {
+	color: #000000; text-decoration: none
+}
+.xhb_bb ul li.zp a:hover {
+	color: #000000; text-decoration: underline
+}
+.xhb_bb ul li.zp a:active {
+	color: #000000; text-decoration: none
+}
+.xhb_bb ul li.xh {
+	width: 15px
+}
+.xhb_bb ul li.mc {
+	width: 40px; color: #ff6600
+}
+.xhb_bb ul li.left {
+	color: #ff6600; margin-left: 5px
+}
+.xhb_bb ul li.left a:link {
+	color: #ff6600; text-decoration: none
+}
+.xhb_bb ul li.left a:visited {
+	color: #ff6600; text-decoration: none
+}
+.xhb_bb ul li.left a:hover {
+	color: #ff6600; text-decoration: underline
+}
+.xhb_bb ul li.left a:active {
+	color: #ff6600; text-decoration: none
+}
+.screenthree {
+	margin: 0px auto; width: 950px; height: 370px; overflow: hidden
+}
+.screenthree .sanleft {
+	height: 370px; overflow: hidden
+}
+.screenthree .sanright {
+	height: 370px; overflow: hidden
+}
+.screenthree .sanleft {
+	width: 190px; float: left
+}
+.sanleft_title {
+	line-height: 32px; text-indent: 10px; width: 190px; background: url(../images/screent_01.gif) no-repeat; height: 32px; color: #0058a6; overflow: hidden; font-weight: bold
+}
+.vipzptj {
+	border-bottom: #99c7f4 1px solid; border-left: #99c7f4 1px solid; width: 188px; overflow: hidden; border-right: #99c7f4 1px solid
+}
+.zzft {
+	border-bottom: #99c7f4 1px solid; border-left: #99c7f4 1px solid; width: 188px; overflow: hidden; border-right: #99c7f4 1px solid
+}
+.vipzptj {
+	height: 330px
+}
+.zzft {
+	height: 132px
+}
+.screenthree .sanright {
+	width: 750px; float: right
+}
+.san_right01 {
+	width: 560px; float: left; height: 520px; overflow: hidden
+}
+.san_right01 .vvzp01 {
+	line-height: 32px; text-indent: 10px; width: 560px; background: url(../images/screent_02.gif) no-repeat; height: 32px; color: #0058a6; font-weight: bold
+}
+.san_right01 .vvzp02 {
+	border-bottom: #99c7f4 1px solid; border-left: #99c7f4 1px solid; width: 559px; height: 330px; clear: both; overflow: hidden
+}
+.vvzp02 .vzp {
+	margin: 0px auto; width: 538px; height: 475px; clear: both; overflow: hidden
+}
+.vzp_01 {
+	width: 538px; height: 238px; overflow: hidden
+}
+.vzp_01_left {
+	width: 266px; height: 238px; overflow: hidden
+}
+.vzp_01_right {
+	width: 266px; height: 238px; overflow: hidden
+}
+.vzp_01_left {
+	float: left
+}
+.vzp_01_right {
+	float: right
+}
+.vzpnr_break {
+	width: 266px; height: 10px; clear: both; overflow: hidden
+}
+.vzpnr_one {
+	width: 266px; height: 120px; overflow: hidden
+}
+.vzpnr_one_left {
+	border-bottom: #cccccc 1px solid; border-left: #cccccc 1px solid; width: 98px; float: left; height: 118px; overflow: hidden; border-top: #cccccc 1px solid; border-right: #cccccc 1px solid
+}
+.vzpnr_one_left img {
+	border-bottom: #ffffff 4px solid; border-left: #ffffff 4px solid; width: 90px; height: 110px; border-top: #ffffff 4px solid; border-right: #ffffff 4px solid
+}
+.vzpnr_one_right {
+	text-align: left; width: 160px; float: right; height: 120px; overflow: hidden
+}
+.vzpnr_one_right_01 {
+	line-height: 35px; width: 160px; height: 35px; color: #ff3300; font-size: 14px; overflow: hidden; font-weight: bold
+}
+.vzpnr_one_right_01 a:link {
+	color: #ff3300; text-decoration: none
+}
+.vzpnr_one_right_01 a:visited {
+	color: #ff3300; text-decoration: none
+}
+.vzpnr_one_right_01 a:hover {
+	color: #ff3300; text-decoration: underline
+}
+.vzpnr_one_right_01 a:active {
+	color: #ff3300; text-decoration: none
+}
+.vzpnr_one_right_02 {
+	padding-bottom: 0px; line-height: 25px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 160px; padding-right: 0px; height: 25px; padding-top: 0px
+}
+.vzpnr_one_right_02 li.vleft {
+	width: 60px; float: left; height: 25px; color: #666666; overflow: hidden
+}
+.vzpnr_one_right_02 li.vright {
+	width: 95px; float: right; height: 25px; color: #0063dc; overflow: hidden
+}
+.vzpnr_two {
+	width: 266px; background: url(../images/screent_06.gif) no-repeat; height: 99px; overflow: hidden; border-top: #dddddd 1px dotted
+}
+.vzpnr_twonr {
+	line-height: 20px; margin: 6px; width: 253px; height: 80px; overflow: hidden
+}
+.vzpnr_twonr a:link {
+	color: #000000; text-decoration: none
+}
+.vzpnr_twonr a:visited {
+	color: #000000; text-decoration: none
+}
+.vzpnr_twonr a:hover {
+	color: #000000; text-decoration: underline
+}
+.vzpnr_twonr a:active {
+	color: #000000; text-decoration: none
+}
+.vzp_02 {
+	text-align: center; line-height: 30px; width: 538px; background: url(../images/screent_07.gif); height: 30px; color: #808080; overflow: hidden
+}
+.vzp_03 {
+	padding: 0px; list-style-type: none; margin: 0px auto; width: 538px; height: 100px; overflow: hidden; 
+}
+.vzp_03 li.zzpnr {
+	line-height: 20px; width: 170px; float: left; height: 20px; color: #808080; overflow: hidden; margin-right: 9px; margin-bottom: 6px;
+}
+.vzp_03 li.zzpnr a:link {
+	color: #000000; text-decoration: none
+}
+.vzp_03 li.zzpnr a:visited {
+	color: #000000; text-decoration: none
+}
+.vzp_03 li.zzpnr a:hover {
+	color: #000000; text-decoration: underline
+}
+.vzp_03 li.zzpnr a:active {
+	color: #000000; text-decoration: none
+}
+.san_right02 {
+	width: 1px; background: url(../images/screent_08.gif) no-repeat; float: left; height: 360px; overflow: hidden
+}
+.san_right03 {
+	width: 189px; float: right; height: 363px; overflow: hidden
+}
+.san_right03 .zxsjzp01 {
+	width: 189px; background: url(../images/screent_03.gif) no-repeat; height: 32px; overflow: hidden
+}
+.piaoa {
+	width: 6px; float: left; height: 30px; overflow: hidden
+}
+.piaob {
+	width: 17px; float: left; padding-top: 8px
+}
+.piaoc {
+	line-height: 32px; float: left; color: #0058a6; overflow: hidden; font-weight: bold
+}
+.san_right03 .zxsjzp02 {
+	width: 188px; height: 330px; border-right: #99c7f4 1px solid;
+	border-bottom: #99c7f4 1px solid;
+}
+.san_right03 .zxsjzp03 {
+	width: 189px; background: url(../images/screent_04.gif) no-repeat; height: 32px; overflow: hidden
+}
+.san_right03 .zxsjzp04 {
+	border-bottom: #99c7f4 1px solid; width: 188px; height: 130px; overflow: hidden; border-right: #99c7f4 1px solid
+}
+.screenfive {
+	margin: 0px auto; width: 950px; clear: both; overflow: hidden
+}
+.screenfive_left {
+	width: 190px; float: left; overflow: hidden
+}
+.screenfive_left_title {
+	border-bottom: #bee2ee 1px solid; border-left: #bee2ee 1px solid; width: 188px; background: url(../images/screenfive_02.gif) repeat-x; height: 30px; border-top: #bee2ee 1px solid; border-right: #bee2ee 1px solid
+}
+.screenfive_left_title ul {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 168px; padding-right: 0px; height: 30px; padding-top: 0px
+}
+.screenfive_left_title ul li.ppic01 {
+	float: left; margin-right: 5px; padding-top: 8px
+}
+.screenfive_left_title ul li.ppic02 {
+	line-height: 30px; float: left; color: #1573ca; font-weight: bold
+}
+.screenfive_left_nr {
+	border-bottom: #bee2ee 1px solid; border-left: #bee2ee 1px solid; width: 188px; background: #f5fafd; border-right: #bee2ee 1px solid
+}
+.screenfive_left_nrr {
+	margin: 0px auto; width: 180px; height: 380px; background: #ffffff; overflow: hidden;
+}
+.screenfive_left_break {
+	height: 10px; clear: both; overflow: hidden
+}
+.screenfive_left_break01 {
+	height: 15px; clear: both; overflow: hidden
+}
+.screenfive_middle {
+	width: 550px; float: left; overflow: hidden; margin-left: 0px; 
+}
+.screenfivem_top {
+	border-bottom: #d6d6d6 1px solid; border-left: #d6d6d6 1px solid; width: 548px; background: url(../images/screenfive_01.gif) repeat-x; height: 26px; overflow: hidden; border-top: #bee2ee 2px solid; border-right: #d6d6d6 1px solid
+}
+.screenfivem_top_nr {
+	margin: 0px auto; width: 528px; overflow: hidden;
+}
+.screenfivem_top_nr .zxgxleft {
+	line-height: 30px; float: left; color: #1573ca; font-weight: bold
+}
+.screenfivem_top_nr .zxgxright {
+	line-height: 26px; float: right; color: #1573ca
+}
+.zxgxright a:link {
+	color: #1573ca; text-decoration: none
+}
+.zxgxright a:visited {
+	color: #1573ca; text-decoration: none
+}
+.zxgxright a:hover {
+	color: #1573ca; text-decoration: underline
+}
+.zxgxright a:active {
+	color: #1573ca; text-decoration: none
+}
+.screenfivem_bottom {
+	border-bottom: #d6d6d6 1px solid; border-left: #d6d6d6 1px solid; width: 548px; overflow: hidden; border-right: #d6d6d6 1px solid; height: 393px;
+}
+.screenfivem_w {
+	width: 548px; height: 25px; clear: both
+}
+.screenfivem_b {
+	width: 548px; background: #f7f7f7; height: 25px; clear: both
+}
+.screenfivem_zxgx {
+	padding-bottom: 0px; line-height: 25px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 520px; padding-right: 0px; height: 25px; padding-top: 0px
+}
+.screenfivem_zxgx01a {
+	padding-bottom: 0px; padding-left: 0px; width: 60px; padding-right: 0px; float: left; color: #0058a6; margin-right: 5px; padding-top: 0px
+}
+.screenfivem_zxgx01b {
+	padding-bottom: 0px; padding-left: 0px; width: 40px; padding-right: 0px; float: left; color: #ff0000; margin-right: 5px; padding-top: 0px
+}
+.screenfivem_zxgx02 {
+	padding-bottom: 0px; padding-left: 0px; width: 310px; padding-right: 0px; float: left; height: 25px; color: #000000; overflow: hidden; margin-right: 5px; padding-top: 0px
+}
+.screenfivem_zxgx02 a:link {
+	color: #000000; text-decoration: none
+}
+.screenfivem_zxgx02 a:visited {
+	color: #000000; text-decoration: none
+}
+.screenfivem_zxgx02 a:hover {
+	color: #000000; text-decoration: underline
+}
+.screenfivem_zxgx02 a:active {
+	color: #000000; text-decoration: none
+}
+.screenfivem_zxgx03 {
+	padding-bottom: 0px; padding-left: 0px; width: 100px; padding-right: 0px; float: left; height: 25px; color: #98bee3; overflow: hidden; margin-right: 5px; padding-top: 0px
+}
+.screenfivem_zxgx04 {
+	padding-bottom: 0px; padding-left: 0px; width: 35px; padding-right: 0px; float: right; height: 25px; color: #bfbfbf; overflow: hidden; padding-top: 0px
+}
+.screenfive_right {
+	width: 190px; float: right; overflow: hidden
+}
+.screenfive_right_title {
+	border-bottom: #b5bcc4 1px solid; border-left: #b5bcc4 1px solid; width: 188px; height: 30px; border-top: #b5bcc4 1px solid; border-right: #b5bcc4 1px solid
+}
+.screenfive_right_title01 {
+	border-bottom: #b5bcc4 1px solid; border-left: #b5bcc4 1px solid; width: 188px; height: 30px; border-right: #b5bcc4 1px solid
+}
+.screenfive_right_titlenr {
+	border-bottom: #ffffff 1px solid; border-left: #ffffff 1px solid; width: 186px; background: url(../images/screenfive_03.gif) repeat-x; height: 28px; border-top: #ffffff 1px solid; border-right: #ffffff 1px solid
+}
+.screenfive_right_titlenr ul {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 166px; padding-right: 0px; height: 30px; padding-top: 0px
+}
+.screenfive_right_titlenr ul li.ppic01 {
+	float: left; margin-right: 5px; padding-top: 8px
+}
+.screenfive_right_titlenr ul li.ppic02 {
+	line-height: 30px; float: left; color: #5c5c5c; font-weight: bold
+}
+.screenfive_right_nr {
+	border-bottom: #b5bcc4 1px solid; border-left: #b5bcc4 1px solid; width: 188px; border-right: #b5bcc4 1px solid
+}
+.screenfive_right_nrr {
+	margin: 0px auto; width: 168px; overflow: hidden
+}
+.screenfive_right_break {
+	height: 10px; clear: both; overflow: hidden
+}
+.screenfive_right_break01 {
+	height: 15px; clear: both; overflow: hidden
+}
+.trjpdsj {
+	width: 190px; height: 272px; overflow: hidden
+}
+.trjpdsj_01 {
+	width: 190px; background: url(../images/screenfive_04.gif) no-repeat; height: 28px
+}
+.trjpdsj_01_nr {
+	line-height: 30px; margin: 0px auto; width: 166px; height: 28px; color: #ffffff; overflow: hidden; font-weight: bold
+}
+.trjpdsj_02 {
+	width: 190px; background: url(../images/screenfive_05.gif) no-repeat; height: 3px; overflow: hidden
+}
+.trjpdsj_03 {
+	width: 190px; background: url(../images/screenfive_06.gif) repeat-y; height: 237px; overflow: hidden
+}
+.trjpdsj_04 {
+	width: 190px; background: url(../images/screenfive_07.gif) no-repeat; height: 4px; overflow: hidden
+}
+.screenfive_right_adv {
+	width: 190px; height: 127px; clear: both; overflow: hidden; _height: 123px
+}
+.screenfive_right_adv img {
+	border-bottom: 0px; border-left: 0px; width: 190px; height: 127px; overflow: hidden; border-top: 0px; border-right: 0px; _height: 123px
+}
+.screenfive_break {
+	width: 10px; float: left; overflow: hidden
+}
+.zjydtit {
+	line-height: 32px; width: 560px; background: url(../images/screent_02.gif) no-repeat; height: 32px; color: #0058a6; clear: both
+}
+.zjydtitnr {
+	padding-bottom: 0px; line-height: 32px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 520px; padding-right: 0px; clear: both; padding-top: 0px
+}
+.zjydtitnr02 {
+	padding-bottom: 0px; padding-left: 0px; width: 145px; padding-right: 0px; float: left; margin-right: 5px; padding-top: 0px
+}
+.zjydtitnr03 {
+	padding-bottom: 0px; padding-left: 0px; width: 230px; padding-right: 0px; float: left; margin-right: 5px; padding-top: 0px
+}
+.zjydtitnr04 {
+	text-align: right; padding-bottom: 0px; padding-left: 0px; width: 110px; padding-right: 0px; float: right; padding-top: 0px
+}
+.vvzp02 .zjyd {
+	margin: 0px auto; width: 538px; height: 475px; clear: both; overflow: hidden
+}
+.zjyd_lb {
+	border-bottom: #e8ecf6 1px dotted; padding-bottom: 0px; line-height: 25px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 520px; padding-right: 0px; height: 25px; clear: both; overflow: hidden; padding-top: 0px; _height: 25px
+}
+.zjyd_lb01 {
+	padding-bottom: 0px; padding-left: 0px; width: 20px; padding-right: 0px; float: left; color: #ff0000; margin-right: 5px; padding-top: 0px
+}
+.zjyd_lb01 input {
+	margin-top: 1px; _margin-top: 1px
+}
+.zjyd_lb02 {
+	padding-bottom: 0px; padding-left: 0px; width: 120px; padding-right: 0px; float: left; height: 25px; color: #000000; overflow: hidden; margin-right: 5px; padding-top: 0px
+}
+.zjyd_lb02 a:link {
+	color: #000000; text-decoration: none
+}
+.zjyd_lb02 a:visited {
+	color: #000000; text-decoration: none
+}
+.zjyd_lb02 a:hover {
+	color: #000000; text-decoration: underline
+}
+.zjyd_lb02 a:active {
+	color: #000000; text-decoration: none
+}
+.zjyd_lb03 {
+	padding-bottom: 0px; padding-left: 0px; width: 255px; padding-right: 0px; float: left; height: 25px; color: #000000; overflow: hidden; margin-right: 5px; padding-top: 0px
+}
+.zjyd_lb03 a:link {
+	color: #000000; text-decoration: none
+}
+.zjyd_lb03 a:visited {
+	color: #000000; text-decoration: none
+}
+.zjyd_lb03 a:hover {
+	color: #000000; text-decoration: underline
+}
+.zjyd_lb03 a:active {
+	color: #000000; text-decoration: none
+}
+.zjyd_lb04 {
+	padding-bottom: 0px; padding-left: 0px; width: 65px; padding-right: 0px; float: left; height: 25px; color: #0058a6; overflow: hidden; margin-right: 5px; padding-top: 0px
+}
+.zjyd_lb05 {
+	padding-bottom: 0px; padding-left: 0px; width: 35px; padding-right: 0px; float: right; height: 25px; color: #bfbfbf; overflow: hidden; padding-top: 0px
+}
+.zjyd_button {
+	margin: 0px auto; width: 520px; height: 30px; clear: both; overflow: hidden
+}
+.zjyd_buttonr {
+	width: 250px; margin-left: 320px; clear: both; overflow: hidden
+}
+.zjyd_buttonra {
+	border-bottom: #cccccc 1px solid; text-align: center; border-left: #cccccc 1px solid; line-height: 20px; margin-top: 10px; width: 30px; background: #f6f6f6; float: left; height: 18px; color: #666666; overflow: hidden; border-top: #cccccc 1px solid; margin-right: 10px; border-right: #cccccc 1px solid; _line-height: 19px
+}
+.zjyd_buttonra a:link {
+	color: #666666; text-decoration: none
+}
+.zjyd_buttonra a:visited {
+	color: #666666; text-decoration: none
+}
+.zjyd_buttonra a:hover {
+	color: #000000; text-decoration: none
+}
+.zjyd_buttonra a:active {
+	color: #666666; text-decoration: none
+}
+.zjyd_buttonrb {
+	text-align: center; line-height: 20px; margin-top: 10px; width: 50px; background: #f6f6f6; float: left; height: 18px; color: #666666; overflow: hidden; margin-right: 10px; _line-height: 19px
+}
+.zjyd_buttonrb a:link {
+	color: #666666; text-decoration: none
+}
+.zjyd_buttonrb a:visited {
+	color: #666666; text-decoration: none
+}
+.zjyd_buttonrb a:hover {
+	color: #000000; text-decoration: none
+}
+.zjyd_buttonrb a:active {
+	color: #666666; text-decoration: none
+}

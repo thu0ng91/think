@@ -1,0 +1,604 @@
+.left2 {
+	line-height: 0px;
+}
+.left {
+	width: 170px; float: left
+}
+.left2 {
+	width: 170px; float: left
+}
+.left ul {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; padding-right: 0px; overflow: hidden; padding-top: 0px
+}
+.left ul li {
+	text-align: left; padding-bottom: 0px; line-height: 18px; list-style-type: none; padding-left: 0px; padding-right: 0px; display: block; height: 20px; overflow: hidden; padding-top: 0px
+}
+.left ul li.more {
+	text-align: right; padding-bottom: 7px; list-style-type: none; padding-left: 0px; padding-right: 7px; display: block; font-family: "courier new"; padding-top: 2px
+}
+.left .tagname div {
+	text-align: left; padding-bottom: 0px; padding-left: 15px; padding-right: 0px; color: #000; font-size: 13px; padding-top: 8px
+}
+.left ul li {
+	color: #6690cc
+}
+.left ul li.more {
+	color: #6690cc
+}
+.left ul li.lpadd div.ltitle h2 {
+	color: #6690cc
+}
+.left ul li .arrow {
+	color: #6690cc
+}
+.left ul li a:link {
+	color: #6690cc; text-decoration: none
+}
+.left ul li a:visited {
+	color: #6690cc; text-decoration: none
+}
+.left ul li a:hover {
+	color: #6690cc; text-decoration: underline
+}
+.left ul li a:active {
+	color: #6690cc
+}
+.left ul li.more2 {
+	padding-bottom: 0px; list-style-type: none; padding-left: 0px; padding-right: 0px; display: block; padding-top: 0px
+}
+.right ul li.more {
+	text-align: right; padding-bottom: 0px; list-style-type: none; padding-left: 0px; padding-right: 7px; display: block; font-family: "courier new"; color: #f46519; padding-top: 2px
+}
+.right ul li.more2 {
+	line-height: 0; list-style-type: none; display: block; height: 7px; padding-top: 2px
+}
+.left ul li.lpadd {
+	padding-bottom: 0px; line-height: 20px; padding-left: 6px; padding-right: 0px; padding-top: 0px
+}
+.left .lpadd2 {
+	padding-bottom: 0px; line-height: 17px; padding-left: 6px; padding-right: 0px; padding-top: 0px
+}
+.left ul li.lpadd div.limg {
+	float: left
+}
+.left ul li.lpadd div.ltitle {
+	float: left
+}
+.left ul li.lpadd div.ltitle h1 {
+	padding-bottom: 0px; padding-left: 3px; width: 100px; padding-right: 0px; color: #f46519; font-size: 14px; font-weight: bold; padding-top: 6px
+}
+.left ul li.lpadd div.ltitle h2 {
+	padding-bottom: 0px; padding-left: 3px; width: 100px; padding-right: 0px; color: #f46519; font-size: 14px; font-weight: bold; padding-top: 6px
+}
+.left ul li.lpadd div.ltitle h2 {
+	font-size: 12px
+}
+.left ul li .arrow {
+	padding-bottom: 0px; padding-left: 14px; padding-right: 2px; font-family: ""; font-size: 8px; padding-top: 0px
+}
+.middle {
+	width: 579px; float: left; margin: 0 9px;
+}
+.middle .item {
+	padding-bottom: 0px; padding-left: 10px; padding-right: 0px; padding-top: 7px
+}
+.middle .imgbox {
+	padding-bottom: 0px; padding-left: 0px; padding-right: 15px; float: left; padding-top: 0px
+}
+.middle .title {
+	float: left
+}
+.middle .title h1 {
+	text-align: left; float: left; height: 27px; color: #333333; font-size: 14px; font-weight: bold
+}
+.middle .title h2 {
+	text-align: left; float: left; height: 27px; color: #333333; font-size: 14px; font-weight: bold
+}
+.middle .title h1 {
+	padding-bottom: 0px; padding-left: 36px; width: 204px; padding-right: 0px; padding-top: 0px
+}
+.middle .title h2 {
+	width: 205px
+}
+.middle .content {
+	text-align: left; padding-bottom: 0px; line-height: 20px; padding-left: 0px; padding-right: 6px; padding-top: 0px
+}
+.middle .contentline {
+	margin-top: 26px !important; clear: both
+}
+.middle .contentmore {
+	text-align: right; padding-bottom: 3px; padding-left: 0px; padding-right: 10px; height: 16px; color: #ec3c03; padding-top: 0px
+}
+.middle .contentmore2 {
+	text-align: right; padding-bottom: 2px; margin: 0px; padding-left: 0px; padding-right: 0px; color: #ec3c03; padding-top: 0px
+}
+.middle .contentline2 {
+	text-align: left; width: 560px; background: url(../images/bg_content_line.gif) repeat-x 0px 7px; height: 12px; margin-left: 12px !important
+}
+.middle .mf2 {
+	width: 579px; overflow: hidden
+}
+.middle .mf2 .mf2title {
+	width: 579px; height: 27px;
+	background: #d2e6f6; border-bottom: #B8D1E7 1px solid;
+}
+.middle .mf2 .mf2title h1 {
+	padding: 6px 0 0 9px; text-align: left; font-size: 13px; font-weight: normal;
+}
+
+.middle .mf2 .mf2left {
+	width: 289px; float: left
+}
+.middle .mf2 .mf2right {
+	width: 290px; float: left; overflow: hidden
+}
+.middle .mf2 .mf2left .item { padding: 0px; }
+.middle .mf2 .mf2right .item { padding: 0px; }
+.middle .mf2 .mf2left .item .lname { height: 26px; overflow: hidden; }
+.middle .mf2 .mf2right .item .lname { height: 26px; overflow: hidden; }
+.middle .mf2 .mf2left .item .lname h1 {
+	text-align: left; padding: 6px 0px 0px 14px; font-size: 13px;
+}
+.middle .mf2 .mf2right .item .lname h1 {
+	text-align: left; padding: 6px 0px 0px 14px; font-size: 13px;
+}
+.middle .mf2 .mf2right .item .limg { padding: 7px 0 0 7px; }
+.middle .mf2 .mf2right .item .limg { float: left; }
+.middle .mf2 .mf2left .item .ltxt { float: left; }
+.middle .mf2 .mf2left .item .ltxt {
+	text-align: left; padding-bottom: 0px; padding-left: 5px; padding-right: 5px; padding-top: 7px
+}
+.middle .mf2 .mf2right .item .ltxt {
+	text-align: left; padding-bottom: 0px; padding-left: 5px; padding-right: 5px; padding-top: 7px
+}
+.middle .mf2 .ltag {
+	text-align: left; padding-bottom: 0px; padding-left: 7px; width: 280px; padding-right: 0px; overflow: hidden; padding-top: 3px
+}
+.middle .mf2 .mf2left .item .ltxt h1 {
+	margin-left: 8px; font-size: 14px; font-weight: bold
+}
+.middle .mf2 .mf2left .item .ltxt .ltxttag {
+	color: #000; margin-left: 8px; font-size: 14px; font-weight: bold
+}
+.middle .mf2 .mf2right .item .ltxt .ltxttag {
+	color: #000; margin-left: 8px; font-size: 14px; font-weight: bold
+}
+.middle .mf2 .mf2left .item .ltxt .ltxt_text {
+	height: 120px; overflow: hidden;
+}
+.middle .mf2 .mf2right .item .ltxt .ltxt_text {
+	height: 120px; overflow: hidden;
+}
+.middle .mf2 .mf2left .item .ltxt a {
+	color: #002065
+}
+.middle .mf2 .mf2right .item .ltxt a {
+	color: #002065
+}
+.middle .mf2 .mf2left .item .ltxt a:hover {
+	color: #002065
+}
+.middle .mf2 .mf2right .item .ltxt a:hover {
+	color: #002065
+}
+.middle .mf2 .mf2left .item .ltxt h2 {
+	line-height: 20px; margin-top: 4px; margin-left: 8px; font-size: 12px; font-weight: normal
+}
+.middle .mf2 .mf2right .item .ltxt h2 {
+	line-height: 20px; margin-top: 4px; margin-left: 8px; font-size: 12px; font-weight: normal
+}
+.middle .mf2 .mf2left .item .ltxt h3 {
+	line-height: 20px; margin-top: 4px; margin-left: 8px; font-size: 12px; font-weight: normal
+}
+.middle .mf2 .mf2right .item .ltxt h3 {
+	line-height: 20px; margin-top: 4px; margin-left: 8px; font-size: 12px; font-weight: normal
+}
+.middle .mf2 .ltag ul.top {
+	padding-top: 9px
+}
+.middle .mf2 .ltag ul {
+	list-style-type: none; float: left; padding-top: 6px
+}
+.middle .mf2 .ltag ul li {
+	padding-right: 7px; display: block; float: left; color: #002065
+}
+.middle .mf2 .ltag ul li.key {
+	padding-right: 15px; color: #ec3c03; font-size: 12px; font-weight: bold
+}
+.middle .mf3 {
+	width: 579px
+}
+.middle .mf3 .mf3left {
+	width: 289px; float: left
+}
+.middle .mf3 .mf3right {
+	width: 290px; float: left
+}
+.middle .mf3 .item {
+	padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px
+}
+.middle .mf3 .lname {
+	font-family: ""; height: 26px
+}
+.middle .mf3 .lname h1 {
+	text-align: left; padding-bottom: 0px; padding-left: 14px; padding-right: 0px; font-size: 12px; font-weight: bold; padding-top: 6px
+}
+.middle .mf3 .limg {
+	padding-bottom: 0px; padding-left: 7px; padding-right: 0px; padding-top: 7px
+}
+.middle .mf3 .limg {
+	float: left
+}
+.middle .mf3 .ltxt {
+	float: left
+}
+.middle .mf3 .ltxt {
+	text-align: left; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 24px
+}
+.middle .mf3 .ltag {
+	text-align: left; padding-bottom: 0px; line-height: 20px; padding-left: 7px; padding-right: 0px; padding-top: 7px
+}
+.middle .mf3 .ltagheight {
+	padding-bottom: 29px !important
+}
+.middle .mf3 .ltxt h1 {
+	margin: 0px 0px 0px 8px; font-size: 14px; font-weight: bold
+}
+.middle .mf3 .ltxt h2 {
+	line-height: 20px; margin: 4px 0px 0px 8px; width: 160px; font-size: 12px; font-weight: normal
+}
+.middle .mf3 .ltxt h3 {
+	line-height: 20px; margin: 4px 0px 0px 8px; width: 160px; font-size: 12px; font-weight: normal
+}
+.middle .mf3 .ltxt h2 strong {
+	color: #000000
+}
+.middle .mf3 .ltxt h2.bgcolor2 {
+	background: #ffffff
+}
+.middle .mf3 .ltag ul {
+	padding-bottom: 0px; padding-left: 0px; padding-right: 0px; clear: both; padding-top: 0px
+}
+.middle .mf3 .ltag ul li {
+	list-style-type: none; display: block; font-family: ""; float: left; font-size: 12px; padding-top: 0px !important
+}
+.middle .mf3 .ltag ul li.key {
+	padding-bottom: 0px; padding-left: 0px; padding-right: 15px; padding-top: 0px
+}
+.middle .mf3 .ltag ul li.h1 {
+	text-align: left; width: 122px
+}
+.middle .mf3 .ltag ul li.h2 {
+	text-align: left; width: 122px
+}
+.middle .mf3 .ltag ul li.h3 {
+	text-align: left; width: 122px
+}
+.middle .mf3 .ltag ul li.h4 {
+	text-align: left; width: 122px
+}
+.middle .mf4 {
+	width: 579px
+}
+.middle .mf4 ul { padding: 0 0 0 9px; clear: both; }
+
+.middle .mf4 ul li {
+	text-align: left; line-height: 21px; list-style-type: none; display: block; float: left; font-size: 12px
+}
+.middle .mf4 ul.end li {
+	padding-bottom: 11px !important
+}
+.middle .mf4 ul.end2 li {
+	padding-bottom: 2px !important
+}
+.middle .mf4 ul li.h1 {
+	width: 81px; font-family: tahoma
+}
+.middle .mf4 ul li.h1#high {
+	width: 81px; font-family: tahoma
+}
+.middle .mf4 ul li.h2 {
+	width: 330px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden
+}
+.middle .mf4 ul li.h3 {
+	width: 100px
+}
+.middle .mf4 ul li.h4 {
+	width: 50px; color: #000000
+}
+.middle .mf4 .mf4items {
+	border-bottom: #e5eaf1 1px solid; border-left: #e5eaf1 1px solid; width: 275px; float: left; border-top: #e5eaf1 1px solid; border-right: #e5eaf1 1px solid
+}
+.middle .mf4 .mf4items .mf4title {
+	text-align: left; padding-bottom: 7px; padding-left: 15px; padding-right: 0px; background: #f2f6fb; font-size: 14px; font-weight: bold; padding-top: 4px
+}
+.middle .mf4 .mf4items .mf4img {
+	padding-bottom: 5px; padding-left: 5px; width: 80px; padding-right: 5px; float: left; height: 84px; padding-top: 5px
+}
+.middle .mf4 .mf4items .mf4item {
+	float: left
+}
+.middle .mf4 .mf4items .mf4item ul {
+	padding-bottom: 0px; list-style-type: none; padding-left: 0px; padding-right: 0px; padding-top: 4px
+}
+.middle .mf4 .mf4items .mf4item ul li {
+	border-bottom: 0px; border-left: 0px; padding-bottom: 0px; line-height: 20px !important; padding-left: 8px; width: 165px; padding-right: 0px; white-space: nowrap; background: url(../images/item_arrow_bg.gif) no-repeat 0px 4px; float: left; overflow: hidden; border-top: 0px; border-right: 0px; padding-top: 0px
+}
+.right2 {
+	line-height: 0px
+}
+.right {
+	width: 179px; float: left
+}
+.right2 {
+	width: 179px; float: left
+}
+.right {
+	height: auto
+}
+.right .mf3 .tagname {
+	padding-bottom: 0px; line-height: 27px; margin: 0px auto; padding-left: 0px; padding-right: 0px; height: 27px; padding-top: 0px
+}
+.right .tagtop {
+	
+}
+.right .mf3 .tagname div {
+	text-align: left; font-size: 13px; font-weight: normal
+}
+.right ul {
+	padding-bottom: 0px; line-height: 20px; padding-left: 8px; padding-right: 0px; overflow: hidden; padding-top: 9px
+}
+div.spacer12 {
+	padding-top: 16px !important
+}
+.right ul li.font13 {
+	padding-bottom: 5px; padding-left: 0px; padding-right: 2px; font-family: ""; font-size: 14px; padding-top: 0px
+}
+.right ul li .arrow {
+	padding-bottom: 0px; padding-left: 0px; padding-right: 2px; font-family: ""; font-size: 8px; padding-top: 0px
+}
+.right ul.toptag {
+	padding-bottom: 0px; margin: -2px 0px 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px
+}
+.right ul.toptag li {
+	text-align: center; padding-bottom: 0px; list-style-type: none; padding-left: 0px; width: 44px; padding-right: 0px; background: url(../images/toptag_bg_out.gif) no-repeat -1px 0px; float: left; height: 20px !important; cursor: pointer; padding-top: 4px
+}
+.right ul.toptag li.hover {
+	text-align: center; padding-bottom: 0px; list-style-type: none; padding-left: 0px; width: 47px; padding-right: 0px; background: url(../images/toptag_bg_over.gif) no-repeat -1px 0px; float: left; height: 20px !important; cursor: pointer; padding-top: 4px
+}
+.right .mf2 ul li {
+	text-align: left; line-height: 20px; list-style-type: none; display: block
+}
+.right .mf3 {
+	text-indent: 10px; display: block; height: auto
+}
+.right .mf3 ul {
+	padding-bottom: 0px; margin: 0px auto; padding-left: 0px; padding-right: 0px; padding-top: 0px
+}
+.right .mf3 ul li {
+	text-align: left; list-style-type: none; width: 174px; text-overflow: ellipsis; height: 20px
+}
+.right .mf3 ul li.more {
+	text-align: right; list-style-type: none; display: block; font-family: "courier new"; color: #f46519
+}
+.right ul li input {
+	border-bottom: medium none; border-left: medium none; width: 144px; background: url(../images/btn_reg_author.gif) no-repeat; height: 36px; font-size: 12px; border-top: medium none; border-right: medium none
+}
+.right ul li input.btn_reg_author {
+	font-size: 14px; font-weight: bold
+}
+.right ul li.p6 {
+	padding-bottom: 0px; padding-left: 8px; padding-right: 0px; padding-top: 6px
+}
+.right ul li.p7 {
+	padding-bottom: 11px; padding-left: 8px; padding-right: 0px; padding-top: 6px
+}
+.right .hotagborder {
+	background: #f2f5fa; padding-top: 10px
+}
+.right .hotag {
+	border-bottom: #cbcbcb 1px solid; border-left: #cbcbcb 1px solid; margin: 0px 4px; background: #ffffff; border-top: #cbcbcb 1px solid; border-right: #cbcbcb 1px solid
+}
+.right .hotagname {
+	text-align: left; padding-bottom: 0px; padding-left: 6px; padding-right: 0px; padding-top: 6px
+}
+.right .hotagtext {
+	text-align: left; padding-bottom: 3px; padding-left: 3px; padding-right: 3px; height: 156px !important; padding-top: 3px
+}
+.right .hotag a {
+	padding-bottom: 3px; padding-left: 3px; padding-right: 3px; padding-top: 3px
+}
+.imgboxborder {
+	border-bottom: #cccccc 1px solid; border-left: #cccccc 1px solid; width: 100px; height: 125px; border-top: #cccccc 1px solid; border-right: #cccccc 1px solid
+}
+.imgboxborder2 {
+	border: #cccccc 1px solid; width: 120px; height: 150px; margin-right: 12px; float: left;
+}
+.frameborder {
+	border-bottom: #b8d1e7 1px solid; border-left: #b8d1e7 1px solid; border-top: #b8d1e7 1px solid; border-right: #b8d1e7 1px solid
+}
+.imgborder {
+	border-bottom: #959595 1px dotted; border-left: #959595 1px dotted; padding-bottom: 2px; padding-left: 2px; padding-right: 2px; border-top: #959595 1px dotted; border-right: #959595 1px dotted; padding-top: 2px
+}
+
+#sub_a3 { height: 298px; }
+#sub_a31 { height: 299px; }
+
+.sub_a41 { height: 230px; }
+.sub_a42 { height: 215px; }
+
+.sub_a43 { height: 500px; clear: both; }
+
+.layout {
+	margin: 0px auto; width: 950px; background: #fff; clear: both
+}
+h1 {
+	padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px
+}
+
+.adv950x90 { padding: 8px 0px; width: 950px; float: left; overflow: hidden; }
+
+div.br {
+	clear: both;
+}
+div.spacer0 {
+	width: 8px; float: left
+}
+div.spacer1 {
+	height: 16px
+}
+div.spacer2 {
+	clear: both; padding-top: 8px
+}
+div.spacer3 {
+	height: 22px
+}
+div.spacer4 {
+	height: 27px !important
+}
+div.spacer5 {
+	padding-top: 3px !important
+}
+div.spacer6 {
+	width: 10px !important; float: left
+}
+div.spacer7 {
+	padding-top: 14px
+}
+div.spacer8 {
+	padding-top: 18px !important
+}
+div.spacer9 {
+	height: 34px !important
+}
+
+/* 频道首页 */
+.left {
+	border-bottom: #b8d1e7 1px solid; border-left: #b8d1e7 1px solid; border-top: #b8d1e7 1px solid; border-right: #b8d1e7 1px solid
+}
+.left .tagname {
+	border-bottom: #b8d1e7 1px solid; line-height: 12px; background: url(../images/bg_left_tag_kh.gif) repeat-x; height: 27px
+}
+.left .tagtop {
+	border-top: #b8d1e7 1px solid
+}
+.left .tagname div {
+	text-align: left; padding-bottom: 0px; padding-left: 15px; padding-right: 0px; color: #000; font-size: 13px; padding-top: 8px
+}
+.left ul li {
+	color: #6690cc
+}
+.left ul li.more {
+	color: #6690cc
+}
+.left ul li.lpadd div.ltitle h2 {
+	color: #6690cc
+}
+.left ul li .arrow {
+	color: #6690cc
+}
+.left ul li a:link {
+	color: #6690cc; text-decoration: none
+}
+.left ul li a:visited {
+	color: #6690cc; text-decoration: none
+}
+.left ul li a:hover {
+	color: #6690cc; text-decoration: underline
+}
+.left ul li a:active {
+	color: #6690cc
+}
+.middle {
+	border-bottom: #b8d1e7 1px solid; border-left: #b8d1e7 1px solid; border-top: #b8d1e7 1px solid; border-right: #b8d1e7 1px solid
+}
+.middle .mf2 {
+	min-height: 326px;
+}
+.middle .mf2 .lname {
+	border-bottom: #b8d1e7 1px solid; background: #d2e6f6
+}
+.middle .mf2 .topborder {
+	border-top: #b8d1e7 1px solid
+}
+.middle .mf2 .lname h1 {
+	color: #002065
+}
+.middle .mf3 .lname {
+	border-bottom: #b8d1e7 1px solid; background: #f2f6fb
+}
+.middle .mf3 .topborder {
+	border-top: #b8d1e7 1px solid
+}
+.middle .mf3 .lname h1 {
+	color: #6690cc
+}
+.middle .mf3 .ltxt h2 {
+	background: #f2f6fb; color: #6690cc
+}
+.middle .mf3 .ltxt h3 {
+	background: #f2f6fb; color: #6690cc
+}
+.middle .mf3 .ltag ul li {
+	color: #6690cc
+}
+.middle .mf4 ul li {
+	border-bottom: #c4def3 1px solid
+}
+.middle .mf4 ul li.h1 {
+	color: #375d94
+}
+.middle .mf4 ul li.h1#high {
+	color: #ff002a
+}
+.middle .mf4 ul li.h2 {
+	color: #000000
+}
+.middle .mf4 ul li.h3 {
+	color: #375d94
+}
+.right {
+	border-bottom: #b8d1e7 1px solid; border-left: #b8d1e7 1px solid; border-top: #b8d1e7 1px solid; border-right: #b8d1e7 1px solid
+}
+.right .tagname {
+	border-bottom: #b8d1e7 1px solid
+}
+.right .tagtop {
+	border-top: #b8d1e7 1px solid
+}
+.right .tagname div {
+	color: #3e6aa8
+}
+.right ul {
+	background: #f6f9fe
+}
+div.spacer12 {
+	background: #f6f9fe
+}
+.right ul li.font13 {
+	color: #6690cc
+}
+.right ul li .arrow {
+	color: #6690cc
+}
+.right .mf2 ul li {
+	color: #6690cc
+}
+.right .mf3 ul {
+	min-height: 200px
+}
+.right .mf3 ul li {
+	color: #6690cc
+}
+.search {
+	border-bottom: #b8d1e7 1px solid; border-left: #b8d1e7 1px solid; border-top: #b8d1e7 1px solid; border-right: #b8d1e7 1px solid
+}
+.search ul#right a {
+	color: #6690cc
+}
+.selectelement {
+	border-bottom: #b8d1e7 1px solid; border-left: #b8d1e7 1px solid; border-top: #b8d1e7 1px solid; border-right: #b8d1e7 1px solid
+}
+.frameborder {
+	border-bottom: #b8d1e7 1px solid; border-left: #b8d1e7 1px solid; border-top: #b8d1e7 1px solid; border-right: #b8d1e7 1px solid
+}

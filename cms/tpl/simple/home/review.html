@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$review.subject} - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/home.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+<script type="text/javascript" src="{$tpldir}js/global.js"></script>
+</head>
+
+<body>
+<!-- site_header -->
+{$header}
+
+<!--main-->
+<div id="main">
+	<div class="reply_subject">
+		<h3>{$review.subject}</h3>
+		<p>{$review.poster} {$review.post_time|date="Y-m-d H:i:s",###}</p>
+		<div>{$review.detail}</div>
+	</div>
+	<div class="reply_list">
+<volist name="list" id="item">
+		<div class="review_item">
+			<div class="review_01">
+				<span class="re_subject">{$item.subject}</span>
+				<span class="re_author">{$item.poster}</span>
+				<span class="re_time">{$item.post_ip} {$item.post_time|date="Y-m-d H:i:s",###}</span>
+			</div>
+			<div class="review_02">{$item.detail}</div>
+		</div>
+</volist>
+	</div>
+	<a name="review"></a>
+	<div class="review">
+		<p><label>回复评论：</label>
+			<input type="text" id="review_subject" value="Re:{$review.subject}" class="normal" />
+		</p>
+		<p><label>回复内容：</label>
+			<textarea id="review_detail"></textarea>
+		</p>
+		<p id="review_submit">
+			<a href="javascript:;" onclick="review_post({$review.review_id},true)">发表评论</a>
+		</p>
+	</div>
+</div>
+<!--end main-->
+
+<!-- site_footer -->
+{$footer}
+</body>
+</html>

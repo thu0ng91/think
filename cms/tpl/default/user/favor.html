@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我的书架 - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/user.css">
+<script type="text/javascript" src="{$tplcms}js/jquery.js"></script>
+<script type="text/javascript" src="{$tplcms}js/global.js"></script>
+</head>
+
+<body>
+<div id="layout">
+	<div id="mainbody">
+		<include file="./tpl/default/header.html" />
+		<div id="main">
+			<div id="mainleft">
+				<div><img src="{$tplcms}images/hyzx_djsc_01.gif" /></div>
+				<div class="tit">
+					<img src="{$tplcms}images/wdsj_01.gif" class="ico" />我的书架
+				</div>
+				<div><img src="{$tplcms}images/hyzx_djsc_03.gif" /></div>
+				
+				<div class="space03">&nbsp;</div>
+				<div class="wdsj_lb_title">
+					<div class="title" style="display:none;"><a href="">最近阅读</a></div>
+					<div class="title"><font class="font02">默认书架</font></div>
+					<div class="title" style="display:none;"><a href="">VIP书架</a></div>
+				</div>
+				
+				<div class="space04">&nbsp;</div>
+				<div class="favor_list">
+					<table width="610" border="0" cellspacing="0" cellpadding="0">
+						<tbody>
+							<tr>
+								<th width="125" align="left" height="30">书名</th>
+								<th width="190" align="left">最新章节</th>
+								<th width="85" align="left">更新日期</th>
+								<th width="190" align="left">书签</th>
+								<th width="50" align="left">状态</th>
+							</tr>
+						<volist name="list" id="book">
+							<tr bgcolor="<if condition="$i%2 eq 1">#fafafa<else />#f0f0f0</if>" style="line-height:30px;">
+								<td align="left" valign="middle" class="font04">
+									<a href="{:BU($book, 'index')}">{$book.book_name}</a>
+								</td>
+								<td align="left" valign="middle" class="font03">
+									<a href="{:BU($book, 'read')}">{$book.last_chapter}</a>
+								</td>
+								<td align="left" valign="middle" class="font04">{$book.last_update|date="y-m-d",###}</td>
+								<td align="left" valign="middle" class="font03">
+									<a href="{:BU($book, 'read', $book)}">{$book.chapter_name}</a>
+								</td>
+								<td align="left" valign="middle" class="font04">
+									<a href="?s=user/favor/delete/id/{$book.id}">删除</a>
+								</td>
+							</tr>
+						</volist>
+						</tbody>
+					</table>
+				</div>
+				<div class="space04">&nbsp;</div>
+				<div style="text-align: right; margin-right: 5px; ">
+					[ 已收藏<font color="#FF0000"> {$i} </font>本 ]
+					[ 可收藏<font color="#FF0000"> 20 </font>本 ]
+				</div>
+				<div class="space03">&nbsp;</div>
+				
+				<div><img src="{$tplcms}images/hyzx_djsc_01.gif" /></div>
+				<div class="tit">
+					<volist name="11,5,0" id="item">
+						<div class="fmlb">
+							<div class="fmh1">
+								<a href="{:BU($item,'index')}"><img src="{$item.image_url}" width="100" height="125"></a>
+							</div>
+							<div class="fmh2"><a href="{:BU($item,'index')}">{$item.book_name}</a></div>
+							<div class="fmh3">
+								<a href="javascript:;" onclick="add_to_favor({$item.book_id}, 0);">[书架收藏]</a>
+							</div>
+						</div>
+					</volist>
+				</div>
+				<div><img src="{$tplcms}images/hyzx_djsc_03.gif" /></div>
+				
+			</div>
+			<div id="mainmiddle">&nbsp;</div>
+			<!--右边部分开始-->
+			<div id="mainright">
+				<div><img src="{$tplcms}images/hyzx_right_01.gif" border="0"></div>
+				<div class="nrbf">
+					<div class="nav_right">
+						<div style="margin-bottom: 8px;">用户中心</div>
+						<div class="nav_right_newdh">
+							<ul>
+								<li><a href="?s=user/index">个人信息</a></li>
+								<li><a href="?s=user/user/update">编辑信息</a></li>
+							</ul>
+							<ul>
+								<li><a href="?s=user/favor">我的书架</a></li>
+								<li><a href="?s=user/charge">充值中心</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div><img src="{$tplcms}images/hyzx_right_03.gif" border="0"></div>
+				<div class="space02">&nbsp;</div>
+
+				<div><img src="{$tplcms}images/hyzx_right_01.gif" border="0"></div>
+				<div class="nrbf">
+		            <div class="bt">您没有新的消息</div>
+				</div>
+				<div><img src="{$tplcms}images/hyzx_right_03.gif" border="0"></div>
+				<div class="space02">&nbsp;</div>
+				<div><img src="{$tplcms}images/hyzx_right_01.gif" border="0"></div>
+				<div class="nrbf">
+					<div class="bt">系统公告</div>
+				</div>
+				<div><img src="{$tplcms}images/hyzx_right_03.gif" border="0"></div>
+				<div class="space02">&nbsp;</div>
+			</div>
+			<!--右边部分结束-->
+		</div>
+		<div class="break_09"></div>
+		<include file="./tpl/default/footer.html" />
+	</div>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/index.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+<script type="text/javascript" src="{$tpldir}js/index.js"></script>
+</head>
+<body>
+<!-- site_header -->
+{$header}
+
+<!-- =searchbar= -->
+<div id="searchbar">
+<div class="inner">
+
+  <ul>
+  <form name="form" method="get" target="_blank" action="#" onsubmit="return do_search();">
+    <li class="bt">小说搜索</li>
+    <li class="input">
+      <input name="searchkey" id="skw" value="请输入书名进行搜索" style="font-size: 12px; color: rgb(51, 153, 0);" onblur="javascript:if(document.getElementById('skw').value=='') document.getElementById('skw').value='请输入书名进行搜索'" onfocus="javascript:if(document.getElementById('skw').value=='请输入书名进行搜索') document.getElementById('skw').value=''" type="text">
+    </li>
+    <li class="select">
+      <select name="searchtype" id="searchtype">
+		  <option selected="selected" value="articlename">书 名</option>
+      </select>
+    </li>
+    <li class="btn">
+        <input name="action" value="login" type="hidden">
+      <input name="input2" value="搜索" onclick="javascript:if(document.getElementById('skw').value=='请输入书名进行搜索') document.getElementById('skw').value=''" type="submit">
+    </li>
+</form>
+  </ul>
+  <div class="tag"> 热门小说：
+  <volist name="11,6,0" id="book">
+  <a target="_blank" href="{:BU($book, 'index')}" title="{$book.book_name}">{$book.book_name}</a> 
+  </volist>
+
+  </div>
+
+  </div>
+</div>
+
+    <div class="hguide">
+        <span class="new_list">
+        	<a href="{$cmsroot}">首页</a> -> 用户信息
+        </span>
+    </div>
+    
+<!--main-->
+<div class="wrapper">
+	<div class="main">
+        <div class="main_left">
+            <div class="mod_title">
+                <span class="title">功能列表</span><span class="par">相关用户功能</span> 
+            </div>
+            <div class="tab_content">
+                <ul>
+                    <li class="txt_info">
+                        <a href="?s=user/user">用户信息</a>
+                    </li>
+                    <li class="txt_info">
+                        <a href="?s=user/user/update">修改用户信息</a>
+                    </li>                      
+                </ul>
+            </div>
+        </div>
+        <div class="main_right">
+            <div class="focus_title"><strong>收藏列表</strong></div>
+            <div id="left_list">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr height="28">
+                        <th width="30%">书籍名称</th>
+                        <th width="35%">书签名称</th>
+                        <th width="25%">最后访问</th>
+                        <th width="10%">操作</th>
+                    </tr>
+            		<volist name="list" id="book">
+                    <tr class="tr1">
+                        <td><a href="{:BU($book, 'index')}" target="_blank">{$book.book_name}</a></td>
+                        <td><a href="{:BU($book, 'read', $book)}" target="_blank">{$book.chapter_name}</a></td>
+                        <td>{$book.last_visit|date="Y-m-d H:i:s",###}</td>
+                        <td>
+                            <a href="?s=user/favor/delete/id/{$book.id}">删除</a>
+                        </td>
+                    </tr>
+            		</volist>
+                </table>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+	</div>
+</div>
+<!--end main-->
+
+<!-- site_footer -->
+{$footer}
+</body>
+</html>

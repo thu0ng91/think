@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>我的书架 - {&system.site_name}</title>
+        <meta name="keywords" content="{&system.metakeywords}" />
+        <meta name="description" content="{&system.metadescription}" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/common.css" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/user.css" />
+        <script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+        <script type="text/javascript" src="{$tpldir}js/global.js"></script>
+    </head>
+
+    <body>
+        {$header}
+
+        <div class="user">
+            <!--左边部分-->
+            <div class="user_left">
+                <div class="user_left_title">其他功能</div>
+                <div class="user_left_nr">
+                    <div class="gyzz_02">
+                        <ul>
+                            <li>·<a href="?s=user/index" class="atuhuang12">我的资料</a></li>
+                            <li>·<a href="?s=user/user/update" class="atuhuang12">编辑信息</a></li>
+                            <li>·<a href="?s=user/favor" class="atuhuang12">我的收藏</a></li>
+                            <li>·<a href="?s=user/msg" class="atuhuang12">我的消息({$msg_unread})</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="space01">&nbsp;</div>
+            </div>
+
+            <!--右边部分-->
+            <div class="user_right">
+                <table align="center" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody>
+                        <tr>
+                            <th background="{$tpldir}images/readpage_01.gif" height="24">
+                                <b class="heichu14">我的消息</b>
+                            </th>
+                        </tr>
+                        <tr align="left">
+                            <th>
+                                <a href="?s=user/msg/msg_unread" class="btn1">未读信息</a>
+                                <a href="?s=user/msg/msg_to" class="btn1">收件箱</a>
+                                <a href="?s=user/msg/msg_from" class="btn1">发件箱</a>
+                                <a href="?s=user/msg/add" class="btn1">新建消息</a>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br/><br/>
+            <div class="user_right">
+                <div class="user_msg">
+                    <form action="?s=user/msg/reply" method="post">
+                        <input type="hidden" name="msg_to" value="{$msg.msg_to}" />
+                        <input type="hidden" name="msg_from" value="{$msg.msg_from}" />
+                        <p><label>短信标题：</label><input type="hidden" name="msg_title" value="{$msg.msg_title}" />{$msg.msg_title}</p>
+                        <p><label>发件人:</label><input type="hidden" name="msg_from_name" value="{$msg.msg_from_name}" />{$msg.msg_from_name}</p>
+                        <p><label>短信内容:</label><textarea name="msg_content" rows="6" cols="20" readonly="readonly">{$msg.msg_content}</textarea></p>
+                        <p class="submit">
+                            <if condition="$msg.msg_from_name neq '系统消息'">
+                                <input type="submit" value="回复" class="formbtn" />                               
+                            </if>
+                            <a href="?s=user/msg/delete/id/{$msg.id}/" onclick="return confirm('确认删除吗?')" class="formbtn">删除</a>
+                            <input type="button" value="返回" class="formbtn" onclick="javascript:history.go(-1);" />
+                        </p>
+                        <div class="space01">&nbsp;</div>
+                    </form>
+                </div>
+            </div>
+            <div class="space01">&nbsp;</div>
+
+            <div class="user_right">
+                <div class="space01">&nbsp;</div>
+                <div class="tit">
+                    <volist name="11,6,0" id="item">
+                        <div class="fmlb">
+                            <div class="fmh1">
+                                <a href="{:BU($item,'index')}"><img src="{$item.image_url}" width="100" height="125"/></a>
+                            </div>
+                            <div class="fmh2"><a href="{:BU($item,'index')}">{$item.book_name}</a></div>
+                            <div class="fmh3">
+                                <a href="javascript:;" onclick="add_to_favor({$item.book_id}, 0);">[书架收藏]</a>
+                            </div>
+                        </div>
+                    </volist>
+                </div>
+                <div class="space01">&nbsp;</div>
+            </div>
+        </div>
+
+        <div class="space01">&nbsp;</div>
+
+        {$footer}
+    </body>
+</html>
+
+

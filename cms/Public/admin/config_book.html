@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+</head>
+
+<body>
+    <div id="rightTop">
+	    <ul class="subnav">
+			<li><a href="javascript:;" res="base" class="btn1">基本设置</a></li>
+			<li><a href="javascript:;" res="html" class="btn1">静态化设置</a></li>
+			<li><a href="javascript:;" res="ebook" class="btn1">电子书设置</a></li>
+			<li><a href="javascript:;" res="credit" class="btn1">积分设置</a></li>
+			<li><a href="javascript:;" res="review" class="btn1">评论设置</a></li>
+			<li><a href="javascript:;" res="vip" class="btn1">VIP阅读设置</a></li>
+		</ul>
+	</div>
+	<div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="info">
+		<form method="post" action="?s=admin/serial/base" id="config_base" style="display:none">
+			<p>
+				<label>目录分类等级：</label>
+				<input type="text" name="sort_depth" value="{&book.sort_depth}" class="normal" />
+			</p>
+			<p>
+				<label>章节内容是否入库：</label>
+				<input type="radio" name="chapter_in_db" value="1" checked="checked"/> 是　
+				<input type="radio" name="chapter_in_db" value="0"/> 否
+			</p>
+			<p>
+				<label>章节内容存放目录：</label>
+				<input type="text" name="chapter_dir" value="{&book.chapter_dir}" class="normal" />
+			</p>
+			<p>
+				<label>章节内容自动审核：</label>
+				<input type="radio" name="chapter_auto_check" value="1" checked="checked" /> 是　
+				<input type="radio" name="chapter_auto_check" value="0"/> 否
+			</p>
+			<p>
+				<label>排行榜每项显示：</label>
+				<input type="text" name="perpage_top" value="{&book.perpage_top}" class="normal" />
+			</p>
+			<p>
+				<label>列表页每页显示：</label>
+				<input type="text" name="perpage_book" value="{&book.perpage_book}" class="normal" />
+			</p>
+			<p>
+				<label>开启分类频道主页：</label>
+				<input type="radio" name="has_channel" value="1" /> 是　
+				<input type="radio" name="has_channel" value="0" checked="checked" /> 否
+			</p>
+			<p>
+				<label>是否开启分卷阅读：</label>
+				<input type="radio" name="read_volume" value="1" /> 是　
+				<input type="radio" name="read_volume" value="0" checked="checked" /> 否
+			</p>
+			<p>
+				<label>是否开启全文阅读：</label>
+				<input type="radio" name="read_full" value="1" /> 是　
+				<input type="radio" name="read_full" value="0" checked="checked" /> 否
+			</p>
+			<p>
+				<label>是否开启搜索记录：</label>
+				<input type="radio" name="search_history" value="1" /> 是　
+				<input type="radio" name="search_history" value="0" checked="checked" /> 否
+			</p>
+			<p class="submit"><input type="submit" value="提交" /></p>
+		</form>
+	</div>
+	
+	<form method="post" action="?s=admin/serial/html" id="config_html" style="display:none">
+		<p>
+			<label>静态化方式：</label>
+			<input type="radio" name="chapter_html" value="3" checked="checked" /> 纯动态　
+			<input type="radio" name="chapter_html" value="1" /> 纯静态　
+			<input type="radio" name="chapter_html" value="2" /> 伪静态
+		</p>
+		<p>
+			<label>静态页面后缀名：</label>
+			<input type="text" name="html_ext" value="{&book.html_ext}" class="normal" />
+		</p>
+		<p style="color:#f0f">
+			<label>伪静态规则</label>
+			开始用 / 表示本系统根目录， 结尾不要加文件后缀（统一用上面定义的后缀名）,变量之间必须用字符分割
+		</p>
+		<p>
+			<label>分类频道主页 规则：</label>
+			<input type="text" name="url_lists" value="{&book.url_lists}" class="normal" />
+			<span class="ext"></span>必有变量：{sid}或{sdir} 可用变量：{sid} {sdir}
+		</p>
+		<p>
+			<label>分类列表页面 规则：</label>
+			<input type="text" name="url_show" value="{&book.url_show}" class="normal" />
+			<span class="ext"></span>必有变量：{sid}或{sdir} 可用变量：{sid} {sdir} {page}
+		</p>
+		<p>
+			<label>书籍简介页面 规则：</label>
+			<input type="text" name="url_index" value="{&book.url_index}" class="normal" />
+			<span class="ext"></span>必有变量：{bid} 可用变量：{sid} {sdir} {bdir} {btime} {byear} {bmonth} {bday}
+		</p>
+		<p>
+			<label>章节列表页面 规则：</label>
+			<input type="text" name="url_menu" value="{&book.url_menu}" class="normal" />
+			<span class="ext"></span>必有变量：{bid} 可用变量：{sid} {sdir} {bdir} {btime} {byear} {bmonth} {bday}
+		</p>
+		<p>
+			<label>章节阅读页面 规则：</label>
+			<input type="text" name="url_read" value="{&book.url_read}" class="normal" />
+			<span class="ext"></span>必有变量：{cid} 可用变量：{sid} {sdir} {bdir} {btime} {byear} {bmonth} {bday} {bid} {ctime}
+		</p>
+		<p>
+			<label>VIP章节阅读页面 规则：</label>
+			<input type="text" name="url_vip" value="{&book.url_vip}" class="normal" />
+			<span class="ext"></span>必有变量：{cid} {page}
+		</p>
+		<p>
+			<label>全文阅读页面 规则：</label>
+			<input type="text" name="url_full" value="{&book.url_full}" class="normal" />
+			<span class="ext"></span>必有变量：{bid} 可用变量：{sid} {sdir} {bdir} {btime} {byear} {bmonth} {bday}
+		</p>
+		<p>
+			<label>书籍下载页面 规则：</label>
+			<input type="text" name="url_down" value="{&book.url_down}" class="normal" />
+			<span class="ext"></span>必有参数：{bid} 可用变量：{sid} {sdir} {bdir} {btime} {byear} {bmonth} {bday}
+		</p>
+		<p>
+			<label>排 行 榜页面 规则：</label>
+			<input type="text" name="url_top" value="{&book.url_top}" class="normal" />
+			<span class="ext"></span>必有参数：{tid}
+		</p>
+		<p>
+			<label>自动生成静态页面：</label>
+			<input type="radio" name="html_auto" value="1" checked="checked" /> 是　
+			<input type="radio" name="html_auto" value="0" /> 否
+		</p>
+		<p>
+			<label>&nbsp;</label>
+			生成静态页面的路径和上面设置的伪静态规则相同
+		</p>
+		<p class="submit"><input type="submit" value="提交" /></p>
+	</form>
+	
+	<form method="post" action="?s=admin/serial/credit" id="config_credit" style="display:none">
+		<p>
+			<label>下载txt文件扣积分：</label>
+			<input type="text" name="credit_txt" value="{&book.credit_txt}" class="normal" />
+		</p>
+		<p>
+			<label>下载umd文件扣积分：</label>
+			<input type="text" name="credit_umd" value="{&book.credit_umd}" class="normal" />
+		</p>
+		<p>
+			<label>下载epub文件扣积分：</label>
+			<input type="text" name="credit_epub" value="{&book.credit_epub}" class="normal" />
+		</p>
+		<p>
+			<label>发表书评增加积分：</label>
+			<input type="text" name="credit_review" value="{&book.credit_review}" class="normal" />
+		</p>
+		<p>
+			<label>书评精华增加积分：</label>
+			<input type="text" name="credit_review_good" value="{&book.credit_review_good}" class="normal" />
+		</p>
+		<p class="submit"><input type="submit" value="提交" /></p>
+	</form>
+	
+	<form method="post" action="?s=admin/serial/vip" id="config_vip" style="display:none" enctype="multipart/form-data">
+		<p>
+			<label>vip计费单元字数：</label>
+			<input type="text" name="vip_persize" value="{&book.vip_persize}" class="normal" />
+			&nbsp;&nbsp; 每多少字数算一个计费单元，默认八舍八入取整
+		</p>
+		<p>
+			<label>vip计费单元单价：</label>
+			<input type="text" name="vip_perprice" value="{&book.vip_perprice}" class="normal" />
+			&nbsp;&nbsp; 每个计费单元需消费金币数
+		</p>
+		<p>
+			<label>一人民币兑换金币数：</label>
+			<input type="text" name="vip_convert" value="{&book.vip_convert}" class="normal" />
+			&nbsp;&nbsp; 充值一元人民币可兑换多少金币
+		</p>
+		<p>
+			<label>更新原有vip章节价格：</label>
+			<input type="radio" name="vip_update" value="1" /> 是　
+			<input type="radio" name="vip_update" value="0" checked="checked" /> 否
+		</p>
+		<p>
+			<label>vip阅读字体路径：</label>
+			<input type="text" name="vip_font" value="{&book.vip_font}" class="normal" />
+			&nbsp;&nbsp; 请把字体上传到 files/vip/ 目录，字体后缀必须为 .ttf
+		</p>
+		<p>
+			<label>vip阅读字体大小：</label>
+			<input type="text" name="vip_font_size" value="{&book.vip_font_size}" class="normal" />
+			&nbsp;&nbsp; 这里字体大小的单位为：point
+		</p>
+		<p>
+			<label>vip阅读增加水印：</label>
+			<input type="radio" name="vip_watermark" value="1" checked="checked" /> 是　
+			<input type="radio" name="vip_watermark" value="0"/> 否
+		</p>
+		<p>
+			<label>vip阅读水印图片：</label>
+			<input type="text" name="vip_watermark_pic" value="{&book.vip_watermark_pic}" class="normal" />
+			&nbsp;&nbsp; 请用透明的gif格式图片，其他暂不支持，图片宽度不要超过760px
+		</p>
+		<p>
+			<label>&nbsp;</label>
+			<input type="file" name="upload" class="pic" />
+		</p>
+		<p>
+			<label>vip阅读水印位置：</label>
+			<input type="text" name="vip_watermark_place" value="{&book.vip_watermark_place}" class="normal" />
+			&nbsp;&nbsp; 用英文“,”分割，每个位置用“x|y"表示，其中x为图片横坐标，y为图片纵坐标。例如：10|10,10|1010
+		</p>
+		<p>
+			<label>vip章节末添加信息：</label>
+			<input type="text" name="vip_extra_info" value="{&book.vip_extra_info}" class="pic" />
+		</p>
+		<p>
+			<label>获得vip月票最低消费：</label>
+			<input type="text" name="vip_ticket_min_credit" value="{&book.vip_ticket_min_credit}" class="normal" />
+		</p>
+		<p>
+			<label>增加vip月票递增规则：</label>
+			<input type="text" name="vip_ticket_per_credit" value="{&book.vip_ticket_per_credit}" class="normal" />
+		</p>
+		<p class="submit"><input type="submit" value="提交" /></p>
+	</form>
+	
+	<form method="post" action="?s=admin/serial/ebook" id="config_ebook" style="display:none">
+		<p><strong>TXT电子书设置：</strong></p>
+		<p>
+			<label>自动生成txt文件：</label>
+			<input type="radio" name="ebook_txt_auto" value="1" checked="checked" /> 是　
+			<input type="radio" name="ebook_txt_auto" value="0" /> 否
+		</p>
+		<p>
+			<label>生成txt格式：</label>
+			<input type="radio" name="ebook_txt_type" value="0" checked="checked" /> 全本模式　
+			<input type="radio" name="ebook_txt_type" value="1" /> 章节模式
+		</p>
+		<p>
+			<label>txt文件存放格式：</label>
+			<input type="text" name="url_txt" value="{&book.url_txt}" class="normal" />
+			可用变量：{sid} {sdir} {bid} {bdir} {btime} {byear} {bmonth} {bday}  下同
+		</p>
+		<p>
+			<label>压缩成zip文件：</label>
+			<input type="radio" name="ebook_txt_zip" value="1" checked="checked" /> 是　
+			<input type="radio" name="ebook_txt_zip" value="0" /> 否
+		</p>
+		<p>
+			<label>zip文件存放格式：</label>
+			<input type="text" name="url_zip" value="{&book.url_zip}" class="normal" />
+		</p>
+		<p><strong>UMD电子书设置：</strong></p>
+		<p>
+			<label>自动生成umd文件：</label>
+			<input type="radio" name="ebook_umd_auto" value="1" checked="checked" /> 是　
+			<input type="radio" name="ebook_umd_auto" value="0" /> 否
+		</p>
+		<p>
+			<label>umd文件存放格式：</label>
+			<input type="text" name="url_umd" value="{&book.url_umd}" class="normal" />
+		</p>
+		<p><strong>Epub电子书设置：</strong></p>
+		<p>
+			<label>自动生成epub文件：</label>
+			<input type="radio" name="ebook_epub_auto" value="1" checked="checked" /> 是　
+			<input type="radio" name="ebook_epub_auto" value="0" /> 否
+		</p>
+		<p>
+			<label>epub文件存放目录：</label>
+			<input type="text" name="url_epub" value="{&book.url_epub}" class="normal" />
+		</p>
+		<p class="submit"><input type="submit" value="提交" /></p>
+	</form>
+	
+	<form method="post" action="?s=admin/serial/review" id="config_review" style="display:none">
+		<p>
+			<label>开启评论：</label>
+			<input type="radio" name="review_open" value="1" checked="checked" /> 是　
+			<input type="radio" name="review_open" value="0" /> 否
+		</p>
+		<p>
+			<label>评论自动审核：</label>
+			<input type="radio" name="review_auto" value="1" checked="checked" /> 是　
+			<input type="radio" name="review_auto" value="0" /> 否
+		</p>
+		<p>
+			<label>回复自动审核：</label>
+			<input type="radio" name="reply_auto" value="1" checked="checked" /> 是　
+			<input type="radio" name="reply_auto" value="0" /> 否
+		</p>
+		<p>
+			<label>评论每页显示：</label>
+			<input type="text" name="perpage_review" value="{&book.perpage_review}" class="normal" />
+		</p>
+		<p>
+			<label>回复每页显示：</label>
+			<input type="text" name="perpage_reply" value="{&book.perpage_reply}" class="normal" />
+		</p>
+		<p class="submit"><input type="submit" value="提交" /></p>
+	</form>
+
+	<p style="color:#f0f;line-height: 1.6em;">
+		自定义目录说明：<br />
+		1. 最后必须以 / 结尾<br />
+		2. 变量说明：<br />
+		{bid} 表示书籍的id， {bdir} 表示 bid/1000的整数值<br />
+		{btime} 表示书籍添加时间（10位数字）{byear} 表示4位年数，{bmonth} 表示2位月数， {bday} 表示2位天数<br />
+		{cid} 表示 章节的id，{ctime} 表示章节添加时间（10位数字）<br />
+		{sid} 表示分类的id， {sdir} 表示 自定义分类目录名， {page} 表示 分类分页的页码<br />
+		{tid} 表示排行榜类型的id<br /><br />
+		页面静态化说明：<br />
+		1. 使用伪静态 需要修改Apache的配置文件(httpd.conf)，确认：<br />
+		　　a　mod_rewrite.so 模块已加载<br />
+		　　b　AllowOverride All<br />
+		2. 使用纯静态 需要在“静态页面生成”中把所有页面生成一下<br />
+	</p>
+	
+<script>
+$(function(){
+	$('#config_{$type}').css('display', 'block');
+	$(".subnav li a[res={$type}]").css('color', '#f0f');
+	
+	$(".subnav li a").click(function(){
+		$("form").css("display", "none");
+		$(".subnav li a").css('color', '#fff');
+		var res = $(this).attr("res");
+		$(".subnav li a[res=" + res + "]").css('color', '#f0f');
+		$("#config_" + res).css('display', 'block');
+	});
+	$("span.ext").html('{&book.html_ext}').css("margin-right","20px");
+	$("input[name=html_ext]").change(function(){
+		$("span.ext").html($(this).attr("value"));
+	});
+	
+	$("input[name=chapter_in_db][value={&book.chapter_in_db}]").attr('checked', 'checked');
+	$("input[name=chapter_auto_check][value={&book.chapter_auto_check}]").attr('checked', 'checked');
+	$("input[name=read_volume][value={&book.read_volume}]").attr('checked', 'checked');
+	$("input[name=read_full][value={&book.read_full}]").attr('checked', 'checked');
+	$("input[name=has_channel][value={&book.has_channel}]").attr('checked', 'checked');
+	$("input[name=search_history][value={&book.search_history}]").attr('checked', 'checked');
+	$("input[name=chapter_html][value={&book.chapter_html}]").attr('checked', 'checked');
+	$("input[name=html_auto][value={&book.html_auto}]").attr('checked', 'checked');
+	$("input[name=vip_watermark][value={&book.vip_watermark}]").attr('checked', 'checked');
+	$("input[name=ebook_txt_auto][value={&book.ebook_txt_auto}]").attr('checked', 'checked');
+	$("input[name=ebook_txt_type][value={&book.ebook_txt_type}]").attr('checked', 'checked');
+	$("input[name=ebook_txt_zip][value={&book.ebook_txt_zip}]").attr('checked', 'checked');
+	$("input[name=ebook_umd_auto][value={&book.ebook_umd_auto}]").attr('checked', 'checked');
+	$("input[name=ebook_epub_auto][value={&book.ebook_epub_auto}]").attr('checked', 'checked');
+	$("input[name=review_open][value={&book.review_open}]").attr('checked', 'checked');
+	$("input[name=review_auto][value={&book.review_auto}]").attr('checked', 'checked');
+	$("input[name=reply_auto][value={&book.reply_auto}]").attr('checked', 'checked');
+});
+</script>
+</body>
+</html>

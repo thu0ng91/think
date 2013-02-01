@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/validate/jquery.validate.js"></script>
+</head>
+
+<body>
+  <div id="rightTop">
+    <ul class="subnav">
+	 <li><a href="?s=admin/backup" class="btn1">备份</a></li>
+     <li><a href="?s=admin/restore" class="btn1">还原</a></li>
+    </ul>
+  </div>
+    <div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="tdare">
+        <table width="100%" cellpadding="0" cellspacing="0" border="1" class="dataTable">
+            <tr class="tatr1">
+                <th width="20" class="firstCell" align="left"></th>
+                <th width="30%" align="left">备份目录</th>
+                <th width="20%" align="left">备份大小</th>
+                <th align="left">操作</th>
+            </tr>
+		<volist name="list" id="bak">
+			<tr class="tatr2">
+				<td class="firstCell">&nbsp;</td>
+				<td>{$key}</td>
+				<td>{$size[$key]} KB</td>
+				<td>
+					<a href="?s=admin/restore/restore/name/{$key}">导入</a>　
+					<a href="?s=admin/restore/delete/name/{$key}">删除</a>　
+				</td>
+			</tr>
+		</volist>
+      	</table>
+    </div>
+</body>
+</html>

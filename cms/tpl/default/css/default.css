@@ -1,0 +1,379 @@
+body {
+	margin: 0px; font-family: arial, helvetica, sans-serif, "宋体"; color: #000000; font-size: 12px
+}
+.break_001 {
+	height: 6px; clear: both; overflow: hidden
+}
+.break_01 {
+	line-height: 8px; height: 8px; clear: both; overflow: hidden
+}
+.break_02 {
+	height: 25px; clear: both; overflow: hidden
+}
+.break_03 {
+	height: 10px; clear: both; overflow: hidden
+}
+.break_04 {
+	height: 20px; clear: both; overflow: hidden
+}
+.break_05 {
+	line-height: 2px; height: 2px; clear: both; overflow: hidden
+}
+.break_06 {
+	width: 8px; float: left; overflow: hidden
+}
+.break_07 {
+	height: 15px; clear: both; overflow: hidden
+}
+.break_08 {
+	height: 40px; clear: both; overflow: hidden
+}
+.break_09 {
+	border-bottom: #dadada 1px dotted; height: 30px; clear: both; overflow: hidden
+}
+img {
+	border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px
+}
+.img03 {
+	margin-top: 3px; margin-right: 5px; _margin-top: 1px
+}
+a:link {
+	text-decoration: none
+}
+a:visited {
+	text-decoration: none
+}
+a:hover {
+	text-decoration: underline
+}
+a:active {
+	text-decoration: none
+}
+.input_01 {
+	border-bottom: #bdbdbd 1px solid; border-left: #bdbdbd 1px solid; line-height: 14px; width: 65px; height: 14px; font-size: 11px; overflow: hidden; border-top: #bdbdbd 1px solid; margin-right: 5px; border-right: #bdbdbd 1px solid
+}
+.input_03 {
+	border-bottom: 0px; border-left: 0px; margin-top: 3px; width: 180px; background: #ffffff; height: 13px; color: #b4b4b4; margin-left: 3px; font-size: 12px; border-top: 0px; border-right: 0px
+}
+#layout {
+	margin: 0px auto; width: 1000px; clear: both; overflow: hidden
+}
+#mainbody {
+	width: 950px; float: left; overflow: hidden
+}
+.piao_left {
+	width: 20px; float: left; overflow: hidden; margin-right: 5px
+}
+.piao_right {
+	width: 20px; float: right; overflow: hidden
+}
+#crown {
+	margin: 0px auto; width: 950px; overflow: hidden
+}
+#crown a:link {
+	color: #000000
+}
+#crown a:visited {
+	color: #000000
+}
+#crown a:hover {
+	color: #004499
+}
+#crown a:active {
+	color: #000000
+}
+#crown {
+	background: url(../images/zl1.gif) repeat-x; height: 31px
+}
+.crown_left {
+	text-align: left; width: 565px; float: left; height: 30px; margin-left: 10px; overflow: hidden; _margin-left: 5px
+}
+.crown_left .zlload {
+	margin-top: 7px; color: #666666; _margin-top: 6px
+}
+.crown_left .zlload a:link {
+	color: #666666
+}
+.crown_left .zlload a:visited {
+	color: #666666
+}
+.crown_left .zlload a:hover {
+	color: #666666
+}
+.crown_left .zlload a:active {
+	color: #666666
+}
+.crown_left ul {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 565px; padding-right: 0px; height: 30px; overflow: hidden; padding-top: 0px
+}
+.crown_left ul li.wenzi {
+	padding-bottom: 0px; line-height: 33px; padding-left: 0px; padding-right: 0px; float: left; height: 30px; overflow: hidden; margin-right: 5px; padding-top: 0px; _line-height: 31px
+}
+.crown_left ul li.kuang {
+	padding-bottom: 0px; margin-top: 6px; padding-left: 0px; width: 69px; padding-right: 0px; float: left; overflow: hidden; margin-right: 5px; padding-top: 0px; _margin-top: 5px
+}
+.crown_left ul li.kuang01 {
+	padding-bottom: 0px; margin-top: 6px; padding-left: 0px; padding-right: 0px; float: left; margin-right: 3px; padding-top: 0px; _margin-top: 4px
+}
+.crown_left ul li.kuang02 {
+	padding-bottom: 0px; margin-top: 9px; padding-left: 0px; width: 1px; padding-right: 0px; float: left; margin-right: 5px; padding-top: 0px
+}
+.crown_left ul li.kuang03 {
+	padding-bottom: 0px; margin-top: 5px; padding-left: 0px; padding-right: 0px; float: left; margin-right: 5px; padding-top: 0px
+}
+.crown_right {
+	width: 150px; float: right; overflow: hidden
+}
+.crown_right ul {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; padding-right: 0px; clear: both; overflow: hidden; padding-top: 0px
+}
+.crown_right ul li {
+	padding-bottom: 0px; margin-top: 9px; padding-left: 0px; padding-right: 0px; float: left; margin-right: 5px; padding-top: 0px
+}
+.lns {
+	height: 80px; clear: both; overflow: hidden
+}
+.lns .zllogo {
+	width: 190px; float: left; height: 80px; overflow: hidden
+}
+.lns .yxsj {
+	width: 80px; float: left; height: 80px; overflow: hidden
+}
+.lns .yxsj .zlyx {
+	line-height: 16px; height: 16px; overflow: hidden
+}
+.lns .yxsj .zlyx div {
+	float: left
+}
+.lns .yxsj .sjzl div {
+	float: left
+}
+.lns .yxsj .sjzl {
+	line-height: 16px; height: 16px; overflow: hidden
+}
+.lns .xuxian {
+	text-align: center; margin-top: 22px; width: 45px; float: left; height: 45px; overflow: hidden
+}
+.lns .zhunav {
+	width: 270px; float: left; height: 80px; overflow: hidden
+}
+.lns .search {
+	border: 0px; width: 345px; float: right; height: 80px; overflow: hidden;
+}
+.lns .search .search01 {
+	height: 30px; overflow: hidden;width: 100%; margin: 0px; padding: 0px;
+}
+.lns .search .search01 .sleft {
+	width: 66px;  float: left; height: 22px; margin-top: 2px;
+}
+.lns .search .search01 .scenter {
+	width: 208px;  float: left; height: 22px; margin: 0 5px 0 3px;
+}
+.lns .search .search01 .scenter input { width: 200px; }
+.lns .search .search01 .sright {
+	width: 46px;  float: left; height: 22px; margin-top: 2px;
+}
+.kb {
+	height: 30px; overflow: hidden
+}
+.kb {
+	width: 65px; display: block; float: left; overflow: hidden; margin-right: 5px; _margin-right: 2px
+}
+.kb .kb_a {
+	border-bottom: #999999 1px solid; border-left: #999999 1px solid; text-indent: 3px; width: 39px; float: left; height: 15px; color: #999999; overflow: hidden; border-top: #999999 1px solid; border-right: #999999 1px solid; padding-top: 3px
+}
+.kb .kb_b {
+	border-bottom: #999999 1px solid; width: 18px; float: left; height: 18px; border-top: #999999 1px solid; border-right: #999999 1px solid
+}
+.kb .kb_b img {
+	border-bottom: #ffffff 1px solid; border-left: #ffffff 1px solid; width: 16px; height: 16px; overflow: hidden; border-top: #ffffff 1px solid; border-right: #ffffff 1px solid
+}
+#searchselectspan {
+	background-image: url(../images/zl8a.gif); line-height: 20px; text-indent: 5px; width: 60px; background-repeat: no-repeat; height: 30px; color: #999999; overflow: hidden; cursor: pointer; _line-height: 22px
+}
+#searchselectspanlist {
+	border-bottom: #999999 1px solid; position: absolute; border-left: #999999 1px solid; padding-bottom: 0px; line-height: 20px; background-color: #ffffff; list-style-type: none; text-indent: 5px; margin: 0px auto; padding-left: 0px; width: 58px; padding-right: 0px; color: #999999; top: 71px; border-right: #999999 1px solid; padding-top: 0px
+}
+#searchselectspanlist a:link {
+	color: #999999; text-decoration: none
+}
+#searchselectspanlist a:visited {
+	color: #999999; text-decoration: none
+}
+#searchselectspanlist a:hover {
+	color: #000000; text-decoration: none
+}
+#searchselectspanlist a:active {
+	color: #999999; text-decoration: none
+}
+.lns .search .search01 .sright {
+	width: 50px; background: url(../images/zl9.gif) no-repeat; float: left; height: 30px
+}
+.lns .search .search02 {
+	line-height: 20px; width: 315px; height: 20px; color: #333333; overflow: hidden
+}
+.lns .yxsj a:link {
+	color: #333333
+}
+.lns .zhunav a:link {
+	color: #333333
+}
+.lns .yxsj a:visited {
+	color: #333333
+}
+.lns .zhunav a:visited {
+	color: #333333
+}
+.lns .yxsj a:hover {
+	color: #004499
+}
+.lns .zhunav a:hover {
+	color: #004499
+}
+.lns .yxsj a:active {
+	color: #333333
+}
+.lns .zhunav a:active {
+	color: #333333
+}
+.lns .search .search02 a:link {
+	color: #333333
+}
+.lns .search .search02 a:visited {
+	color: #333333
+}
+.lns .search .search02 a:hover {
+	color: #004499
+}
+.lns .search .search02 a:active {
+	color: #333333
+}
+.fnav {
+	margin: 0px auto; width: 950px; background: url(../images/zh_navbg.jpg) no-repeat; height: 36px; clear: both; overflow: hidden
+}
+.fnav ul li {
+	padding-bottom: 0px; padding-left: 0px; padding-right: 0px; float: left; padding-top: 0px
+}
+.fnav .funav {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 925px; padding-right: 0px; height: 30px; padding-top: 0px
+}
+.fnav .funav .navwz {
+	line-height: 30px; color: #ffffff
+}
+.fnav .funav .navwz a:link {
+	color: #ffffff
+}
+.fnav .funav .navwz a:visited {
+	color: #ffffff
+}
+.fnav .funav .navwz a:hover {
+	color: #ffffff; text-decoration: underline
+}
+.fnav .funav .navwz a:active {
+	color: #ffffff
+}
+.fnav .funav .navgd {
+	margin-top: 3px; width: 2px; height: 23px; margin-left: 9px; margin-right: 9px
+}
+#bottom01 {
+	border-bottom: #e6e6e6 1px solid; text-align: center; line-height: 40px; margin: 0px auto; width: 950px; height: 40px; clear: both
+}
+#bottom01 a:link {
+	color: #000000; text-decoration: none
+}
+#bottom01 a:visited {
+	color: #000000; text-decoration: none
+}
+#bottom01 a:hover {
+	color: #ff0000; text-decoration: underline
+}
+#bottom01 a:active {
+	color: #000000; text-decoration: none
+}
+#bottom02 {
+	text-align: center; line-height: 20px; margin: 0px auto; width: 750px; color: #999999; clear: both; overflow: hidden
+}
+#bottom02 form {
+	margin: 0px auto; width: 750px; clear: both; overflow: hidden
+}
+#bottom02 a:link {
+	color: #666666; text-decoration: none
+}
+#bottom02 a:visited {
+	color: #666666; text-decoration: none
+}
+#bottom02 a:hover {
+	color: #666666; text-decoration: underline
+}
+#bottom02 a:active {
+	color: #666666; text-decoration: none
+}
+#bottom02 img {
+	border-bottom: 0px; border-left: 0px; width: 108px; height: 50px; overflow: hidden; border-top: 0px; border-right: 0px
+}
+#bottom02 input {
+	width: 40px; height: 48px; overflow: hidden; cursor: pointer
+}
+.myfnav {
+	text-align: center; line-height: 36px; margin: 0px auto; width: 950px; height: 36px; clear: both; overflow: hidden
+}
+.myfnav a:link {
+	color: #000000; text-decoration: none
+}
+.myfnav a:visited {
+	color: #000000; text-decoration: none
+}
+.myfnav a:hover {
+	color: #000000; text-decoration: underline
+}
+.myfnav a:active {
+	color: #000000; text-decoration: none
+}
+.myfnav ul {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 920px; padding-right: 0px; height: 36px; clear: both; overflow: hidden; padding-top: 0px
+}
+.myfnav ul li {
+	padding-bottom: 0px; list-style-type: none; padding-left: 0px; padding-right: 0px; float: left; overflow: hidden; margin-right: 19px; padding-top: 0px
+}
+
+#yqlj {
+	border-bottom: #cccccc 1px dotted; width: 950px; background: #f9f9f9; border-top: #e8e8e8 1px solid; padding-top: 0px; clear: both;
+}
+.yqlj_break {
+	width: 950px; height: 8px; clear: both; overflow: hidden
+}
+.yqljnr {
+	line-height: 22px; margin: 0px auto; width: 920px; color: #000000; overflow: hidden
+}
+.yqljnr a { margin-right: 6px; }
+.yqljnr a:link {
+	color: #000000; text-decoration: none
+}
+.yqljnr a:visited {
+	color: #000000; text-decoration: none
+}
+.yqljnr a:hover {
+	color: #ff0000; text-decoration: underline
+}
+.yqljnr a:active {
+	color: #000000; text-decoration: none
+}
+
+.adv01_left { float: left; }
+.adv01_right { float: right; }
+
+/* 弹出窗口 */
+#bookcms_pop_bg { position:fixed; top:0; left:0; z-index:1983; width:100%; height:100%; background:#000; filter:alpha(opacity=70); opacity:0.7; _position:absolute; _height:1000px; }
+
+#bookcms_pop_contents { width: 400px; height: 230px; position: absolute; z-index: 1988; top: 50%; left: 50%; margin: -125px 0 0 -250px; background: #fff; border: 2px solid #ea3; font-size: 13px; }
+#bookcms_pop_title { width: 390px; height: 24px; line-height: 24px; margin-bottom: 6px; padding: 0 5px; background: #a1a1a1; }
+#bookcms_pop_title_txt { float: left; font-weight: bold; }
+#bookcms_pop_close { float: right; cursor: pointer; }
+#bookcms_pop_detail { width: 390px; margin: 0 auto; height: 180px; line-height: 1.5em; padding-top: 20px; }
+#bookcms_pop_detail .in { width: 300px; height: 30px; line-height: 30px;margin: 0 auto;  }
+#bookcms_pop_detail .in input { width: 180px; }
+#bookcms_pop_detail .in .vcode { width: 125px; }
+#bookcms_pop_detail .submit { width: 300px; height: 30px; line-height: 30px;margin: 0 auto; padding-left: 95px; }
+#bookcms_pop_detail .submit input { width: 60px; }
+#bookcms_pop_detail .in img { margin-left: 4px; vertical-align: top; padding-top: 2px;  }
+#cms_pop_msg { color: #f0f; }

@@ -1,0 +1,19 @@
+# rewrite规则，请勿直接修改
+# 系统会通过后台的伪静态规则定义自动更新本文件
+# 请设置文件权限为 777
+
+RewriteEngine On
+RewriteBase /code
+
+# RuleStart
+
+
+RewriteRule ^book/(.+?)/(\d+)/index.html$ index.php\?s=book/index/id/$2
+RewriteRule ^book/(.+?)/(\d+)/menu.html$ index.php\?s=book/menu/id/$2
+RewriteRule ^book/(.+?)/(\d+)/(\d+).html$ index.php\?s=book/read/id/$3
+RewriteRule ^book/(.+?)/(\d+)/full.html$ index.php\?s=book/full/id/$2
+RewriteRule ^book/(.+?)/(\d+)/down.html$ index.php\?s=book/down/id/$2
+RewriteRule ^book/top/(\d+).html$ index.php\?s=top/index/id/$1
+RewriteRule ^book/(.+?)/index.html$ index.php\?s=book/lists/id/$1
+RewriteRule ^book/(.+?)/page_(\d+).html$ index.php\?s=book/show/id/$1/p/$2
+RewriteRule ^book/read/vip-(\d+)-(\d+).html$ index.php\?s=vip/index/id/$1/page/$2

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+</head>
+
+<body>
+	<div id="rightTop">
+	    <ul class="subnav">
+			<li><a href="?s=admin/recommend/add_sort" class="btn1">添加分类</a></li>
+			<li><a href="?s=admin/recommend/add" class="btn1">推荐书籍</a></li>
+			<li><a href="?s=admin/recommend" class="btn1">所有分类</a></li>
+	    </ul>
+    </div>
+    <div class="mrightTop">
+        <h3>{$sort.sort_name}</h3>
+    </div>
+    <div class="tdare">
+        <table width="100%" cellpadding="0" cellspacing="0" border="1" class="dataTable">
+            <tr class="tatr1">
+                <th width="20" class="firstCell" align="left"></th>
+                <th width="15%" align="left">顺序</th>
+                <th width="25%" align="left">书名</th>
+                <th align="left">操作</th>
+            </tr>
+		<volist name="list" id="item">
+			<tr class="tatr2">
+				<td class="firstCell">&nbsp;</td>
+				<td>{$item.order}</td>
+				<td><a href="{:BU($item,'index')}" target="_blank">{$item.book_name}</a></td>
+				<td>
+					<a href="?s=admin/recommend/update/id/{$item.id}">编辑</a>
+					<a href="?s=admin/recommend/delete/id/{$item.id}" onclick="return confirm('确认要删除吗？');">删除</a>
+				</td>
+			</tr>
+		</volist>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/user.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+</head>
+
+<body>
+<form method="post" action="?s=user/worksort/{$action}">
+	<input type="hidden" name="work_id" value="{$sort.work_id}" />
+	<input type="hidden" name="sort_id" value="{$sort.sort_id}" />
+	<p><label>分类名称：</label>
+		<input type="text" name="sort_name" value="{$sort.sort_name}" />
+	</p>
+	<p><label>分类顺序：</label>
+		<input type="text" name="sort_order" value="{$sort.sort_order}" />
+	</p>
+	<p><label>分类描述：</label>
+		<textarea name="sort_description">{$sort.sort_description}</textarea>
+	</p>
+	<p class="submit"><input type="submit" value="提交" /></p>
+</form>
+
+</body>
+</html>

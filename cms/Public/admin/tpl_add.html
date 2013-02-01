@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>模板编辑</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/global.js"></script>
+</head>
+
+<body>
+    <div id="rightTop">
+	    <ul class="subnav">
+			<li><a href="?s=admin/style" class="btn1">网站风格</a></li>
+			<li><a href="?s=admin/tpl/show/id/{$tpl.sid}" class="btn1">{$tpl.name}</a></li>
+			<li><a href="?s=admin/tpl/add/id/{$tpl.sid}" class="btn1">添加模板</a></li>
+		</ul>
+	</div>
+	<div class="mrightTop">
+
+    </div>
+    <div class="info" style="clear: both;">
+		<form method="post" action="?s=admin/tpl/{$action}" style="margin-top:20px;">
+			<input type="hidden" name="sid" value="{$tpl.sid}" />
+			<input type="hidden" name="tid" value="{$tpl.tid}" />
+			<p><label>模板名称：</label>
+				<input type="text" name="note" value="{$tpl.note}" class="normal"
+					<if condition="$tpl.is_system gt 0">readonly /> 系统默认模板无法更改<else /> /></if>
+			</p>
+			<p><label>类别：</label>
+				<select name="group" id="group_name">
+					<option value="global">全局页面</option>
+					<option value="home">前台页面</option>
+					<option value="user">后台页面</option>
+					<option value="css">css文件</option>
+					<option value="js">js文件</option>
+				</select>
+			</p>
+			<p><label>文件名：</label>
+				<input type="text" name="file" value="{$tpl.file}" class="normal"
+					<if condition="$tpl.is_system gt 0">readonly /> 系统默认模板无法更改<else /> /></if>
+			</p>
+			<p><label>文件内容：</label>
+				<textarea name="contents" style="width:80%; height:400px;">{$tpl.contents}</textarea>
+			</p>
+			<p class="submit"><input type="submit" value="提交" /></p>
+		</form>
+	</div>
+	
+	<div class="mrightTop" style="margin-top: 30px;">
+        <ul id="tpl_note">
+        	<li style="color:#f0f;">模板使用说明：</li>
+        	<li><a href="javascript:;" res="#i_list">书籍列表说明</a></li>
+        	<li><a href="javascript:;" res="#i_url">URL调用方式</a></li>
+        	<li><a href="javascript:;" res="#i_var">可调用参数(对象)说明</a></li>
+        	<li><a href="javascript:;" res="#i_page">各页面可调用参数列表</a></li>
+        	<li><a href="javascript:;" res="#i_func">参数可使用函数列表</a></li>
+        </ul>
+    </div>
+	<div id="i_list" class="help">
+		<div class="h_title1">书籍列表说明</div>
+		<div class="h_title2">根据统计数据获取书籍列表</div>
+		<p>1. 全部 或 分类的：月/周/日/总点击、推荐榜，收藏榜，总字数榜，全本榜，最新入库，最新更新，今天更新， 总评分榜</p>
+		<p>2. 全部数据的：评论榜，搜索榜</p>
+		<div class="h_title2">根据后台编辑推荐获取书籍列表</div>
+		<div class="h_title3">调用方式：&lt;volist name="$tid, $limit, $sid" id="item"&gt;...&lt;/volist&gt;　　这里item 是个 book 对象</div>
+		<p>参数说明：</p>
+		<p> $tid	预定义ID（具体见后面说明）</p>
+		<p>	$limit	显示条数</p>
+		<p>	$sid	附属ID（分类排行时表示书籍分类ID，后台推荐时表示推荐分类ID，其他情况有相应说明）</p>
+		<div class="h_title3">预定义ID说明（$tid)：</div>
+		<p><span>11　总点击榜</span><span>21　总推荐榜</span><span>31　总字数榜</span><span>41　全本榜</span></p>
+		<p><span>12　月点击榜</span><span>22　月推荐榜</span><span>32　总收藏榜</span><span>42　今日更新</span></p>
+		<p><span>13　周点击榜</span><span>23　周推荐榜</span><span>33　最新入库</span><span>43　总评分榜</span></p>
+		<p><span>14　日点击榜</span><span>24　日推荐榜</span><span>34　最新更新</span></p>
+		<p><span>99　后台编辑推荐</span><span>此时sid 为推荐分类的编号</span></p>
+	</div>
+	<literal>
+	<div id="i_url" class="help">
+		<div class="h_title1">URL调用方式</div>
+		<p><span>CMS首页</span><span>{$cmsroot}</span><span>最后有 /</span></p>
+		<p><span>网站到分类导航</span><span>{:SN($book)}</span><span>或 {:SN($sort)}，参看可调用参数</span></p>
+		<p><span>排行榜分类页</span><span>{:BU($tid, 'top')}</span><span>tid为预定义ID，可用 11-41</span></p>
+		<p><span>书籍简介页面</span><span>{:BU($item, 'index')}</span></p>
+		<p><span>本书章节列表</span><span>{:BU($item, 'menu')}</span></p>
+		<p><span>本书全文阅读</span><span>{:BU($item, 'full')}</span></p>
+		<p><span>本书章节阅读</span><span>{:BU($item, 'read', $ch)}</span></p>
+		<p><span>本书分卷阅读</span><span>{:BU($item, 'read', $ch)}</span></p>
+		<p><span>本书下载页面</span><span>{:BU($item, 'down')}</span></p>
+		<p><span>本书所属分类</span><span>{:BU($item, 'lists')}</span></p>
+		<p><span>本书最新章节</span><span>{:BU($item, 'read')}</span></p>
+		<div class="h_title1">模板中文件目录调用说明：</div>
+		<p><span>风格目录</span><span>{$tpldir}</span><span>最后有 /</span></p>
+		<p><span>网站头部模板</span><span>{$header}</span></p>
+		<p><span>网站尾部模板</span><span>{$footer}</span></p>
+		<div class="h_title1">注意：在系统默认风格模板中，以上 3 项分别特殊定义如下</div>
+		<p><span>1. 风格目录</span><span>{$tplcms} , 一般风格模板中为：{$tpldir}</span></p>
+		<p><span>2. 网站头部模板</span><span>&lt;include file="./Tpl/default/header.html" /&gt; ，一般风格模板中为：{$header}</span></p>
+		<p><span>3. 网站尾部模板</span><span>&lt;include file="./Tpl/default/footer.html" /&gt; ，一般风格模板中为：{$footer}</span></p>
+	</div>
+
+
+	<div id="i_var" class="help">
+		<div class="h_title1">可调用参数(对象)说明</div>
+		<div class="h_title2">book 对象可使用参数：调用方式举例：{$item.book_id}</div>
+		<div class="var_list" id="var_book">
+			<p><span>book_id</span><span>书籍ID</span><span>book_name</span><span>书籍名称</span></p>
+			<p><span>sort_id</span><span>所属分类ID</span><span>sort_name</span><span>所属分类名称</span></p>
+			<p><span>author</span><span>作者名称</span><span>poster</span><span>添加者名称</span></p>
+			<p><span>post_time</span><span>入库时间</span><span>keywords</span><span>关键词</span></p>
+			<p><span>is_power</span><span>是否已授权</span><span>is_first</span><span>是否本站首发</span></p>
+			<p><span>is_full</span>是否已全本<span></span><span></span><span></span></p>
+			<p><span>introduce</span><span>书籍简介</span><span>image_url</span><span>书籍封面</span></p>
+			<p><span>last_chapter</span><span>最后更新章节名称</span><span>last_chapterid</span><span>最后更新章节ID</span></p>
+			<p><span>last_update</span><span>最后更新时间</span><span></span><span></span></p>
+			<p><span>day_visit</span><span>本日访问数</span><span>week_visit</span><span>本周访问数</span></p>
+			<p><span>month_visit</span><span>本月访问数</span><span>all_visit</span><span>总访问数</span></p>
+			<p><span>day_vote</span><span>本日推荐数</span><span>week_vote</span><span>本周推荐数</span></p>
+			<p><span>month_vote</span><span>本月推荐数</span><span>all_vote</span><span>总推荐数</span></p>
+			<p><span>total_size</span><span>总字数</span><span>store_num</span><span>总收藏数</span></p>
+		</div>
+		
+		<div class="h_title2">chapter 对象可使用参数：调用方式举例：{$item.chapter_id}</div>
+		<div class="var_list" id="var_chapter">
+			<p><span>chapter_id</span><span>章节ID</span><span>chapter_name</span><span>章节名称</span></p>
+			<p><span>chapter_detail</span><span>章节内容</span><span>chapter_size</span><span>章节字数</span></p>
+			<p><span>poster_id</span><span>章节添加者ID</span><span>poster</span><span>章节添加者</span></p>
+			<p><span>post_time</span><span>章节添加时间</span><span></span><span></span></p>
+			<p><span>chapter_type</span><span>章节类别</span><span>0：普通章节</span><span>1：分卷章节</span></p>
+		</div>
+		
+		<div class="h_title2">volume 对象可使用参数：调用方式举例：{$item.chapter_id}</div>
+		<div class="var_list" id="var_volume">
+			<p><span>chapter_id</span><span>分卷ID</span><span>chapter_name</span><span>分卷名称</span></p>
+		</div>
+		
+		<div class="h_title2">ebook 对象可使用参数：调用方式举例：{$item.id}</div>
+		<div class="var_list" id="var_ebook">
+			<p><span>id</span><span>电子书ID</span><span>type</span><span>电子书格式（TXT，UMD，EPUB）</span></p>
+			<p><span>size</span><span>电子书文件大小</span><span>time</span><span>电子书创建时间</span></p>
+		</div>
+		
+		<div class="h_title2">link 对象可使用参数：调用方式举例：{$item.sitename}</div>
+		<div class="var_list" id="var_link">
+			<p><span>sitename</span><span>网站名称</span><span>siteurl</span><span>网站地址</span></p>
+			<p><span>siteinstro</span><span>网站简介</span><span></span><span></span></p>
+		</div>
+		
+		<div class="h_title2">sort 对象可使用参数：调用方式举例：{$item.sort_name}</div>
+		<div class="var_list" id="var_sort">
+			<p><span>sort_id</span><span>分类编号</span><span>sort_name</span><span>分类名称</span></p>
+		</div>
+		
+		<div class="h_title2">vote 对象可调用参数：调用方式举例：{$vote.subject}</div>
+		<div class="var_list" id="var_vote">
+			<p><span>vote_id</span><span>投票ID</span><span>subject</span><span>投票主题</span></p>
+			<p><span>description</span><span>投票描述</span><span>vote_num</span><span>总投票数</span></p>
+		</div>
+		
+		<div class="h_title2">voteitem 对象可调用参数：调用方式举例：{$vote.name}</div>
+		<div class="var_list" id="var_voteitem">
+			<p><span>name</span><span>该投票选项</span><span>state</span><span>该投票选项获得投票数</span></p>
+		</div>
+		
+		<div class="h_title2">system 对象可调用参数：调用方式举例：{&system.site_name}</div>
+		<div class="var_list" id="var_system">
+			<p><span>site_name</span><span>网站名称</span><span>site_domain</span><span>网站域名</span></p>
+			<p><span>site_index</span><span>首页名称</span><span></span></p>
+		</div>
+		
+		<div class="h_title2">其他可使用参数：调用方式举例：{$prev}</div>
+		<div class="var_list" id="var_else">
+			<p><span>prev</span><span>上一页</span><span>如到首页，则为空</span></p>
+			<p><span>next</span><span>下一页</span><span>如到尾页，则为空</span></p>
+			<p><span>page</span><span>列表分页信息</span><span>书籍分类列表中使用</span></p>
+		</div>
+	</div>
+	
+	<div id="i_page" class="help">
+		<div class="h_title1">各页面可调用参数列表</div>
+		<div class="h_title2">说明，以下 $book[直接变量][book] 中，"$book" 是可调用的变量， "[直接变量]" 是变量形式，"[book]" 说明变量属于哪类对象</div>
+		<div class="h_title2">直接变量可以用 "{变量名.参数}"（对象） 或 "{变量名}"（纯变量）来调用</div>
+		<div class="h_title2">循环变量需要用 &lt;volist name="变量名" value="item"&gt; ... &lt;/volist&gt; 来循环调用，其中 "item" 是循环中可用的变量名，属于哪个对象由上面所说的第二个 "[]" 中的值确定</div>
+		<p><span>所有页面</span><span>$sorts[循环变量][sort]</span><span>$links[循环变量][link]</span><span>&system[直接变量][system]</span></p>
+		<p><span>书籍简介页面</span><span><span>$book[直接变量][book]</span></p>
+		<p><span>章节列表页面</span><span><span>$book[直接变量][book]</span><span>$list[循环变量][chapter]</span></p>
+		<p><span>全文阅读页面</span><span><span>$book[直接变量][book]</span><span>$list[循环变量][chapter]</span></p>
+		<p><span>分卷阅读页面</span><span><span>$book[直接变量][book]</span><span>$list[循环变量][chapter]</span><span>$chapter[直接变量][volume]</span></p>
+		<p><span>章节阅读页面</span><span><span>$book[直接变量][book]</span><span>$chapter[直接变量][chapter]</span><span>$volume[直接变量][volume]</span><span>$prev　$next</span></p>
+		<p><span>书籍下载页面</span><span><span>$book[直接变量][book]</span><span>$list[循环变量][ebook]</span></p>
+		<p><span>排行榜页面</span><span><span>$list[循环变量][book]</span></p>
+		<p><span>分类列表页面</span><span><span>$list[循环变量][book]</span><span>$sort[直接变量][sort]</span><span>$page</span></p>
+		<p><span>投票页面</span><span><span>$vote[直接变量][vote]</span><span>$list[循环变量][voteitem]</span></p>
+	</div>
+	
+	<div id="i_func" class="help">
+		<div class="h_title1">参数可使用函数列表</div>
+		<div class="h_title2">与时间有关的参数可用 date 函数来显示格式化时间（更多参数参看php的date函数说明）</div>
+		<p>例如：{$book.post_time|date="Y-m-d H:i",###} 实际显示为 2010-12-12 08:08:08</p>
+		<p>其中 Y-m-d H:i 为格式化形式，### 不能更改，Y为4位数字年数，m d H i s 分别为2位数字月 天 时 分 秒</p>
+		<div class="h_title2">与文本段落有关的参数可用 nl2br 函数来分行</div>
+		<p>例如：{$chapter.chapter_detail|nl2br}</p>
+		<div class="h_title2">与数字有关的参数可用 zeroFill 函数来填充0</div>
+		<p>例如：{$i|zeroFill=###,$length} 若$i=1，$length=3 则实际显示为 001</p>
+		<p>其中，$i 为参数名，### 不能更改，$length 为需要显示的长度</p>
+	</div>
+	</literal>
+	
+	<script type="text/javascript">
+		$('#group_name').val('{$tpl.group}');
+		$('#tpl_note li a').click(function(){
+			$('div.help').hide();
+			$($(this).attr('res')).show();
+		});
+	</script>
+</body>
+</html>

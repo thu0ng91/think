@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$sort.sort_name} - {&system.site_name}</title>
+<meta name="keywords" content="{&system.metakeywords}" />
+<meta name="description" content="{&system.metadescription}" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/channel.css" />
+<script type="text/javascript" src="{$tplcms}js/jquery.js"></script>
+<script type="text/javascript" src="{$tplcms}js/global.js"></script>
+</head>
+
+<body>
+<div id="layout">
+	<div id="mainbody">
+		<include file="./tpl/default/header.html" />
+		<!--第二屏开始-->
+		<div class="layout">
+			<div class="left2">
+				<div class="left">
+					<div class="tagname">
+						<div>本类热门推荐</div>
+					</div>
+					<ul id="sub_a3">
+					<volist name="21,12,$sort[sort_id]" id="item">
+						<li><font class="arrow">·</font><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+						<div class="spacer15"></div>
+					</volist>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="middle">
+				<div class="mf2">
+					<div class="mf2title">
+						<h1>{:SN($sort)}封面推荐</h1>
+					</div>
+				<volist name="11,2,$sort[sort_id]" id="item">
+					<div class="mf2<if condition="$i%2 eq 1">left<else />right</if>">
+						<div class="item">
+							<div class="ltxt">
+								<h3 class="blue">
+									<a href="{:BU($item,'index')}"><img  class="imgboxborder2" src="{$item.image_url}" /></a>
+									<div class="ltxttag">{$item.book_name}</div>
+									<div class="ltxt_text">
+										<a href="{:BU($item,'index')}">{$item.introduce}</a>
+									</div>
+								</h3>
+							</div>
+						</div>
+					</div>
+				</volist>
+				</div>
+			</div>
+			
+			<div class="right2">
+				<div class="right">
+					<div class="mf3">
+						<div class="tagname">
+							<div>本类热门点击</div>
+						</div>
+						
+						<ul id="sub_a31">
+						<volist name="11,12,$sort[sort_id]" id="item">
+							<li><font class="arrow">·</font><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+							<div class="spacer15"></div>
+						</volist>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="layout">
+			<div id="ad_top_2" class="adv950x90">
+				<div class="left"><script type="text/javascript" src="{$cmsroot}files/ads/7.js"></script></div>
+			</div>
+		</div>
+		
+		<div class="layout sf2">
+			<div class="left2">
+				<div class="left">
+					<div class="tagname">
+						<div>本周热门推荐</div>
+					</div>
+					<ul class="sub_a41">
+					<volist name="23,12,$sort[sort_id]" id="item">
+						<li><font class="arrow">·</font><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+					</volist>
+					</ul>
+				</div>
+				<div class="br spacer2"></div>
+				<div class="left">
+					<div class="tagname">
+						<div>本类热门收藏</div>
+					</div>
+					<ul class="sub_a41">
+					<volist name="32,12,$sort[sort_id]" id="item">
+						<li><font class="arrow">·</font><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+					</volist>
+					</ul>
+				</div>
+				<div class="br spacer2"></div>
+			</div>
+			
+			<div class="middle">
+				<div class="mf2">
+					<div class="mf2left">
+						<div class="item">
+							<div class="lname"><h1>最新更新</h1></div>
+						</div>
+					</div>
+					<div class="mf2right">
+						<div class="item">
+							<div class="lname">
+								<h1 style="text-align:right;"><a href="{:BU($sort,'show','1')}">更多</a>&nbsp;</h1>
+							</div>
+						</div>
+					</div>
+					<div class="mf4 sub_a43">
+					<volist name="34,25,$sort[sort_id]" id="item">
+						<ul>
+							<li class="h1">[<a href="{:BU($item,'lists')}">{$item.sort_name}</a>]</li>
+							<li class="h2"><a href="{:BU($item,'index')}">{$item.book_name}</a> (<a href="{:BU($item,'read')}">{$item.last_chapter}</a>)</li>
+							<li class="h3">{$item.author}</li>
+							<li class="h4">{$item.last_update|date="m-d",###}</li>
+						</ul>
+					</volist>
+					</div>
+				</div>
+			</div>
+			<div class="spacer0"></div>
+			<div class="right2">
+				<div class="right">
+					<div class="mf3">
+						<div class="tagname">
+							<div>本周热门点击</div>
+						</div>
+						<ul class="sub_a42">
+						<volist name="13,12,$sort[sort_id]" id="item">
+							<li><font class="arrow">·</font><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+						</volist>
+						</ul>
+					</div>
+					<div class="spacer12"></div>
+				</div>
+				<div class="br spacer2"></div>
+				<div class="right">
+					<div class="mf3">
+						<div class="tagname">
+							<div>本类完本推荐</div>
+						</div>
+						<ul class="sub_a42">
+						<volist name="41,12,$sort[sort_id]" id="item">
+							<li><font class="arrow">·</font><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+						</volist>
+						</ul>
+					</div>
+					<div class="spacer12"></div>
+				</div>
+				<div class="br spacer15"></div>
+			</div>
+		</div>
+		<include file="./tpl/default/footer.html" />
+	</div>
+</div>
+</body>
+</html>
+

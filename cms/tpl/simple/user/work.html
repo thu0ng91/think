@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/user.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+</head>
+
+<body>
+	<empty name="work">
+		<p><a href="?s=user/work/add">建立文集</a></p>
+	<else />
+		<p>
+			文集名称：{$work.work_name}
+			<a href="?s=user/work/update/work_id/{$work.work_id}">编辑</a>
+			<a href="?s=user/worksort/add/work_id/{$work.work_id}">添加分类</a>
+		</p>
+	<volist name="list" id="item">
+		<p style="margin-left:20px;">
+			<a href="?s=user/worksort/show/sort_id/{$item.sort_id}">{$item.sort_name}</a>
+			<a href="?s=user/worksort/update/sort_id/{$item.sort_id}">编辑</a>
+			<a href="?s=user/worksort/delete/sort_id/{$item.sort_id}">删除</a>
+		</p>
+	</volist>
+	</empty>
+</body>
+</html>

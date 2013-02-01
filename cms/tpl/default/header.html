@@ -1,0 +1,65 @@
+<!--非系统默认风格，不需以下js定义-->
+<script type="text/javascript">var baseurl	= '{$cmsroot}';</script>
+
+<!--顶部登陆部分开始-->
+<div id="crown">
+	<div id="logininfobar" class="crown_left">
+		<div class="zlload">
+			欢迎访问 {&system.site_name}！
+			<a href="{$cmsroot}index.php?s=login/">登录</a>
+			<a href="{$cmsroot}index.php?s=register/">注册</a>
+		</div>
+	</div>
+	<div class="crown_right">
+		<ul>
+			<li><img src="{$tplcms}images/zl3.gif" /></li>
+			<li><a href="#">客服帮助</a></li>
+			<li><img src="{$tplcms}images/zl4.gif" /></li>
+			<li><a href="javascript:;" onclick="SetHome(this,window.location)">设为首页</a></li>
+		</ul>
+	</div>
+</div>
+<!--顶部登陆部分结束-->
+<!--logo_主导航_搜索部分开始-->
+<div class="lns">
+	<div class="zllogo"><a href="{$cmsroot}"><img src="{$tplcms}images/zl_logo.gif" /></a></div>
+	<div class="search">
+		<div class="break_04"></div>
+		<form method="post" action="{$cmsroot}?s=book/search" id="sform" class="search01" onsubmit="return do_search();">
+			<select name="tid" id="s_tid" class="sleft">
+				<option value="1">书名</option>
+				<option value="2">作者</option>
+			</select>
+			<div class="scenter"><input type="text" name="keyword" id="s_keyword" /></div>
+			<div class="sright"><input type="image" src="{$tplcms}images/zl9a.gif" /></div>
+		</form>
+		<!-- 热门搜索，暂无 -->
+		<div class="search02">
+		<volist name="search" id="item">
+			<a href="{$cmsroot}?s=book/search/tid/{$item.tid}/keyword/{$item.keyword}">{$item.keyword}</a>&nbsp;
+		</volist>
+		</div>
+	</div>
+</div>
+<!--logo_主导航_搜索部分结束-->
+<!--负导航栏开始-->
+<div class="fnav">
+	<ul class="funav">
+		<li class="navwz"><a href="{$cmsroot}">书库首页</a></li>
+		<li class="navgd"><img src="{$tplcms}images/zl10.gif" /></li>
+	<volist name="sorts" id="item">
+		<li class="navwz"><a href="{:BU($item, 'lists')}">{$item.sort_name}</a></li>
+		<li class="navgd"><img src="{$tplcms}images/zl10.gif" /></li>
+	</volist>
+		<li class="navwz"><a href="{:BU(11, 'top')}">排行榜</a></li>
+	</ul>
+</div>
+<!--负导航栏结束-->
+<div class="break_05"></div>
+<!--广告开始-->
+<div id="adv01">
+	<div class="adv01_left"><script type="text/javascript" src="{$cmsroot}files/ads/1.js"></script></div>
+	<div class="adv01_right"><script type="text/javascript" src="{$cmsroot}files/ads/3.js"></script></div>
+</div>
+<!--广告结束-->
+<div class="break_01"></div>

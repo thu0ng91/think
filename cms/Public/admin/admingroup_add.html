@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<style type="text/css">
+<!--
+body {background: #fcfdff}
+-->
+</style>
+</head>
+
+<body>
+    <div id="rightTop">
+        <ul class="subnav">
+            <li><a href="?s=admin/admingroup/add" class="btn1">添加</a></li>
+            <li><a href="?s=admin/admingroup/group_list" class="btn1">管理</a></li>
+        </ul>
+    </div>
+    <div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="info">
+        <form action="?s=admin/admingroup/{$action}" method="post">
+            <p><input type="hidden" name="id" value="{$group.id}" /></p>
+            <p><label>组名：</label><input type="text" name="group_name" value="{$group.group_name}"/></p>
+            <p><label>组权限如下：</label></p>
+            <p/>
+            <p><label>系统管理</label> <!-- $config 这个值会传递一个数组过来 -->
+                <input type="radio" name="authority0" value="0" checked="checked" /> 无
+                <input type="radio" name="authority0" value="1" /> 有</p>
+            <p><label>　　系统设置</label>
+                <input type="radio" name="authority0_0" value="0" checked="checked" /> 无
+                <input type="radio" name="authority0_0" value="1" /> 有</p>
+            <p><label>　　管理员列表</label>
+                <input type="radio" name="authority0_1" value="0" checked="checked" /> 无
+                <input type="radio" name="authority0_1" value="1" /> 有</p>
+            <p><label>　　管理员分组</label>
+                <input type="radio" name="authority0_2" value="0" checked="checked" /> 无
+                <input type="radio" name="authority0_2" value="1" /> 有</p>
+            <p><label>　　友情链接</label>
+                <input type="radio" name="authority0_3" value="0" checked="checked" /> 无
+                <input type="radio" name="authority0_3" value="1" /> 有</p>
+            <p><label>　　广告管理</label>
+                <input type="radio" name="authority0_4" value="0" checked="checked" /> 无
+                <input type="radio" name="authority0_4" value="1" /> 有</p>
+            <p><label>　　管理员信息</label>
+                <input type="radio" name="authority0_5" value="0" checked="checked" /> 无
+                <input type="radio" name="authority0_5" value="1" /> 有</p>
+            <br/>
+            <!-- 书籍管理 -->
+            <p><label>书籍管理</label> <!-- $book 这个值会传递一个数组过来 -->
+                <input type="radio" name="authority1" value="0" checked="checked" /> 无
+                <input type="radio" name="authority1" value="1" /> 有</p>
+            <p><label>　　参数设置</label>
+                <input type="radio" name="authority1_0" value="0" checked="checked" /> 无
+                <input type="radio" name="authority1_0" value="1" /> 有</p>
+            <p><label>　　书籍管理</label>
+                <input type="radio" name="authority1_1" value="0" checked="checked" /> 无
+                <input type="radio" name="authority1_1" value="1" /> 有</p>
+            <p><label>　　书籍分类</label>
+                <input type="radio" name="authority1_2" value="0" checked="checked" /> 无
+                <input type="radio" name="authority1_2" value="1" /> 有</p>
+            <p><label>　　书籍推荐</label>
+                <input type="radio" name="authority1_3" value="0" checked="checked" /> 无
+                <input type="radio" name="authority1_3" value="1" /> 有</p>
+            <p><label>　　书评管理</label>
+                <input type="radio" name="authority1_4" value="0" checked="checked" /> 无
+                <input type="radio" name="authority1_4" value="1" /> 有</p>
+            <p><label>　　投票管理</label>
+                <input type="radio" name="authority1_5" value="0" checked="checked" /> 无
+                <input type="radio" name="authority1_5" value="1" /> 有</p>
+            <p><label>　　文集管理</label>
+                <input type="radio" name="authority1_6" value="0" checked="checked" /> 无
+                <input type="radio" name="authority1_6" value="1" /> 有</p>
+            <p><label>　　电子书批量生成</label>
+                <input type="radio" name="authority1_7" value="0" checked="checked" /> 无
+                <input type="radio" name="authority1_7" value="1" /> 有</p>
+            <p><label>　　静态页面生成</label>
+                <input type="radio" name="authority1_8" value="0" checked="checked" /> 无
+                <input type="radio" name="authority1_8" value="1" /> 有</p>
+            <p><label>　　搜索记录管理</label>
+                <input type="radio" name="authority1_9" value="0" checked="checked" /> 无
+                <input type="radio" name="authority1_9" value="1" /> 有</p>
+            <p><label>　　章节管理</label>
+                <input type="radio" name="authority1_10" value="0" checked="checked" /> 无
+                <input type="radio" name="authority1_10" value="1" /> 有</p>
+            <br/>
+            
+            <!-- 用户管理 -->
+            <p><label>用户管理</label> <!-- $user 这个值会传递一个数组过来 -->
+                <input type="radio" name="authority2" value="0" checked="checked" /> 无
+                <input type="radio" name="authority2" value="1" /> 有</p>
+            <p><label>　　用户列表</label>
+                <input type="radio" name="authority2_0" value="0" checked="checked" /> 无
+                <input type="radio" name="authority2_0" value="1" /> 有</p>
+            <p><label>　　用户组列表</label>
+                <input type="radio" name="authority2_1" value="0" checked="checked" /> 无
+                <input type="radio" name="authority2_1" value="1" /> 有</p>
+            <br/>
+
+            <!-- 采集管理 -->
+            <p><label>采集管理</label> <!-- $collector 这个值会传递一个数组过来 -->
+                <input type="radio" name="authority3" value="0" checked="checked" /> 无
+                <input type="radio" name="authority3" value="1" /> 有</p>
+            <p><label>　　采集器管理</label>
+                <input type="radio" name="authority3_0" value="0" checked="checked" /> 无
+                <input type="radio" name="authority3_0" value="1" /> 有</p>
+            <p><label>　　临时库管理</label>
+                <input type="radio" name="authority3_1" value="0" checked="checked" /> 无
+                <input type="radio" name="authority3_1" value="1" /> 有</p>
+            <p><label>　　资源库管理</label>
+                <input type="radio" name="authority3_2" value="0" checked="checked" /> 无
+                <input type="radio" name="authority3_2" value="1" /> 有</p>
+            <br/>
+
+            <!-- 订单管理 -->
+            <p><label>订单管理</label> <!-- $themes 这个值会传递一个数组过来 -->
+                <input type="radio" name="authority4" value="0" checked="checked" /> 无
+                <input type="radio" name="authority4" value="1" /> 有</p>
+            <p><label>　　订单列表</label>
+                <input type="radio" name="authority4_0" value="0" checked="checked" /> 无
+                <input type="radio" name="authority4_0" value="1" /> 有</p>
+            <p><label>　　支付方式</label>
+                <input type="radio" name="authority4_1" value="0" checked="checked" /> 无
+                <input type="radio" name="authority4_1" value="1" /> 有</p>
+            <br/>
+
+            <!-- 风格模版 -->
+            <p><label>风格模版</label> <!-- $themes 这个值会传递一个数组过来 -->
+                <input type="radio" name="authority5" value="0" checked="checked" /> 无
+                <input type="radio" name="authority5" value="1" /> 有</p>
+            <p><label>　　风格管理</label>
+                <input type="radio" name="authority5_0" value="0" checked="checked" /> 无
+                <input type="radio" name="authority5_0" value="1" /> 有</p>
+            <br/>
+
+            <!-- 数据维护 -->
+            <p><label>数据维护</label> <!-- $database 这个值会传递一个数组过来 -->
+                <input type="radio" name="authority6" value="0" checked="checked" /> 无
+                <input type="radio" name="authority6" value="1" /> 有</p>
+            <p><label>　　数据库备份</label>
+                <input type="radio" name="authority6_0" value="0" checked="checked" /> 无
+                <input type="radio" name="authority6_0" value="1" /> 有</p>
+            <p><label>　　数据库还原</label>
+                <input type="radio" name="authority6_1" value="0" checked="checked" /> 无
+                <input type="radio" name="authority6_1" value="1" /> 有</p>
+            <br/>
+            <p class="paddingT15 wordSpacing5"><input type="submit" value="提交" class="formbtn" /></p>
+        </form>
+    </div>
+    <script>
+        // config 系统管理
+        $("input[name=authority0][value={$config[0]}]").attr('checked', 'checked');
+        $("input[name=authority0_0][value={$config[1]}]").attr('checked', 'checked');
+        $("input[name=authority0_1][value={$config[2]}]").attr('checked', 'checked');
+        $("input[name=authority0_2][value={$config[3]}]").attr('checked', 'checked');
+        $("input[name=authority0_3][value={$config[4]}]").attr('checked', 'checked');
+        $("input[name=authority0_4][value={$config[5]}]").attr('checked', 'checked');
+        $("input[name=authority0_5][value={$config[6]}]").attr('checked', 'checked');
+
+        // book 系统管理
+        $("input[name=authority1][value={$book[0]}]").attr('checked', 'checked');
+        $("input[name=authority1_0][value={$book[1]}]").attr('checked', 'checked');
+        $("input[name=authority1_1][value={$book[2]}]").attr('checked', 'checked');
+        $("input[name=authority1_2][value={$book[3]}]").attr('checked', 'checked');
+        $("input[name=authority1_3][value={$book[4]}]").attr('checked', 'checked');
+        $("input[name=authority1_4][value={$book[5]}]").attr('checked', 'checked');
+        $("input[name=authority1_5][value={$book[6]}]").attr('checked', 'checked');
+        $("input[name=authority1_6][value={$book[7]}]").attr('checked', 'checked');
+        $("input[name=authority1_7][value={$book[8]}]").attr('checked', 'checked');
+        $("input[name=authority1_8][value={$book[9]}]").attr('checked', 'checked');
+        $("input[name=authority1_9][value={$book[10]}]").attr('checked', 'checked');
+        $("input[name=authority1_10][value={$book[11]}]").attr('checked', 'checked');
+
+        // user 用户管理
+        $("input[name=authority2][value={$user[0]}]").attr('checked', 'checked');
+        $("input[name=authority2_0][value={$user[1]}]").attr('checked', 'checked');
+        $("input[name=authority2_1][value={$user[2]}]").attr('checked', 'checked');
+
+        // collector 采集器管理
+        $("input[name=authority3][value={$collector[0]}]").attr('checked', 'checked');
+        $("input[name=authority3_0][value={$collector[1]}]").attr('checked', 'checked');
+        $("input[name=authority3_1][value={$collector[2]}]").attr('checked', 'checked');
+        $("input[name=authority3_2][value={$collector[3]}]").attr('checked', 'checked');
+
+        // order 订单管理
+        $("input[name=authority4][value={$order[0]}]").attr('checked', 'checked');
+        $("input[name=authority4_0][value={$order[1]}]").attr('checked', 'checked');
+        $("input[name=authority4_1][value={$order[2]}]").attr('checked', 'checked');
+
+        // themes 风格模版
+        $("input[name=authority5][value={$themes[0]}]").attr('checked', 'checked');
+        $("input[name=authority5_0][value={$themes[1]}]").attr('checked', 'checked');
+       // $("input[name=authority3_1][value={$themes[2]}]").attr('checked', 'checked');
+
+        // database 数据库管理
+        $("input[name=authority6][value={$database[0]}]").attr('checked', 'checked');
+        $("input[name=authority6_0][value={$database[1]}]").attr('checked', 'checked');
+        $("input[name=authority6_1][value={$database[2]}]").attr('checked', 'checked');
+    </script>
+</body>
+</html>

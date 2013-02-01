@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>模板编辑</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/global.js"></script>
+</head>
+
+<body>
+    <div id="rightTop">
+	    <ul class="subnav">
+			<li><a href="?s=admin/payment" class="btn1">支付方式</a></li>
+		</ul>
+	</div>
+	<div class="mrightTop">
+		<h3>{$payment.pay_tname}</h3>
+    </div>
+    <div class="info" style="clear: both;">
+		<form method="post" action="?s=admin/payment/alipay" style="margin-top:20px;">
+			<input type="hidden" name="id" value="{$payment.pay_tid}" />
+			<p><label>支付名称：</label>
+				{$payment.pay_tname}
+			</p>
+			<p><label>合作身份者ID：</label>
+				<input type="text" name="partner" value="{$config.partner}" class="normal" />
+				&nbsp;&nbsp; 以2088开头的16位纯数字
+			</p>
+			<p><label>安全检验码：</label>
+				<input type="text" name="key" value="{$config.key}" class="normal" />
+				&nbsp;&nbsp; 数字和字母组成的32位字符
+			</p>
+			<p><label>支付宝帐户(email)：</label>
+				<input type="text" name="email" value="{$config.email}" class="normal" />
+				&nbsp;&nbsp; 签约支付宝账号(是Email)
+			</p>
+			<p class="submit"><input type="submit" value="提交" /></p>
+		</form>
+	</div>
+</body>
+</html>

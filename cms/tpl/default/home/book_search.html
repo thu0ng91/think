@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>书籍搜索 - {&system.site_name}</title>
+<meta name="keywords" content="{&system.metakeywords}" />
+<meta name="description" content="{&system.metadescription}" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/lists.css" />
+<script type="text/javascript" src="{$tplcms}js/jquery.js"></script>
+<script type="text/javascript" src="{$tplcms}js/global.js"></script>
+</head>
+
+<body>
+<div id="layout">
+	<div id="mainbody">
+		<include file="./tpl/default/header.html" />
+		<!--第二屏开始-->
+		<div class="layout sf2">
+			<div class="left2">
+				<div class="left">
+					<div class="tagname">
+						<div>本月热门点击</div>
+					</div>
+					<ul class="sub_list">
+					<volist name="12,10,0" id="item">
+						<li><font class="arrow">·</font><a href="{:BU($item, 'index')}">{$item.book_name}</a></li>
+					</volist>
+					</ul>
+				</div>
+				<div class="br spacer2"></div>
+
+				<div class="left">
+					<div class="tagname">
+						<div>本月热门推荐</div>
+					</div>
+					<ul class="sub_list">
+					<volist name="22,10,0" id="item">
+						<li><font class="arrow">·</font><a href="{:BU($item, 'index')}">{$item.book_name}</a></li>
+					</volist>
+					</ul>
+				</div>
+				<div class="br spacer2"></div>
+				<div class="br spacer2"></div>
+			</div>
+			<div class="spacer6">&nbsp;</div>
+
+			<div class="middle">
+				<div class="mf2">
+					<div class="mf2left">
+						<div class="item">
+							<div class="lname"><h1>书籍搜索：{$keyword}</h1></div>
+						</div>
+					</div>
+					<div class="mf2right">
+						<div class="lname">&nbsp;</div>
+					</div>
+					<div class="mf4">
+						<ul class="header">
+							<li class="h1">类别</li>
+							<li class="h2">书名</li>
+							<li class="h3">最新章节</li>
+							<li class="h4">作者</li>
+							<li class="h5">状态</li>
+							<li class="h6">更新时间</li>
+						</ul>
+					<volist name="list" id="item">
+						<ul class="list <if condition="$i%2 eq 0">hight</if>">
+							<li class="h1">[<a href="{:BU($item, 'lists')}">{$item.sort_name}</a>] </li>
+							<li class="h2"><a href="{:BU($item, 'index')}">{$item.book_name}</a></li>
+							<li class="h3"><a href="{:BU($item, 'read')}">{$item.last_chapter}</a></li>
+							<li class="h4">{$item.author}</li>
+							<li class="h5"><if condition="$item.is_full eq 1">已完本<else />连载中</if></li>
+							<li class="h6">{$item.last_update|date="Y-m-d H:i",###}</li>
+						</ul>
+					</volist>
+					</div>
+					<div class="jump">{$page}</div>
+				</div>
+			</div>
+			<div class="br"></div>
+		</div>
+		<include file="./tpl/default/footer.html" />
+	</div>
+</div>
+</body>
+</html>
+

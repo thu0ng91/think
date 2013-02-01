@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/global.js"></script>
+</head>
+
+<body>
+	<div id="rightTop">
+	    <ul class="subnav">
+			<li><a href="?s=admin/vote/add/book_id/{$Think.get.book_id}" class="btn1">添加投票</a></li>
+			<li><a href="?s=admin/vote/" class="btn1">所有投票</a></li>
+	    </ul>
+    </div>
+    <div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="tdare">
+        <table width="100%" cellpadding="0" cellspacing="0" border="1" class="dataTable">
+            <tr class="tatr1">
+                <th width="30" class="firstCell" align="left">
+                	<input type="checkbox" class="select_all" title="全选" />
+                </th>
+                <th width="60" align="left">编号</th>
+                <th width="30%" align="left">主题</th>
+                <th width="120" align="left">所属模块</th>
+                <th width="60" align="left">投票数</th>
+                <th width="140" align="left">投票时间</th>
+                <th width="80" align="left">已审核</th>
+                <th width="80" align="left">已开启</th>
+                <th width="60" align="left">编辑</th>
+                <th align="left">删除</th>
+            </tr>
+		<volist name="list" id="item">
+			<tr class="tatr2">
+				<td class="firstCell">
+					<input type="checkbox" name="id[]" value="{$item.vote_id}" />
+				</td>
+				<td>{$item.vote_id}</td>
+				<td><a href="?s=vote/index/id/{$item.vote_id}" target="_blank">{$item.subject}</a></td>
+				<td><empty name="item.book_name">系统<else />{$item.book_name}</empty></td>
+				<td>{$item.vote_num}</td>
+				<td>
+					{$item.start_time|date="Y-m-d H:i:s",###} - <br />
+					{$item.end_time|date="Y-m-d H:i:s",###}
+				</td>
+				<td class="td_flag"><if condition="$item.if_check eq 1">
+					<span class="s1">是 </span><a href="?s=admin/vote/check/id/{$item.vote_id}/value/0">取消</a><else />
+					<span class="s2">否 </span><a href="?s=admin/vote/check/id/{$item.vote_id}/value/1">审核</a></if>
+				</td>
+				<td class="td_flag"><if condition="$item.if_display eq 1">
+					<span class="s1">是 </span><a href="?s=admin/vote/hide/id/{$item.vote_id}/value/0">关闭</a><else />
+					<span class="s2">否 </span><a href="?s=admin/vote/hide/id/{$item.vote_id}/value/1">开启</a></if>
+				</td>
+				<td>
+					<a href="?s=admin/vote/update/id/{$item.vote_id}">编辑</a>
+				</td>
+				<td class="td_flag">
+					<a href="?s=admin/vote/delete/id/{$item.vote_id}" res="confirm">删除</a>
+				</td>
+			</tr>
+		</volist>
+			<tr>
+				<td class="firstCell">
+					<input type="checkbox" class="select_all" title="全选" />
+				</td>
+				<td>选中项：</td>
+				<td colspan="8" style="text-align:left" class="do_select">
+					<a href="?s=admin/vote/check/value/1">审核</a> /
+					<a href="?s=admin/vote/check/value/0">取消</a>　
+					<a href="?s=admin/vote/hide/value/1">开启</a> /
+					<a href="?s=admin/vote/hide/value/0">关闭</a>　
+					<a href="?s=admin/vote/delete" res="confirm">删除</a>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4">&nbsp;</td>
+				<td colspan="6" style="text-align:left">{$page}</td>
+			</tr>
+		</table>
+	</div>
+	<script>select_all("id[]");</script>
+</body>
+</html>

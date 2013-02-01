@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$chapter.chapter_name} - {$book.book_name} - {&system.site_name}</title>
+<meta name="keywords" content="{&system.metakeywords}" />
+<meta name="description" content="{&system.metadescription}" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/chapter.css">
+<script type="text/javascript" src="{$tplcms}js/jquery.js"></script>
+<script type="text/javascript" src="{$tplcms}js/global.js"></script>
+<script type="text/javascript" src="{$tplcms}js/book.js"></script>
+<script type="text/javascript">
+	var preview_page = "{$prev}";
+	var next_page = "{$next}";
+	var index_page = "{:BU($book, 'menu')}";
+</script>
+</head>
+
+<body>
+<div id="layout">
+	<div id="mainbody">
+		<include file="./tpl/default/header.html" />
+		<!--第二屏开始-->
+		<!--头部-->
+		<div class="contentsa">
+			<div class="contentsa_l"><img src="{$tplcms}images/contentspage02.gif"></div>
+			<div class="contentsa_l">
+				{:SN($book)}
+				<a href="{:BU($book, 'index')}">{$book.book_name}</a>
+				<font color="#999999">(书号{$book.book_id})</font>
+			</div>
+			<div class="contentsa_r"><img src="{$tplcms}images/contentspage03.gif" /></div>
+			<div class="contentsa_r">
+				<if condition="C('book.read_full') eq 1"><a href="{:BU($book, 'full')}">全文阅读</a> | </if>
+				<a href="javascript:;" onclick="add_to_favor({$book.book_id}, 0);">加入收藏</a> | 
+				<a href="javascript:;" onclick="open_favor();">打开书架</a> | 
+				<a href="javascript:;" onclick="add_to_favor({$book.book_id}, {$chapter.chapter_id});">加入书签</a> | 
+				<a href="{:BU($book, 'index')}">返回书页</a>
+			</div>
+		</div>
+		<!-- 阅读设置 -->
+		<script type="text/javascript" src="{$tplcms}js/read_set.js"></script>
+		
+		<!--底部-->
+		<div class="contentsb">
+			<div class="break_04"></div>
+			
+			<div class="readpage_leftn">
+				<div class="readpage_leftntit">{$volume.chapter_name} {$chapter.chapter_name}</div>
+				<div class="readpage_leftnzgx">
+					<p>
+						小说：<a href="{:BU($book, 'index')}">{$book.book_name}</a>　
+						作者：{$book.author}　
+						最新更新：{$chapter.update_time|date="Y-m-d H:i:s",###}　
+						字数：{$chapter.chapter_size}
+					</p>
+				</div>
+				<div id="txt_contents" class="readpage_leftntxt">{$chapter.chapter_detail|nl2br}</div>
+
+				<div class="readpage_leftnfy">(快捷键←)
+					[<empty name="prev">至首页<else /><a href="{$prev}">上一页</a></empty>] 
+					[<a href="{:BU($book, 'menu')}">回目录</a>] 
+					[<empty name="next">至尾页<else /><a href="{$next}">下一页</a></empty>] 
+					（快捷键→）
+				</div>
+				<div class="readpage_leftnfya">
+					<p>
+						<a href="javascript:;" onclick="add_to_favor({$book.book_id}, {$chapter.chapter_id});">添加书签</a> | 
+						<a href="javascript:;" onclick="add_recommend({$book.book_id});">投推荐票</a> | 
+						<a href="javascript:;" onclick="add_to_favor({$book.book_id}, 0);">打开书架</a> | 
+						<a href="{:BU($book, 'menu')}">返回书目</a> | 
+						<a href="{:BU($book, 'index')}">返回书页</a>
+					</p>
+				</div>
+			</div>
+			
+			<div class="break_04"></div>
+		</div>
+		
+		<div class="break_09"></div>
+		<include file="./tpl/default/footer.html" />
+	</div>
+</div>
+</body>
+<script type="text/javascript">$(function(){ initRead(false); }); </script>
+</html>
+

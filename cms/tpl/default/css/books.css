@@ -1,0 +1,1066 @@
+.coverpageleft {
+	width: 750px; float: left; overflow: hidden
+}
+.cpl01 {
+	width: 750px; height: 353px; clear: both; overflow: hidden
+}
+.cpl01a {
+	border-left: #ffffff 2px solid; margin: 0px auto; width: 746px; background: #d6d6d6; height: 1px; clear: both; overflow: hidden; border-right: #ffffff 2px solid
+}
+.cpl01b {
+	border-left: #d6d6d6 1px solid; margin: 0px auto; width: 746px; background: #ffffff; height: 1px; clear: both; overflow: hidden; border-right: #d6d6d6 1px solid
+}
+.cpl01c {
+	border-bottom: #d6d6d6 1px solid; border-left: #d6d6d6 1px solid; margin: 0px auto; width: 748px; background: url(../images/coverpage01.gif) repeat-x; height: 350px; clear: both; overflow: hidden; border-top: 0px; border-right: #d6d6d6 1px solid
+}
+.cpl01c .isbn {
+	line-height: 30px; margin: 0px auto; width: 730px; height: 30px; clear: both; overflow: hidden
+}
+.cpl01c .isbn .isbn_l {
+	float: left
+}
+.cpl01c .isbn .isbn_l a:link {
+	color: #000000; text-decoration: none
+}
+.cpl01c .isbn .isbn_l a:visited {
+	color: #000000; text-decoration: none
+}
+.cpl01c .isbn .isbn_l a:hover {
+	color: #000000; text-decoration: underline
+}
+.cpl01c .isbn .isbn_l a:active {
+	color: #000000; text-decoration: none
+}
+.cpl01c .isbn .isbn_r {
+	float: right
+}
+.cpl01c .isbn .isbn_r a:link {
+	color: #1573ca; text-decoration: none
+}
+.cpl01c .isbn .isbn_r a:visited {
+	color: #1573ca; text-decoration: none
+}
+.cpl01c .isbn .isbn_r a:hover {
+	color: #1573ca; text-decoration: underline
+}
+.cpl01c .isbn .isbn_r a:active {
+	color: #1573ca; text-decoration: none
+}
+.cpl01c .mainpart {
+	margin: 0px auto; width: 730px; height: 305px; clear: both; overflow: hidden
+}
+.mainpartl {
+	width: 132px; float: left; height: 300px; overflow: hidden
+}
+.mainpartl .fengbg {
+	width: 132px; background: url(../images/coverpage02.gif) no-repeat; height: 156px; clear: both; overflow: hidden
+}
+.mainpartl .fengbg .fengk {
+	border-bottom: #cccccc 1px solid; border-left: #cccccc 1px solid; width: 124px; float: right; height: 154px; overflow: hidden; border-top: #cccccc 1px solid; border-right: #cccccc 1px solid
+}
+.mainpartl .fengbg .fengk img {
+	border-bottom: #ffffff 2px solid; border-left: #ffffff 2px solid; width: 120px; height: 150px; overflow: hidden; border-top: #ffffff 2px solid; border-right: #ffffff 2px solid
+}
+.mainpartl .anniuspace01 {
+	height: 13px; clear: both; overflow: hidden
+}
+.mainpartl .anniuspace02 {
+	height: 6px; clear: both; overflow: hidden
+}
+.mainpartl .anniua {
+	line-height: 26px; text-indent: 35px; width: 124px; background: url(../images/coverpage03.gif) no-repeat; height: 26px; color: #1573ca; margin-left: 6px; clear: both; font-size: 14px; overflow: hidden;
+}
+.mainpartl .anniua a:link {
+	color: #1573ca; text-decoration: none
+}
+.mainpartl .anniua a:visited {
+	color: #1573ca; text-decoration: none
+}
+.mainpartl .anniua a:hover {
+	color: #599edd; text-decoration: none
+}
+.mainpartl .anniua a:active {
+	color: #1573ca; text-decoration: none
+}
+.mainpartl .anniub {
+	line-height: 26px; text-indent: 35px; width: 124px; background: url(../images/coverpage04.gif) no-repeat; height: 26px; color: #ff6600; margin-left: 6px; clear: both; font-size: 14px; overflow: hidden
+}
+.mainpartl .anniub a:link {
+	color: #ff6600; text-decoration: none
+}
+.mainpartl .anniub a:visited {
+	color: #ff6600; text-decoration: none
+}
+.mainpartl .anniub a:hover {
+	color: #fb924d; text-decoration: none
+}
+.mainpartl .anniub a:active {
+	color: #ff6600; text-decoration: none
+}
+.mainpartr {
+	width: 590px; float: right; height: 300px; overflow: hidden
+}
+.mainpartr01 {
+	width: 590px; clear: both; overflow: hidden; 
+}
+.mainpartr02 {
+	width: 590px; clear: both; overflow: hidden
+}
+.mainpartr03 {
+	width: 590px; clear: both; overflow: hidden
+}
+.mainpartr04 {
+	width: 590px; clear: both; overflow: hidden
+}
+.mainpartr01 {
+	line-height: 30px; height: 50px
+}
+.book_pingfen { clear: both; width: 574px; height: 60px; margin: 3px auto; }
+#book_score_num { width: 100px; float: left; text-align: center; height: 44px; line-height: 44px; padding-top: 8px; font-size: 40px; color: #f60; }
+.book_score_show { width: 464px; float: left; margin-left: 10px; }
+#book_score_bar { width: 100%; height: 30px; line-height: 30px; }
+#book_ping_num { width: 100; height: 24px; line-height: 24px; margin-top: 6px; }
+
+.mainpartr03 {
+	line-height: 30px; height: 30px
+}
+.mainpartr03 {
+	border-bottom: #d6d6d6 1px solid; text-align: right
+}
+.mainpartr04 {
+	border-bottom: #e4e4e4 1px dotted; background: #f8f8f8; height: 25px; border-top: #ffffff 3px solid
+}
+.mainpartr04nr {
+	border-bottom: #ffffff 1px solid; text-align: center; line-height: 23px; margin: 0px auto; width: 590px; height: 23px; clear: both
+}
+.mainpartr02 {
+	height: 10px
+}
+.mainpartfont01 {
+	font-family: "隶书"; color: #ff0000; font-size: 30px; height: 30px;
+}
+.mainpartfont01 h1 {
+	font-family: "隶书"; color: #ff0000; font-size: 30px; float: left; margin-right: 10px;
+}
+.mainpartfont01 h2 {
+	color: #1573ca; font-size: 12px; font-weight: normal; padding-top: 16px;
+}
+.mainpartfont02 a:link {
+	color: #1573ca; text-decoration: none
+}
+.mainpartfont02 a:visited {
+	color: #1573ca; text-decoration: none
+}
+.mainpartfont02 a:hover {
+	color: #1573ca; text-decoration: underline
+}
+.mainpartfont02 a:active {
+	color: #1573ca; text-decoration: none
+}
+.mainpartfont03 {
+	color: #000000
+}
+.mainpartfont03 a:link {
+	color: #000000; text-decoration: none
+}
+.mainpartfont03 a:visited {
+	color: #000000; text-decoration: none
+}
+.mainpartfont03 a:hover {
+	color: #000000; text-decoration: underline
+}
+.mainpartfont03 a:active {
+	color: #000000; text-decoration: none
+}
+.mainpartfont04 {
+	color: #000000; font-weight: bold
+}
+.mainpartr05 {
+	width: 590px; height: 160px; border-top: #ffffff 1px solid
+}
+.mainpartr05l {
+	border: #ffffff 3px solid; line-height: 20px; width: 580px; margin: 0 auto; float: left; height: 154px; color: #000000; overflow: hidden; 
+}
+.mainpartr05l p {
+	padding-bottom: 0px; text-indent: 24px; margin: 5px 0px 10px; padding-left: 0px; padding-right: 0px; padding-top: 0px
+}
+.mainpartr05l a:link {
+	color: #000000; text-decoration: none
+}
+.mainpartr05l a:visited {
+	color: #000000; text-decoration: none
+}
+.mainpartr05l a:hover {
+	color: #000000; text-decoration: underline
+}
+.mainpartr05l a:active {
+	color: #000000; text-decoration: none
+}
+.mainpartr05r {
+	border-left: #e4e4e4 1px dotted; width: 102px; background: #f8f8f8; float: right; height: 194px; overflow: hidden
+}
+.mainpartr05rnr {
+	border-left: #ffffff 1px solid; width: 101px; height: 194px; overflow: hidden
+}
+.mainpartr05rnran {
+	text-align: center; width: 101px; height: 21px
+}
+.mainpartr05rnran a:link {
+	color: #bfbfbf; text-decoration: none
+}
+.mainpartr05rnran a:visited {
+	color: #bfbfbf; text-decoration: none
+}
+.mainpartr05rnran a:hover {
+	color: #bfbfbf; text-decoration: underline
+}
+.mainpartr05rnran a:active {
+	color: #bfbfbf; text-decoration: none
+}
+.mainpartr05rnrzt {
+	margin: 0px auto; width: 77px; background: #e1e1e1; height: 74px; clear: both; overflow: hidden
+}
+.mainpartr05rnrzt .zzt01 {
+	border-left: #f8f8f8 1px solid; width: 75px; height: 1px; overflow: hidden; border-right: #f8f8f8 1px solid
+}
+.mainpartr05rnrzt .zzt02 {
+	border-bottom: #e1e1e1 1px solid; text-align: center; line-height: 20px; margin: 0px auto; width: 75px; background: url(../images/coverpage07.gif) repeat-y; height: 20px; clear: both; overflow: hidden
+}
+.mainpartr05rnrzt .zzt03 {
+	text-align: center; line-height: 25px; margin: 0px auto; width: 75px; background: url(../images/coverpage07.gif) repeat-y; height: 51px; clear: both; overflow: hidden
+}
+.mainpartr05rnrzj {
+	text-align: center; line-height: 26px; margin: 0px auto; width: 76px; background: url(../images/coverpage08.gif) no-repeat; height: 26px; color: #ff6600; clear: both; font-size: 14px
+}
+.mainpartr05rnrzj a:link {
+	color: #ff6600; text-decoration: none
+}
+.mainpartr05rnrzj a:visited {
+	color: #ff6600; text-decoration: none
+}
+.mainpartr05rnrzj a:hover {
+	color: #fb924d; text-decoration: none
+}
+.mainpartr05rnrzj a:active {
+	color: #ff6600; text-decoration: none
+}
+.cpl01cspace {
+	margin: 0px auto; width: 730px; height: 10px; clear: both; overflow: hidden
+}
+.cpl02 {
+	width: 750px; clear: both; overflow: hidden
+}
+.cpl02left {
+	width: 140px; float: left; overflow: hidden
+}
+.cpl02left .ltit01 {
+	line-height: 35px; text-indent: 10px; width: 140px; background: url(../images/coverpage12.gif) no-repeat; height: 38px; overflow: hidden; font-weight: bold
+}
+.cpl02left .lnr01 {
+	border-bottom: #bee2ee 1px solid; border-left: #bee2ee 1px solid; margin: 0px auto; width: 138px; border-right: #bee2ee 1px solid
+}
+.cpl02left .lnr01 .leftnr01 {
+	border-bottom: #f5fafd 6px solid; border-left: #f5fafd 6px solid; background: #ffffff; border-top: 0px; border-right: #f5fafd 6px solid
+}
+.lnr01_aa {
+	line-height: 20px; margin: 0px auto; width: 105px; height: 118px; color: #000000; overflow: hidden
+}
+.lnr01_aa a:link {
+	color: #000000; text-decoration: none
+}
+.lnr01_aa a:visited {
+	color: #000000; text-decoration: none
+}
+.lnr01_aa a:hover {
+	color: #000000; text-decoration: underline
+}
+.lnr01_aa a:active {
+	color: #000000; text-decoration: none
+}
+.cpl02left .ltit02 {
+	border: #bee2ee 1px solid; width: 138px; background: url(../images/coverpage13.gif) repeat-x; height: 30px; color: #1573ca; overflow: hidden; font-weight: bold;
+}
+.cpl02left .ltit02 .picl {
+	border-bottom: 0px; border-left: 0px; margin-top: 8px; text-indent: 10px; float: left; border-top: 0px; border-right: 0px; _margin-top: 8px
+}
+.cpl02left .ltit02 .wordl {
+	border-bottom: 0px; border-left: 0px; line-height: 30px; float: left; height: 30px; margin-left: 5px; overflow: hidden; border-top: 0px; border-right: 0px
+}
+.cpl02left .lnr02 {
+	border-bottom: #bee2ee 1px solid; border-left: #bee2ee 1px solid; margin: 0px auto; width: 138px; border-right: #bee2ee 1px solid
+}
+.cpl02left .lnr02 .leftnr02 {
+	border-bottom: #f5fafd 6px solid; border-left: #f5fafd 6px solid; padding-bottom: 5px; line-height: 20px; padding-left: 5px; padding-right: 5px; background: #ffffff; border-top: #f5fafd 6px solid; border-right: #f5fafd 6px solid; padding-top: 5px
+}
+.lnr02_aa {
+	padding: 8px 0 0 0; list-style-type: none; margin: 0px auto; width: 115px;  overflow: hidden; min-height: 160px;
+}
+.lnr02_aa li {
+	padding: 0px; line-height: 20px; width: 115px; height: 20px; color: #0058a6; clear: both; overflow: hidden; 
+}
+.lnr02_aa li.ebook { margin-bottom: 8px; }
+
+.lnr02_aa li a:link {
+	color: #0058a6; text-decoration: none
+}
+.lnr02_aa li a:visited {
+	color: #0058a6; text-decoration: none
+}
+.lnr02_aa li a:hover {
+	color: #0058a6; text-decoration: underline
+}
+.lnr02_aa li a:active {
+	color: #0058a6; text-decoration: none
+}
+.lnr02_bb {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 105px; padding-right: 0px; overflow: hidden; padding-top: 0px
+}
+.lnr02_bb li {
+	padding-bottom: 0px; line-height: 20px; padding-left: 0px; width: 105px; padding-right: 0px; height: 20px; color: #0058a6; clear: both; overflow: hidden; padding-top: 0px
+}
+.lnr02_bb li a:link {
+	color: #0058a6; text-decoration: none
+}
+.lnr02_bb li a:visited {
+	color: #0058a6; text-decoration: none
+}
+.lnr02_bb li a:hover {
+	color: #0058a6; text-decoration: underline
+}
+.lnr02_bb li a:active {
+	color: #0058a6; text-decoration: none
+}
+.lnr02_cc {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 105px; padding-right: 0px; overflow: hidden; padding-top: 0px
+}
+.lnr02_cc li {
+	padding-bottom: 0px; line-height: 20px; margin: 0px auto; padding-left: 0px; width: 105px; padding-right: 0px; height: 20px; color: #000000; clear: both; overflow: hidden; padding-top: 0px
+}
+.cpl02right {
+	width: 600px; float: right
+}
+.liwuk {
+	width: 600px; height: 139px; overflow: hidden
+}
+.liwu01 {
+	margin: 0px auto; width: 596px; background: #e6e6e6; height: 1px; overflow: hidden
+}
+.liwu02 {
+	border-left: #e6e6e6 1px solid; margin: 0px auto; width: 596px; background: #f8f8f8; height: 1px; overflow: hidden; border-right: #e6e6e6 1px solid
+}
+.liwu03 {
+	border-left: #e6e6e6 1px solid; width: 598px; background: #f8f8f8; height: 135px; overflow: hidden; border-right: #e6e6e6 1px solid
+}
+.liwupart {
+	margin: 0px auto; width: 545px; height: 119px; clear: both; overflow: hidden
+}
+.partlwspace {
+	width: 25px; float: left; height: 119px; overflow: hidden
+}
+.partlw {
+	width: 70px; float: left; height: 119px; overflow: hidden
+}
+.partlw .lwpic {
+	width: 70px; height: 40px; clear: both; overflow: hidden
+}
+.partlw .lwan {
+	text-align: center; line-height: 22px; width: 66px; background: url(../images/coverpage20.gif) no-repeat; height: 20px; clear: both; overflow: hidden; _line-height: 22px
+}
+.partlw .lwan a:link {
+	color: #000000; text-decoration: none
+}
+.partlw .lwan a:visited {
+	color: #000000; text-decoration: none
+}
+.partlw .lwan a:hover {
+	color: #666666; text-decoration: none
+}
+.partlw .lwan a:active {
+	color: #000000; text-decoration: none
+}
+.partlw .lwsm {
+	text-align: center; line-height: 20px; width: 70px; height: 20px; color: #ff6600; overflow: hidden
+}
+.partlw .lwspace {
+	width: 70px; height: 9px; clear: both; overflow: hidden
+}
+.lovers {
+	width: 600px; clear: both; overflow: hidden
+}
+.lovertit {
+	width: 600px; background: url(../images/coverpage21.gif) no-repeat; height: 32px
+}
+.lovertit .lovertit001 {
+	width: 10px; float: left; height: 32px; overflow: hidden
+}
+.lovertit .lovertit002 {
+	margin-top: 8px; float: left; overflow: hidden; margin-right: 5px
+}
+.lovertit .lovertit003 {
+	line-height: 32px; float: left; overflow: hidden; font-weight: bold; _line-height: 32px
+}
+.lovers_bottom {
+	width: 600px; clear: both; overflow: hidden
+}
+.lovers_bottomleft {
+	width: 1px; background: url(../images/coverpage22.gif) no-repeat; float: left; height: 100px; overflow: hidden
+}
+.lovers_bottomright {
+	width: 1px; background: url(../images/coverpage22.gif) no-repeat; float: right; height: 100px; overflow: hidden
+}
+.lovers_bottommiddle {
+	width: 596px; float: left; overflow: hidden
+}
+.lovers_bottommiddle .loverzt {
+	margin: 0px auto; width: 560px; clear: both; overflow: hidden
+}
+.lovers_bottommiddle .loverzt .zzpin {
+	width: 180px; float: left; height: 70px; overflow: hidden
+}
+.lovers_bottommiddle .loverzt .zzpin .zpfm {
+	border-bottom: #cccccc 1px solid; border-left: #cccccc 1px solid; width: 58px; float: left; height: 68px; overflow: hidden; border-top: #cccccc 1px solid; border-right: #cccccc 1px solid
+}
+.lovers_bottommiddle .loverzt .zzpin .zpnrbf {
+	width: 108px; float: left; height: 70px; overflow: hidden
+}
+.lovers_bottommiddle .loverzt .zzpin .zpnrbf a:link {
+	color: #000000; text-decoration: none
+}
+.lovers_bottommiddle .loverzt .zzpin .zpnrbf a:visited {
+	color: #000000; text-decoration: none
+}
+.lovers_bottommiddle .loverzt .zzpin .zpnrbf a:hover {
+	color: #000000; text-decoration: underline
+}
+.lovers_bottommiddle .loverzt .zzpin .zpnrbf a:active {
+	color: #000000; text-decoration: none
+}
+.lovers_bottommiddle .loverzt .zzpin .zpnrbf .timu {
+	line-height: 25px; width: 108px; height: 30px; overflow: hidden; font-weight: bold
+}
+.lovers_bottommiddle .loverzt .zzpin .zpnrbf .fenlei {
+	line-height: 20px; width: 108px; height: 20px; color: #999999; overflow: hidden
+}
+.lovers_bottommiddle .loverzt .zzpin .zpfm img {
+	border-bottom: #ffffff 1px solid; border-left: #ffffff 1px solid; width: 56px; height: 66px; overflow: hidden; border-top: #ffffff 1px solid; border-right: #ffffff 1px solid
+}
+.zzpinspace {
+	width: 10px; float: left; height: 70px; overflow: hidden
+}
+.tlqgd {
+	margin-top: 11px; width: 169px; float: right; height: 21px; overflow: hidden
+}
+.tlqgdnnr {
+	width: 70px; float: left; height: 21px; overflow: hidden
+}
+.tlqgdspace {
+	width: 3px; float: left; height: 21px; overflow: hidden
+}
+.tlql01 {
+	border-bottom: #ffffff 1px solid; text-align: center; border-left: #e7e5e6 1px solid; line-height: 20px; width: 68px; background: #ffffff; height: 20px; color: #1573ca; border-top: #e7e5e6 1px solid; cursor: pointer; border-right: #e7e5e6 1px solid
+}
+.tlql02 {
+	border-bottom: #e7e5e6 1px solid; text-align: center; border-left: #e7e5e6 1px solid; line-height: 19px; width: 68px; background: #f5f5f5; height: 19px; color: #1573ca; border-top: #e7e5e6 1px solid; cursor: pointer; border-right: #e7e5e6 1px solid
+}
+.tlqbottom {
+	border: #e6e6e6 1px solid; border-top: 0px; width: 598px; min-height: 385px;
+}
+.tlqbottom .review_close { height: 30px; line-height: 30px; text-align: center; color:#a1a1a1; }
+.pl_question {
+	margin: 0px auto; width: 579px; background: #eeeeee; height: 25px; color: #1573ca; overflow: hidden
+}
+.pl_question span.flag { color: #f0f; }
+.pl_question p {
+	line-height: 25px; margin: 0px auto; padding-left: 10px
+}
+.pl_question a:link {
+	color: #1573ca; text-decoration: none
+}
+.pl_question a:visited {
+	color: #1573ca; text-decoration: none
+}
+.pl_question a:hover {
+	color: #599edd; text-decoration: none
+}
+.pl_question a:active {
+	color: #1573ca; text-decoration: none
+}
+.pl_questionnr {
+	border-bottom: #ffffff 10px solid; border-left: #ffffff 10px solid; line-height: 20px; margin: 0px auto; width: 559px; color: #747474; overflow: hidden; border-top: #ffffff 10px solid; border-right: #ffffff 10px solid
+}
+.pl_questionnr a:link {
+	color: #747474; text-decoration: none
+}
+.pl_questionnr a:visited {
+	color: #747474; text-decoration: none
+}
+.pl_questionnr a:hover {
+	color: #747474; text-decoration: underline
+}
+.pl_questionnr a:active {
+	color: #747474; text-decoration: none
+}
+.pl_questionnr p {
+	line-height: 20px; margin: 0px auto; width: 559px; overflow: hidden
+}
+.pl_questionnr001 {
+	border-bottom: #ffffff 10px solid; border-left: #ffffff 10px solid; line-height: 20px; margin: 0px auto; width: 559px; color: #000000; border-top: #ffffff 10px solid; border-right: #ffffff 10px solid
+}
+.pl_questionnr001 a:link {
+	color: #000000; text-decoration: none
+}
+.pl_questionnr001 a:visited {
+	color: #000000; text-decoration: none
+}
+.pl_questionnr001 a:hover {
+	color: #000000; text-decoration: underline
+}
+.pl_questionnr001 a:active {
+	color: #000000; text-decoration: none
+}
+.pl_questionnr001 p {
+	line-height: 20px; margin: 0px auto
+}
+.fabiaonr {
+	line-height: 20px; margin: 0px auto; width: 559px; height: 20px; color: #747474; overflow: hidden
+}
+.fabiaonr span.s1 { color: #1573CA; }
+.fabiaonr span.s2 { color: #000000; }
+.fabiaonr001 {
+	text-align: right; line-height: 30px; margin: 0px auto; width: 559px; height: 30px; color: #747474; overflow: hidden
+}
+.fabiaonr001 a:hover {
+	position: relative; top: -1px; text-decoration: none; left: -1px
+}
+.tlq_zzhf {
+	border-bottom: #c0dbe4 1px dotted; border-left: #c0dbe4 1px dotted; margin: 0px auto; width: 508px; background: #eef9ff; border-top: #c0dbe4 1px dotted; border-right: #c0dbe4 1px dotted
+}
+.tlq_zzhf p {
+	padding-bottom: 10px; line-height: 20px; margin: 0px auto; padding-left: 10px; padding-right: 10px; color: #08526b; padding-top: 10px
+}
+.tlq_answer {
+	margin: 0px auto; width: 508px; border-top: #eeeeee 1px solid
+}
+.tlq_answer_lynr {
+	border-bottom: #cccccc 1px solid; border-left: #cccccc 1px solid; line-height: 20px; width: 505px; font-family: arial, helvetica, sans-serif, "宋体"; height: 100px; font-size: 12px; overflow: hidden; border-top: #cccccc 1px solid; border-right: #cccccc 1px solid
+}
+.tlq_answer_hf {
+	line-height: 22px; margin: 0px auto; width: 140px; height: 20px; color: #666666
+}
+.tlq_answer_hf_l {
+	text-align: center; width: 66px; background: url(../images/coverpage20.gif); float: left; height: 20px
+}
+.tlq_answer_hf_r {
+	text-align: center; width: 66px; background: url(../images/coverpage20.gif); float: right; height: 20px
+}
+.tlq_answer_hf a:link {
+	color: #666666; text-decoration: none
+}
+.tlq_answer_hf a:visited {
+	color: #666666; text-decoration: none
+}
+.tlq_answer_hf a:hover {
+	color: #333333; text-decoration: none
+}
+.tlq_answer_hf a:active {
+	color: #666666; text-decoration: none
+}
+.spzj {
+	line-height: 30px; margin: 0px auto; width: 579px; height: 30px; clear: both; overflow: hidden; border-top: #cccccc 1px solid
+}
+.spzj_left {
+	float: left
+}
+.spzj_left a:link {
+	color: #ff0000; text-decoration: none
+}
+.spzj_left a:visited {
+	color: #ff0000; text-decoration: none
+}
+.spzj_left a:hover {
+	position: relative; color: #ff0000; top: -1px; text-decoration: none; left: -1px
+}
+.spzj_left a:active {
+	color: #ff0000; text-decoration: none
+}
+.spzj_right {
+	float: right; color: #1573ca
+}
+.spzj_right a:link {
+	color: #1573ca; text-decoration: none
+}
+.spzj_right a:visited {
+	color: #1573ca; text-decoration: none
+}
+.spzj_right a:hover {
+	position: relative; color: #1573ca; top: -1px; text-decoration: none; left: -1px
+}
+.spzj_right a:active {
+	color: #1573ca; text-decoration: none
+}
+.messages {
+	line-height: 20px; margin: 0px auto; width: 579px; clear: both
+}
+.messages_left {
+	width: 450px; float: left; overflow: hidden
+}
+.messages_leftbiaoti {
+	line-height: 30px; width: 450px; height: 30px; overflow: hidden; _line-height: 30px
+}
+.messages_leftbiaoti div {
+	float: left; margin-right: 5px
+}
+.messages_leftbiaoti div select {
+	position: relative; height: 22px; top: 1px; _top: 2px; _height: 16px
+}
+.messages_leftbiaoti div input {
+	position: relative; width: 323px; height: 16px; font-size: 12px; overflow: hidden; top: 1px; _height: 16px
+}
+.messages_leftface {
+	line-height: 30px; width: 450px; height: 30px; overflow: hidden; _line-height: 30px
+}
+.leftfacediv {
+	float: left; margin-right: 4px
+}
+.messages_leftface div .img01 {
+	margin-top: 3px; width: 19px; height: 19px; overflow: hidden; margin-right: 5px
+}
+.messages_leftface div .img02 {
+	margin-top: 3px; width: 80px; height: 19px; overflow: hidden; cursor: pointer
+}
+.messages_leftcont {
+	width: 450px; overflow: hidden
+}
+.messages_leftcont div {
+	float: left; margin-right: 5px
+}
+.messages_leftcont div .textarea {
+	position: relative; line-height: 20px; width: 393px; float: left; height: 100px; overflow: hidden
+}
+.messages_lefttijiao {
+	text-align: center; line-height: 30px; height: 30px
+}
+.messages_lefttijiao p {
+	text-align: center; padding-bottom: 0px; line-height: 28px; margin: 0px auto; padding-left: 0px; width: 76px; padding-right: 0px; background: url(../images/coverpage08.gif) no-repeat; height: 26px; color: #ff6600; font-size: 14px; overflow: hidden; padding-top: 0px
+}
+.messages_lefttijiao a:link {
+	color: #ff6600; text-decoration: none
+}
+.messages_lefttijiao a:visited {
+	color: #ff6600; text-decoration: none
+}
+.messages_lefttijiao a:hover {
+	color: #fb924d; text-decoration: none
+}
+.messages_lefttijiao a:active {
+	color: #ff6600; text-decoration: none
+}
+.messages_right {
+	width: 110px; float: right; color: #999999; overflow: hidden
+}
+.messages_right p {
+	margin: 0px auto
+}
+.messages_right a:link {
+	color: #999999; text-decoration: none
+}
+.messages_right a:visited {
+	color: #999999; text-decoration: none
+}
+.messages_right a:hover {
+	color: #999999; text-decoration: underline
+}
+.messages_right a:active {
+	color: #999999; text-decoration: none
+}
+.coverpageright {
+	width: 190px; float: right; overflow: hidden
+}
+.coverpagerighttit {
+	width: 190px; background: url(../images/coverpage09.gif) no-repeat; height: 31px; overflow: hidden
+}
+.coverpagerighttitspace {
+	width: 10px; float: left; overflow: hidden
+}
+.coverpagerighttitimg {
+	width: 12px; float: left; height: 12px; overflow: hidden; margin-left: 3px;
+}
+.coverpagerighttitfont {
+	float: left; color: #5c5c5c; margin-left: 5px; font-weight: bold
+}
+.coverpagerightnr {
+	border: #bbdbf7 1px solid; width: 188px; min-height: 200px;
+}
+.bszxxx {
+	border-bottom: #ffffff 9px solid; border-left: #ffffff 9px solid; width: 170px; background: #ffffff; height: 189px; overflow: hidden; border-top: #ffffff 9px solid; border-right: #ffffff 9px solid
+}
+.bszxxx001 {
+	border-bottom: #ebf4fd 1px dotted; width: 170px; background: url(../images/coverpage10.gif) no-repeat 135px 8px; height: 40px
+}
+.bszxxx001zz {
+	line-height: 20px; width: 160px; height: 20px; color: #1573ca; clear: both; overflow: hidden
+}
+.bszxxx001ds {
+	line-height: 20px; width: 165px; height: 20px; clear: both; overflow: hidden
+}
+.bszxxx002 {
+	text-align: right; margin-top: 4px; width: 170px; height: 20px; overflow: hidden
+}
+.rightnr_ul001 {
+	border-bottom: #ebf4fd 1px solid; padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 178px; padding-right: 0px; height: 18px; clear: both; overflow: hidden; padding-top: 0px
+}
+.rightnr_ul001_lia {
+	line-height: 19px; width: 28px; float: left; overflow: hidden
+}
+.rightnr_ul001_lib {
+	line-height: 19px; width: 105px; float: left; overflow: hidden
+}
+.rightnr_ul001_lic {
+	line-height: 19px; width: 38px; float: left; overflow: hidden
+}
+.rightnr_ul002 {
+	border-bottom: #ebf4fd 1px solid; padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 178px; padding-right: 0px; height: 20px; clear: both; overflow: hidden; padding-top: 0px
+}
+.rightnr_ul002_lia {
+	line-height: 20px; width: 28px; float: left; overflow: hidden
+}
+.rightnr_ul002_lia .liared {
+	text-align: center; line-height: 14px; margin-top: 3px; width: 16px; background: url(../images/coverpage25.gif) no-repeat; height: 14px; color: #ff6600; margin-left: 2px; font-size: 11px; overflow: hidden
+}
+.rightnr_ul002_lia .liahui {
+	text-align: center; line-height: 14px; margin-top: 3px; width: 16px; background: url(../images/coverpage26.gif) no-repeat; height: 14px; color: #bfbfbf; margin-left: 2px; font-size: 11px; overflow: hidden
+}
+.rightnr_ul002_lib {
+	line-height: 20px; width: 105px; float: left; color: #0058a6; overflow: hidden
+}
+.rightnr_ul002_lib a:link {
+	color: #0058a6; text-decoration: none
+}
+.rightnr_ul002_lib a:visited {
+	color: #0058a6; text-decoration: none
+}
+.rightnr_ul002_lib a:hover {
+	color: #0058a6; text-decoration: underline
+}
+.rightnr_ul002_lib a:active {
+	color: #0058a6; text-decoration: none
+}
+.rightnr_ul002_libred {
+	line-height: 20px; width: 105px; float: left; color: #ff6600; overflow: hidden
+}
+.rightnr_ul002_libred a:link {
+	color: #ff6600; text-decoration: none
+}
+.rightnr_ul002_libred a:visited {
+	color: #ff6600; text-decoration: none
+}
+.rightnr_ul002_libred a:hover {
+	color: #ff6600; text-decoration: underline
+}
+.rightnr_ul002_libred a:active {
+	color: #ff6600; text-decoration: none
+}
+.rightnr_ul002_lic {
+	line-height: 20px; width: 38px; float: left; overflow: hidden
+}
+.rightnr_ul003 {
+	border-bottom: #ebf4fd 1px solid; text-align: right; line-height: 17px; width: 178px; height: 17px; clear: both; overflow: hidden
+}
+.rightnr_ul003 a:link {
+	color: #000000; text-decoration: none
+}
+.rightnr_ul003 a:visited {
+	color: #000000; text-decoration: none
+}
+.rightnr_ul003 a:hover {
+	position: relative; color: #333333; top: -1px; text-decoration: none; left: -1px
+}
+.rightnr_ul003 a:active {
+	color: #000000; text-decoration: none
+}
+.rightnr_ul004 {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 168px; padding-right: 0px; height: 25px; clear: both; overflow: hidden; padding-top: 0px
+}
+.rightnr_ul004_lia {
+	width: 20px; float: left; height: 25px; overflow: hidden
+}
+.rightnr_ul004_lia img {
+	margin-top: 5px; width: 15px; height: 15px; overflow: hidden
+}
+.rightnr_ul004_lib {
+	line-height: 25px; width: 140px; float: left; height: 25px; color: #0058a6; overflow: hidden
+}
+.rightnr_ul004_lib a:link {
+	color: #0058a6; text-decoration: none
+}
+.rightnr_ul004_lib a:visited {
+	color: #0058a6; text-decoration: none
+}
+.rightnr_ul004_lib a:hover {
+	color: #0058a6; text-decoration: underline
+}
+.rightnr_ul004_lib a:active {
+	color: #0058a6; text-decoration: none
+}
+.rightnr_ul005 {
+	text-align: center; line-height: 40px; margin: 0px auto; width: 178px; height: 40px; color: #0058a6; clear: both; overflow: hidden; font-weight: bold
+}
+.rightnr_ul005 a:link {
+	color: #0058a6; text-decoration: none
+}
+.rightnr_ul005 a:visited {
+	color: #0058a6; text-decoration: none
+}
+.rightnr_ul005 a:hover {
+	color: #0058a6; text-decoration: underline
+}
+.rightnr_ul005 a:active {
+	color: #0058a6; text-decoration: none
+}
+.rightnr_ul006 {
+	line-height: 25px; text-indent: 5px; margin: 0px auto; width: 178px; background: #f6fafe; height: 25px; clear: both; overflow: hidden
+}
+.rightnr_ul006 a:link {
+	color: #000000; text-decoration: none
+}
+.rightnr_ul006 a:visited {
+	color: #000000; text-decoration: none
+}
+.rightnr_ul006 a:hover {
+	color: #000000; text-decoration: underline
+}
+.rightnr_ul006 a:active {
+	color: #000000; text-decoration: none
+}
+.rightnr_ul007 {
+	line-height: 25px; text-indent: 5px; margin: 0px auto; width: 178px; height: 25px; clear: both; overflow: hidden
+}
+.rightnr_ul007 a:link {
+	color: #000000; text-decoration: none
+}
+.rightnr_ul007 a:visited {
+	color: #000000; text-decoration: none
+}
+.rightnr_ul007 a:hover {
+	color: #000000; text-decoration: underline
+}
+.rightnr_ul007 a:active {
+	color: #000000; text-decoration: none
+}
+.rightnr_ul008 {
+	line-height: 20px; margin: 0px auto; width: 178px; background: #f6fafe; color: #747474; clear: both; overflow: hidden
+}
+.rightnr_ul008 p {
+	padding-bottom: 5px; margin: 0px auto; padding-left: 5px; padding-right: 5px; padding-top: 5px
+}
+.rightnr_ul008 a:link {
+	color: #747474; text-decoration: none
+}
+.rightnr_ul008 a:visited {
+	color: #747474; text-decoration: none
+}
+.rightnr_ul008 a:hover {
+	color: #747474; text-decoration: underline
+}
+.rightnr_ul008 a:active {
+	color: #747474; text-decoration: none
+}
+.rightnr_ul009 {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 168px; padding-right: 0px; height: 20px; clear: both; overflow: hidden; padding-top: 0px
+}
+.rightnr_ul009_lia {
+	line-height: 25px; width: 60px; float: left; height: 25px; color: #999999; overflow: hidden
+}
+.rightnr_ul009_lia a:link {
+	color: #999999; text-decoration: none
+}
+.rightnr_ul009_lia a:visited {
+	color: #999999; text-decoration: none
+}
+.rightnr_ul009_lia a:hover {
+	color: #999999; text-decoration: underline
+}
+.rightnr_ul009_lia a:active {
+	color: #999999; text-decoration: none
+}
+.rightnr_ul009_lib {
+	line-height: 25px; width: 100px; float: left; height: 25px; color: #0058a6; overflow: hidden
+}
+.rightnr_ul009_lib a:link {
+	color: #0058a6; text-decoration: none
+}
+.rightnr_ul009_lib a:visited {
+	color: #0058a6; text-decoration: none
+}
+.rightnr_ul009_lib a:hover {
+	color: #0058a6; text-decoration: underline
+}
+.rightnr_ul009_lib a:active {
+	color: #0058a6; text-decoration: none
+}
+.bqxzk {
+	border-bottom: #ffcc99 1px solid; position: relative; border-left: #ffcc99 1px solid; width: 335px; background: #fffdee; float: right; clear: both; border-top: #ffcc99 1px solid; top: -8px; right: 10px; border-right: #ffcc99 1px solid
+}
+.bqxzk_space01 {
+	border-bottom: #ffffff 5px solid; border-left: #ffffff 5px solid; list-style-type: none; margin: 0px auto; width: 325px; overflow: hidden; border-top: #ffffff 5px solid; border-right: #ffffff 5px solid
+}
+.bqxzk ul {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 325px; padding-right: 0px; overflow: hidden; padding-top: 0px
+}
+.bqxzk ul li {
+	border-bottom: #ffffff 1px solid; border-left: #ffffff 1px solid; padding-bottom: 0px; padding-left: 0px; width: 23px; padding-right: 0px; float: left; height: 23px; border-top: #ffffff 1px solid; border-right: #ffffff 1px solid; padding-top: 0px
+}
+.bqxzk ul li p {
+	border-bottom: #cccccc 1px solid; border-left: #cccccc 1px solid; padding-bottom: 0px; margin: 0px auto; padding-left: 0px; width: 21px; padding-right: 0px; height: 21px; overflow: hidden; border-top: #cccccc 1px solid; border-right: #cccccc 1px solid; padding-top: 0px
+}
+.bqxzk ul li p img {
+	border-bottom: #ffffff 1px solid; border-left: #ffffff 1px solid; width: 19px; height: 19px; overflow: hidden; border-top: #ffffff 1px solid; cursor: pointer; border-right: #ffffff 1px solid
+}
+.fmy_hfq {
+	margin: 0px auto; width: 950px; clear: both; overflow: hidden
+}
+.fmy_hfq_top {
+	line-height: 32px; text-indent: 15px; width: 950px; background: url(../images/coverpage34.gif) no-repeat; height: 30px; color: #000000; font-size: 13px; font-weight: bold
+}
+.fmy_hfq_top a:link {
+	color: #000000; text-decoration: none
+}
+.fmy_hfq_top a:visited {
+	color: #000000; text-decoration: none
+}
+.fmy_hfq_top a:hover {
+	color: #000000; text-decoration: none
+}
+.fmy_hfq_top a:active {
+	color: #000000; text-decoration: none
+}
+.fmy_hfq_bottom {
+	border-bottom: #e6e6e6 1px solid; border-left: #e6e6e6 1px solid; margin: 0px auto; width: 948px; overflow: hidden; border-right: #e6e6e6 1px solid
+}
+.fmy_hfq_bottomnr {
+	margin: 0px auto; width: 918px; clear: both; overflow: hidden
+}
+.fmy_hfq_bottomnr_01 {
+	margin: 0px auto; width: 908px; height: 50px; clear: both; overflow: hidden
+}
+.fmy_hfq_bottomnr_01_left {
+	text-align: left; line-height: 50px; float: left; height: 50px; overflow: hidden
+}
+.fmy_hfq_bottomnr_01_right {
+	text-align: right; line-height: 50px; float: right; height: 50px; overflow: hidden
+}
+.fmy_hfq_bottomnr_01 a:link {
+	color: #002065; text-decoration: none
+}
+.fmy_hfq_bottomnr_01 a:visited {
+	color: #002065; text-decoration: none
+}
+.fmy_hfq_bottomnr_01 a:hover {
+	color: #002065; text-decoration: underline
+}
+.fmy_hfq_bottomnr_01 a:active {
+	color: #002065; text-decoration: none
+}
+.fmy_hfq_bottomnr_02 {
+	line-height: 27px; text-indent: 5px; margin: 0px auto; width: 918px; background: #eeeeee; height: 27px; clear: both; font-size: 14px; overflow: hidden
+}
+.fmy_hfq_bottomnr_02 .top_name{ float: right; }
+
+.fmy_hfq_bottomnr_03 {
+	padding-bottom: 15px; line-height: 25px; text-indent: 24px; margin: 0px auto; width: 908px; clear: both; font-size: 14px; overflow: hidden; padding-top: 15px
+}
+.fmy_hfq_bottomnr_04 {
+	border-bottom: #dbdbdb 1px solid; line-height: 25px; margin: 0px auto; width: 918px; height: 25px; clear: both; overflow: hidden
+}
+.fmy_hfq_bottomnr_04_left {
+	text-align: left; line-height: 25px; float: left; height: 25px; margin-left: 5px; overflow: hidden
+}
+.fmy_hfq_bottomnr_04_right {
+	text-align: right; line-height: 25px; float: right; height: 25px; overflow: hidden; margin-right: 5px
+}
+.fmy_hfq_bottomnr_04 a:link {
+	color: #1573ca; text-decoration: none
+}
+.fmy_hfq_bottomnr_04 a:visited {
+	color: #1573ca; text-decoration: none
+}
+.fmy_hfq_bottomnr_04 a:hover {
+	color: #1573ca; text-decoration: underline
+}
+.fmy_hfq_bottomnr_04 a:active {
+	color: #1573ca; text-decoration: none
+}
+.fmy_hfq_bottomnr_05 {
+	line-height: 27px; margin: 0px auto; width: 918px; background: #f5f5f5; height: 27px; clear: both; font-size: 14px; overflow: hidden
+}
+.fmy_hfq_bottomnr_05_left {
+	float: left; width: 60%; margin-left: 5px; color: #a1a1a1;
+}
+.fmy_hfq_bottomnr_05_center {
+	float: left; width: 30%; margin-right: 5px; text-align: right;
+}
+.fmy_hfq_bottomnr_05_center a { color: #a1a1a1; }
+.fmy_hfq_bottomnr_05_right {
+	float: right; margin-right: 5px; min-width: 60px; text-align: right;
+}
+.fmy_hfq_bottomnr_06 {
+	line-height: 25px; margin: 0px auto; width: 890px; clear: both; overflow: hidden; padding: 15px 8px;
+}
+.fmy_hfq_bottomnr_06  span { color: #a1a1a1; }
+.fmy_hfq_bottomnr_08 {
+	border-bottom: #c0dbe4 1px dotted; border-left: #c0dbe4 1px dotted; padding-bottom: 15px; line-height: 25px; text-indent: 24px; margin: 0px auto; width: 848px; background: #eef9ff; clear: both; overflow: hidden; border-top: #c0dbe4 1px dotted; border-right: #c0dbe4 1px dotted; padding-top: 15px
+}
+.fmy_hfq_bottomnr_07 {
+	border-bottom: #dbdbdb 1px solid; line-height: 25px; margin: 0px auto; width: 918px; height: 25px; clear: both; overflow: hidden
+}
+.fmy_hfq_bottomnr_07_left {
+	text-align: left; line-height: 25px; float: left; height: 25px; margin-left: 5px; overflow: hidden
+}
+.fmy_hfq_bottomnr_07_right {
+	text-align: right; line-height: 25px; float: right; height: 25px; overflow: hidden; margin-right: 5px
+}
+.fmy_hfq_bottomnr_07 a:link {
+	color: #1573ca; text-decoration: none
+}
+.fmy_hfq_bottomnr_07 a:visited {
+	color: #1573ca; text-decoration: none
+}
+.fmy_hfq_bottomnr_07 a:hover {
+	color: #1573ca; text-decoration: underline
+}
+.fmy_hfq_bottomnr_07 a:active {
+	color: #1573ca; text-decoration: none
+}
+.author_info {
+	margin: 0px auto; width: 540px; background: #f7f7f7; height: 30px; clear: both
+}
+.author_info .l {
+	margin-top: 10px; float: left; color: #1573ca; margin-left: 5px; _margin-top: 10px
+}
+.author_info .r {
+	margin-top: 3px; float: right; margin-right: 5px; _margin-top: 3px
+}
+.author_info .r input {
+	line-height: 16px; height: 25px; overflow: hidden; _line-height: 20px
+}
+author_friend_link {
+	line-height: 20px; margin: 0px auto; width: 540px; height: 180px; clear: both; overflow: hidden
+}
+.author_friend_link ul {
+	padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; padding-right: 0px; clear: both; padding-top: 0px
+}
+.author_friend_link ul li.h1 {
+	padding-bottom: 0px; list-style-type: none; margin-top: 10px; padding-left: 0px; padding-right: 0px; height: 20px; margin-left: 40px; margin-right: 20px; padding-top: 0px
+}
+
+a.reply_url { margin-left: 6px; }
+
+/* 投票页面 */
+.book_vote { min-height: 300px; width: 100%; }
+.book_vote div { line-height: 24px; margin-bottom: 6px; }
+.book_vote ul,li { list-style-type: none; }
+.vote_list li { clear: both; }
+.vote_list li.submit { text-align: center; }
+.vote_list div { float: left; }
+.vote_list span { float: right; margin-right: 10px; display: none; }
+

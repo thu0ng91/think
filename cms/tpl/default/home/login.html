@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>会员登录 - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/login.css">
+<script type="text/javascript" src="{$tplcms}js/jquery.js"></script>
+<script type="text/javascript" src="{$tplcms}js/global.js"></script>
+</head>
+
+<body>
+<div id="loadpage">
+	<div class="loadpage">
+		<div class="loadpagespace">&nbsp;</div>
+        <div class="loadpagenr">
+			<div class="loadpagenrtit">会员登录</div>
+            <div class="loadpagespace">&nbsp;</div>
+            <form id="loginform" action="{$cmsroot}index.php?s=login/login" method="post" onsubmit="return do_login();">
+				<div class="loadxinxi">
+					<ul>
+						<li class="lload">用户名：</li>
+						<li class="rload"><input style="width:165px; overflow:hidden; color:#666666; font-size:12px; line-height:20px;" tabindex="1" id="user_name" type="text" name="user_name" /></li>
+					</ul>
+					<ul>
+						<li class="lload">密　码：</li>
+						<li class="rload"><input style="width:165px; overflow:hidden; color:#666666; font-size:12px; line-height:20px;" tabindex="2" id="user_pwd" type="password" name="user_pwd" /></li>
+					</ul>
+					<ul>
+						<li class="lload">验证码：</li>
+						<li class="rload">
+							<input style="width:100px; overflow:hidden; color:#666666; font-size:12px; line-height:20px;" tabindex="2" id="check_code" type="text" name="check_code" />
+							<img style="cursor:pointer" title="刷新验证码" src="{$cmsroot}index.php?s=home/ajax/vcode" id="verifyImg" onClick="freshVerify()" />
+						</li>
+					</ul>
+					<ul>
+						<li class="lload">&nbsp;</li>
+						<li class="rload"><input id="rememberme" tabindex="4" name="isKeepAlive" type="checkbox" value="1"><label for="rememberme"><font color="#aaaaaa">下次自动登陆</font></label></li>
+					</ul>
+				</div>
+				<div class="loaddl">
+					<ul>
+						<li class="lload">&nbsp;</li>
+						<li class="mload"><input tabindex="5" type="image" name="submit" src="{$tplcms}images/loadpage04.jpg" value="登 录"></li>
+						<li class="rload">
+							<a href="{$cmsroot}index.php?s=register/">注册</a>&nbsp;|&nbsp;
+							<a href="javascript:;">忘记密码？</a>
+						</li>
+					</ul>
+                </div>
+			</form>
+			<div class="loadline01">&nbsp;</div>
+			<div class="loadline02">&nbsp;</div>
+		</div>
+    </div>
+</div>
+<!--footer-->
+<div class="loadpagespacea">&nbsp;</div>
+<div class="loadbottom">
+	<a href="{$cmsroot}">{&system.site_name}</a>　　我们一起分享最好的中文阅读平台
+</div>
+<!--footer-->
+</body>
+</html>
+

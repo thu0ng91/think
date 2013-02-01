@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+</head>
+
+<body>
+	<div id="rightTop">
+	    <ul class="subnav">
+			<li><a href="?s=admin/vote/add/book_id/{$Think.get.book_id}" class="btn1">添加投票</a></li>
+			<li><a href="?s=admin/vote/" class="btn1">所有投票</a></li>
+	    </ul>
+    </div>
+    <div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="info">
+		<form method="post" action="?s=admin/vote/{$action}">
+			<input type="hidden" name="vote_id" value="{$vote.vote_id}" />
+			<input type="hidden" name="book_id" value="{$vote.book_id}" />
+			<p><label>投票主题：</label>
+				<input type="text" name="subject" value="{$vote.subject}" class="normal" />
+			</p>
+			<p><label>投票描述：</label>
+				<textarea name="description">{$vote.description}</textarea>
+			</p>
+			<p><label>开始时间：</label>
+				<input type="text" name="start_time" class="normal" value="<notempty name="vote.start_time">{$vote.start_time|date="Y-m-d H:i:s",###}</notempty>" />
+			</p>
+			<p><label>结束时间：</label>
+				<input type="text" name="end_time" class="normal" value="<notempty name="vote.end_time">{$vote.end_time|date="Y-m-d H:i:s",###}</notempty>" />
+			</p>
+			<p><label>投票开关：</label>
+				<input type="radio" name="if_display" value="1" checked="checked" /> 开启
+				<input type="radio" name="if_display" value="0" /> 关闭
+			</p>
+			<p><label>允许游客投票：</label>
+				<input type="radio" name="need_login" value="0" /> 是　
+				<input type="radio" name="need_login" value="1" checked="checked" /> 否　
+			</p>
+			<p><label>允许多项选择：</label>
+				<input type="radio" name="multi_select" value="1" /> 是　
+				<input type="radio" name="multi_select" value="0" checked="checked" /> 否　
+			</p>
+			<p><label>选项1：</label>
+				<input type="text" name="item1" value="{$vote.item1}" class="normal" />
+			</p>
+			<p><label>选项2：</label>
+				<input type="text" name="item2" value="{$vote.item2}" class="normal" />
+			</p>
+			<p><label>选项3：</label>
+				<input type="text" name="item3" value="{$vote.item3}" class="normal" />
+			</p>
+			<p><label>选项4：</label>
+				<input type="text" name="item4" value="{$vote.item4}" class="normal" />
+			</p>
+			<p><label>选项5：</label>
+				<input type="text" name="item5" value="{$vote.item5}" class="normal" />
+			</p>
+			<p><label>选项6：</label>
+				<input type="text" name="item6" value="{$vote.item6}" class="normal" />
+			</p>
+			<p><label>选项7：</label>
+				<input type="text" name="item7" value="{$vote.item7}" class="normal" />
+			</p>
+			<p><label>选项8：</label>
+				<input type="text" name="item8" value="{$vote.item8}" class="normal" />
+			</p>
+			<p><label>选项9：</label>
+				<input type="text" name="item9" value="{$vote.item9}" class="normal" />
+			</p>
+			<p><label>选项10：</label>
+				<input type="text" name="item10" value="{$vote.item10}" class="normal" />
+			</p>
+			<p class="submit"><input type="submit" value="提交" /></p>
+		</form>
+	</div>
+	<script type="text/javascript">
+		$("input[name=if_display][value={$vote.if_display}]").attr('checked', 'checked');
+		$("input[name=need_login][value={$vote.need_login}]").attr('checked', 'checked');
+		$("input[name=multi_select][value={$vote.multi_select}]").attr('checked', 'checked');
+	</script>
+</body>
+</html>

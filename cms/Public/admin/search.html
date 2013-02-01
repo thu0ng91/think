@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/global.js"></script>
+</head>
+
+<body>
+	<div id="rightTop">
+	    <ul class="subnav">
+			<li><a href="?s=admin/search/" class="btn1">所有记录</a></li>
+			<li><a href="?s=admin/search/index/tid/1" class="btn1">热门记录</a></li>
+			<li><a href="?s=admin/search/index/tid/2" class="btn1">失败记录</a></li>
+	    </ul>
+    </div>
+    <div class="mrightTop">
+        <div class="fontr td_flag">
+        <if condition="$search_on eq 0">
+        	搜索记录统计<span class="s2">未开启</span>！<a href="?s=admin/search/open/value/1">开启统计</a>
+        <else />
+        	搜索记录统计<span class="s1">已开启</span>！<a href="?s=admin/search/open/value/0">关闭统计</a>
+        </if>
+        </div>
+    </div>
+    <div class="tdare">
+        <table width="100%" cellpadding="0" cellspacing="0" border="1" class="dataTable">
+            <tr class="tatr1">
+                <th width="30" class="firstCell" align="left">
+                	<input type="checkbox" class="select_all" title="全选" />
+                </th>
+                <th width="60" align="left">编号</th>
+                <th width="12%" align="left">搜索类别</th>
+                <th width="20%" align="left">关键词</th>
+                <th width="12%" align="left">搜索次数</th>
+                <th width="140" align="left">搜索结果</th>
+                <th align="left">操作</th>
+            </tr>
+		<volist name="list" id="item">
+			<tr class="tatr2">
+				<td class="firstCell">
+					<input type="checkbox" name="id[]" value="{$item.sid}" />
+				</td>
+				<td>{$item.sid}</td>
+				<td><if condition="$item.tid eq 1">书名<else />作者</if></td>
+				<td><a href="?s=book/search/tid/{$item.tid}/keyword/{$item.keyword}" target="_blank">{$item.keyword}</a></td>
+				<td>{$item.snum}</td>
+				<td class="td_flag"><if condition="$item.result eq 1">
+					<span class="s1">成功 </span><a href="?s=admin/search/check/id/{$item.sid}/value/0">标记为失败</a><else />
+					<span class="s2">失败 </span><a href="?s=admin/search/check/id/{$item.sid}/value/1">标记为成功</a></if>
+				</td>
+				<td class="td_flag">
+					<a href="?s=admin/search/delete/id/{$item.sid}" res="confirm">删除</a>
+				</td>
+			</tr>
+		</volist>
+			<tr>
+				<td class="firstCell">
+					<input type="checkbox" class="select_all" title="全选" />
+				</td>
+				<td>选中项：</td>
+				<td colspan="5" style="text-align:left" class="do_select">
+					<a href="?s=admin/search/check/value/1">标记为成功</a> /
+					<a href="?s=admin/search/check/value/0">失败</a>　
+					<a href="?s=admin/search/delete" res="confirm">删除</a>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4">&nbsp;</td>
+				<td colspan="6" style="text-align:left">{$page}</td>
+			</tr>
+		</table>
+	</div>
+	<script>select_all("id[]");</script>
+</body>
+</html>

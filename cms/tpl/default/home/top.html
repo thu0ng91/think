@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>排行榜 - {&system.site_name}</title>
+<meta name="keywords" content="{&system.metakeywords}" />
+<meta name="description" content="{&system.metadescription}" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/top.css" />
+<script type="text/javascript" src="{$tplcms}js/jquery.js"></script>
+<script type="text/javascript" src="{$tplcms}js/global.js"></script>
+</head>
+
+<body>
+<div id="layout">
+	<div id="mainbody">
+		<include file="./tpl/default/header.html" />
+		<!--第二屏开始-->
+		<!--头部-->
+		<div class="middle">
+			<div class="break_01"></div>
+			<div class="mf2">
+				<ul class="title">
+					<li class="top_11"><a href="{:BU(11, 'top')}">总点击榜</a></li>
+					<li class="top_12"><a href="{:BU(12, 'top')}">月点击榜</a></li>
+					<li class="top_13"><a href="{:BU(13, 'top')}">周点击榜</a></li>
+					<li class="top_21"><a href="{:BU(21, 'top')}">总推荐榜</a></li>
+					<li class="top_22"><a href="{:BU(22, 'top')}">月推荐榜</a></li>
+					<li class="top_23"><a href="{:BU(23, 'top')}">周推荐榜</a></li>
+					<li class="top_32"><a href="{:BU(32, 'top')}">总收藏</a></li>
+					<li class="top_31"><a href="{:BU(31, 'top')}">总字数</a></li>
+					<li class="top_41"><a href="{:BU(41, 'top')}">全本榜</a></li>
+					<li class="top_33"><a href="{:BU(33, 'top')}">新书榜</a></li>
+				</ul>
+			</div>
+			<div id="mf4contentlist" class="mf4">
+				<ul class="header">
+					<li class="h1">序号</li>
+					<li class="h2">类别</li>
+					<li class="h3"><div>书名</div></li>
+					<li class="h4">更新日期</li>
+					<li class="h5">最新章节</li>
+					<li class="h6">作者</li>
+					<li class="h7">{$type_name}</li>
+					<li class="h8">状态</li>
+				</ul>
+			<volist name="list" id="item">
+				<ul class="list <if condition="$i%2 eq 0">hight</if>">
+					<li class="h1">{$i|zeroFill=###,3}</li>
+					<li class="h2"><a href="{:BU($item, 'lists')}">{$item.sort_name}</a></li>
+					<li class="h3"><a href="{:BU($item, 'index')}">{$item.book_name}</a></li>
+					<li class="h4">{$item.last_update|date="Y-m-d",###}</li>
+					<li class="h5"><a href="{:BU($item, 'read')}">{$item.last_chapter}</a></li>
+					<li class="h6">{$item.author}</li>
+					<li class="h7"><if condition="$type_key eq 'post_time'">{$item.post_time|date="Y-m-d",###}<else />{$item.$type_key}</if></li>
+					<li class="h8"><if condition="$item.is_full eq 1">已完本<else />连载中</if></li>
+				</ul>
+			</volist>
+			</div>
+		</div>
+		
+		<div class="break_09"></div>
+		<include file="./tpl/default/footer.html" />
+	</div>
+</div>
+<script type="text/javascript">
+	$(".mf2 .title li.top_{$top_id}").addClass("t");
+</script>
+</body>
+</html>
+

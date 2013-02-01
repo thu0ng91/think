@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>充值中心 - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/user.css">
+<script type="text/javascript" src="{$tplcms}js/jquery.js"></script>
+<script type="text/javascript" src="{$tplcms}js/global.js"></script>
+</head>
+
+<body>
+<div id="layout">
+	<div id="mainbody">
+		<include file="./tpl/default/header.html" />
+		<div id="main">
+			<div id="mainleft">
+				<div><img src="{$tplcms}images/hyzx_djsc_01.gif" /></div>
+				<div class="tit">
+					<img src="{$tplcms}images/hyzx_right_icon_08.gif" class="ico" />订单确认
+				</div>
+				<div><img src="{$tplcms}images/hyzx_djsc_03.gif" /></div>
+				
+				<div class="reg_info">
+					<div class="rinfo">
+						<span class="rleft">充值账号：</span>
+						<span class="rright">{$order.user_name}</span>
+					</div>
+					<div class="rinfo">
+						<span class="rleft">充值金额：</span>
+						<span class="rright">{$order.money} 元</span>
+					</div>
+				</div>
+			    <div class="ue_submit">
+					{$status}
+			    </div>
+			</div>
+			<div id="mainmiddle">&nbsp;</div>
+			<!--右边部分开始-->
+			<div id="mainright">
+				<div><img src="{$tplcms}images/hyzx_right_01.gif" /></div>
+				<div class="nrbf">
+					<div class="nav_right">
+						<div style="margin-bottom: 8px;">用户中心</div>
+						<div class="nav_right_newdh">
+							<ul>
+								<li><a href="?s=user/index">个人信息</a></li>
+								<li><a href="?s=user/user/update">编辑信息</a></li>
+							</ul>
+							<ul>
+								<li><a href="?s=user/favor">我的书架</a></li>
+								<li><a href="?s=user/charge">充值中心</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div><img src="{$tplcms}images/hyzx_right_03.gif" /></div>
+				<div class="space02">&nbsp;</div>
+
+				<div><img src="{$tplcms}images/hyzx_right_01.gif" /></div>
+				<div class="nrbf">
+		            <div class="bt">您没有新的消息</div>
+				</div>
+				<div><img src="{$tplcms}images/hyzx_right_03.gif" /></div>
+				<div class="space02">&nbsp;</div>
+				<div><img src="{$tplcms}images/hyzx_right_01.gif" /></div>
+				<div class="nrbf">
+					<div class="bt">系统公告</div>
+				</div>
+				<div><img src="{$tplcms}images/hyzx_right_03.gif" /></div>
+				<div class="space02">&nbsp;</div>
+			</div>
+			<!--右边部分结束-->
+		</div>
+		<div class="break_09"></div>
+		<include file="./tpl/default/footer.html" />
+	</div>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>书籍搜索 - {&system.site_name}</title>
+        <meta name="keywords" content="{&system.metakeywords}" />
+        <meta name="description" content="{&system.metadescription}" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/common.css" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/search.css"/>
+        <script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+        <script type="text/javascript" src="{$tpldir}js/common.js"></script>
+        <script type="text/javascript" src="{$tpldir}js/global.js"></script>
+    </head>
+
+    <body>
+        {$header}
+
+        <!--第一屏开始-->
+        <div class="searchpage_layout">
+            <!--左边部分-->
+            <div class="coverpage_left">
+                <div class="coverpage_left_title">本月热门点击</div>
+                <div class="coverpage_left_nr">
+                    <div class="gyzz_02">
+                        <ul>
+                            <volist name="12,10,0" id="item">
+                                <li><font class="arrow">·</font><a href="{:BU($item, 'index')}">{$item.book_name}</a></li>
+                            </volist>
+                            <!--<li class="more"><a href="#">更多&gt;&gt;</a></li>-->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="space01">&nbsp;</div>
+
+                <div class="coverpage_left_title">本月热门推荐</div>
+                <div class="coverpage_left_nr">
+                    <div class="gyzz_02">
+                        <ul>
+                            <volist name="22,10,0" id="item">
+                                <li><font class="arrow">·</font><a href="{:BU($item, 'index')}">{$item.book_name}</a></li>
+                            </volist>
+                            <!--<li class="more"><a href="#">更多&gt;&gt;</a></li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--右边部分-->
+            <div id="right">
+                <div class="right_01"><strong>搜索关键字：</strong><font color="#FF0000">{$keyword}</font></div>
+                <div class="space01">&nbsp;</div>
+                <volist name="list" id="item">
+                    <div class="right_02">
+                        <div class="right_02_aa">
+                            <div class="gsds">
+                                <div class="h01">书名：<a href="{:BU($item, 'index')}">{$item.book_name}</a></div>
+                                <div class="h02">作者：{$item.author}</div>
+                                <div class="h03">最新章节：<a href="{:BU($item, 'read')}">{$item.last_chapter}</a></div>
+                                <div class="h04"><a href="javascript:;" onclick="add_to_favor({$item.book_id}, 0);">[收藏]</a></div>
+                            </div>
+                        </div>
+                        <div class="right_02_cc">
+                            <ul>
+                                <li>类别：<a href="{:BU($item, 'lists')}"><font color="#4F8503">{$item.sort_name}</font></a></li>
+                                <li>字数：{$item.total_size}</li>
+                                <li>状态：<if condition="$item.is_full eq 1">已完本<else />连载中</if></li>
+                                <li>点击：{$item.all_visit}</li>
+                                <li>推荐：{$item.all_vote}</li>
+                            </ul>
+                        </div>
+                        <div class="right_02_bb">内容简介：{$item.introduce}</div>
+                        <div class="space01">&nbsp;</div>
+                    </div>
+                </volist>
+
+                <div class="right_01_button">{$page}</div>
+            </div>
+        </div>
+
+        <div class="space01">&nbsp;</div>
+
+        <!--底部-->
+        <div class="layerout">
+            <!--有情链接-->
+            <div class="main_yqlj">
+                <div class="main_yqlj_title"><img src="{$tpldir}images/green_12.gif" /></div>
+                <div class="main_yqlj_nr">
+                    <div class="yqljnr">
+                        <table class="ibluelink" cellspacing="5" cellpadding="0" width="100%" border="0">
+                            <tbody>
+                                &nbsp;|&nbsp;&nbsp;
+                                <volist name="links" id="item">
+                                    <a href="{$item.siteurl}" target="_blank" title="{$item.siteinstro}">{$item.sitename}</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                </volist>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space01">&nbsp;</div>
+        </div>
+
+        {$footer}
+    </body>
+</html>

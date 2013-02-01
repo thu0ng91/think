@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{$book.book_name} - {&system.site_name}</title>
+        <meta name="keywords" content="{&system.metakeywords}" />
+        <meta name="description" content="{&system.metadescription}" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/common.css" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/contentspage.css"/>
+        <script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+        <script type="text/javascript" src="{$tpldir}js/global.js"></script>
+    </head>
+
+    <body>
+        {$header}
+
+        <!--第二屏开始-->        
+        <!--头部-->
+        <div class="zdh">
+            <div class="zdh_left">
+                <a href="{$cmsroot}">{&system.site_index}</a> &gt;
+                <a href="{:BU($book,'lists')}">{$book.sort_name}</a> &gt;
+                <a href="{:BU($book,'index')}"><strong>{$book.book_name}</strong></a>
+                <font color=#999999>(书号{$book.book_id})</font>
+            </div>
+            <div class="zdh_right">
+                <if condition="C('book.read_full') eq 1"><a href="{:BU($book, 'full')}">全文阅读</a> | </if>
+                <a href="javascript:;" onclick="add_to_favor({$book.book_id}, 0);">加入收藏</a> |
+                <a href="javascript:;" onclick="open_favor();">打开书架</a> |
+                <a href="javascript:;" onclick="add_to_favor({$book.book_id}, {$chapter.chapter_id});">加入书签</a> |
+                <a href="{:BU($book, 'index')}">返回书页</a>
+            </div>
+        </div>
+
+        <!--底部-->
+        <div class=contentsb>
+            <div class=break_04></div>
+            <div class=contentsbtit>{$book.book_name}</div>
+            <div class=contentsb02>
+				小说作者：{$book.author}　
+				最新更新：<a href="{:BU($book, 'read')}">{$book.last_chapter}</a>　
+				{$book.last_update|date="Y-m-d H:i:s",###}
+            </div>
+            <div class=break_04></div>
+            <div class=contentsb03>
+                <div class=contentsb03_l>电子书下载</div>
+            </div>
+            <div class=contentsb04>
+                <table width="98%" cellpadding="0" cellspacing="0" border="1" style="margin:0 auto;">
+                    <tr height="30">
+                        <th width="15%">电子书格式</th><th width="15%">分册</th><th width="15%">大小</th>
+                        <th width="25%">更新时间</th><th>下载</th>
+                    </tr>
+                    <volist name="63,3,$book[book_id]" id="item">
+                        <tr style="text-align: center">
+                            <td>{$item.type}</td>
+                            <td>全本</td>
+                            <td>{$item.size} KB</td>
+                            <td>{$item.time|date="Y-m-d H:i",###}</td>
+                            <td><a href="javascript:;" onclick="book_down('{$item.id}','{$key}');">下载</a></td>
+                        </tr>
+                    </volist>
+                </table>
+            </div>
+        </div>
+
+        <div class="space01">&nbsp;</div>
+        <div class="space01">&nbsp;</div>
+
+        {$footer}
+    </body>
+</html>
+

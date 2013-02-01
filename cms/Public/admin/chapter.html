@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$book.book_name} - 章节列表</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/global.js"></script>
+</head>
+
+<body>
+	<div id="rightTop">
+	    <ul class="subnav">
+			<li><a href="?s=admin/chapter/add/id/{$book.book_id}" class="btn1">添加章节</a></li>
+			<li><a href="?s=admin/chapter/index/id/{$book.book_id}" class="btn1">章节列表</a></li>
+			<li><a href="?s=admin/book/update/id/{$book.book_id}" class="btn1">书籍修改</a></li>
+	    </ul>
+    </div>
+    <div class="mrightTop">
+        <h3>{$book.book_name}</h3>
+    </div>
+    <div class="tdare">
+        <table width="100%" cellpadding="0" cellspacing="0" border="1" class="dataTable">
+            <tr class="tatr1">
+                <th width="30" class="firstCell" align="left">
+                	<input type="checkbox" class="select_all" title="全选" />
+                </th>
+                <th width="60" align="left">编号</th>
+                <th width="60" align="left">卷id</th>
+                <th width="30%" align="left">章节名</th>
+                <th width="80" align="left">字数</th>
+                <th width="140" align="left">更新时间</th>
+                <th width="80" align="left">已审核</th>
+                <th width="80" align="left">是否VIP</th>
+                <th width="80" align="left">删除</th>
+                <th align="left">操作</th>
+            </tr>
+		<volist name="list" id="item">
+			<tr class="tatr2">
+				<td class="firstCell">
+					<input type="checkbox" name="id[]" value="{$item.chapter_id}" />
+				</td>
+				<td>{$item.chapter_id}</td>
+				<td>{$item.volume_id}</td>
+				<td><a href="?s=book/read/id/{$item.chapter_id}" target="_blank">{$item.chapter_name}</a></td>
+				<td>{$item.chapter_size}</td>
+				<td>{$item.update_time|date="Y-m-d H:i:s",###}</td>
+				<td class="td_flag"><if condition="$item.if_check eq 1">
+					<span class="s1">是　</span><a href="?s=admin/chapter/check/id/{$item.chapter_id}/value/0">取消</a><else />
+					<span class="s2">否　</span><a href="?s=admin/chapter/check/id/{$item.chapter_id}/value/1">审核</a></if>
+				</td>
+				<td class="td_flag"><if condition="$item.is_vip eq 1">
+					<span class="s1">是　</span><a href="?s=admin/chapter/vip/id/{$item.chapter_id}/value/0">取消</a><else />
+					<span class="s2">否　</span><a href="?s=admin/chapter/vip/id/{$item.chapter_id}/value/1">VIP</a></if>
+				</td>
+				<td class="td_flag">
+					<a href="?s=admin/chapter/delete/id/{$item.chapter_id}/book_id/{$book.book_id}" res="confirm">删除</a>
+				</td>
+				<td>
+					<a href="?s=admin/chapter/update/id/{$item.chapter_id}">编辑</a>
+				</td>
+			</tr>
+		</volist>
+			<tr>
+				<td class="firstCell">
+					<input type="checkbox" class="select_all" title="全选" />
+				</td>
+				<td>选中项：</td>
+				<td colspan="4" style="text-align:left" class="do_select">
+					<a href="?s=admin/chapter/check/value/1">审核</a> /
+					<a href="?s=admin/chapter/check/value/0">取消</a>　
+					<a href="?s=admin/chapter/vip/value/1">VIP</a> /
+					<a href="?s=admin/chapter/vip/value/0">取消</a>　
+					<a href="?s=admin/chapter/delete/book_id/{$book.book_id}" res="confirm">删除</a>　
+					转移到：
+					<select id="volume_list" onchange="do_select('volume_list');">
+						<option value="0">请选择分卷</option>
+					<volist name="volumes" id="item">
+						<option value="{$item.chapter_id}">{$item.chapter_name}</option>
+					</volist>
+					</select>　
+					<a href="#" res="?s=admin/chapter/transfer/volume_id/" id="volume_list_go">确定</a>
+				</td>
+				<td colspan="4" style="color:#f0f;text-align:left;">注意：删除分卷不会删除该分卷下的章节！</td>
+			</tr>
+		</table>
+	</div>
+	<h3>重新生成静态页面</h3>
+	<form action="?s=admin/html/book" method="post">
+		<input type="hidden" name="book_id" value="{$book.book_id}" />
+		<p>
+			<input type="checkbox" name="type[]" value="index" /> 书籍首页
+			<input type="checkbox" name="type[]" value="menu" /> 章节列表页
+			<input type="checkbox" name="type[]" value="read" /> 章节内容页
+			<input type="checkbox" name="type[]" value="full" /> 全文阅读页
+			<input type="checkbox" name="type[]" value="down" /> 电子书下载页
+		</p>
+		<p><input type="submit" value="确认" class="formbtn" /></p>
+	</form>
+	<h3>重新生成电子书</h3>
+	<form action="?s=admin/ebook/book" method="post">
+		<input type="hidden" name="book_id" value="{$book.book_id}" />
+		<p>
+			<input type="checkbox" name="type[]" value="txt" /> 生成txt电子书
+			<input type="checkbox" name="type[]" value="umd" /> 生成umd电子书
+			<input type="checkbox" name="type[]" value="epub" /> 生成epub电子书
+		</p>
+		<p><input type="submit" value="确认" class="formbtn" /></p>
+	</form>
+	<script>select_all("id[]");</script>
+</body>
+</html>

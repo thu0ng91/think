@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<style type="text/css">
+<!--
+body {background: #fcfdff}
+-->
+</style>
+</head>
+
+<body>
+    <div id="rightTop">
+        <ul class="subnav">
+            <li><a href="?s=admin/usergroup/add" class="btn1">添加</a></li>
+            <li><a href="?s=admin/usergroup/group_list" class="btn1">管理</a></li>
+        </ul>
+    </div>
+    <div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="info">
+        <form action="?s=admin/usergroup/{$action}" method="post">
+            <p><input type="hidden" name="id" value="{$group.id}" /></p>
+            <p><label>组名：</label>
+                <input type="text" name="group_name" value="{$group.group_name}"/></p>
+            <p><label>组权限如下：</label></p>
+            <p/>
+            <p><label>可以发帖:</label> <!-- $group_auth 这个值会传递一个数组过来 -->
+                <input type="radio" name="authority_0" value="0" />无
+                <input type="radio" name="authority_0" value="1" checked="checked" />有</p>
+            <p><label>可以评论:</label>
+                <input type="radio" name="authority_1" value="0" />无
+                <input type="radio" name="authority_1" value="1" checked="checked" />有</p>
+            <p><label>编辑评论:</label>
+                <input type="radio" name="authority_2" value="0" />无
+                <input type="radio" name="authority_2" value="1" checked="checked" />有</p>
+            <p><label>删除评论:</label>
+                <input type="radio" name="authority_3" value="0" checked="checked" />无
+                <input type="radio" name="authority_3" value="1" />有</p>
+            <p><label>建立投票:</label> <!-- 作者分组才有此权限 -->
+                <input type="radio" name="authority_4" value="0" checked="checked" />无
+                <input type="radio" name="authority_4" value="1" />有</p>
+            <p><label>删除投票:</label> <!-- 作者分组才有此权限 -->
+                <input type="radio" name="authority_5" value="0" checked="checked" />无
+                <input type="radio" name="authority_5" value="1" />有</p>
+            <p><label>允许下载-TXT:</label> <!-- 是否允许下载TXT格式的书的权限 -->
+                <input type="radio" name="authority_6" value="0" />无
+                <input type="radio" name="authority_6" value="1" checked="checked" />有</p>
+            <p><label>允许下载-UMD:</label> <!-- 是否允许下载UMD格式的书的权限 -->
+                <input type="radio" name="authority_7" value="0" />无
+                <input type="radio" name="authority_7" value="1" checked="checked" />有</p>
+            <p><label>允许下载-EPUB:</label> <!-- 是否允许下载EPUB格式的书的权限 -->
+                <input type="radio" name="authority_8" value="0" />无
+                <input type="radio" name="authority_8" value="1" checked="checked" />有</p>
+            <p><label>收藏:</label>
+                <input type="radio" name="authority_9" value="0" checked="checked" />无
+                <input type="radio" name="authority_9" value="1" />有</p>
+            <p><label>推荐票:</label>
+                <input type="radio" name="authority_10" value="0" checked="checked" />无
+                <input type="radio" name="authority_10" value="1" />有</p>
+            <p><label>群发信息:</label>
+                <input type="radio" name="authority_11" value="0" checked="checked" />无
+                <input type="radio" name="authority_11" value="1" />有</p>
+            <p class="paddingT15 wordSpacing5"><input type="submit" value="提交" class="formbtn" /></p>
+        </form>
+    </div>
+    <script>
+        $("input[name=authority_0][value={$group_auth[0]}]").attr('checked', 'checked');
+        $("input[name=authority_1][value={$group_auth[1]}]").attr('checked', 'checked');
+        $("input[name=authority_2][value={$group_auth[2]}]").attr('checked', 'checked');
+        $("input[name=authority_3][value={$group_auth[3]}]").attr('checked', 'checked');
+        $("input[name=authority_4][value={$group_auth[4]}]").attr('checked', 'checked');
+        $("input[name=authority_5][value={$group_auth[5]}]").attr('checked', 'checked');
+        $("input[name=authority_6][value={$group_auth[6]}]").attr('checked', 'checked');
+        $("input[name=authority_7][value={$group_auth[7]}]").attr('checked', 'checked');
+        $("input[name=authority_8][value={$group_auth[8]}]").attr('checked', 'checked');
+        $("input[name=authority_9][value={$group_auth[9]}]").attr('checked', 'checked');
+        $("input[name=authority_10][value={$group_auth[10]}]").attr('checked', 'checked');
+        $("input[name=authority_11][value={$group_auth[11]}]").attr('checked', 'checked');
+    </script>
+</body>
+</html>

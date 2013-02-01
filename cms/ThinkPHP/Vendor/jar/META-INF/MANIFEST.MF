@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.0
+MicroEdition-Configuration: CLDC-1.0
+MIDlet-Name: 摩登时代
+MIDlet-Version: 1.0
+MIDlet-Vendor: JIEQI CMS (www.jieqi.com)
+MIDlet-1: 摩登时代, /icon.png, JavaBook
+MicroEdition-Profile: MIDP-1.0
+Created-By: 10.0-b19 (Sun Microsystems Inc.)

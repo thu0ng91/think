@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+</head>
+
+<body>
+	<div id="rightTop">
+	    <ul class="subnav">
+			<li><a href="?s=admin/booksort/add" class="btn1">添加分类</a></li>
+			<li><a href="?s=admin/booksort" class="btn1">所有分类</a></li>
+	    </ul>
+    </div>
+	<div class="mrightTop">
+        <div class="fontl">书籍分类 &gt; {$sort.sort_name}</div>
+    </div>
+    <div class="tdare">
+        <table width="100%" cellpadding="0" cellspacing="0" border="1" class="dataTable">
+            <tr class="tatr1">
+                <th width="10%" align="left">编号</th>
+                <th width="25%" align="left">分类名称</th>
+                <th align="left">操作</th>
+            </tr>
+		<volist name="list" id="sort">
+			<tr class="tatr2">
+				<td>{$key}</td>
+				<td><a href="?s=admin/booksort/show/super_id/{$key}/">{$sort}</a></td>
+				<td>
+					<a href="?s=admin/booksort/update/sort_id/{$key}/">编辑</a>
+					<a href="?s=admin/booksort/delete/sort_id/{$key}/" onclick="return confirm('确认要删除吗？');">删除</a>
+					<a href="?s=admin/html/sort/sort_id/{$key}/">生成页面</a>
+				</td>
+			</tr>
+		</volist>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$book.book_name} - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/index.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+<script type="text/javascript" src="{$tpldir}js/index.js"></script>
+</head>
+
+<body>
+<!-- site_header -->
+{$header}
+
+<!-- =searchbar= -->
+<div id="searchbar">
+<div class="inner">
+
+  <ul>
+  <form name="form" method="get" target="_blank" action="#" onsubmit="return do_search();">
+    <li class="bt">小说搜索</li>
+    <li class="input">
+      <input name="searchkey" id="skw" value="请输入书名进行搜索" style="font-size: 12px; color: rgb(51, 153, 0);" onblur="javascript:if(document.getElementById('skw').value=='') document.getElementById('skw').value='请输入书名进行搜索'" onfocus="javascript:if(document.getElementById('skw').value=='请输入书名进行搜索') document.getElementById('skw').value=''" type="text">
+    </li>
+    <li class="select">
+      <select name="searchtype" id="searchtype">
+		  <option selected="selected" value="articlename">书 名</option>
+      </select>
+    </li>
+    <li class="btn">
+        <input name="action" value="login" type="hidden">
+      <input name="input2" value="搜索" onclick="javascript:if(document.getElementById('skw').value=='请输入书名进行搜索') document.getElementById('skw').value=''" type="submit">
+    </li>
+</form>
+  </ul>
+  <div class="tag"> 热门小说：
+  <volist name="11,6,0" id="book1">
+  <a target="_blank" href="{:BU($book1, 'index')}" title="{$book1.book_name}">{$book1.book_name}</a> 
+  </volist>
+
+  </div>
+
+  </div>
+</div>
+
+    <div class="hguide">
+        <span class="new_list">
+        	<a href="{$cmsroot}">{&system.site_index}</a> ->
+			<a href="{:BU($book, 'lists')}">{$book.sort_name}</a> ->
+			{$book.book_name}
+        </span>
+    </div>
+
+<!--main-->
+<div class="wrapper">
+	<div class="main">
+        <div class="main_left">
+            <div class="mod_title">
+                <span class="title">热门推荐</span><span class="par">同类热门精品推荐</span> 
+            </div>
+            <div class="tab_content">
+                <ul>
+                <volist name="11,3,$book[sort_id]" id="item">
+                    <li class="txt_info">
+                        {$i}.{$item.book_name}<span class="author">{$item.book_author}</span>
+                        <div class="txt_content">
+                            <img src="{$item.image_url}" alt="{$item.book_name}" />
+                            <p>{$item.introduce}</p>
+                            <div style="clear:both;"></div>
+                            <p>
+                            <a href="{:BU($item, 'index')}">详情</a>
+                            <a href="{:BU($item, 'down')}">下载</a>
+                            </p>
+                        </div>
+                    </li>
+                </volist>
+                </ul>
+            </div>
+        </div>
+        <div class="main_right">
+            <div class="focus_title"><strong>小说详细资料</strong></div>
+            <div class="book_info">
+                <div class="bookShelf">
+                    <div class="book_img">
+                        <img src="{$book.image_url}" alt="{$book.book_name}" /><br />
+                        <div>
+                            <a href="{:BU($book, 'menu')}">阅读</a>
+                            <a href="javascript:;" onclick="add_to_favor({$book.book_id}, 0);">收藏</a>
+                        </div>
+                        <div>
+                            <a href="javascript:;" onclick="add_recommend({$book.book_id});">推荐</a>
+                            <a href="{:BU($book, 'down')}">下载</a>
+                        </div>
+                    </div>
+                    <div class="book_intro">
+                        <p class="txt_title">
+                            <span class="txt_name">{$book.book_name}</span>
+                            <span class="txt_writer">作者：{$book.author}</span>
+                        </p>
+                        <p class="txt_info">
+                            <span>分类：<a href="{:BU($book, 'lists')}">{$book.sort_name}</a></span>
+                            <span>字数：{$book.total_size}</span>
+                            <span>点击：{$book.all_visit}</span>
+                            <span>更新时间：{$book.last_update|date="Y-m-d",###}</span>
+                      </p>
+                        <p class="txt_all">{$book.introduce|nl2br}</p>
+                        <p class="vote_list">投票调查：<span></span></p>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            <div class="new_chapter">
+                    <div class="mod_title"><span class="title">最新章节</span></div>
+                    <div class="chapter_cont">
+                        <p class="cont_ti">
+                            <a href="{:BU($book, 'read')}">{$book.last_chapter}</a>
+                            <span class="cont_up">更新时间：{$book.last_update|date="Y-m-d H:i:s",###}</span>
+                        </p>
+                        <p class="content_tx">{$book.chapter_detail}</p>
+                        <p class="content_more"><a href="{:BU($book, 'read')}">详情...</a></p>
+                    </div>
+                    <div class="mod_title"><span class="title">读者评论</span></div>
+                    <div class="chapter_cont1">
+                        <div class="reader_comment"></div>
+                        <div class="selectLink"></div>
+                    </div>
+                </div>
+                <div class="review">
+                  	<p><label>评论主题：</label>
+                      <input type="text" id="review_subject" class="textbox" />
+                    </p>
+                    <p><label>评论内容：</label>
+                        <textarea id="review_detail" rows="5" class="textbox"></textarea>
+                    </p>
+                    <p id="review_submit">
+                        <a href="javascript:;" onclick="review_post({$book.book_id}, false)">发表评论</a>
+                    </p>
+                 </div>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+	</div>
+</div>
+
+<!--end main-->
+
+<!-- site_footer -->
+{$footer}
+
+<script>
+$(function(){
+	get_review({$book.book_id}, 1);
+	get_vote({$book.book_id});
+});
+</script>
+</body>
+</html>

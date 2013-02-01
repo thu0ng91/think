@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$review.subject} - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/index.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+<script type="text/javascript" src="{$tpldir}js/index.js"></script>
+</head>
+
+<body>
+<!-- site_header -->
+{$header}
+
+<!-- =searchbar= -->
+<div id="searchbar">
+<div class="inner">
+
+  <ul>
+  <form name="form" method="get" target="_blank" action="#" onsubmit="return do_search();">
+    <li class="bt">小说搜索</li>
+    <li class="input">
+      <input name="searchkey" id="skw" value="请输入书名进行搜索" style="font-size: 12px; color: rgb(51, 153, 0);" onblur="javascript:if(document.getElementById('skw').value=='') document.getElementById('skw').value='请输入书名进行搜索'" onfocus="javascript:if(document.getElementById('skw').value=='请输入书名进行搜索') document.getElementById('skw').value=''" type="text">
+    </li>
+    <li class="select">
+      <select name="searchtype" id="searchtype">
+		  <option selected="selected" value="articlename">书 名</option>
+      </select>
+    </li>
+    <li class="btn">
+        <input name="action" value="login" type="hidden">
+      <input name="input2" value="搜索" onclick="javascript:if(document.getElementById('skw').value=='请输入书名进行搜索') document.getElementById('skw').value=''" type="submit">
+    </li>
+</form>
+  </ul>
+  <div class="tag"> 热门小说：
+  <volist name="11,6,0" id="book1">
+  <a target="_blank" href="{:BU($book1, 'index')}" title="{$book1.book_name}">{$book1.book_name}</a> 
+  </volist>
+
+  </div>
+
+  </div>
+</div>
+
+    <div class="hguide">
+        <span class="new_list">
+        	<a href="{$cmsroot}">首页</a> ->
+			评论列表
+        </span>
+    </div>
+
+<div class="wrapper">
+    <!--main-->
+    <div class="main">
+    	<div class="ge_title"><span class="title">{$review.subject}</span></div>
+    <div class="chapter_cont">
+            <p class="cont_ti">
+                {$review.poster} {$review.post_time|date="Y-m-d H:i:s",###}
+</p>
+            <p>
+            	{$review.detail}
+            </p>
+            <p class="content_more"></p>
+        </div>
+        <div class="ge_title"><span class="title">回复列表</span></div>
+        <div class="chapter_cont1">
+            <volist name="list" id="item">
+            <div class="review_item">
+                <div class="review_01">
+                    <span class="re_subject">{$item.subject}</span>
+                    <span class="re_author">{$item.poster}</span>
+                    <span class="re_time">{$item.post_ip} {$item.post_time|date="Y-m-d H:i:s",###}</span>
+                </div>
+                <div class="review_02">{$item.detail}</div>
+            </div>
+   			</volist>
+            <a name="review"></a>
+        	<div class="review">
+                <p><label>回复评论：</label>
+                    <input type="text" id="review_subject" value="Re:{$review.subject}" class="textbox" />
+                </p>
+                <p><label>回复内容：</label>
+                    <textarea id="review_detail" rows="5" class="textbox"></textarea>
+                </p>
+                <p id="review_submit">
+                    <a href="javascript:;" onclick="review_post({$review.review_id},true)">发表评论</a>
+                </p>
+        	</div>
+        </div>	
+    </div>
+    <!--end main-->
+</div>
+
+<!-- site_footer -->
+{$footer}
+</body>
+</html>

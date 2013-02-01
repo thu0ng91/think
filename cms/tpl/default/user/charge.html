@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>充值中心 - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/user.css">
+<script type="text/javascript" src="{$tplcms}js/jquery.js"></script>
+<script type="text/javascript" src="{$tplcms}js/global.js"></script>
+</head>
+
+<body>
+<div id="layout">
+	<div id="mainbody">
+		<include file="./tpl/default/header.html" />
+		<div id="main">
+			<div id="mainleft">
+				<div><img src="{$tplcms}images/hyzx_djsc_01.gif" /></div>
+				<div class="tit">
+					<img src="{$tplcms}images/hyzx_right_icon_08.gif" class="ico" />充值中心
+				</div>
+				<div><img src="{$tplcms}images/hyzx_djsc_03.gif" /></div>
+				
+				<form name="register" action="?s=user/charge/confirm" method="post">
+					<input type="hidden" name="pay_tid" value="1" />
+					<div class="reg_info">
+						<div class="rinfo">
+							<span class="rleft">帐号：</span>
+							<span class="rright">{$user.user_name}</span>
+						</div>
+						<div class="rinfo">
+							<span class="rleft">充值账号：</span>
+							<span class="rright"><input type="text" name="charge_id" value="{$user.user_name}" readonly />&nbsp;&nbsp; 目前只允许为自己充值</span>
+						</div>
+						<div class="rinfo">
+							<span class="rleft">充值金额：</span>
+							<span class="rright"><input type="text" name="charge_amount"  />&nbsp;&nbsp; 1元以上，可以是 1.01 元</span>
+						</div>
+						<div class="rinfo">
+							<span class="rleft">支付方式：</span>
+							<span class="rright">
+								<input type="radio" name="pay_bank" value="directPay" checked><img src="{$tplcms}images/charge/alipay_1.gif" />
+							</span>
+						</div>
+						<div class="rinfo">
+							<span class="rleft">&nbsp;</span>
+							<span class="rright">
+								<input type="radio" name="pay_bank" value="ICBCB2C" /><img src="{$tplcms}images/charge/ICBC_OUT.gif" />
+								<input type="radio" name="pay_bank" value="CMB" /><img src="{$tplcms}images/charge/CMB_OUT.gif" />
+								<input type="radio" name="pay_bank" value="CCB" /><img src="{$tplcms}images/charge/CCB_OUT.gif" />
+							</span>
+						</div>
+						<div class="rinfo">
+							<span class="rleft">&nbsp;</span>
+							<span class="rright">
+								<input type="radio" name="pay_bank" value="BOCB2C" /><img src="{$tplcms}images/charge/BOC_OUT.gif" />
+								<input type="radio" name="pay_bank" value="ABC" /><img src="{$tplcms}images/charge/ABC_OUT.gif" />
+								<input type="radio" name="pay_bank" value="COMM" /><img src="{$tplcms}images/charge/COMM_OUT.gif" />
+							</span>
+						</div>
+						<div class="rinfo">
+							<span class="rleft">&nbsp;</span>
+							<span class="rright">
+								<input type="radio" name="pay_bank" value="SPDB" /><img src="{$tplcms}images/charge/SPDB_OUT.gif" />
+								<input type="radio" name="pay_bank" value="GDB" /><img src="{$tplcms}images/charge/GDB_OUT.gif" />
+								<input type="radio" name="pay_bank" value="CITIC" /><img src="{$tplcms}images/charge/CITIC_OUT.gif" />
+							</span>
+						</div>
+						<div class="rinfo">
+							<span class="rleft">&nbsp;</span>
+							<span class="rright">
+								<input type="radio" name="pay_bank" value="CEBBANK" /><img src="{$tplcms}images/charge/CEB_OUT.gif" />
+								<input type="radio" name="pay_bank" value="CIB" /><img src="{$tplcms}images/charge/CIB_OUT.gif" />
+								<input type="radio" name="pay_bank" value="SDB" /><img src="{$tplcms}images/charge/SDB_OUT.gif" />
+							</span>
+						</div>
+						<div class="rinfo">
+							<span class="rleft">&nbsp;</span>
+							<span class="rright">
+								<input type="radio" name="pay_bank" value="CMBC" /><img src="{$tplcms}images/charge/CMBC_OUT.gif" />
+								<input type="radio" name="pay_bank" value="HZCBB2C" /><img src="{$tplcms}images/charge/HZCB_OUT.gif" />
+								<input type="radio" name="pay_bank" value="SHBANK" /><img src="{$tplcms}images/charge/SHBANK_OUT.gif" />
+							</span>
+						</div>
+						<div class="rinfo">
+							<span class="rleft">&nbsp;</span>
+							<span class="rright">
+								<input type="radio" name="pay_bank" value="NBBANK" /><img src="{$tplcms}images/charge/NBBANK_OUT.gif" />
+								<input type="radio" name="pay_bank" value="SPABANK" /><img src="{$tplcms}images/charge/SPABANK_OUT.gif" />
+								<input type="radio" name="pay_bank" value="PSBC-DEBIT" /><img src="{$tplcms}images/charge/PSBC_OUT.gif" />
+							</span>
+						</div>
+					</div>
+				    <div class="ue_submit">
+						<input type="submit" value="进入充值" />
+				    </div>
+				</form>
+			</div>
+			<div id="mainmiddle">&nbsp;</div>
+			<!--右边部分开始-->
+			<div id="mainright">
+				<div><img src="{$tplcms}images/hyzx_right_01.gif" /></div>
+				<div class="nrbf">
+					<div class="nav_right">
+						<div style="margin-bottom: 8px;">用户中心</div>
+						<div class="nav_right_newdh">
+							<ul>
+								<li><a href="?s=user/index">个人信息</a></li>
+								<li><a href="?s=user/user/update">编辑信息</a></li>
+							</ul>
+							<ul>
+								<li><a href="?s=user/favor">我的书架</a></li>
+								<li><a href="?s=user/charge">充值中心</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div><img src="{$tplcms}images/hyzx_right_03.gif" /></div>
+				<div class="space02">&nbsp;</div>
+
+				<div><img src="{$tplcms}images/hyzx_right_01.gif" /></div>
+				<div class="nrbf">
+		            <div class="bt">您没有新的消息</div>
+				</div>
+				<div><img src="{$tplcms}images/hyzx_right_03.gif" /></div>
+				<div class="space02">&nbsp;</div>
+				<div><img src="{$tplcms}images/hyzx_right_01.gif" /></div>
+				<div class="nrbf">
+					<div class="bt">系统公告</div>
+				</div>
+				<div><img src="{$tplcms}images/hyzx_right_03.gif" /></div>
+				<div class="space02">&nbsp;</div>
+			</div>
+			<!--右边部分结束-->
+		</div>
+		<div class="break_09"></div>
+		<include file="./tpl/default/footer.html" />
+	</div>
+</div>
+</body>
+</html>
+
+

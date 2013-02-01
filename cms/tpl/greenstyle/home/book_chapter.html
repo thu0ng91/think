@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$chapter.chapter_name} - {$book.book_name} - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/index.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+<script type="text/javascript" src="{$tpldir}js/index.js"></script>
+</head>
+
+<body>
+<!-- site_header -->
+{$header}
+
+<!-- =searchbar= -->
+<div id="searchbar">
+<div class="inner">
+
+  <ul>
+  <form name="form" method="get" target="_blank" action="#" onsubmit="return do_search();">
+    <li class="bt">小说搜索</li>
+    <li class="input">
+      <input name="searchkey" id="skw" value="请输入书名进行搜索" style="font-size: 12px; color: rgb(51, 153, 0);" onblur="javascript:if(document.getElementById('skw').value=='') document.getElementById('skw').value='请输入书名进行搜索'" onfocus="javascript:if(document.getElementById('skw').value=='请输入书名进行搜索') document.getElementById('skw').value=''" type="text">
+    </li>
+    <li class="select">
+      <select name="searchtype" id="searchtype">
+		  <option selected="selected" value="articlename">书 名</option>
+      </select>
+    </li>
+    <li class="btn">
+        <input name="action" value="login" type="hidden">
+      <input name="input2" value="搜索" onclick="javascript:if(document.getElementById('skw').value=='请输入书名进行搜索') document.getElementById('skw').value=''" type="submit">
+    </li>
+</form>
+  </ul>
+  <div class="tag"> 热门小说：
+  <volist name="11,6,0" id="book1">
+  <a target="_blank" href="{:BU($book1, 'index')}" title="{$book1.book_name}">{$book1.book_name}</a> 
+  </volist>
+
+  </div>
+
+  </div>
+</div>
+
+    <div class="hguide">
+        <span class="new_list">
+        	<a href="{$cmsroot}">首页</a> ->
+			<a href="{:BU($book, 'lists')}">{$book.sort_name}</a> ->
+			<a href="{:BU($book, 'index')}">{$book.book_name}</a> ->
+			<a href="{:BU($book, 'menu')}">章节列表</a> ->
+			{$chapter.chapter_name}
+        </span>
+    </div>
+
+<!--main-->
+<div class="wrapper">
+    <div class="main">
+        <!--recommend-->
+        <div class="site_nav">
+            <a href="javascript:;" onclick="add_to_favor({$book.book_id}, 0);">加入书架</a> |
+            <a href="javascript:;" onclick="open_favor();">打开书架</a> |
+            <a href="javascript:;" onclick="add_to_favor({$book.book_id}, {$chapter.chapter_id});">加入书签</a>
+        </div>
+        <!--end recommend-->
+      <div style="clear:both;"></div>
+    
+        <h2>{$volume.chapter_name} {$chapter.chapter_name}</h2>
+        <h5>更新时间：{$chapter.post_time|date="Y-m-d H:i:s",###}</h5>
+        <p class="main_text">{$chapter.chapter_detail|nl2br}</p>
+        
+        <!--tips-->
+        <div id="tips">
+            <div class="page">
+            <empty name="prev">至首页<else /><a href="{$prev}">上一页</a></empty><span>|</span>
+            <a href="{:BU($book, 'menu')}">返回书目</a><span>|</span>
+            <empty name="next">至尾页<else /><a href="{$next}">下一页</a></empty>
+            </div>
+        </div>
+        <!--end tips-->
+  </div>
+  <!--end main-->
+</div>
+
+<!-- site_footer -->
+{$footer}
+</body>
+</html>

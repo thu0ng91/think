@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>投票：{$vote.subject} - {&system.site_name}</title>
+<meta name="keywords" content="{&system.metakeywords}" />
+<meta name="description" content="{&system.metadescription}" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/books.css">
+<script type="text/javascript" src="{$tplcms}js/jquery.js"></script>
+<script type="text/javascript" src="{$tplcms}js/global.js"></script>
+<script type="text/javascript" src="{$tplcms}js/book.js"></script>
+</head>
+
+<body>
+<div id="layout">
+	<div id="mainbody">
+		<include file="./tpl/default/header.html" />
+		<!--第二屏开始-->
+		<div class="fmy_hfq">
+			<div class="fmy_hfq_top">
+				<a href="{$cmsroot}">{&system.site_index}</a> &gt; 
+				投票：{$vote.subject}
+			</div>
+		</div>
+		<div class="fmy_hfq_bottom">
+			<div class="fmy_hfq_bottomnr">
+				<div class="book_vote">
+					<h2>投票主题：{$vote.subject}</h2>
+					<div class="vote_desc">投票描述：{$vote.description}</div>
+					<div class="vote_desc">投票选项：</div>
+					<form action="{$cmsroot}index.php?s=vote/add/" method="post" onsubmit="return do_vote();">
+						<input type="hidden" name="vote_id" id="vote_id" value="{$vote.vote_id}" />
+						<ul class="vote_list">
+						<volist name="list" id="item">
+							<li class="vlist">
+								<div><input type="{$vote.type}" name="<if condition="$vote.type eq 'radio'">items<else />items[]</if>" value="{$key}" /> {$i}. {$item.name}</div>
+								<span>{$item.state} 票</span>
+							</li>
+						</volist>
+							<li class="submit">
+								<input type="submit" value="投票" />
+								<input type="button" value="查看投票结果" onclick="show_vote_result();" />
+							</li>
+						</ul>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!--封面页回复区结束-->
+		<div class="break_09"></div>
+		<include file="./tpl/default/footer.html" />
+	</div>
+</div>
+<script type="text/javascript">
+	$(".reply_url").click(function(){
+		$('#sp_content_{$review.review_id}').focus();
+	});
+</script>
+</body>
+</html>
+

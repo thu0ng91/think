@@ -1,0 +1,50 @@
+<!--头部开始-->
+<div id="top">
+    <div class="left">
+        <a href="{$cmsroot}"><img src="{$tpldir}images/logo.gif" border="0" /></a>
+    </div>
+    <div class="right">
+        <div class="minibanner">
+            <div class="miniright">
+                <span id="logininfo" class="zlload">
+                    <a href="{$cmsroot}index.php?s=login/">登录</a>
+                    <a href="{$cmsroot}index.php?s=register/">注册</a>
+                </span>
+            </div>
+        </div>
+        <div class="minibanner">
+            <div class="miniright">
+                <form id="sform" method="post" action="{$cmsroot}?s=book/search" onsubmit=" return do_search();">
+                    <select name="tid" id="s_tid" class="sleft">
+                        <option value="1">书名</option>
+                        <option value="2">作者</option>
+                    </select>
+                    <input style="width:400px;" type="text" name="keyword" id="s_keyword" />
+                    <input type="submit" value="搜&nbsp;&nbsp;索" class="submit"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--子导航开始-->
+<div class="zdh">
+    <div class="zdh_left">
+        <a href="{$cmsroot}">书库首页</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <volist name="sorts" id="item">
+            <a href="{:BU($item, 'lists')}">{$item.sort_name}</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        </volist>
+        <a href="{:BU(11, 'top')}">排行榜</a>
+    </div>
+</div>
+
+<div class="space01">&nbsp;</div>
+
+<!-- 广告段1开始 -->
+<div class="ads">
+    <div class="ads_left"><script type="text/javascript" src="/cms/files/ads/1.js"></script></div>
+    <div class="ads_right"><script type="text/javascript" src="/cms/files/ads/3.js"></script></div>
+</div>
+<!-- 广告段1结束 -->
+
+<div class="space01">&nbsp;</div>

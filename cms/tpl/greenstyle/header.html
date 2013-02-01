@@ -1,0 +1,55 @@
+<div id="header">
+<div class="logo"><a href="{$cmsroot}">{&system.site_name}</a></div>
+
+<div class="banner">
+<!-- TOP广告位620*70 -->
+
+</div>
+</div>
+
+<!-- =nav= -->
+<div id="nav">
+  <!-- mainnav -->
+  <div class="mainnav">
+    <ul class="container">
+    <li class="now"><a href="{$cmsroot}" title="首页">首页</a></li>
+    <li><a href="{:BU(33, 'top')}" title="最新小说列表">最新小说</a></li>
+    <li><a href="{:BU(0, 'top')}" title="小说排行榜">小说排行榜</a></li>
+    <li><a href="{:BU(0, 'top')}" title="小说库"><strong>小说库</strong></a></li>
+    </ul>
+  </div>
+  <!-- subnav -->
+  <div class="subnav">
+    <div class="topsmenu">
+   	<strong><a href="{:BU(11, 'top')}">小说排行榜</a>：</strong>
+    <a href="{:BU(11, 'top')}">总排行榜</a>－
+    <a href="{:BU(12, 'top')}">月排行榜</a>－
+    <a href="{:BU(13, 'top')}">周排行榜</a>|
+    <strong><a href="{:BU(21, 'top')}">小说推荐榜</a>：</strong>
+    <a href="{:BU(21, 'top')}">总推荐榜</a>－
+    <a href="{:BU(22, 'top')}">月推荐榜</a>－
+    <a href="{:BU(23, 'top')}">周推荐榜</a>|
+    <strong><a href="{:BU(34, 'top')}">最近更新小说</a></strong>
+    <strong><a href="{:BU(33, 'top')}">最新入库小说</a></strong>
+    <strong><a href="{:BU(32, 'top')}">小说收藏榜</a></strong>
+    <strong><a href="{:BU(31, 'top')}">小说字数榜</a></strong>
+    </div>
+    <div class="container">
+        <strong><a href="javascript:void();">作品分类:</a></strong> ┊
+        <volist name="sorts" id="item">
+            <a href="{:BU($item, 'lists')}">{$item.sort_name}</a> ┊ 
+        </volist>
+    </div>
+  </div>
+</div>
+<!-- =tipbox= -->
+<div class="tipbox">
+<div class="left">
+<!-- 阅读前 -->
+每天欣赏一部言情小说，一年三百六十五天，天天快乐阅读！
+</div>
+<div class="right" id="user_info">
+ 
+</div>
+
+</div>

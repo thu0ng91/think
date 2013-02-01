@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>书籍批量生成</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/datepicker/WdatePicker.js"></script>
+</head>
+
+<body>
+	<div id="rightTop">
+	    <ul class="subnav">
+			<li><a href="?s=admin/html" class="btn1">静态页生成</a></li>
+			<li><a href="?s=admin/html/main" class="btn1">生成首页</a></li>
+			<li><a href="?s=admin/html/top" class="btn1">生成排行榜</a></li>
+			<li><a href="?s=admin/html/sort" class="btn1">生成分类页</a></li>
+	    </ul>
+    </div>
+    <div class="mrightTop">
+		<h3>注意：要生成静态页面，请先在“参数设置》静态化设置》静态化方式”项选择“纯静态”</h3>
+    </div>
+    <div class="info">
+		<form action="?s=admin/html/book" method="post">
+			<p><strong><input type="radio" name="by_name" value="id" checked="checked" /> 按书籍序号</strong>
+			起止序号：<input type="text" name="from_id" /> - <input type="text" name="to_id" /></p>
+			
+			<p><strong><input type="radio" name="by_name" value="time" /> 按更新时间</strong>
+			起止时间：<input type="text" name="from_time" class="Wdate" onFocus="WdatePicker({startDate:'%y-%M-%d 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true})"/> - <input type="text" name="to_time" class="Wdate" onFocus="WdatePicker({startDate:'%y-%M-%d %HH:%mm:%ss',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true})"/></p>
+
+			<p><strong><input type="radio" name="by_name" value="all" /> 全部书籍</strong></p>
+
+			<p><strong>生成选项</strong></p>
+			<p>
+				<input type="checkbox" name="type[]" value="index" /> 书籍首页
+				<input type="checkbox" name="type[]" value="menu" /> 章节列表页
+				<input type="checkbox" name="type[]" value="read" /> 章节内容页
+				<input type="checkbox" name="type[]" value="full" /> 全文阅读页
+				<input type="checkbox" name="type[]" value="down" /> 电子书下载页
+			</p>
+			<p class="submit"><input type="submit" value="开始生成" /></p>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{$sort.sort_name} - {&system.site_name}</title>
+        <meta name="keywords" content="{&system.metakeywords}" />
+        <meta name="description" content="{&system.metadescription}" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/common.css" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/mainpage.css"/>
+        <script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+        <script type="text/javascript" src="{$tpldir}js/common.js"></script>
+        <script type="text/javascript" src="{$tpldir}js/global.js"></script>
+    </head>
+
+    <body>
+        {$header}
+
+        <!-- 第三屏开始 -->
+        <div class="layerout">
+            <!--左边部分-->
+            <div class="mainbody_left_big">
+                <div class="mainbody_left_big_nr_02">
+                    <div class="title">
+                        <div class="left">最新更新作品</div>
+                        <div class="right"><a href="">更多更新</a>&nbsp;</div>
+                    </div>
+                    <div class=nr>
+                        <div class="space01">&nbsp;</div>
+                        <volist name="34,15,0" id="item">
+                            <div>
+                                <ul class=screenfivem_zxgx>
+                                    <li class=screenfivem_zxgx01a><a href="{:BU($item,'lists')}">[{$item.sort_name}]</a></li>
+                                    <li class=screenfivem_zxgx02>
+                                        <a href="{:BU($item,'index')}">{$item.book_name}</a>
+                                        <if condition="$item[last_chapterid] neq 0"><a href="{:BU($item,'read')}">({$item.last_chapter})</a></if>
+                                    </li>
+                                    <li class=screenfivem_zxgx03>{$item.author}</li>
+                                    <li class=screenfivem_zxgx04>{$item.last_update|date="m-d",###}</li>
+                                </ul>
+                            </div>
+                        </volist>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space02">&nbsp;</div>
+
+            <!--右边部分-->
+            <div class="mainbody_right">
+                <div class="mainbody_right_top">热门推荐</div>
+                <div class="mainbody_right_bottom">
+                    <div class="mainbody_right_bottom_gg_02">
+                        <volist name="23,12,$sort[sort_id]" id="item">
+                            <ul class="paihanglb02">
+                                <li>。<a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+                            </ul>
+                        </volist>
+                    </div>
+                </div>
+
+                <div class="space01">&nbsp;</div>
+
+                <div class="mainbody_right_top">本周热门点击</div>
+                <div class="mainbody_right_bottom">
+                    <div class="mainbody_right_bottom_gg_02">
+                        <volist name="13,12,$sort[sort_id]" id="item">
+                            <ul class="paihanglb02">
+                                <li>。<a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+                            </ul>
+                        </volist>
+                    </div>
+                </div>
+
+                <div class="space01">&nbsp;</div>
+
+                <div class="mainbody_right_top">完本推荐</div>
+                <div class="mainbody_right_bottom">
+                    <div class="mainbody_right_bottom_gg_02">
+                        <volist name="41,12,$sort[sort_id]" id="item">
+                            <ul class="paihanglb02">
+                                <li>。<a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+                            </ul>
+                        </volist>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 友情链接 -->
+        <div class="layerout">
+            <div class="main_yqlj">
+                <div class="main_yqlj_title"><img src="{$tpldir}images/green_12.gif" /></div>
+                <div class="main_yqlj_nr">
+                    <div class="yqljnr">
+                        <table class="ibluelink" cellspacing="5" cellpadding="0" width="100%" border="0">
+                            <tbody>
+                                &nbsp;|&nbsp;&nbsp;
+                            <volist name="links" id="item">
+                                <a href="{$item.siteurl}" target="_blank" title="{$item.siteinstro}">{$item.sitename}</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                            </volist>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space01">&nbsp;</div>
+
+            {$footer}
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,45 @@
+<volist name="list" id="item">
+<!--书评 开始-->
+<div class="break_01">&nbsp;</div>
+<div class="pl_question">
+	<p>
+		<a href="{$cmsroot}index.php?s=review/index/id/{$item.review_id}" target="_blank" id="sptitle_{$item.review_id}">{$item.subject}</a>
+		<span class="flag">
+			<if condition="$item.if_good eq 1">　[精华]</if>
+			<if condition="$item.if_top eq 1">　[置顶]</if>
+			<if condition="$item.if_lock eq 1">　[锁定]</if>
+		</span>
+	</p>
+</div>
+<div class="pl_questionnr">
+	<if condition="$item.if_check eq 1">{$item.detail}<else />评论审核中...</if>
+</div>
+<div class="break_03">&nbsp;</div>
+<div class="fabiaonr">
+	发表人：<span class="s1">{$item.poster}</span>　
+	发表日期：<span class="s2">{$item.post_time|date="Y-m-d H:i:s",###}</span>　
+	点击数：<span class="s2">{$item.view_num}</span>　
+	回复数：<span class="s2" id="sp_num_{$item.review_id}">{$item.reply_num}</span>
+</div>
+<div class="fabiaonr001">
+	<a href="javascript:;" onclick="<if condition="$item.if_lock eq 1">reply_lock();<else />show_quick_reply({$item.review_id});</if>"><font color="#1573CA">[ 回复 ]</font></a>&nbsp;
+	<a href="javascript:;" onclick="$('#sp_title').focus();"><font color="#1573CA">[ 快速发表 ]</font></a>
+</div>
+<div id="spreply_{$item.review_id}" style="display: none;">
+	<div class="break_04">&nbsp;</div>
+	<div class="tlq_answer">
+		<div class="break_04">&nbsp;</div>
+		<div><textarea id="sp_content_{$item.review_id}" class="tlq_answer_lynr"></textarea></div>
+		<div class="break_01">&nbsp;</div>
+		<div class="tlq_answer_hf">
+			<div class="tlq_answer_hf_l">
+				<a href="javascript:;" onclick="quick_reply({$item.review_id},1);">回 复</a>
+			</div>
+			<div class="tlq_answer_hf_r">
+				<a href="javascript:;" onclick="$('#spreply_{$item.review_id}').hide();">取 消</a>
+			</div>
+		</div>
+	</div>
+	<div class="break_04">&nbsp;</div>
+</div>
+</volist>

@@ -1,0 +1,367 @@
+body {
+	background-color: #eaf5ff
+}
+.contentsa {
+	line-height: 29px; margin: 0px auto; width: 950px; background: url(../images/contentspage04.gif) repeat-x; height: 29px; clear: both; font-size: 13px; overflow: hidden
+}
+.contentsa_l {
+	float: left; height: 29px; color: #002065; overflow: hidden
+}
+.contentsa_l a:link {
+	color: #002065; text-decoration: none
+}
+.contentsa_l a:visited {
+	color: #002065; text-decoration: none
+}
+.contentsa_l a:hover {
+	color: #3d62b2; text-decoration: none
+}
+.contentsa_l a:active {
+	color: #002065; text-decoration: none
+}
+.contentsa_r {
+	float: right; height: 29px; overflow: hidden
+}
+.contentsa_r a:link {
+	color: #000000; text-decoration: none
+}
+.contentsa_r a:visited {
+	color: #000000; text-decoration: none
+}
+.contentsa_r a:hover {
+	color: #666666; text-decoration: none
+}
+.contentsa_r a:active {
+	color: #000000; text-decoration: none
+}
+.contentsb {
+	border-bottom: #a5b9c5 1px solid; border-left: #a5b9c5 1px solid; margin: 0px auto; width: 948px; clear: both; overflow: hidden; border-top: #a5b9c5 1px solid; border-right: #a5b9c5 1px solid
+}
+.contentsb01 {
+	margin: 0px auto; width: 920px; height: 50px; overflow: hidden
+}
+.contentsb01_left {
+	width: 610px; float: left; overflow: hidden
+}
+.contentsb01_right {
+	width: 180px; float: right; overflow: hidden
+}
+.contentsb01_right ul {
+	padding-bottom: 0px; line-height: 16px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 180px; padding-right: 0px; height: 16px; padding-top: 0px
+}
+.contentsb01_right ul li {
+	padding-bottom: 0px; padding-left: 0px; padding-right: 0px; float: left; height: 16px; padding-top: 0px
+}
+.contentsb01_right ul li.xzwz {
+	text-align: center; line-height: 15px; width: 34px; background: url(../images/contentspage05.gif) no-repeat; height: 16px; color: #666666; margin-left: 5px; font-size: 10px
+}
+.contentsb01_right ul li.xzwz a:link {
+	color: #666666; text-decoration: none
+}
+.contentsb01_right ul li.xzwz a:visited {
+	color: #666666; text-decoration: none
+}
+.contentsb01_right ul li.xzwz a:hover {
+	color: #000000; text-decoration: none
+}
+.contentsb01_right ul li.xzwz a:active {
+	color: #666666; text-decoration: none
+}
+.contentsbtit {
+	text-align: center; line-height: 45px; margin: 0px auto; width: 940px; font-family: "隶书"; height: 45px; color: #960000; clear: both; font-size: 30px; overflow: hidden
+}
+.contentsb02 {
+	text-align: center; line-height: 25px; margin: 0px auto; width: 940px; height: 25px; clear: both; font-size: 12px; overflow: hidden
+}
+.contentsb02 a:link {
+	color: #000000; text-decoration: none
+}
+.contentsb02 a:visited {
+	color: #000000; text-decoration: none
+}
+.contentsb02 a:hover {
+	color: #000000; text-decoration: underline
+}
+.contentsb02 a:active {
+	color: #000000; text-decoration: none
+}
+.contentsb03 {
+	border-bottom: #a5b9c5 1px solid; background: #abd7ff; height: 25px; border-top: #a5b9c5 1px solid
+}
+.contentsb03_l {
+	line-height: 25px; float: left; height: 25px; color: #000000; margin-left: 8px; font-size: 14px
+}
+.contentsb03_l a:link {
+	color: #002065; text-decoration: none
+}
+.contentsb03_l a:visited {
+	color: #002065; text-decoration: none
+}
+.contentsb03_l a:hover {
+	color: #000000; text-decoration: none
+}
+.contentsb03_l a:active {
+	color: #002065; text-decoration: none
+}
+.contentsb03_r {
+	line-height: 25px; float: right; height: 25px; color: #000000; font-size: 12px; margin-right: 8px
+}
+.contentsb03_r a:link {
+	color: #000000; text-decoration: none
+}
+.contentsb03_r a:visited {
+	color: #000000; text-decoration: none
+}
+.contentsb03_r a:hover {
+	color: #333333; text-decoration: none
+}
+.contentsb03_r a:active {
+	color: #000000; text-decoration: none
+}
+.contentsb04 {
+	border: #eaf5ff 30px solid; line-height: 20px; margin: 0px auto; clear: both; 
+}
+.bookdetail {
+	margin: 0px auto; width: 948px; clear: both; 
+}
+.bookdetail ul {
+	border-bottom: 0px; border-left: 0px; padding-bottom: 0px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 948px; padding-right: 0px; background: #e6f3ff; height: 28px; overflow: hidden; border-top: #d2dce2 1px solid; border-right: 0px; padding-top: 0px
+}
+.bookdetail ul li {
+	padding-bottom: 0px; line-height: 28px; padding-left: 0px; padding-right: 0px; float: left; color: #0c3181; font-size: 13px; padding-top: 0px
+}
+.bookdetail ul li span { color: #f0f; font-size: 10px; }
+
+.bookdetail ul li a:link {
+	color: #0c3181; text-decoration: none
+}
+.bookdetail ul li a:visited {
+	color: #0c3181; text-decoration: none
+}
+.bookdetail ul li a:hover {
+	color: #3d62b2; text-decoration: none
+}
+.bookdetail ul li a:active {
+	color: #0c3181; text-decoration: none
+}
+.bookdetail ul li.s1 {
+	padding-bottom: 0px; text-indent: 16px; padding-left: 0px; width: 315px; padding-right: 0px; height: 28px; overflow: hidden; padding-top: 0px
+}
+.bookdetail ul li.s0 {
+	padding-bottom: 0px; text-indent: 16px; padding-left: 0px; width: 315px; padding-right: 0px; height: 28px; overflow: hidden; padding-top: 0px
+}
+.bookdetail ul li.s2 {
+	border-bottom: 0px; border-left: #d2dce2 1px solid; padding-bottom: 0px; text-indent: 16px; padding-left: 0px; width: 314px; padding-right: 0px; height: 28px; overflow: hidden; border-top: 0px; border-right: #d2dce2 1px solid; padding-top: 0px
+}
+.contentsc {
+	margin: 0px auto; width: 950px; height: 32px; clear: both
+}
+.contentsd {
+	border-bottom: #e6e6e6 1px solid; border-left: #e6e6e6 1px solid; margin: 0px auto; width: 948px; background: #ffffff; clear: both; border-top: 0px; border-right: #e6e6e6 1px solid
+}
+.contentsdnr {
+	margin: 0px auto; width: 918px; clear: both; overflow: hidden
+}
+.contentsdnr_zp {
+	width: 300px; float: left; height: 156px; overflow: hidden; margin-right: 5px
+}
+.contentsdnr_zp_left {
+	border-bottom: #cccccc 1px solid; border-left: #cccccc 1px solid; width: 124px; float: left; height: 154px; overflow: hidden; border-top: #cccccc 1px solid; margin-right: 10px; border-right: #cccccc 1px solid
+}
+.contentsdnr_zp_left img {
+	border-bottom: #ffffff 2px solid; border-left: #ffffff 2px solid; width: 120px; height: 150px; overflow: hidden; border-top: #ffffff 2px solid; border-right: #ffffff 2px solid
+}
+.contentsdnr_zp_right {
+	width: 162px; float: left; height: 156px; overflow: hidden
+}
+.contentsdnr_zp_righttit {
+	line-height: 30px; width: 162px; height: 30px; color: #1573ca; font-size: 14px; overflow: hidden; font-weight: bold
+}
+.contentsdnr_zp_righttit a:link {
+	color: #1573ca; text-decoration: none
+}
+.contentsdnr_zp_righttit a:visited {
+	color: #1573ca; text-decoration: none
+}
+.contentsdnr_zp_righttit a:hover {
+	color: #1573ca; text-decoration: underline
+}
+.contentsdnr_zp_righttit a:active {
+	color: #1573ca; text-decoration: none
+}
+.contentsdnr_zp_rightauther {
+	line-height: 30px; width: 162px; height: 30px; color: #000000; font-size: 12px; overflow: hidden
+}
+.contentsdnr_zp_rightauther a:link {
+	color: #999999; font-size: 14px; font-weight: bold; text-decoration: none
+}
+.contentsdnr_zp_rightauther a:visited {
+	color: #999999; font-size: 14px; font-weight: bold; text-decoration: none
+}
+.contentsdnr_zp_rightauther a:hover {
+	color: #666666; font-size: 14px; font-weight: bold; text-decoration: underline
+}
+.contentsdnr_zp_rightauther a:active {
+	color: #999999; font-weight: bold; text-decoration: none
+}
+.contentsdnr_zp_rightsm {
+	line-height: 22px; width: 162px; height: 22px; color: #999999; overflow: hidden
+}
+.readpage_left {
+	border-bottom: 0px; border-left: 0px; width: 737px; float: left; overflow: hidden; border-top: 0px; border-right: #d2dce2 1px solid
+}
+.readpage_leftn {
+	margin: 0px auto; width: 800px; overflow: hidden;
+}
+.readpage_leftntit {
+	text-align: center; line-height: 45px; font-family: "隶书"; height: 45px; color: #960000; font-size: 24px; overflow: hidden
+}
+.readpage_leftnzgx {
+	text-align: center; line-height: 40px; height: 50px; color: #999999
+}
+.readpage_leftnzgx a:link {
+	color: #002065; text-decoration: none
+}
+.readpage_leftnzgx a:visited {
+	color: #002065; text-decoration: none
+}
+.readpage_leftnzgx a:hover {
+	color: #3d62b2; text-decoration: none
+}
+.readpage_leftnzgx a:active {
+	color: #002065; text-decoration: none
+}
+.readpage_leftnzgx p {
+	padding-bottom: 0px; margin: 0px auto; padding-left: 0px; padding-right: 0px; border-top: #cccccc 1px dotted; padding-top: 0px
+}
+.readpage_leftntxt {
+	line-height: 1.6em; width: 100%; color: #000000; font-size: 14px; overflow: hidden
+}
+.readpage_leftntxt p {
+	text-indent: 2em;
+}
+.readpage_leftntxt a:link {
+	color: #ff0000; text-decoration: none
+}
+.readpage_leftntxt a:visited {
+	color: #ff0000; text-decoration: none
+}
+.readpage_leftntxt a:hover {
+	color: #cc0000; text-decoration: underline
+}
+.readpage_leftntxt a:active {
+	color: #ff0000; text-decoration: none
+}
+
+.readpage_leftntxt ul, .readpage_leftntxt li { list-style-type: none; padding: 0px; margin: 0px; }
+.chapter_order { }
+.chapter_order li { clear: both; height: 24px; line-height: 24px; margin-bottom: 6px; }
+.chapter_order li span { text-align: center; float:  left; width: 26%; font-size: 13px; }
+.chapter_order li span.s2 { text-align: left; padding-left: 2%; width: 45%; margin: 0 2px; }
+.chapter_order li.title span { text-align: center; font-weight: bold; background: #DBEDF5; }
+
+.readpage_leftntxt .note { text-align: center; font-size: 12px; }
+.readpage_leftntxt .note em { color: #f0f; }
+
+.order_btn { text-align: center; height: 30px; line-height: 30px; margin: 20px 0px; }
+.order_btn button.red { color: #f0f; }
+
+#vip_list { max-height: 300px; overflow-y: auto; }
+
+.readpage_leftnfy {
+	border-bottom: #cccccc 1px dotted; text-align: center; line-height: 50px; height: 50px; font-size: 14px
+}
+.readpage_leftnfy a:link {
+	color: #1573ca; text-decoration: none
+}
+.readpage_leftnfy a:visited {
+	color: #1573ca; text-decoration: none
+}
+.readpage_leftnfy a:hover {
+	color: #1573ca; text-decoration: underline
+}
+.readpage_leftnfy a:active {
+	color: #1573ca; text-decoration: none
+}
+.readpage_leftnfy p {
+	margin: 0px auto
+}
+.readpage_leftnfya {
+	text-align: center; line-height: 50px; height: 40px; color: #1573ca; font-size: 14px
+}
+.readpage_leftnfya a:link {
+	color: #1573ca; text-decoration: none
+}
+.readpage_leftnfya a:visited {
+	color: #1573ca; text-decoration: none
+}
+.readpage_leftnfya a:hover {
+	color: #1573ca; text-decoration: underline
+}
+.readpage_leftnfya a:active {
+	color: #1573ca; text-decoration: none
+}
+.readpage_leftnfya p {
+	margin: 0px auto
+}
+.readpage_leftnzztj {
+	line-height: 25px; width: 667px; height: 30px; font-size: 14px; overflow: hidden; font-weight: bold
+}
+.readpage_leftnzztj a:link {
+	color: #1573ca; font-weight: normal; text-decoration: none
+}
+.readpage_leftnzztj a:visited {
+	color: #1573ca; font-weight: normal; text-decoration: none
+}
+.readpage_leftnzztj a:hover {
+	color: #1573ca; font-weight: normal; text-decoration: underline
+}
+.readpage_leftnzztj a:active {
+	color: #1573ca; font-weight: normal; text-decoration: none
+}
+.readpage_leftnjptj {
+	padding-bottom: 0px; line-height: 25px; list-style-type: none; margin: 0px auto; padding-left: 0px; width: 667px; padding-right: 0px; height: 30px; font-size: 14px; overflow: hidden; font-weight: bold; padding-top: 0px
+}
+.readpage_leftnjptj li {
+	padding-bottom: 0px; line-height: 30px; padding-left: 0px; width: 100px; padding-right: 0px; float: left; height: 30px; overflow: hidden; margin-right: 10px; padding-top: 0px
+}
+.readpage_leftnjptj li a:link {
+	color: #1573ca; font-weight: normal; text-decoration: none
+}
+.readpage_leftnjptj li a:visited {
+	color: #1573ca; font-weight: normal; text-decoration: none
+}
+.readpage_leftnjptj li a:hover {
+	color: #1573ca; font-weight: normal; text-decoration: underline
+}
+.readpage_leftnjptj li a:active {
+	color: #1573ca; font-weight: normal; text-decoration: none
+}
+.readpage_right {
+	border-bottom: 0px; border-left: 0px; width: 210px; float: right; overflow: hidden; border-top: #d2dce2 1px solid; border-right: 0px
+}
+.readpage_right_l {
+	width: 10px; float: left
+}
+.readpage_right_m {
+	float: left
+}
+.readpage_rightlw {
+	margin: 0px auto; width: 190px; clear: both; overflow: hidden
+}
+.readpage_rightlw01 {
+	margin: 0px auto; width: 186px; background: #bbdbf7; height: 1px; clear: both; overflow: hidden
+}
+.readpage_rightlw02 {
+	border-left: #bbdbf7 1px solid; margin: 0px auto; width: 186px; height: 1px; clear: both; overflow: hidden; border-right: #bbdbf7 1px solid
+}
+.readpage_rightlw03 {
+	border-left: #bbdbf7 1px solid; margin: 0px auto; width: 188px; clear: both; overflow: hidden; border-right: #bbdbf7 1px solid
+}
+.readpage_rightlw03nr {
+	margin: 0px auto; width: 165px; clear: both; overflow: hidden
+}
+
+.read_set { height: 30px; line-height: 30px; clear: both; font-size: 12px; margin: 10px auto; }
+
+.read_set input, .read_set select { font-size: 12px; }

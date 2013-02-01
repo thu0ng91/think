@@ -1,0 +1,1 @@
+document.write('<a href="/code/index.php?s=ajax/ads/id/1" target="_self" title="翠竹轩"><img src="/code/files/ads/images/ad_01.jpg" width="468" height="60" /></a>');

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/global.js"></script>
+</head>
+
+<body>
+	<div id="rightTop">
+	    <ul class="subnav">
+			<li><a href="?s=admin/review" class="btn1">所有评论</a></li>
+	    </ul>
+    </div>
+    <div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="tdare">
+        <table width="100%" cellpadding="0" cellspacing="0" border="1" class="dataTable">
+            <tr class="tatr1">
+                <th width="30" class="firstCell" align="left">
+                	<input type="checkbox" class="select_all" title="全选" />
+                </th>
+                <th width="60" align="left">编号</th>
+                <th width="20%" align="left">主题</th>
+                <th width="15%" align="left">书名</th>
+                <th width="8%" align="left">点击/回复</th>
+                <th width="10%" align="left">发表人</th>
+                <th width="12%" align="left">发表时间</th>
+                <th width="60" align="left">已审核</th>
+                <th width="60" align="left">已锁定</th>
+                <th width="60" align="left">已置顶</th>
+                <th width="60" align="left">已加精</th>
+                <th align="left">操作</th>
+            </tr>
+		<volist name="list" id="item">
+			<tr class="tatr2">
+				<td class="firstCell">
+					<input type="checkbox" name="id[]" value="{$item.review_id}" />
+				</td>
+				<td>{$item.review_id}</td>
+				<td><a href="?s=review/index/id/{$item.review_id}" target="_blank">{$item.subject}</a></td>
+				<td><a href="?s=book/index/id/{$item.book_id}" target="_blank">{$item.book_name}</a></td>
+				<td>{$item.view_num}/{$item.reply_num}</td>
+				<td>{$item.poster}</td><td>{$item.post_time|date="Y-m-d H:i:s",###}</td>
+				<td class="td_flag"><if condition="$item.if_check eq 1">
+					<span class="s1">是 </span><a href="?s=admin/review/check/id/{$item.review_id}/value/0">取消</a><else />
+					<span class="s2">否 </span><a href="?s=admin/review/check/id/{$item.review_id}/value/1">审核</a></if>
+				</td>
+				<td class="td_flag"><if condition="$item.if_lock eq 1">
+					<span class="s1">是 </span><a href="?s=admin/review/lock/id/{$item.review_id}/value/0">解锁</a><else />
+					<span class="s2">否 </span><a href="?s=admin/review/lock/id/{$item.review_id}/value/1">锁定</a></if>
+				</td>
+				<td class="td_flag"><if condition="$item.if_top eq 1">
+					<span class="s1">是 </span><a href="?s=admin/review/top/id/{$item.review_id}/value/0">取消</a><else />
+					<span class="s2">否 </span><a href="?s=admin/review/top/id/{$item.review_id}/value/1">置顶</a></if>
+				</td>
+				<td class="td_flag"><if condition="$item.if_good eq 1">
+					<span class="s1">是 </span><a href="?s=admin/review/good/id/{$item.review_id}/value/0">去精</a><else />
+					<span class="s2">否 </span><a href="?s=admin/review/good/id/{$item.review_id}/value/1">加精</a></if>
+				</td>
+				<td class="td_flag">
+					<a href="?s=admin/review/delete/id/{$item.review_id}" res="confirm">删除</a>
+				</td>
+			</tr>
+		</volist>
+			<tr>
+				<td class="firstCell">
+					<input type="checkbox" class="select_all" title="全选" />
+				</td>
+				<td>选中项：</td>
+				<td colspan="9" style="text-align:left" class="do_select">
+					<a href="?s=admin/review/check/value/1">审核</a> /
+					<a href="?s=admin/review/check/value/0">取消</a>　
+					<a href="?s=admin/review/lock/value/1">锁定</a> /
+					<a href="?s=admin/review/lock/value/0">解锁</a>　
+					<a href="?s=admin/review/top/value/1">置顶</a> /
+					<a href="?s=admin/review/top/value/0">取消</a>　
+					<a href="?s=admin/review/good/value/1">精华</a> /
+					<a href="?s=admin/review/good/value/0">去精</a>　
+					<a href="?s=admin/review/delete" res="confirm">删除</a>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4">&nbsp;</td>
+				<td colspan="4" style="text-align:left">{$page}</td>
+			</tr>
+		</table>
+	</div>
+	<script>select_all("id[]");</script>
+</body>
+</html>

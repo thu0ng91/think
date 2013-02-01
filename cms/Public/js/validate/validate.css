@@ -1,0 +1,6 @@
+.form label.error{
+	color: red;
+	font-style: italic;
+	display:inline;
+}
+.form input.error { border: 1px solid red; }

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>全文阅读 - {$book.book_name} - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/index.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+<script type="text/javascript" src="{$tpldir}js/index.js"></script>
+</head>
+
+<body>
+<!-- site_header -->
+{$header}
+
+<!--main-->
+<div id="main">
+	<div class="site_nav">
+		<span class="nav">
+			<a href="{$cmsroot}">首页</a> ->
+			<a href="{:BU($book, 'lists')}">{$book.sort_name}</a> ->
+			<a href="{:BU($book, 'index')}">{$book.book_name}</a> ->
+			<a href="{:BU($book, 'menu')}">章节列表</a> ->
+			全文阅读
+		</span>
+	</div>
+	
+	<ul class="book_action">
+	<volist name="list" id="ch">
+		<li><a href="{:BU($book, 'full')}#{$key}">{$ch.chapter_name}</a></li>
+	</volist>
+	</ul>
+	
+	<div id="chapter_detail" style="clear: both;">
+	<volist name="list" id="ch">
+		<a name="{$key}"></a>
+		<h2>{$ch.chapter_name}&nbsp;<a href="{:BU($book, 'full')}#top" title="top">↑</a></h2>
+		<p class="main_text">{$ch.chapter_detail|nl2br}</p>
+	</volist>
+	</div>
+</div>
+<!--end main-->
+
+<!-- site_footer -->
+{$footer}
+</body>
+</html>

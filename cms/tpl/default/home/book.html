@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$book.book_name} - {&system.site_name}</title>
+<meta name="keywords" content="{&system.metakeywords}" />
+<meta name="description" content="{&system.metadescription}" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/books.css" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/pingfen.css" />
+<script type="text/javascript" src="{$tplcms}js/jquery.js"></script>
+<script type="text/javascript" src="{$tplcms}js/global.js"></script>
+<script type="text/javascript" src="{$tplcms}js/book.js"></script>
+<script type="text/javascript" src="{$tplcms}js/pingfen.js"></script>
+</head>
+
+<body>
+<div id="layout">
+	<div id="mainbody">
+		<include file="./tpl/default/header.html" />
+		<!--第二屏开始-->
+		<!--封面页左边部分开始-->
+		<div class="coverpageleft"><!--左边第一部分开始-->
+			<div class="cpl01">
+				<div class="cpl01a"></div>
+				<div class="cpl01b"></div>
+				<div class="cpl01c">
+					<div class="isbn">
+						<div class="isbn_l">
+							{:SN($book)}
+							<a href="{:BU($book,'index')}"><strong>{$book.book_name}</strong></a>
+							<font color="#999999">(书号{$book.book_id})</font>
+						</div>
+						<div class="isbn_r"></div>
+					</div>
+					<div class="cpl01cspace"></div>
+					<div class="mainpart">
+						<div class="mainpartl">
+							<div class="fengbg">
+								<div class="fengk"><a href="{:BU($book,'menu')}"><img alt="{$book.book_name}" src="{$book.image_url}"></a></div>
+							</div>
+							<div class="anniuspace01"></div>
+							<div class="anniua"><a href="{:BU($book,'menu')}">点&nbsp;击&nbsp;阅&nbsp;读</a></div>
+							<div class="anniuspace02"></div>
+							<div class="anniua"><a href="javascript:;" onclick="add_to_favor({$book.book_id}, 0);">加&nbsp;入&nbsp;书&nbsp;架</a></div>
+							<div class="anniuspace02"></div>
+							<div class="anniua"><a href="javascript:;" onclick="add_recommend({$book.book_id});">投&nbsp;推&nbsp;荐&nbsp;票</a></div>
+							<div class="anniuspace02"></div>
+							<div class="anniub"><a href="javascript:;">打&nbsp;赏&nbsp;作&nbsp;品</a></div>
+						</div>
+						<div class="mainpartr">
+							<div class="mainpartr01">
+								<font class="mainpartfont01">
+									<H1>{$book.book_name}</H1>
+									<H2>作者：{$book.author}</H2>
+								</font>
+							</div>
+							<div class="book_pingfen">
+								<div id="book_score_num"></div>
+								<div class="book_score_show">
+									<div id="book_score_bar"></div>
+									<div id="book_ping_num">已有 <span></span> 人评分</div>
+								</div>
+							</div>
+							<div class="mainpartr04">
+								<div class="mainpartr04nr">
+									<font class="mainpartfont04">类别：</font>
+									<font class="mainpartfont02"><a href="{:BU($book,'lists')}">{$book.sort_name}</a></font>
+									<font class="mainpartfont04">　　总点击：</font>{$book.all_visit}
+									<font class="mainpartfont04">　　总推荐：</font>{$book.all_vote}
+									<font class="mainpartfont04">　　总字数：</font>{$book.total_size}
+									<font class="mainpartfont04">　　授权状态：</font>
+									<font class="mainpartfont02"><if condition="$book.is_power eq 1">已授权<else />暂未授权</if></font>
+								</div>
+							</div>
+							<div class="mainpartr05">
+								<div class="mainpartr05l">
+									<div style="height: 130px; overflow: hidden">{$book.introduce|nl2br}</div>
+									<font color="red">[最新更新] &gt;&gt;&gt;</font>
+									<a href="{:BU($book,'read')}"><font color="red">{$book.last_chapter} {$book.last_update|date="Y-m-d",###}</font></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--左边第一部分结束-->
+			<div class="break_01"></div>
+			<div class="cpl02">
+				<!--left-->
+				<div class="cpl02left">
+					<div class="ltit02">
+						<div class="picl"><img src="{$tplcms}images/screent_05.gif"></div>
+						<div class="wordl">本书下载</div>
+					</div>
+					<div class="lnr02">
+							<ul class="lnr02_aa">
+							<volist name="63,3,$book[book_id]" id="item">
+								<li class="ebook"><a href="javascript:;" onclick="book_down('{$item.id}','{$key}');">{$item.type} 电子书下载</a></li>
+							</volist>
+							</ul>
+					</div>
+				</div>
+				<!--right-->
+				<div class="cpl02right">
+					<!--讨论区开始-->
+					<!--讨论区头部开始-->
+					<div class="lovertit">
+						<div class="lovertit001"></div>
+						<div class="lovertit002"><img src="{$tplcms}images/coverpage24.gif"></div>
+						<div class="lovertit003"><strong>{$book.book_name}</strong> </div>
+						<div class="tlqgd">
+							<div class="tlqgdnnr">
+								<div style="cursor: pointer" id="showspall" class="tlql01">全部评论</div>
+							</div>
+							<div class="tlqgdspace"></div>
+							<div class="tlqgdnnr">
+								<div style="cursor: pointer" id="showspjh" class="tlql02">精华评论</div>
+							</div>
+						</div>
+					</div>
+					<!--讨论区头部结束-->
+					<div class="tlqbottom">
+						<div class="break_01"></div>
+						<div id="showReview201007">
+							<div id="review_list"><center style="height: 50px"><img src="{$tplcms}images/loading.gif">书评加载中......</center></div>
+							<div class="spzj">
+								<div class="spzj_left"></div>
+								<div class="spzj_right"></div>
+							</div>
+						</div>
+						<div class="break_08"></div>
+						<div class="messages">
+							<div class="messages_left">
+								<div class="messages_leftbiaoti">
+									<div>标题：</div>
+									<div>
+										<select id="sp_title_pre">
+											<option selected="selected">评论</option><option>情节</option>
+											<option>角色</option><option>资料</option>
+											<option>相关</option><option>推荐</option>
+											<option>投票</option><option>求助</option>
+										</select>
+									</div>
+									<div><input id="sp_title" type="text"></div>
+								</div>
+								<div class="break_01"></div>
+								<div class="messages_leftcont">
+									<div>内容：</div>
+									<div><textarea id="sp_content" class="textarea need_login"></textarea></div>
+								</div>
+								<div class="break_04"></div>
+								<div class="messages_lefttijiao">
+									<p><a href="javascript:;" onclick="review_post({$book.book_id});">确&nbsp;认&nbsp;提&nbsp;交</a></p>
+								</div>
+								<div class="break_01"></div>
+							</div>
+							<div class="messages_right">
+								<p>提醒：您的鼓励是作者创作最大的动力。</p>
+								<p>发表《<strong>{$book.book_name}</strong>》书评，可获得1点积分</p>
+							</div>
+						</div>
+						<div class="break_08"></div>
+					</div>
+					<a name="inputbookreview"></a>
+					<!--讨论区结束-->
+				</div>
+				<div class="break_01"></div>
+			</div>
+		</div>
+		<!--封面页左边部分结束-->
+		<!--封面页右边部分开始-->
+		<div class="coverpageright">
+				<div class="coverpagerighttit">
+					<div class="break_01"></div>
+					<div class="coverpagerighttitspace"></div>
+					<div class="coverpagerighttitimg"><img src="{$tplcms}images/screent_05.gif"></div>
+					<div class="coverpagerighttitfont">向好友推荐本书</div>
+				</div>
+
+				<div class="coverpagerightnr">
+					<div class="break_01"></div>
+					<ul class="rightnr_ul004">
+						<li class="rightnr_ul004_lia"><img src="{$tplcms}images/coverpage27.gif"></li>
+						<li class="rightnr_ul004_lib"><a onclick="javascript:{shareBookChat();return false;}" href="javascript:;">聊天分享</a></li>
+					</ul>
+					<ul class="rightnr_ul004">
+						<li class="rightnr_ul004_lia"><img src="{$tplcms}images/coverpage28.gif"></li>
+						<li class="rightnr_ul004_lib"><a onclick="javascript:{refbook2db();return false;}" href="javascript:;">推荐到豆瓣</a></li>
+					</ul>
+					<ul class="rightnr_ul004">
+						<li class="rightnr_ul004_lia"><img src="{$tplcms}images/coverpage29.gif"></li>
+						<li class="rightnr_ul004_lib"><a onclick="javascript:{refbook2rr();return false;}" href="javascript:;">推荐到人人</a></li>
+					</ul>
+					<ul class="rightnr_ul004">
+						<li class="rightnr_ul004_lia"><img src="{$tplcms}images/coverpage30.gif"></li>
+						<li class="rightnr_ul004_lib"><a onclick="javascript:{refbook2kxw();return false;}" href="javascript:;">推荐到开心网</a></li>
+					</ul>
+					<ul class="rightnr_ul004">
+						<li class="rightnr_ul004_lia"><img src="{$tplcms}images/coverpage31.gif"></li>
+						<li class="rightnr_ul004_lib"><a onclick="javascript:{refbook2bsh();return false;}" href="javascript:;">推荐到白社会</a></li>
+					</ul>
+					<ul class="rightnr_ul004">
+						<li class="rightnr_ul004_lia"><img src="{$tplcms}images/coverpage32.gif"></li>
+						<li class="rightnr_ul004_lib"><a href="">推荐邮件</a></li></ul>
+					<div class="break_01"></div></div>
+				<div class="break_01"></div>
+				<div class="coverpagerighttit">
+					<div class="break_01"></div>
+					<div class="coverpagerighttitspace"></div>
+					<div class="coverpagerighttitimg"><img src="{$tplcms}images/screent_05.gif"></div>
+					<div class="coverpagerighttitfont">作品相关</div></div>
+				<div class="coverpagerightnr">
+					<div class="rightnr_ul005">《<strong>{$book.book_name}</strong>》</div>
+					<div class="rightnr_ul006"><font color="#0058a6">作品类型：</font><a href="{:BU($item,'lists')}">{$book.sort_name}</a></div>
+					<div class="rightnr_ul007"><font color="#0058a6">入库日期：</font>{$book.post_time|date="Y-m-d",###}</div>
+					<div class="rightnr_ul006"><font color="#0058a6">更新情况：</font><if condition="$book.is_full eq 1">已完本<else />连载中</if></div>
+					<div class="rightnr_ul007"><font color="#0058a6">周点击：</font>{$book.week_visit}</div>
+					<div class="rightnr_ul007"><font color="#0058a6">周推荐：</font>{$book.week_vote}</div>
+					<div class="rightnr_ul008">
+						<p>《<strong>{$book.book_name}</strong>》由作者{$book.author}上传，{&system.site_name}提供网络空间。如发现该作品上传人有侵权行为请及时与我们联系。</a></p>
+					</div>
+					<div class="break_01"></div>
+				</div>
+				<div class="break_01"></div>
+				<div class="coverpagerighttit">
+					<div class="break_01"></div>
+					<div class="coverpagerighttitspace"></div>
+					<div class="coverpagerighttitimg"><img src="{$tplcms}images/screent_05.gif"></div>
+					<div class="coverpagerighttitfont">本类热门推荐</div>
+				</div>
+				<div class="coverpagerightnr">
+					<div class="break_01"></div>
+				<volist name="21,10,$book[sort_id]" id="item">
+					<ul class="rightnr_ul009">
+						<li class="rightnr_ul009_lia"><a href="{:BU($item,'lists')}">[{$item.sort_name}]</a></li>
+						<li class="rightnr_ul009_lib"><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+					</ul>
+				</volist>
+				</div>
+				<div class="break_01"></div>
+				<!--封面页右边部分结束-->
+			</div>
+		</div>
+		<include file="./tpl/default/footer.html" />
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	get_review({$book.book_id},1);
+	show_pingfen({$book.book_id}, {$book.ping_num}, {$book.ave_score});
+	$(".need_login").focus(function(){ show_login(); });
+});
+</script>
+</body>
+</html>
+

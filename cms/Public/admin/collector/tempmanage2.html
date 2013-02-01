@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>临时库管理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/collector.css" />
+    <script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-ui-1.8.6.custom.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/collector.js"></script>
+  </head>
+  <body>
+    <div id="rightTop">
+        <ul class="subnav">
+            <li><a href="?s=admin/temp/tempmanage" class="btn3">未入库书列表</a></li>
+            <li><a href="?s=admin/temp/tempmanage2" class="btn3">已入库书列表</a></li>
+            <li><a href="javascript:showDiv(3);" class="btn3">类型关系设置</a></li>
+            <li><a href="javascript:deleteImg('?s=admin/temp/deleteimg');" class="btn3">清空本地图片</a></li>
+            <li><a href="javascript:deleteTemp('?s=admin/temp/deletetemp');" class="btn3">清空临时库</a></li>
+        </ul>
+    </div>
+    <div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="main">
+        <div class="collector">
+            <div class="card" id="guide2">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                  <thead>
+                      <tr>
+                          <th>书名</th>
+                          <th>作者</th>
+                          <th>类型</th>
+                          <th>总字数</th>
+                          <th>操作</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <!--<volist name="list2" id="vo">-->
+                      <tr id ="Booklist{$vo.book_id}" class="trcss">
+                          <td onclick="showBookInfo('{$vo.book_id}')" style=" cursor:pointer;">{$vo.book_name}</td>
+                          <td onclick="showBookInfo('{$vo.book_id}')" style=" cursor:pointer;">{$vo.book_man}</td>
+                          <td onclick="showBookInfo('{$vo.book_id}')" style=" cursor:pointer;">{$vo.type_name}</td>
+                          <td onclick="showBookInfo('{$vo.book_id}')" style=" cursor:pointer;">{$vo.book_sum}</td>
+                          <td>[<a href="javascript:deleteBook('?s=admin/temp/deleteputbook/book_id/{$vo.book_id}');">删除</a>] | [<a target="_blank" href="?s=home/book/index/id/{$vo.post_id}">阅读</a>]</td>
+                      </tr>
+                      <tr id ="BookInfo{$vo.book_id}" style="display:none;">
+                          <td colspan="5" style="text-align: left;">
+                            <ul>
+                              <li><b>书名:</b>{$vo.book_name}</li>
+                              <li><b>类型:</b>{$vo.type_name}</li>
+                              <li><b>关键字:</b>{$vo.book_key}</li>
+                              <li><b>封面图片:</b><img alt="封面图" src="{$vo.book_affix}" /></li>
+                              <li><b>内容简介:</b>{$vo.book_introduce}</li>
+                              <li><b>内容摘要:</b>{$vo.book_abstract}</li>
+                              <li><b>作者:</b>{$vo.book_man}</li>
+                              <li><b>最后更新:</b>{$vo.book_date}</li>
+                              <li><b>总字数:</b>{$vo.book_sum}</li>
+                              <li><b>本书地址:</b>{$vo.book_url}</li>
+                            </ul>
+                          </td>
+                        </tr>
+                      <!--</volist>-->
+                  </tbody>
+                </table>
+                <div style=" text-align: center;">{$page2}</div>
+            </div>
+            <div class="card" id="guide3" style="display: none;">
+                <form action="?s=admin/temp/settype" method="post">
+                    <div id="list3">
+                        <ul id="sel">
+                            <!--<volist name="sel1" id="vo1">-->
+                            <li class="cobx">
+                               {$vo1.type_name} &rArr;
+                               <input type="hidden" value="{$vo1.type_id}" name="type_id[]">
+                               <input type="hidden" value="{$vo1.sort_id}" id="setSel{$vo1.type_id}">
+                               <select class="combobox" name="sort_id[]" id="setSelV{$vo1.type_id}">
+                                   <option value="0">请选择</option>
+                                   <!--<volist name="sel2" id="vo2">-->
+                                   <option value="{$vo2.sort_id}">{$vo2.sort_name}</option>
+                                   <!--</volist>-->
+                               </select>
+                            </li>
+                            <!--</volist>-->
+                        </ul>
+                    </div>
+                    <div style="clear: both;"></div>
+                    <div class="control">
+                        <input type="submit" class="formbtn3" value="提交设置"/>
+                    </div>
+                </form>
+            </div>
+          </div>
+          <div id="deleteTempBook" title="提示信息" style="display: none;">
+            <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+                确定删除此书吗?
+            </p>
+         </div>
+         <div id="deleteTemp" title="提示信息" style="display: none;">
+            <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+                确定清空临时库吗?
+            </p>
+         </div>
+         <div id="deleteBook" title="提示信息" style="display: none;">
+            <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+                确定从书库中删除此书吗?
+            </p>
+         </div>
+         <div id="deleteImg" title="提示信息" style="display: none;">
+            <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+                确定清空所有本地化的图片吗?
+            </p>
+         </div>
+     </div>
+  </body>
+</html>
+<script type="text/javascript">
+
+    // 鼠标经过颜色变化
+    var curColor = $(".trcss").css('background-color');
+    $(".trcss").mouseover(function(){ $(this).css('background-color', '#bbdbf1');});
+    $(".trcss").mouseout(function(){ $(this).css('background-color', curColor);});
+
+    // 清空临时库
+    function deleteTemp(strUrl){
+        $( "#deleteTemp" ).dialog({
+			resizable: false,
+			height:200,
+			modal: true,
+			buttons: {
+				"确定清空": function() {
+					window.location.href = strUrl;
+				},
+				"取消": function() {
+					$( this ).dialog( "close" );
+				}
+			}
+	});
+    }
+
+    // 清空本地图片
+    function deleteImg(strUrl){
+        $( "#deleteImg" ).dialog({
+			resizable: false,
+			height:200,
+			modal: true,
+			buttons: {
+				"确定清空": function() {
+					window.location.href = strUrl;
+				},
+				"取消": function() {
+					$( this ).dialog( "close" );
+				}
+			}
+	});
+    }
+
+    // 层之间的交互显隐
+    function showDiv(id){
+        for(var i = 1; i <= 5; i++){
+            if(i == id){
+                $("#guide" + i).fadeIn("slow");
+            }else{
+                $("#guide" + i).hide();
+            }
+        }
+    }
+
+    // 从临时库中删除
+    function deleteTempBook(strUrl){
+        $( "#deleteTempBook" ).dialog({
+			resizable: false,
+			height:200,
+			modal: true,
+			buttons: {
+				"确定删除": function() {
+					window.location.href = strUrl;
+				},
+				"取消": function() {
+					$( this ).dialog( "close" );
+				}
+			}
+	});
+    }
+
+    // 从正式库中删除
+    function deleteBook(strUrl){
+        $( "#deleteBook" ).dialog({
+			resizable: false,
+			height:200,
+			modal: true,
+			buttons: {
+				"确定删除": function() {
+					window.location.href = strUrl;
+				},
+				"取消": function() {
+					$( this ).dialog( "close" );
+				}
+			}
+	});
+    }
+
+    // 显示\隐藏电子书信息
+    function showBookInfo(id){
+        var eInfo = $("#BookInfo" + id);
+        if(eInfo.css("display") == "none"){
+            eInfo.fadeIn();
+        }else{
+            eInfo.fadeOut();
+        }
+    }
+
+    // 设置下拉框的默认选中
+    function setSelect(){
+        for(i = 0; i < 100; i++){
+            $("#setSelV" + i).val($("#setSel" + i).val());
+        }
+    }
+
+    // 临时库中的书全部入库
+    function putAll(){
+        var strBookId = "";
+        var url = "?s=admin/temp/getbookid/s/1";
+        $.ajaxSetup({async: false});
+        $.get(
+              url,
+              function(e){
+                  strBookId = e;
+              }
+        );
+        window.location.href = "?s=admin/temp/putbook/book_id/" + strBookId;
+    }
+
+    // 入库选中的书
+    function putSelect(){
+        var strBookId = "";
+        for(i = 0; i < $(".checkBox").length; i++){
+            if($(".checkBox")[i].checked == true){
+                strBookId += $(".checkBox")[i].value + ","
+            }
+        }
+        window.location.href = "?s=admin/temp/putbook/book_id/" + strBookId;
+    }
+
+    // 勾选全选
+    function setCheckAll(e){
+        for(i = 0; i < $(".checkBox").length; i++){
+            if(e == true){
+                $(".checkBox")[i].checked = true;
+            }else{
+                $(".checkBox")[i].checked = false;
+            }
+        }
+    }
+
+    $(function(){
+        setSelect();
+    });
+</script>

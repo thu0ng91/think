@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/global.js"></script>
+</head>
+
+<body>
+    <div id="rightTop">
+        <ul class="subnav">
+            <li><a href="?s=admin/user/add" class="btn1">添加</a></li>
+            <li><a href="?s=admin/user/user_list" class="btn1">管理</a></li>
+        </ul>
+    </div>
+    <div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="info">
+        <form action="?s=admin/user/{$action}" method="post">
+            <p><input type="hidden" name="id" value="{$user.id}" /></p>
+            <p><label>账号：</label><input type="text" name="user_name"  value="{$user.user_name}"/></p>
+            <p><label>密码：</label><input type="text" name="user_pwd"/></p>
+            <p><label>确认密码：</label><input type="text" name="user_dpwd"/></p>
+            <p><label>是否激活</label>
+                <input type="radio" name="is_activation" value="0" checked="checked" />否
+                <input type="radio" name="is_activation" value="1" />是</p>
+            <p><label>用户组：</label>
+                <select name="group_id">
+                    <volist name="grouplist" id="group">
+                        <option value="{$group.id}">{$group.group_name}</option>
+                    </volist>
+                </select>
+            </p>
+            <p><label>邮件：</label><input type="text" name="email" value="{$user.email}"/></p>
+            <p><label>昵称：</label><input type="text" name="nickname" value="{$user.nickname}"/></p>
+            <p class="paddingT15 wordSpacing5"><input type="submit" value="提交" class="formbtn" /></p>
+        </form>
+    </div>
+</body>
+</html>

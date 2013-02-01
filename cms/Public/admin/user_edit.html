@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+</head>
+
+<body>
+    <form action="?s=admin/user/do_update" method="post">
+        <br/>
+        <br/>
+        <p><input type="hidden" name="id" value="{$user.id}" /></p>
+        <p><label>用户名：</label><input type="text" name="user_name" value="{$user.user_name}"/></p>
+        <br/>
+        <p><label>--用户信息如下-- </label></p><br/>
+        <p><label>用户密码：</label><input type="password" name="user_pwd"/></p>
+        <p><label>确认密码：</label><input type="password" name="user_dpwd"/></p>
+        <p><label>密码提示问题: </label><input type="text" name="pwd_quiz" value="{$info.pwd_quiz}" /></p>
+        <p><label>密码提示答案: </label><input type="text" name="pwd_answer" value="{$info.pwd_answer}" /></p>
+        <p><label>密码保护问题: </label><input type="text" name="pwd_protect_quiz" value="{$info.pwd_protect_quiz}" /></p>
+        <p><label>密码保护答案: </label><input type="text" name="pwd_protect_answer" value="{$info.pwd_protect_answer}"/></p>
+        <p><label>真实姓名: </label><input type="text" name="real_name" value="{$info.real_name}"/></p>
+        <p><label>昵称: </label><input type="text" name="nickname" value="{$user.nickname}"/></p>
+        <p><label>性别: </label> <!--{$info.sex}-->
+        <input type="radio" name="sex" value="女" checked="checked" />女
+        <input type="radio" name="sex" value="男" />男</p>
+        <p><label>是否激活</label>
+            <input type="radio" name="is_activation" value="0" checked="checked" />否
+            <input type="radio" name="is_activation" value="1" />是</p>
+        <p><label>用户组：</label>
+            <select name="group_id" id="group_id">
+                <volist name="grouplist" id="group">
+                    <option value="{$group.id}">{$group.group_name}</option>
+                </volist>
+            </select>
+        </p>
+        <p><label>邮件：</label><input type="text" name="email" value="{$user.email}"/></p>
+        <p><label>MSN: </label><input type="text" name="msn" value="{$info.msn}"/></p>
+        <p><label>qq: </label><input type="text" name="qq" value="{$info.qq}"/></p>
+        <p><label>生日: </label><input type="text" name="birthday" value="{$info.birthday}"/></p>
+        <p><label>地址: </label><input type="text" name="address" value="{$info.address}"/></p>
+        <p><label>积分: </label><input type="text" name="accumulate" value="{$info.accumulate}"/></p>
+        <p><label>VIP金额: </label><input type="text" name="vip_money" value="{$info.vip_money}"/></p>
+        <p><label>发帖数量: </label><input type="text" name="post_nums" value="{$info.post_nums}"/></p>
+        <p><label>收藏书数量: </label><input type="text" name="collecte_nums" value="{$info.collecte_nums}"/></p>
+        <p><label>注册时间: </label><input type="text" name="register_time" value="{$info.register_time}"/></p>
+        <p><label>来自: </label><input type="text" name="come_from" value="{$info.come_from}"/></p>
+        <br/>
+        <br/>
+        <p class="paddingT15 wordSpacing5"><input type="submit" value="提交" class="formbtn" /><input type="button" value="取消" onclick="javascript:history.go(-1)" class="formbtn" /></p>
+    </form>
+    <script>
+        $('#group_id').val('{$user.group_id}');
+        $("input[name=sex][value={$info.sex}]").attr('checked', 'checked');
+        $("input[name=is_activation][value={$user.is_activation}]").attr('checked', 'checked');
+    </script>
+</body>
+</html>

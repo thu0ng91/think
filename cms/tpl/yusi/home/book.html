@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{$book.book_name} - {&system.site_name}</title>
+        <meta name="keywords" content="{&system.metakeywords}" />
+        <meta name="description" content="{&system.metadescription}" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/common.css" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/coverpage.css"/>
+        <script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+        <script type="text/javascript" src="{$tpldir}js/global.js"></script>
+        <script type="text/javascript" src="{$tpldir}js/book.js"></script>
+    </head>
+
+    <body>
+        {$header}
+
+        <!--第一屏开始-->
+        <div class="coverpage_layout">
+            <!--左边部分-->
+            <div class="coverpage_left">
+                <div class="coverpage_left_title">此作者其他作品</div>
+                <div class="coverpage_left_nr">
+                    <div class="gyzz_02">
+                        <ul>
+                            <li/>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="space01">&nbsp;</div>
+
+                <div class="coverpage_left_title">同类作品推荐</div>
+                <div class="coverpage_left_nr">
+                    <div class="gyzz_02">
+                        <volist name="21,10,$book[sort_id]" id="item">
+                            <ul class="paihanglb02">
+                                <li class="hui2"><a href="{:BU($item,'lists')}">[{$item.sort_name}]</a></li>
+                                <li class=""><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+                            </ul>
+                        </volist>
+                    </div>
+                </div>
+
+                <div class="space01">&nbsp;</div>
+
+                <div class="coverpage_left_title">同类作品排行</div>
+                <div class="coverpage_left_nr">
+                    <div class="gyzz_02">
+                        <volist name="11,10,$book[sort_id]" id="item">
+                            <ul class="paihanglb02">
+                                <li class="hui2"><a href="{:BU($item,'lists')}">[{$item.sort_name}]</a></li>
+                                <li class=""><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+                            </ul>
+                        </volist>
+                    </div>
+                </div>
+                <div class="space01">&nbsp;</div>
+            </div>
+
+            <!--右边部分-->
+            <div class="coverpage_right">
+                <div class="coverpage_right_01">
+                    <a href="{$cmsroot}">{&system.site_index}</a> &gt;
+                    <a href="{:BU($book,'lists')}">{$book.sort_name}</a> &gt;
+                    <a href="{:BU($book,'index')}"><strong>{$book.book_name}</strong></a>
+                    <font color=#999999>(书号{$book.book_id})</font>
+                </div>
+                <div class="coverpage_right_02">{$book.book_name}&nbsp;&nbsp;<span style="font-size:12px; color:#999999; font-weight:normal;">文 / {$book.author}</span></div>
+                <div class="coverpage_right_03">
+                    <div class="left">
+                        <div><a href="{:BU($book,'menu')}"><img alt="{$book.book_name}" src="{$book.image_url}"/></a></div>
+                        <div class="space01">&nbsp;</div>
+                    </div>
+                    <div class="right">
+                        <div class="nr_01">作品介绍</div>
+                        <div class="nr_02">
+                            <p>{$book.introduce}</p>
+                            <if condition="$book.last_chapter neq null">
+                                最新更新章节：<a href="{:BU($book,'read')}">{$book.last_chapter} <font color="red">[{$book.last_update|date="Y-m-d",###}]</font></a></if>
+                            <br/>
+                        </div>
+                        <div class="nr_03">
+                            <!-- 点击阅读 -->
+                            <a href="{:BU($book,'menu')}"><img src="{$tpldir}images/coverpage_07.gif" border="0"/></a>　
+                            <!-- 加入收藏 -->
+                            <a href="javascript:;" onclick="add_to_favor({$book.book_id}, 0);"><img src="{$tpldir}images/coverpage_08.gif" border="0"/></a>　
+                            <!-- 推荐本书 -->
+                            <a href="javascript:;" onclick="add_recommend({$book.book_id});"><img src="{$tpldir}images/coverpage_09.gif" border="0"/></a>　
+                            <!-- 下载本书
+                            <a href=""><img src="{$tpldir}images/coverpage_10.gif" border="0"/></a> -->
+                        </div>                        
+                    </div>
+                </div>
+                
+                <!-- 下载链接 -->
+                <div class="coverpage_right_06">
+                    <h3 class=" up">下载本书</h3>
+                </div>
+                <div class="coverpage_right_07">
+                    <div class="space01">&nbsp;</div>
+                    <div class="space01">&nbsp;</div>
+                    <div class="downloadlink">
+                        <volist name="63,3,$book[book_id]" id="item">
+                            <a href="javascript:;" onclick="book_down('{$item.id}','{$key}');">{$item.type} 电子书下载</a>
+                        </volist>
+                    </div>
+                    <div class="space01">&nbsp;</div>
+                    <div class="space01">&nbsp;</div>
+                </div>
+
+                <div class="space01">&nbsp;</div>
+                <div class="space01">&nbsp;</div>
+                <div class="space01">&nbsp;</div>
+
+                <!-- 本书相关信息 -->
+                <div class="coverpage_right_04"><img src="{$tpldir}images/coverpage_11.gif" width="126" height="30"/></div>
+                <div class="coverpage_right_05">
+                    <div class="nr">
+                        <ul>
+                            <li>授权状态：<if condition="$book.is_power eq 1">已授权<else />暂未授权</if></li>
+                            <li>连载状态：<if condition="$book.is_full eq 1">已完本<else />连载中</if></li>
+                            <li>入库时间：<font color="#666666">{$book.post_time|date="Y-m-d",###}</font></li>
+                        </ul>
+                        <ul>
+                            <li>完成字数：{$book.total_size}</li>
+                            <li>收藏人数：<font color="#FF0000">{$book.all_visit}</font></li>
+                            <li>&nbsp;</li>
+                        </ul>
+                        <ul>
+                            <li>总点击：<font color="#FF0000">{$book.all_visit}</font></li>
+                            <li>月点击：{$book.month_visit}</li>
+                            <li>周点击：{$book.week_visit}</li>
+                        </ul>
+                        <ul>
+                            <li>总推荐：{$book.all_vote}</li>
+                            <li>月推荐：{$book.month_vote}</li>
+                            <li>周推荐：{$book.week_vote}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="space01">&nbsp;</div>
+
+                <!-- 评论部分 -->
+                <div class="coverpage_right_06">
+                    <h3 class=" up">所有评论</h3>
+                    <h3 class=" deodar">精华评论</h3>
+                </div>
+                <div class="coverpage_right_07">
+                    <div class="space01">&nbsp;</div>
+                    <div id="review_list"><center style="HEIGHT: 50px"><img src="{$tpldir}images/loading.gif"/>书评加载中......</center></div>
+                    <div class="spzj">
+                        <div class="spzj_left"></div>
+                        <div class="spzj_right"></div>
+                    </div>
+                </div>
+
+                <div class="space01">&nbsp;</div>
+                <div class="space01">&nbsp;</div>
+
+                <!--
+                <div class="coverpage_right_06">
+                    <div class="aa">《{$book.book_name}》的评论</div>
+                </div>-->
+                <div class="space01">&nbsp;</div>
+                <div class="space01">&nbsp;</div>
+                <div class="messages">
+                    <div class="messages_left">
+                        <div class="messages_leftbiaoti">
+                            <div>标题：</div>
+                            <div>
+                                <select id="sp_title_pre">
+                                    <option selected="selected">评论</option><option>情节</option>
+                                    <option>角色</option><option>资料</option>
+                                    <option>相关</option><option>推荐</option>
+                                    <option>投票</option><option>求助</option>
+                                </select>
+                            </div>
+                            <div><input id="sp_title" type="text"/></div>
+                        </div>
+                        <div class="space01">&nbsp;</div>
+                        <div class="messages_leftcont">
+                            <div>内容：</div>
+                            <div><textarea id="sp_content" class="textarea"></textarea></div>
+                        </div>
+                        <div class="space01">&nbsp;</div>
+                        <div class="messages_lefttijiao">
+                            <p><a href="javascript:;" onclick="review_post({$book.book_id});">提&nbsp;交</a></p>
+                        </div>
+                        <div class="space01">&nbsp;</div>
+                    </div>
+                    <div class="messages_right">
+                        <p>提醒：您的鼓励是作者创作最大的动力。</p>
+                        <p>发表《<strong>{$book.book_name}</strong>》书评，可获得1点积分</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space01">&nbsp;</div>
+            <!--广告开始-->
+            <!--广告结束-->
+            <div class="space01">&nbsp;</div>
+
+            <!-- 友情链接 -->
+            {$footer}
+        </div>
+        <script>get_review({$book.book_id},1);</script>
+    </body>
+</html>

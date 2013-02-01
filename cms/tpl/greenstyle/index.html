@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{&system.site_index}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/index.css">
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+<script type="text/JavaScript" src="{$tpldir}js/index.js"></script>
+</head><body>
+<!-- =topnav= -->
+
+
+<!-- =header= -->
+{$header}
+
+<!-- =searchbar= -->
+<div id="searchbar">
+<div class="inner">
+
+  <ul>
+  <form name="form" method="get" target="_blank" action="#" onsubmit="return do_search();">
+    <li class="bt">小说搜索</li>
+    <li class="input">
+      <input name="searchkey" id="skw" value="请输入书名进行搜索" style="font-size: 12px; color: rgb(51, 153, 0);" onblur="javascript:if(document.getElementById('skw').value=='') document.getElementById('skw').value='请输入书名进行搜索'" onfocus="javascript:if(document.getElementById('skw').value=='请输入书名进行搜索') document.getElementById('skw').value=''" type="text">
+    </li>
+    <li class="select">
+      <select name="searchtype" id="searchtype">
+		  <option selected="selected" value="articlename">书 名</option>
+      </select>
+    </li>
+    <li class="btn">
+        <input name="action" value="login" type="hidden">
+      <input name="input2" value="搜索" onclick="javascript:if(document.getElementById('skw').value=='请输入书名进行搜索') document.getElementById('skw').value=''" type="submit">
+    </li>
+</form>
+  </ul>
+  <div class="tag"> 热门小说：
+  <volist name="11,6,0" id="book">
+  <a target="_blank" href="{:BU($book, 'index')}" title="{$book.book_name}">{$book.book_name}</a> 
+  </volist>
+
+  </div>
+
+  </div>
+</div>
+
+<!-- =wrapper common= -->
+<div class="wrapper">
+<div class="common">
+<div class="left">
+<div class="focus_title">
+<strong>强烈推荐小说</strong>
+<small><a href="" title="推荐" target="_blank">更多推荐</a></small>
+
+</div>
+ <div class="Focus2">
+<ul class="Focus2Box">
+ <volist name="21,4,0" id="book">
+ <li>
+<span class="imgcove"><img src="{$book.image_url}" height="60" width="60" alt="{$book.book_name}"></span>
+<span class="Jeshao">
+<font class="green">
+<a href="{:BU($book, 'index')}" target="_blank">{$book.book_name}</a>
+</font><br>
+<a href="{:BU($book, 'index')}" target="_blank">{$book.introduce}</a>
+</span>
+ </li>
+ </volist>
+
+
+</ul> 
+<div class="clr"></div>
+	  </div>
+
+
+
+</div>
+</div>
+
+
+<div class="commend">
+    <div class="mod newbook">
+      <div class="mod_title"> <span class="title">最新精品</span> <span class="par">精品新作推荐</span> </div>
+
+      <div class="mod_container">
+      <div class="booklist"> 
+	
+<div class="text li_2">
+
+<volist name="99,6,4" id="book">
+<a target="_blank" href="{:BU($book, 'index')}" title="{$book.book_name}"><span style="">{$book.book_name}</span></a><br>
+</volist>
+
+
+</div>
+ 
+      </div>
+    
+      </div>
+    </div>
+     <div class="mod newbook">
+      <div class="mod_title"> <span class="title">网站动态</span> </div>
+      <div class="mod_container li_2">
+	           
+		      用手机访问：<font color="blue">wap.qhuan.com</font><br>
+随时随地看小说，<br>
+体会读书的无上乐趣！<br>
+看更多好书请加群：<br>
+QQ群：49851393<br>
+注明来自本站！ 
+		       
+		      </div>
+
+    </div>
+
+    
+    
+</div>
+</div>
+
+<div class="wrapper mod greenbg">
+<!-- 中心广告950x60-->
+<a href="" target="_blank"><img src="" border="0" height="60" width="950"></a>
+
+</div>
+
+<!-- =wrapper_tag= -->
+
+<!-- =wrapper 8 mod= -->
+<div class="wrapper">
+  <div class="tr8_mod">
+
+    <div class="mod">
+      <div class="mod_title"> <span class="title">最受欢迎小说</span> <span class="more"></span> </div>
+
+ 
+
+<div class="mod_container">
+
+<div class="li_2">
+
+<volist name="24,10,0" id="book">
+<a target="_blank" href="{:BU($book, 'index')}"><span style="">{$book.book_name}</span></a><br>
+</volist>
+
+
+</div>
+
+</div> 
+      
+    </div>
+
+    <div class="mod">
+
+      <div class="mod_title"> <span class="title">新书品读</span> <span class="more"></span> </div>
+     
+
+<div class="mod_container">
+
+
+<div class="li_2">
+
+<volist name="33,10,0" id="book">
+<a target="_blank" href="{:BU($book, 'index')}"><span style="">{$book.book_name}</span></a><br>
+</volist>
+
+</div>
+
+</div> 
+    </div>
+
+    <div class="mod">
+      <div class="mod_title"> <span class="title">收藏排行</span> <span class="more"></span> </div>
+      
+
+<div class="mod_container">
+
+
+<div class="li_2">
+
+<volist name="32,10,0" id="book">
+<a target="_blank" href="{:BU($book, 'index')}"><span style="">{$book.book_name}</span></a><br>
+</volist>
+
+</div>
+
+</div> 
+    </div>
+
+    <div class="mod">
+      <div class="mod_title"> <span class="title">人气排行</span> <span class="more"></span> </div>
+      
+
+<div class="mod_container">
+
+
+<div class="li_2">
+
+<volist name="14,10,0" id="book">
+<a target="_blank" href="{:BU($book, 'index')}"><span style="">{$book.book_name}</span></a><br>
+</volist>
+
+</div>
+
+</div> 
+    </div>
+
+    
+
+  </div>
+</div>
+
+
+<!-- =wrapper lists= -->
+<div class="wrapper wrapper_list">
+<!-- sidebar left -->
+
+<div class="sidebar left">
+<div class="mod">
+<div class="mod_title">
+<span class="title">月排行榜</span>
+</div>
+<div class="mod_container">
+<ul class="tops_list">
+
+<volist name="12,10,0" id="book">
+<li class="em"><a href="{:BU($book, 'index')}" target="_blank">{$book.book_name}</a></li>
+</volist>
+
+</ul>
+</div>
+</div>
+
+<div class="mod">
+<div class="mod_title">
+<span class="title">周排行榜</span>
+
+</div>
+<div class="mod_container">
+<div class="tops_list">
+
+<volist name="13,10,0" id="book">
+<li class="em"><a href="{:BU($book, 'index')}" target="_blank">{$book.book_name}</a></li>
+</volist>
+ 
+</div>
+</div>
+</div>
+</div>
+
+<!-- main -->
+<div class="main">
+<div class="mod_list mod">
+<div class="mod_title">
+<span class="title"><a href="http://www.qhuan.com/modules/article/toplist.php?sort=lastupdate" target="_blank">最新更新小说</a></span>
+
+<span class="more"><a href="javascript:CopyURL();" title="点击就可以复制">请把本站的网址复制给你QQ上的朋友，谢谢您^_^</a></span>
+</div>
+
+<ul class="mod_container">
+
+<volist name="34,20,0" id="book">
+<li>《<a href="{:BU($book, 'index')}" target="_blank" title="{$book.book_name}">{$book.book_name}</a>》-[<a href="{:BU($book, 'read')}" target="_blank" title="{$book.last_chapter}">{$book.last_chapter}</a>]<span>({$book.last_update|date="m-d",###})</span>&nbsp;<font color="#ff0000">new!</font></li>
+</volist>
+
+</ul>
+</div>
+</div>
+
+<!-- sidebar right -->
+<div class="sidebar right">
+<div class="mod">
+<div class="mod_title">
+<span class="title">月推荐榜</span>
+
+</div>
+<div class="mod_container">
+<ul class="tops_list">
+
+<volist name="22,10,0" id="book">
+<li class="em"><a href="{:BU($book, 'index')}" target="_blank">{$book.book_name}</a></li>
+</volist>
+
+</ul>
+</div>
+</div>
+
+<div class="mod">
+<div class="mod_title">
+<span class="title">周推荐榜</span>
+</div>
+<div class="mod_container">
+<ul class="tops_list">
+
+<volist name="23,10,0" id="book">
+<li class="em"><a href="{:BU($book, 'index')}" target="_blank">{$book.book_name}</a></li>
+</volist>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+{$footer}
+
+</body></html>

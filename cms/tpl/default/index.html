@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{&system.site_name}</title>
+<meta name="keywords" content="{&system.metakeywords}" />
+<meta name="description" content="{&system.metadescription}" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/index.css" />
+<script type="text/javascript" src="{$tplcms}js/jquery.js"></script>
+<script type="text/javascript" src="{$tplcms}js/global.js"></script>
+<script type="text/javascript" src="{$tplcms}js/index.js"></script>
+</head>
+
+<body>
+<div id="layout">
+	<div id="mainbody">
+		<include file="./tpl/default/header.html" />
+		<!--第二屏开始-->
+		<div class="screentwo">
+			<div class="tleft">
+				<div class="tjzq">
+				<volist name="sorts" id="item">
+					<a href="{:BU($item, 'lists')}">{$item.sort_name}</a>│
+				</volist>
+				</div>
+				<div class="tjzqnr">
+					<div class="bz_break01"></div>
+					<!--本周精品推荐开始-->
+					<div class="bzjptj">
+						<div class="bzjptj_01">总推荐榜</div>
+						<div class="bzjptj_02">
+							<div class="break_001"></div>
+						<volist name="21,10,0" id="item">
+							<ul class="paihanglb01">
+								<li class="hui">[<a href="{:BU($item,'lists')}">{$item.sort_name}</a>]</li>
+								<li class="blue"><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+							</ul>
+						</volist>
+						</div>
+						<div class="bzjptj_03"></div>
+						<div class="bzjptj_04"></div>
+					</div>
+					<!--本周精品推荐结束-->
+					<div class="bz_break01"></div>
+					<!--热门作品开始-->
+					<div class="rmzp">
+						<div class="rmzp_01">主推小说</div>
+						<div class="rmzp_02">
+							<div class="break_001"></div>
+							<div class="rmzpnr">
+							<volist name="99,6,6" id="item">
+								<div class="<if condition="$i%2 eq 1">rmzpnr_l<else />rmzpnr_r</if>">
+									<ul class="rmzpnr_ul">
+										<li class="feng"><a href="{:BU($item,'index')}"><img src="{$item.image_url}" /></a></li>
+										<li class="break"></li>
+										<li class="js">
+											<div class="zpjs_01"><a href="{:BU($item,'index')}">{$item.book_name}</a></div>
+											<div class="zpjs_02">类别：{$item.sort_name}</div>
+											<div class="zpjs_03"><a href="{:BU($item,'index')}">{$item.introduce}</a></div>
+										</li>
+									</ul>
+								</div>
+							</volist>
+							</div>
+						</div>
+					</div>
+					<!--热门作品结束-->
+				</div>
+				<div><img src="{$tplcms}images/screens_04.gif" /></div>
+			</div>
+			<div class="tright">
+				<div class="xhb_aa">
+					<div class="xhb_break"></div>
+					<div class="xianhua">
+						<div id="xianhua_fw_id1" class="xianhua_fw checked">月点击榜</div>
+						<div class="xianhua_break"></div>
+						<div id="xianhua_fw_id2" class="xianhua_fw">月推荐榜</div>
+					</div>
+				</div>
+				<div id="xhb_bb_id" class="xhb_bb">
+					<div class="break_01"></div>
+					<ul class="ul_xianhua_fw_id1">
+					<volist name="12,15,0" id="item">
+						<li class="zp"><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+						<li class="xh"><img src="{$tplcms}images/screens_01.gif" /></li>
+						<li class="mc">{$item.month_visit}</li>
+					</volist>
+					</ul>
+					<ul class="ul_xianhua_fw_id2" style="display:none">
+					<volist name="22,15,0" id="item">
+						<li class="zp"><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+						<li class="xh"><img src="{$tplcms}images/screens_01.gif" /></li>
+						<li class="mc">{$item.month_vote}</li>
+					</volist>
+					</ul>
+				</div>
+				<div><img src="{$tplcms}images/screens_06.gif" /></div>
+			</div>
+		</div>
+		<!--第二屏结束-->
+		<div class="break_01"></div>
+		<!--第三屏上方广告开始-->
+		<div id="adv01">
+			<div class="adv01_left"><script type="text/javascript" src="{$cmsroot}files/ads/4.js"></script></div>
+			<div class="adv01_right"><script type="text/javascript" src="{$cmsroot}files/ads/5.js"></script></div>
+		</div>
+		<!--第三屏上方广告结束-->
+		<div class="break_01"></div>
+		<!--第三屏开始-->
+		<div class="screenthree">
+			<div class="sanleft">
+				<!--vip作品推荐-->
+				<div class="sanleft_title">总字数榜</div>
+				<div class="vipzptj">
+					<div class="break_001"></div>
+				<volist name="31,15,0" id="item">
+					<ul class="paihanglb02">
+						<li class="hui2"><a href="{:BU($item,'lists')}">[{$item.sort_name}]</a></li>
+						<li class="hei2"><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+					</ul>
+				</volist>
+				</div>
+				<div class="break_01"></div>
+			</div>
+			<div class="sanright">
+				<!--首页强推开始-->
+				<div class="san_right01">
+					<div class="vvzp01">首页强推</div>
+					<div class="vvzp02">
+						<div class="break_01"></div>
+						<div class="vzp">
+							<!--强推开始-->
+							<div class="vzp_01">
+							<volist name="99,2,3" id="item">
+								<div class="vzp_01_<if condition="$i%2 eq 1">left<else />right</if>">
+									<div class="vzpnr_one">
+										<div class="vzpnr_one_left"><a href="{:BU($item,'index')}"><img src="{$item.image_url}" /></a></div>
+										<div class="vzpnr_one_right">
+											<div class="vzpnr_one_right_01"><a href="{:BU($item,'index')}">{$item.book_name}</a></div>
+											<ul class="vzpnr_one_right_02">
+												<li class="vleft">作品类型：</li>
+												<li class="vright">{$item.sort_name}</li>
+											</ul>
+											<ul class="vzpnr_one_right_02">
+												<li class="vleft">作　　者：</li>
+												<li class="vright">{$item.author}</li>
+											</ul>
+											<ul class="vzpnr_one_right_02">
+												<li class="vleft">最后更新：</li>
+												<li class="vright">{$item.last_update|date="Y-m-d",###}</li>
+											</ul>
+										</div>
+									</div>
+									<div class="vzpnr_break"></div>
+									<div class="vzpnr_two">
+										<div class="vzpnr_twonr">
+											<a href="{:BU($item,'index')}">{$item.introduce}</a>
+										</div>
+									</div>
+								</div>
+							</volist>
+							</div>
+							<!--vip作品结束-->
+							<!--全本精选开始-->
+							<ul class="vzp_03">
+							<volist name="11,9,0" id="item">
+								<li class="zzpnr">[{$item.sort_name}] <a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+							</volist>
+							</ul>
+							<!--全本精选结束-->
+						</div>
+					</div>
+				</div>
+				<!--第三屏vip作品结束-->
+				<div class="san_right02"></div>
+				<div class="san_right03">
+					<div class="zxsjzp01">
+						<div class="piaoa"></div>
+						<div class="piaob">
+							<img src="{$tplcms}images/screent_05.gif" /></div>
+						<div class="piaoc">最新上架作品</div>
+					</div>
+					<div class="zxsjzp02">
+						<div class="break_001"></div>
+					<volist name="33,15,0" id="item">
+						<ul class="paihanglb03">
+							<li class="hui3"><a href="{:BU($item,'lists')}">[{$item.sort_name}]</a></li>
+							<li class="hei3"><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+						</ul>
+					</volist>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--第三屏结束-->
+		<div class="break_01"></div>
+		<!--第五屏开始-->
+		<div class="screenfive">
+			<!--左边开始-->
+			<div class="screenfive_left">
+				<div class="screenfive_left_title">
+					<ul>
+						<li class="ppic01"><img src="{$tplcms}images/screent_05.gif" /></li>
+						<li class="ppic02">热门收藏榜</li>
+					</ul>
+				</div>
+				<div class="screenfive_left_nr">
+					<div class="screenfive_left_break"></div>
+					<div class="screenfive_left_nrr">
+					<volist name="32,15,0" id="item">
+						<ul class="paihanglb04">
+							<li class="hui4"><a href="{:BU($item,'lists')}">[{$item.sort_name}]</a></li>
+							<li class="blue2"><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+						</ul>
+					</volist>
+					</div>
+				</div>
+			</div>
+			<!--左边结束-->
+			<div class="screenfive_break">&nbsp;</div>
+			<!--中间开始-->
+			<div class="screenfive_middle">
+				<div class="screenfivem_top">
+					<div class="screenfivem_top_nr">
+						<div class="zxgxleft">最新更新</div>
+						<div class="zxgxright">[<a href="">更多更新</a>]</div>
+					</div>
+				</div>
+				<div class="screenfivem_bottom">
+				<volist name="34,15,0" id="item">
+					<div class="screenfivem_<if condition="$i%2 eq 1">b<else />w</if>">
+						<ul class="screenfivem_zxgx">
+							<li class="screenfivem_zxgx01a"><a href="{:BU($item,'lists')}">[{$item.sort_name}]</a></li>
+							<li class="screenfivem_zxgx02">
+								<a href="{:BU($item,'index')}">{$item.book_name}</a>
+								<a href="{:BU($item,'read')}">({$item.last_chapter})</a></li>
+							<li class="screenfivem_zxgx03">{$item.author}</li>
+							<li class="screenfivem_zxgx04">{$item.last_update|date="m-d",###}</li>
+						</ul>
+					</div>
+				</volist>
+				</div>
+			</div>
+			<!--中间结束-->
+			<!--右边开始-->
+			<div class="screenfive_right">
+				<div class="screenfive_right_title">
+					<div class="screenfive_right_titlenr">
+						<ul>
+							<li class="ppic01"><img src="{$tplcms}images/screenfive_08.gif" /></li>
+							<li class="ppic02">完本回顾榜</li>
+						</ul>
+					</div>
+				</div>
+				<div class="screenfive_right_nr">
+					<div class="screenfive_right_break"></div>
+					<div class="screenfive_left_nrr">
+					<volist name="41,15,0" id="item">
+						<ul class="paihanglb05">
+							<li class="hui5"><a href="{:BU($item,'lists')}">[{$item.sort_name}]</a></li>
+							<li class="blue3"><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+						</ul>
+					</volist>
+					</div>
+				</div>
+			</div>
+			<!--右边结束-->
+		</div>
+		<div class="break_01"></div>
+		<!--第五屏结束-->
+		<!--友情链接开始-->
+		<div id="yqlj">
+			<div class="yqlj_break"></div>
+			<div class="yqljnr">
+				<span style="color: #000000; font-weight: bold">友情链接： </span>
+			<volist name="links" id="item">
+				<a href="{$item.siteurl}" target="_blank" title="{$item.siteinstro}">{$item.sitename}</a>
+			</volist>
+			</div>
+			<div class="yqlj_break"></div>
+		</div>
+		<!--友情链接结束-->
+		<include file="./tpl/default/footer.html" />
+	</div>
+</div>
+</body>
+</html>

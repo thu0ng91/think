@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网站管理</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/css.css" />
+<script type="text/javascript">
+ //重载验证码
+function freshVerify() {
+   document.getElementById('verifyImg').src='?s=admin/login/check_code/' +  Math.random();
+}
+</script>
+</head>
+
+<body>
+<div id="login_main">
+	<div id="login">
+    	<div class="login_left"></div>
+        <div class="login_nr">
+        	<div class="admin"><img src="__PUBLIC__/images/admin.jpg" width="307" height="60" /></div>
+			<div class="admin_main">
+			<form action="?s=admin/login/login" method="post" target="_top">
+				<dl>
+           		  <dt>账　号：</dt>
+                  <dd><input type="text" name="admin_name" class="input" /></dd>
+                  <dt>密　码：</dt>
+                  <dd><input type="password" name="admin_pwd" class="input" /></dd>
+                  <dt>验证码：</dt>
+                  <dd><input type="text" name="check_code" class="input02" />
+                  <img src="?s=admin/login/check_code" id="verifyImg"  width="58" height="22" /></dd>
+                  <dt> </dt>
+                  <dd>看不清，<a href="javascript:;" onclick="freshVerify();">换一张</a></dd>
+                </dl>
+				<ul>
+               	  <li><input type="image" src="__PUBLIC__/images/login.jpg" /></li>
+                  <li><a href="javascript:;" onclick="window.location.href = '__ROOT__'" />
+                  	<img src="__PUBLIC__/images/returns.jpg" width="72" height="24" /></a>
+                  </li>
+              </ul>
+           </form>
+            </div>
+        </div>
+        <div class="login_right"></div>
+    </div>
+	<div id="login_copy">Powered by BOOKCMS V1.0 Beta © 2010 BookCMS Inc. </div>
+</div>
+</body>
+</html>

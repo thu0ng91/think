@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$book.book_name} - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/home.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+<script type="text/javascript" src="{$tpldir}js/global.js"></script>
+</head>
+
+<body>
+<!-- site_header -->
+{$header}
+
+<!--main-->
+<div id="main">
+	<!--recommend-->
+	<div class="site_nav">
+		<span class="nav">
+			<a href="{$cmsroot}">{&system.site_index}</a> ->
+			<a href="{:BU($book, 'lists')}">{$book.sort_name}</a> ->
+			<a href="{:BU($book, 'index')}">{$book.book_name}</a> ->
+			章节列表
+		</span>
+	</div>
+	<!--end recommend-->
+
+	<h2>{$book.book_name}最新章节<if condition="C('book.read_full') eq 1">（<a href="{:BU($book, 'full')}">全文阅读</a>）</if></h2>
+    <div id="chapter_list">
+   	<volist name="volume" id="vo">
+   		<div class="volume">{$vo.chapter_name}
+    	<if condition="($vo.chapter_id gt 0) AND (C('book.read_volume') eq 1)">
+    	（<a href="{:BU($book, 'read', $vo)}">分卷阅读</a>）
+    	</if>
+    	</div>
+   	<volist name="chapter[$vo[chapter_id]]" id="ch">
+   		<div class="chapter">
+   			<a href="{:BU($book, 'read', $ch)}" title="字数：{$ch.chapter_size}">{$ch.chapter_name}</a>
+   		</div>
+	</volist>
+	</volist>
+    </div>
+</div>
+<!--end main-->
+
+<!-- site_footer -->
+{$footer}
+</body>
+</html>

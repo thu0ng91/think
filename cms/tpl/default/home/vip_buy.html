@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>单章订阅信息确认 - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/chapter.css">
+<script type="text/javascript" src="{$tplcms}js/jquery.js"></script>
+<script type="text/javascript" src="{$tplcms}js/global.js"></script>
+</head>
+
+<body>
+<div id="layout">
+	<div id="mainbody">
+		<include file="./tpl/default/header.html" />
+		<!--第二屏开始-->
+		<!--头部-->
+		<div class="contentsa">
+			<div class="contentsa_l"><img src="{$tplcms}images/contentspage02.gif"></div>
+			<div class="contentsa_l">
+				{:SN($book)}
+				<a href="{:BU($book, 'index')}">{$book.book_name}</a> &gt;
+				单章订阅信息确认
+			</div>
+			<div class="contentsa_r"><img src="{$tplcms}images/contentspage03.gif" /></div>
+			<div class="contentsa_r">
+				
+			</div>
+		</div>
+		
+		<!--底部-->
+		<div class="contentsb">
+			<div class="break_04"></div>
+			<div class="readpage_leftn">
+				<div class="readpage_leftntit">单章订阅信息确认</div>
+				<div class="readpage_leftntxt">
+					<ul class="chapter_order">
+						<li class="title">
+							<span>书名</span>
+							<span class="s2">订阅章节名称</span>
+							<span>所需金币</span>
+						</li>
+						<li>
+							<span>{$book.book_name}</span>
+							<span class="s2">{$chapter.chapter_name}</span>
+							<span id="chapter_price">{$chapter.sale_price}</span>
+						</li>
+					</ul>
+					<div class="note">
+						本次将消费金币：<em>{$chapter.sale_price}</em> 点，
+						您目前拥有金币：<em class="jb_total"></em> 点。
+					</div>
+				</div>
+				
+				<div class="readpage_leftntit">其他未订阅章节信息</div>
+				<div class="readpage_leftntxt">
+					<ul class="chapter_order" id="vip_list">
+						<li class="title">
+							<span>书名</span>
+							<span class="s2">订阅章节名称</span>
+							<span>所需金币</span>
+						</li>
+					<volist name="list" id="item">
+						<li class="total">
+							<span><input type="checkbox" name="id[]" value="{$item.chapter_id}" /> {$book.book_name}</span>
+							<span class="s2">{$item.chapter_name}</span>
+							<span>{$item.sale_price}</span>
+						</li>
+					</volist>
+					</ul>
+					<div class="note">
+						全部订阅将消费金币：<em class="cost_total">{$chapter.sale_price}</em> 点，
+						您目前拥有金币：<em class="jb_total"></em> 点。
+					</div>
+				</div>
+				<div class="order_btn">
+					<button onclick="order_chapter({$chapter.chapter_id}, 1, {$chapter.sale_price})" class="red">订阅本章</button>
+					<button onclick="order_chapter({$chapter.chapter_id}, 2)">订阅选定章节</button>
+					<button onclick="order_chapter({$chapter.chapter_id}, 3)">订阅全部章节</button>
+					<button onclick="history.go(-1);">取消订阅</button>
+				</div>
+			</div>
+			<div class="break_04"></div>
+		</div>
+		
+		<div class="break_09"></div>
+		<include file="./tpl/default/footer.html" />
+	</div>
+</div>
+<script type="text/javascript">setTimeout("vip_order()", 100);</script>
+</body>
+</html>
+

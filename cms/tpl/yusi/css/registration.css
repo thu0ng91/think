@@ -1,0 +1,195 @@
+@charset "utf-8";
+/* CSS Document */
+.registration{
+	width:950px;
+	clear:both;
+	overflow:hidden;
+	margin:0 auto;
+}
+.registration .xx{
+	font-size:14px;
+	line-height:20px;
+	height:20px;
+	overflow:hidden;
+	margin-top:20px;
+}
+.registration .zc{
+	margin-top:30px;
+	margin-bottom:30px;
+	padding:0px;
+	overflow:hidden;
+}
+.registration .zc .zc01{
+	height:35px;
+	overflow:hidden;
+	background:url(../images/green_14.gif) repeat-x;
+}
+.registration .zc .zc01 .ghd_left{
+	float:left;
+	width:10px;
+}
+.registration .zc .zc01 .ghd_middle{
+	float:left;
+	height:35px;
+	line-height:35px;
+	color:#003399;
+	font-size:14px;
+	font-weight:bold;
+}
+.registration .zc .zc01 .ghd_right{
+	float:right;
+	width:10px;
+}
+.registration .zc .zc02{
+	border-top:0px;
+	border-right:1px solid #B3D4FF;
+	border-bottom:1px solid #B3D4FF;
+	border-left:1px solid #B3D4FF;
+}
+.registration .zc .zc02 .fhnr{
+	width:900px;
+	margin:0 auto;
+}
+.registration .zc .zc02 .fhnr .xinxi{
+	height:25px;
+	overflow:hidden;
+	margin-top:15px;
+	margin-bottom:0px;
+	font-size:14px;
+	line-height:25px;
+}
+.registration .zc .zc02 .fhnr .hsxinxi{
+	height:20px;
+	overflow:hidden;
+	margin-top:5px;
+	margin-bottom:0px;
+	color:#999999;
+	line-height:20px;
+}
+
+body {
+/*	background-image: url(../images/registrationpage04.jpg); 
+    background-color: #e8f7fc;*/
+    margin: 0px auto;
+    background-repeat: repeat-x;
+    font-family: arial, helvetica, sans-serif, "宋体";
+    font-size: 12px
+}
+a:link {
+	color: #666666;
+    text-decoration: none
+}
+a:visited {
+	color: #666666;
+    text-decoration: none
+}
+a:hover {
+	color: #333333;
+    text-decoration: underline
+}
+a:active {
+	color: #666666;
+    text-decoration: none
+}
+img {
+	border-bottom: 0px;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px
+}
+.registrationpagespace01 {
+	height: 30px; 
+    clear: both;
+    overflow: hidden
+}
+.registrationpage01 {
+	margin: 0px auto;
+    width: 830px;
+/*    background: url(../images/registrationpage02.jpg) repeat-y; */
+    clear: both;
+    overflow: hidden
+}
+.registrationpage02a {
+	height: 160px;
+    clear: both
+}
+.registrationpage02b {
+	line-height: 50px;
+    margin: 0px auto;
+    width: 640px;
+    height: 50px;
+    color: #999999;
+    clear: both;
+    font-size: 13px;
+    overflow: hidden
+}
+.registrationpage02b a:link {
+	color: #999999; text-decoration: none
+}
+.registrationpage02b a:visited {
+	color: #999999;
+    text-decoration: none
+}
+.registrationpage02b a:hover {
+	color: #666666;
+    text-decoration: none
+}
+.registrationpage02b a:active {
+	color: #999999;
+    text-decoration: none
+}
+.registrationpage03 {
+	margin: 0px auto; 
+    width: 830px;
+    clear: both
+}
+.registrationpage02c {
+	line-height: 50px; 
+    margin: 0px auto;
+    width: 640px;
+    clear: both;
+    overflow: hidden
+}
+.registrationpage02c dl {
+	padding-bottom: 0px; 
+    margin: 0px auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px
+}
+.registrationpage02c dl dt {
+	color: #153b9d; font-size: 14px
+}
+.registrationpage02c dl dd {
+	line-height: 30px
+}
+.registrationpage02d {
+	margin: 0px auto;
+    width: 640px;
+    clear: both;
+    overflow: hidden
+}
+.registrationpage_agreement {
+	border-bottom: #cccccc 1px solid; 
+    border-left: #cccccc 1px solid;
+    margin: 0px auto;
+    width: 680px;
+    background: #f8f8f8;
+    clear: both;
+    overflow: hidden;
+    border-top: #cccccc 1px solid;
+    border-right: #cccccc 1px solid
+}
+
+input.normal {
+    width:140px;
+    overflow:hidden;
+}
+input.rcode {
+    width: 100px;
+    overflow: hidden;
+}
+#verifyImg {
+    cursor:pointer;
+    vertical-align: middle;
+}

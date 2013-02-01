@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+</head>
+
+<body>
+    <div id="rightTop">
+	    <ul class="subnav">
+			<li><a href="javascript:;" res="base" class="btn1">网站基本信息</a></li>
+			<li><a href="javascript:;" res="db" class="btn1">数据库设置</a></li>
+			<li><a href="javascript:;" res="view" class="btn1">显示控制</a></li>
+	    </ul>
+    </div>
+    <div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+	<div class="info">
+	<form method="post" action="?s=admin/config/update_base" id="config_base">
+            <table class="infoTable">
+                <tr>
+                    <th class="paddingT15">网站名称：</th>
+                    <td class="paddingT15 wordSpacing5"><input type="text" name="site_name" value="{&system.site_name}" class="normal" /></td>
+                </tr>
+                <tr>
+                    <th class="paddingT15">网站域名：</th>
+                    <td class="paddingT15 wordSpacing5"><input type="text" name="site_domain" value="{&system.site_domain}" class="normal" /></td>
+                </tr>
+                <tr>
+                    <th class="paddingT15">首页名称：</th>
+                    <td class="paddingT15 wordSpacing5"><input type="text" name="site_index" value="{&system.site_index}" class="normal" /></td>
+                </tr>
+                <tr>
+                    <th class="paddingT15">网站ICP备案号：</th>
+                    <td class="paddingT15 wordSpacing5"><input type="text" name="site_icp" value="{&system.site_icp}" class="normal" /></td>
+                </tr>
+                <tr>
+                    <th class="paddingT15">网站关键词：</th>
+                    <td class="paddingT15 wordSpacing5"><textarea name="metakeywords">{&system.metakeywords}</textarea></td>
+                </tr>
+                <tr>
+                    <th class="paddingT15">网站描述：</th>
+                    <td class="paddingT15 wordSpacing5"> <textarea name="metadescription">{&system.metadescription}</textarea></td>
+                </tr>
+                 <tr>
+                <th class="paddingT15"></th>
+                <td class="paddingT15 wordSpacing5"> <input type="submit" value="提交" class="formbtn" /></td>
+            </tr>
+            </table>
+	</form>
+
+	<form method="post" action="?s=admin/config/update_db" id="config_db" style="display:none">
+	<table class="infoTable">
+            <tr>
+                <th class="paddingT15">数据库类型：</th>
+                <td class="paddingT15 wordSpacing5"><input type="text" name="DB_TYPE" value="{&DB_TYPE}" class="normal" /></td>
+            </tr>
+            <tr>
+                <th class="paddingT15">数据库连接编码：</th>
+                <td class="paddingT15 wordSpacing5"><input type="text" name="DB_CHARSET" value="{&DB_CHARSET}" class="normal" /></td>
+            </tr>
+            <tr>
+                <th class="paddingT15">数据表前缀：</th>
+                <td class="paddingT15 wordSpacing5"><input type="text" name="DB_PREFIX" value="{&DB_PREFIX}" class="normal" /></td>
+            </tr>
+            <tr>
+                <th class="paddingT15">数据库服务器：</th>
+                <td class="paddingT15 wordSpacing5"><input type="text" name="DB_HOST" value="{&DB_HOST}" class="normal" /></td>
+            </tr>
+            <tr>
+                <th class="paddingT15">数据库连接端口：</th>
+                <td class="paddingT15 wordSpacing5"><input type="text" name="DB_PORT" value="{&DB_PORT}" class="normal" /></td>
+            </tr>
+            <tr>
+                <th class="paddingT15">数据库名：</th>
+                <td class="paddingT15 wordSpacing5"><input type="text" name="DB_NAME" value="{&DB_NAME}" class="normal" /></td>
+            </tr>
+            <tr>
+                <th class="paddingT15">数据库用户：</th>
+                <td class="paddingT15 wordSpacing5"><input type="text" name="DB_USER" value="{&DB_USER}" class="normal" /></td>
+            </tr>
+            <tr>
+                <th class="paddingT15">数据库密码：</th>
+                <td class="paddingT15 wordSpacing5"><input type="text" name="DB_PWD" value="{&DB_PWD}" class="normal" /></td>
+            </tr>
+            <tr>
+                <th class="paddingT15"></th>
+                <td class="paddingT15 wordSpacing5"> <input type="submit" value="提交" class="formbtn" /></td>
+            </tr>
+        </table>
+	</form>
+
+	<form method="post" action="?s=admin/config/update_view" id="config_view" style="display:none">
+            <table class="infoTable">
+                <tr>
+                    <th class="paddingT15">网站是否开放：</th>
+                    <td class="paddingT15 wordSpacing5"><input type="radio" name="site_open" value="0"/>关闭
+                        <input type="radio" name="site_open" value="1" checked="checked"/>开放</td>
+                </tr>
+                <tr>
+                    <th class="paddingT15">网站关闭提示：</th>
+                    <td class="paddingT15 wordSpacing5"><textarea name="site_close_inform" id="site_close_inform" rows="5" cols="50">{&system.site_close_inform}</textarea></td>
+                </tr>
+                <tr>
+                    <th class="paddingT15">是否开放注册：</th>
+                    <td class="paddingT15 wordSpacing5"><input type="radio" name="site_allow_reg" value="1" checked="checked"/>是
+                        <input type="radio" name="site_allow_reg" value="0"/>否</td>
+                </tr>
+                <tr>
+                    <th class="paddingT15">Cookies有效时间：</th>
+                    <td class="paddingT15 wordSpacing5"><input type="text" name="session_time" value="{&system.cookie_time}" class="normal" />单位为“秒”,设成“0”表示用系统默认参数
+                    </td>
+                </tr>
+                <tr>
+                    <th class="paddingT15">Cookie的有效域名：</th>
+                    <td class="paddingT15 wordSpacing5"><input type="text" name="cookies_domain" value="{&system.cookies_domain}" class="normal" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="paddingT15">列表最大页数：</th>
+                    <td class="paddingT15 wordSpacing5"><input type="text" name="max_pagenum" value="{&system.max_pagenum}" class="normal" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="paddingT15"></th>
+                    <td class="paddingT15 wordSpacing5"> <input type="submit" value="提交" class="formbtn" /></td>
+                </tr>
+            </table>
+            
+	</form>
+
+        </div>
+
+<script>
+$(function(){
+	$(".subnav li a").click(function(){
+		$('form').css('display', 'none');
+		$('#config_'+$(this).attr('res')).css('display', 'block');
+	});
+
+        $("input[name=site_open][value={&system.site_open}]").attr('checked', 'checked');
+        $("input[name=site_allow_reg][value={&system.site_allow_reg}]").attr('checked', 'checked');
+});
+</script>
+</body>
+</html>

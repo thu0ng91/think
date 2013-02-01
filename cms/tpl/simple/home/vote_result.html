@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>投票结果 - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/home.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+<script type="text/javascript" src="{$tpldir}js/global.js"></script>
+</head>
+
+<body>
+<!-- site_header -->
+{$header}
+
+<!--main-->
+<div id="main">
+	<div class="site_nav">
+		<span class="nav">
+			<a href="{$cmsroot}">首页</a> ->
+			投票结果
+		</span>
+	</div>
+	
+	<div class="book_vote">
+		<h2>投票主题：{$vote.subject}</h2>
+		<div class="vote_desc">投票描述：{$vote.description}</div>
+		<div class="vote_desc">投票结果：共 {$vote.vote_num} 票</div>
+		<form action="#" method="post">
+		<volist name="list" id="item">
+			<p>{$i}. {$item.name} {$item.state} 票</p>
+		</volist>
+		</form>
+	</div>
+</div>
+<!--end main-->
+
+<!-- site_footer -->
+{$footer}
+</body>
+</html>

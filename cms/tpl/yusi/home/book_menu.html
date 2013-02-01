@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{$book.book_name} - {&system.site_name}</title>
+        <meta name="keywords" content="{&system.metakeywords}" />
+        <meta name="description" content="{&system.metadescription}" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/common.css" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/contentspage.css"/>
+        <script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+        <script type="text/javascript" src="{$tpldir}js/global.js"></script>
+    </head>
+
+    <body>
+        {$header}
+
+        <!--目录部分开始-->
+        <div class="zdh">
+            <div class="zdh_left">
+                <a href="{$cmsroot}">{&system.site_index}</a> &gt;
+                <a href="{:BU($book,'lists')}">{$book.sort_name}</a> &gt;
+                <a href="{:BU($book,'index')}"><strong>{$book.book_name}</strong></a>
+                <font color=#999999>(书号{$book.book_id})</font>
+            </div>
+        </div>
+
+        <div class="contents_body">
+            <div class="title">{$book.book_name}</div>
+            <div class="contents_body_nr">
+                <div class="contents_body_nr_01">
+                    作者：{$book.author}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    最新更新：<a href="{:BU($book, 'read')}">{$book.last_chapter}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {$book.last_update|date="Y-m-d H:i:s",###}
+                </div>
+                <div class="space03">&nbsp;</div>
+                <div class="contents_body_nr_02">                    
+                    <div class="biaoti">作品相关</div>
+                    <div class="space03">&nbsp;</div>
+                    <div>{$book.introduce|nl2br}</div>
+                    <div class="space03">&nbsp;</div>
+
+                    <volist name="volume" id="vo">
+                        <div class="biaoti">
+                                {$vo.chapter_name}<if condition="($vo.chapter_id gt 0) AND (C('book.read_volume') eq 1)">[ <a href="{:BU($book, 'read', $vo)}">分卷阅读</a> ]</if>
+                        </div>
+                        <div class="contents_body_nr_02">
+                            <ul>
+                                <volist name="chapter[$vo[chapter_id]]" id="ch">
+                                    <li class="s{$i%3}"><a href="{:BU($book, 'read', $ch)}" title="字数：{$ch.chapter_size}">{$ch.chapter_name}</a></li>
+                                </volist>
+                            </ul>
+                        </div>
+                    </volist>
+                </div>
+                <div class="space03">&nbsp;</div>
+            </div>
+        </div>
+        <!--目录部分结束 -->
+
+        <div class="space01">&nbsp;</div>
+        <!--广告02开始-->
+        <!--广告02结束-->
+        <div class="space01">&nbsp;</div>
+
+        <!-- 友情链接 -->
+        <div class="layerout">
+            <div class="main_yqlj">
+                <div class="main_yqlj_title"><img src="{$tpldir}images/green_12.gif" /></div>
+                <div class="main_yqlj_nr">
+                    <div class="yqljnr">
+                        <table class="ibluelink" cellspacing="5" cellpadding="0" width="100%" border="0">
+                            <tbody>
+                                &nbsp;|&nbsp;&nbsp;
+                            <volist name="links" id="item">
+                                <a href="{$item.siteurl}" target="_blank" title="{$item.siteinstro}">{$item.sitename}</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                            </volist>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space01">&nbsp;</div>
+        </div>
+
+        {$footer}
+    </body>
+</html>

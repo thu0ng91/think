@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>{$title}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+        <script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+    </head>
+    <body>
+        <div id="rightTop">
+            <ul class="subnav">
+                <li><a href="?s=admin/msg/add" class="btn1">添加</a></li>
+                <li><a href="?s=admin/msg/show" class="btn1">管理</a></li>
+            </ul>
+        </div>
+        <div class="mrightTop">
+            <ul class="set_menu" style="padding-top:6px;">
+                <li><a href="javascript:;" res="private" class="btn1">个人消息</a></li>
+                <li><a href="javascript:;" res="global" class="btn1">群发消息</a></li>
+            </ul>
+        </div>
+
+        <div class="info" id="msg_private" style="display:none">
+            <p/><p style="font-weight: bold;"><span>编辑个人信息</span></p>
+            <form action="?s=admin/msg/do_add_private" method="post">
+                <p><label>短信标题：</label><input type="text" name="msg_title"/></p>
+                <p><label>接收人ID：</label><input type="text" name="msg_to"/></p>
+                <p><label>回复内容：</label><textarea name="msg_content" rows="6" cols="20"></textarea></p>
+                <p class="submit">
+                    <input type="submit" value="发送" class="formbtn" onclick="return confirm('确认发送吗?')" />
+                    <input type="button" value="返回" class="formbtn" onclick="javascript:history.go(-1);" />
+                </p>
+            </form>
+        </div>
+
+        <div class="info" id="msg_global" style="display:none">
+            <p/><p style="font-weight: bold;"><span>编辑群发信息</span></p>
+            <form action="?s=admin/msg/do_add_global" method="post">
+                <p><label>短信标题：</label><input type="text" name="msg_title"/></p>
+                <p>
+                    <label>群发消息组：</label>
+                    <volist name="grouplist" id="group">
+                        <input type="checkbox" class="checkitem" name="group_id[]" value="{$group.id}" />&nbsp;{$group.group_name}&nbsp;&nbsp;&nbsp;
+                    </volist>
+                </p>
+                <p><label>回复内容：</label><textarea name="msg_content" rows="6" cols="20"></textarea></p>
+                <p class="submit">
+                    <input type="submit" value="发送" class="formbtn" onclick="return confirm('确认发送吗?')" />
+                    <input type="button" value="返回" class="formbtn" onclick="javascript:history.go(-1);" />
+                </p>
+            </form>
+        </div>
+
+        <script>
+            $(function(){
+                $(".set_menu li a").click(function(){
+                    $('.info').css('display', 'none');
+                    $(".set_menu li a").removeClass('selectone');
+                    $(this).addClass('selectone');
+                    $('#msg_'+$(this).attr('res')).css('display', 'block');
+                });
+            });
+        </script>
+
+    </body>
+</html>

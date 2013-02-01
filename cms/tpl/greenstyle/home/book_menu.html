@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$book.book_name} - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/index.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+<script type="text/javascript" src="{$tpldir}js/index.js"></script>
+</head>
+
+<body>
+<!-- site_header -->
+{$header}
+
+<!-- =searchbar= -->
+<div id="searchbar">
+<div class="inner">
+
+  <ul>
+  <form name="form" method="get" target="_blank" action="#" onsubmit="return do_search();">
+    <li class="bt">小说搜索</li>
+    <li class="input">
+      <input name="searchkey" id="skw" value="请输入书名进行搜索" style="font-size: 12px; color: rgb(51, 153, 0);" onblur="javascript:if(document.getElementById('skw').value=='') document.getElementById('skw').value='请输入书名进行搜索'" onfocus="javascript:if(document.getElementById('skw').value=='请输入书名进行搜索') document.getElementById('skw').value=''" type="text">
+    </li>
+    <li class="select">
+      <select name="searchtype" id="searchtype">
+		  <option selected="selected" value="articlename">书 名</option>
+      </select>
+    </li>
+    <li class="btn">
+        <input name="action" value="login" type="hidden">
+      <input name="input2" value="搜索" onclick="javascript:if(document.getElementById('skw').value=='请输入书名进行搜索') document.getElementById('skw').value=''" type="submit">
+    </li>
+</form>
+  </ul>
+  <div class="tag"> 热门小说：
+  <volist name="11,6,0" id="book">
+  <a target="_blank" href="{:BU($book, 'index')}" title="{$book.book_name}">{$book.book_name}</a> 
+  </volist>
+
+  </div>
+
+  </div>
+</div>
+
+<!--main-->
+<div class="wrapper">
+	<!--recommend-->
+	<div class="site_nav">
+		<span class="nav">
+			<a href="{$cmsroot}">{&system.site_index}</a> ->
+			<a href="{:BU($book, 'lists')}">{$book.sort_name}</a> ->
+			<a href="{:BU($book, 'index')}">{$book.book_name}</a> ->
+			章节列表
+		</span>
+	</div>
+	<!--end recommend-->
+
+	<h2>{$book.book_name}最新章节<if condition="C('book.read_full') eq 1">（<a href="{:BU($book, 'full')}">全文阅读</a>）</if></h2>
+    <div class="chapter_list">
+   	<volist name="volume" id="vo">
+   		<div class="volume">{$vo.chapter_name}
+    	<if condition="($vo.chapter_id gt 0) AND (C('book.read_volume') eq 1)">
+    	（<a href="{:BU($book, 'read', $vo)}">分卷阅读</a>）
+    	</if>
+    	</div>
+        <div class="list">  
+            <volist name="chapter[$vo[chapter_id]]" id="ch">
+            <div class="chapter">
+                <a href="{:BU($book, 'read', $ch)}" title="字数：{$ch.chapter_size}">{$ch.chapter_name}</a>
+            </div>
+            </volist>
+            <div style="clear:both;"></div>
+        </div>
+	</volist>
+    <div style="clear:both;"></div>
+    </div>
+</div>
+<!--end main-->
+
+<!-- site_footer -->
+{$footer}
+</body>
+</html>

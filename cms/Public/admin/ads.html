@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+</head>
+
+<body>
+    <div id="rightTop">
+        <ul class="subnav">
+			<li><a href="?s=admin/ads/add" class="btn1">添加广告</a></li>
+			<li><a href="?s=admin/ads" class="btn1">管理广告</a></li>
+        </ul>
+    </div>
+    <div class="mrightTop">
+        <h3>广告调用方式：&lt;script type="text/javascript" src="__ROOT__/files/ads/广告编号.js"&gt;&lt;/script&gt;</h3>
+    </div>
+    <div class="tdare">
+        <table width="100%" cellpadding="0" cellspacing="0" border="1" class="dataTable">
+            <tr class="tatr1">
+                <th width="20" class="firstCell" align="left"></th>
+                <th width="8%" align="left">广告编号</th>
+                <th width="20%" align="left">广告名称</th>
+                <th width="15%" align="left">链接URL</th>
+                <th width="15%" align="left">广告大小</th>
+                <th width="8%" align="left">点击次数</th>
+                <th width="8%" align="left">广告状态</th>
+                <th align="left">操作</th>
+            </tr>
+            <volist name="list" id="item">
+                <tr class="tatr2">
+                    <td class="firstCell"><input type="checkbox" class="checkitem" name="id[]" value="{$item.aid}" /></td>
+                    <td>{$item.aid}</td>
+                    <td>{$item.name}</td>
+                    <td>{$item.url}</td>
+                    <td>{$item.width} * {$item.height}</td>
+                    <td>{$item.hit_num}</td>
+                    <td><if condition="$item.is_show eq 1">开启<else />关闭</if></td>
+                    <td>
+                    	<a href="?s=admin/ads/show/id/{$item.aid}/" target="_blank">预览</a>　
+                        <a href="?s=admin/ads/update/id/{$item.aid}/">编辑</a>　
+                        <a href="?s=admin/ads/delete/id/{$item.aid}/" onclick="return confirm('确认删除吗?')">删除</a>
+                    </td>
+                </tr>
+            </volist>
+            <tr>
+                <td colspan="4">{$page}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

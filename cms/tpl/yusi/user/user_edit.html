@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>个人信息 - {&system.site_name}</title>
+        <meta name="keywords" content="{&system.metakeywords}" />
+        <meta name="description" content="{&system.metadescription}" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/common.css" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/user.css" />
+        <script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+        <script type="text/javascript" src="{$tpldir}js/global.js"></script>
+    </head>
+
+    <body>
+        {$header}
+
+        <div class="user">
+            <!--左边部分-->
+            <div class="user_left">
+                <div class="user_left_title">其他功能</div>
+                <div class="user_left_nr">
+                    <div class="gyzz_02">
+                        <ul>
+                            <li>·<a href="?s=user/index" class="atuhuang12">我的资料</a></li>
+                            <li>·<a href="?s=user/user/update" class="atuhuang12">编辑信息</a></li>
+                            <li>·<a href="?s=user/favor" class="atuhuang12">我的收藏</a></li>
+                            <li>·<a href="?s=user/msg" class="atuhuang12">我的消息({$msg_unread})</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="space01">&nbsp;</div>
+            </div>
+
+            <!--右边部分-->
+            <div class="user_right">
+                <table align="center" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" class="borderTD" valign="top" width="23%">
+                                <table align="center" cellpadding="3" cellspacing="0" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <th background="{$tpldir}images/readpage_01.gif" height="24"><b class="heichu14">我的资料</b></th>
+                                        </tr>
+                                        <tr>
+                                            <td><label>帐号：</label><span class="huang12">{$user.user_name}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>真实姓名：</label><span class="huang12"><input type="text" name="real_name" value="{$info.real_name}" /></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>昵　称：</label><span class="huang12"><input type="text" name="nickname" value="{$user.nickname}" /></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>您的性别：</label><span class="huang12">
+                                                    <input type="radio" name="sex" value="0" checked="checked" /> 女 &nbsp;
+                                                    <input type="radio" name="sex" value="1" /> 男</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>您的QQ：</label><span class="huang12"><input type="text" name="qq" value="{$info.qq}" /></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>您的MSN：</label><span class="huang12"><input type="text" name="msn" value="{$info.msn}" /></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>您的生日：</label><span class="huang12"><input type="text" name="birthday" value="{$info.birthday}" /></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>您的地址：</label><span class="huang12"><input type="text" name="address" value="{$info.address}" /></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>修改密码：</label><span class="huang12"><input type="text" name="user_pwd" /><font color="#f0f">　如不需要修改密码，则留空</font></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>确认密码：</label><span class="huang12"><input type="text" name="user_dpwd" /></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="ue_submit"><input type="submit" value="保存" /></div></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="space01">&nbsp;</div>
+        </div>
+
+        <div class="space01">&nbsp;</div>
+
+        ${footer}
+        <script type="text/javascript">
+            $("input[name=sex][value={$info.sex}]").attr('checked', 'checked');
+        </script>
+    </body>
+</html>
+
+

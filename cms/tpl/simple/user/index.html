@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>个人中心 - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/user.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+<script type="text/javascript" src="{$tpldir}js/global.js"></script>
+</head>
+
+<body>
+<!--head-->
+<div id="head">
+	<ul>
+    	<li class="list_01">
+			
+    	</li>
+        <li class="list_02" id="user_info"></li>
+    </ul>
+</div>
+<!--end head-->
+
+<!--logo search-->
+<div id="logo_search">
+	<div id="logo">
+    	<a href="{$cmsroot}"><img src="{$tpldir}images/logo.jpg" alt="logo" /></a>
+    </div>
+    <div id="search">
+   		<form action="#" method="get" onsubmit="return do_search();">
+        	<select name="type">
+        		<option value="1">书名</option>
+            </select>
+            <input type="text" name="keyword" id="keyword" />
+            <input type="submit" value="搜&nbsp;&nbsp;索" class="submit" />
+        </form>
+    </div>
+    <div id="hot">
+    	
+    </div>
+</div>
+<!--end logo search-->
+
+<!--navigation-->
+<div id="nav">
+	<ul>
+    	<li><a href="{$cmsroot}">首页</a></li>
+	<volist name="book_sort" id="sort">
+		<li><a href="{:BU($sort, 'lists')}">{$sort.sort_name}</a></li>
+	</volist>
+		<li style="background:none;"><a href="{:BU(0, 'top')}">排行榜</a></li>
+    </ul>
+</div>
+<!--end navigation-->
+
+
+
+<!--main-->
+<div id="main">
+	<div class="user_left">
+		<ul>
+			<li><a href="?s=user/user">个人信息</a></li>
+			<li><a href="?s=user/favor">我的收藏夹</a></li>
+		</ul>
+	</div>
+	<div class="user_right">
+		<iframe frameborder="0" width="100%" height="500" id="workspace" src="?s=user/{$module}"></iframe>
+	</div>
+</div>
+<!--end main-->
+
+<!--footer-->
+<div id="footer">
+	<div id="foo_link">
+		<a href="#">首页</a>
+		<a href="#">联系我们</a>
+		<a href="#">网站统计</a>
+	</div>
+    <div id="foo_info">
+    	<span>Copyright@2010</span>
+    	<a href="#">电子书鸟站</a>
+    	<a href="#">Niaozhan.com</a>
+    	<span>all rights reserved</span>
+    	<span>沪ICP备000000000号</span>
+    </div>
+    <div id="foo_by">Powered by CMS(PHP)2.0</div>
+</div>
+<!--end footer-->
+
+<script type="text/javascript">
+	var baseurl = "{$cmsroot}";
+	$(".user_left ul li a").click(function(){
+		$("#workspace").attr("src", $(this).attr("href"));
+		return false;
+	});
+</script>
+</body>
+</html>

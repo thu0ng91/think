@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$book.book_name} - {$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+</head>
+
+<body>
+	<div id="rightTop">
+	    <ul class="subnav">
+			<li><a href="?s=admin/chapter/add/book_id/{$book.book_id}" class="btn1">添加章节</a></li>
+			<li><a href="?s=admin/chapter/index/book_id/{$book.book_id}" class="btn1">章节列表</a></li>
+			<li><a href="?s=admin/book/update/book_id/{$book.book_id}" class="btn1">书籍修改</a></li>
+	    </ul>
+    </div>
+    <div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="info">
+		<form method="post" action="?s=admin/chapter/{$action}">
+			<input type="hidden" name="book_id" value="{$book.book_id}" />
+			<input type="hidden" name="chapter_id" value="{$chapter.chapter_id}" />
+			<p><label>书名：</label>{$book.book_name}</p>
+			<p><label>卷名：</label>
+				<select name="volume_id" id="volume_id">
+					<option value="0"></option>
+				<volist name="list" id="item">
+					<option value="{$item.chapter_id}">{$item.chapter_name}</option>
+				</volist>
+				</select>
+			</p>
+			<p><label>章节标题：</label>
+				<input type="text" name="chapter_name" value="{$chapter.chapter_name}" class="normal" />
+			</p>
+			<p><label>章节类型：</label>
+				<input type="radio" name="chapter_type" value="0" checked="checked" /> 普通章节
+				<input type="radio" name="chapter_type" value="1" /> 分卷名
+			</p>
+			<p><label>章节内容：</label>
+				<textarea name="chapter_detail" style="width:600px;height:300px;">{$chapter.chapter_detail}</textarea>
+			</p>
+			<p><label>存为草稿：</label>
+				<input type="radio" name="is_draft" value="1" /> 是
+				<input type="radio" name="is_draft" value="0" checked="checked" /> 否
+			</p>
+			<p class="submit"><input type="submit" value="提交" /></p>
+		</form>
+	</div>
+	<script>
+		$("#volume_id").val({$chapter.volume_id});
+		$("input[name=chapter_type][value={$chapter.chapter_type}]").attr('checked', 'checked');
+		$("input[name=is_draft][value={$chapter.is_draft}]").attr('checked', 'checked');
+	</script>
+</body>
+</html>

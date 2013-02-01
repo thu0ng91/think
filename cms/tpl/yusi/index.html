@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{&system.site_name}</title>
+        <meta name="keywords" content="{&system.metakeywords}" />
+        <meta name="description" content="{&system.metadescription}" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/common.css" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/mainpage.css"/>
+        <script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+        <script type="text/javascript" src="{$tpldir}js/common.js"></script>
+        <script type="text/javascript" src="{$tpldir}js/global.js"></script>
+    </head>
+
+    <body>
+        {$header}
+
+        <!--第一屏开始-->
+        <div class="layerout">
+            <!--左边部分-->
+            <div class="mainbody_left">
+                <!-- 总推荐榜 -->
+                <div class="mainbody_left_top">强力推荐</div> 
+                <div class="mainbody_left_bottom">
+                    <div class="space01">&nbsp;</div>
+                    <volist name="21,15,0" id="item">
+                        <ul class="paihanglb02">
+                            <li class="hui2"><a href="{:BU($item,'lists')}">[{$item.sort_name}]</a></li>
+                            <li class="blue3"><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+                        </ul>
+                    </volist>
+                </div>
+            </div>
+
+            <div class="space02">&nbsp;</div>
+
+            <!--中间部分--> <!-- 后台编辑推荐 -->
+            <div class="mainbody_middle">
+                <div class="mainbody_middle_nr">
+                    <div class="mainbody_middle_nr_02">
+                        <div class="title">
+                            <div class="left">编辑推荐</div>
+                        </div>
+                        <div class=vzp>
+                            <div class=vzp_01>
+                                <div class="space01">&nbsp;</div>
+                                <volist name="99,2,3" id="item">
+                                    <div class="vzp_01_<if condition="$i%2 eq 1">left<else />right</if>">
+                                        <div class="vzpnr_one">
+                                            <div class="vzpnr_one_left"><a href="{:BU($item,'index')}"><img src="{$item.image_url}" /></a></div>
+                                            <div class="vzpnr_one_right">
+                                                <div class="vzpnr_one_right_01"><a href="{:BU($item,'index')}">{$item.book_name}</a></div>
+                                                <ul class="vzpnr_one_right_02">
+                                                    <li class="vleft">作品类型：</li>
+                                                    <li class="vright">{$item.sort_name}</li>
+                                                </ul>
+                                                <ul class="vzpnr_one_right_02">
+                                                    <li class="vleft">作　　者：</li>
+                                                    <li class="vright">{$item.author}</li>
+                                                </ul>
+                                                <ul class="vzpnr_one_right_02">
+                                                    <li class="vleft">最后更新：</li>
+                                                    <li class="vright">{$item.last_update|date="Y-m-d",###}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="vzpnr_break"></div>
+                                        <div class="vzpnr_two">
+                                            <div class="vzpnr_twonr">
+                                                <a href="{:BU($item,'index')}">{$item.introduce}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </volist>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space02">&nbsp;</div>
+
+            <!--右边部分-->
+            <div class="mainbody_right">
+                <div class="mainbody_right_top">总点击榜</div>
+                <div class="mainbody_right_bottom">
+                    <div class="mainbody_right_bottom_gg_02">
+                        <volist name="11,15,0" id="item">
+                            <ul class="paihanglb02">
+                                <li class="hui2"><a href="{:BU($item,'lists')}">[{$item.sort_name}]</a></li>
+                                <li><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+                            </ul>
+                        </volist>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space01">&nbsp;</div>
+        <!-- 广告段2开始 -->
+        <div class="ads">
+            <div class="ads_left"><script type="text/javascript" src="/cms/files/ads/1.js"></script></div>
+            <div class="ads_right"><script type="text/javascript" src="/cms/files/ads/3.js"></script></div>
+        </div>
+        <!-- 广告段2结束 -->
+        <div class="space01">&nbsp;</div>
+
+        <!--第二屏开始-->
+        <div class="layerout">
+            <!--左边部分-->
+            <div class="mainbody_left">
+                <div class="mainbody_left_top">周推荐榜</div>
+                <div class="mainbody_left_bottom">
+                    <div class="space01">&nbsp;</div>
+                    <volist name="13,15,0" id="item">
+                        <ul class="paihanglb02">
+                            <li class="hui2"><a href="{:BU($item,'lists')}">[{$item.sort_name}]</a></li>
+                            <li><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+                        </ul>
+                    </volist>
+                </div>
+            </div>
+
+            <div class="space02">&nbsp;</div>
+
+            <!--中间部分-->
+            <div class="mainbody_middle">
+                <div class="mainbody_middle_nr">
+                    <div class="mainbody_middle_nr_02">
+                        <div class="title">
+                            <div class="left">最新更新作品</div>
+                        </div>
+                        <div class=nr>
+                            <div class="space01">&nbsp;</div>
+                            <volist name="34,15,0" id="item">
+                                <div>
+                                    <ul class=screenfivem_zxgx>
+                                        <li class=screenfivem_zxgx01a><a href="{:BU($item,'lists')}">[{$item.sort_name}]</a></li>
+                                        <li class="screenfivem_zxgx02">
+                                            <a href="{:BU($item,'index')}">{$item.book_name}</a>
+                                            <if condition="$item[last_chapterid] neq 0"><a href="{:BU($item,'read')}">({$item.last_chapter})</a></if>
+                                        </li>
+                                        <li class=screenfivem_zxgx03>{$item.author}</li>
+                                        <li class=screenfivem_zxgx04>{$item.last_update|date="m-d",###}</li>
+                                    </ul>
+                                </div>
+                            </volist>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space02">&nbsp;</div>
+
+            <!--右边部分-->
+            <div class="mainbody_right">
+                <div class="mainbody_right_top">周点击榜</div>
+                <div class="mainbody_right_bottom">
+                    <div class="mainbody_right_bottom_gg_02">
+                        <volist name="13,15,0" id="item">
+                            <ul class="paihanglb02">
+                                <li class="hui2"><a href="{:BU($item,'lists')}">[{$item.sort_name}]</a></li>
+                                <li><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+                            </ul>
+                        </volist>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space01">&nbsp;</div>
+        <div class="space01">&nbsp;</div>
+
+        <!--第三屏开始-->
+        <div class="layerout">
+            <!--左边部分-->
+            <div class="mainbody_left">
+                <div class="mainbody_left_top">日点击榜</div>
+                <div class="mainbody_left_bottom">
+                    <div class="space01">&nbsp;</div>
+                    <volist name="24,15,0" id="item">
+                        <ul class="paihanglb02">
+                            <li class="hui2"><a href="{:BU($item,'lists')}">[{$item.sort_name}]</a></li>
+                            <li><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+                        </ul>
+                    </volist>
+                </div>
+            </div>
+
+            <div class="space02">&nbsp;</div>
+
+            <!--中间部分-->
+            <div class="mainbody_middle">
+                <div class="mainbody_middle_nr">
+                    <div class="mainbody_middle_nr_02">
+                        <div class="title">
+                            <div class="left">全本精选</div>
+                        </div>
+                        <div class="vzp">
+                            <!--全本精选开始-->
+                            <ul class="vzp_03">
+                                <volist name="41,12,0" id="item">
+                                    <li class="zzpnr">[{$item.sort_name}] <a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+                                </volist>
+                            </ul>
+                            <!--全本精选结束-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space02">&nbsp;</div>
+
+            <!--右边部分-->
+            <div class="mainbody_right">
+                <div class="mainbody_right_top">今日更新</div>
+                <div class="mainbody_right_bottom">
+                    <div class="mainbody_right_bottom_gg_02">
+                        <div class="space01">&nbsp;</div>
+                        <volist name="42,15,0" id="item">
+                            <ul class="paihanglb02">
+                                <li class="hui2"><a href="{:BU($item,'lists')}">[{$item.sort_name}]</a></li>
+                                <li><a href="{:BU($item,'index')}">{$item.book_name}</a></li>
+                            </ul>
+                        </volist>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space01">&nbsp;</div>
+
+        <!-- 第四屏开始 -->
+        <div class="layerout">
+            <!--有情链接-->
+            <div class="main_yqlj">
+                <div class="main_yqlj_title"><img src="{$tpldir}images/green_12.gif" /></div>
+                <div class="main_yqlj_nr">
+                    <div class="yqljnr">
+                        <table class="ibluelink" cellspacing="5" cellpadding="0" width="100%" border="0">
+                            <tbody>
+                                &nbsp;|&nbsp;&nbsp;
+                                <volist name="links" id="item">
+                                    <a href="{$item.siteurl}" target="_blank" title="{$item.siteinstro}">{$item.sitename}</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                </volist>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space01">&nbsp;</div>
+        </div>
+
+        {$footer}
+    </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title} - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/index.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+<script type="text/javascript" src="{$tpldir}js/index.js"></script>
+<script LANGUAGE="JavaScript">
+ //重载验证码
+function freshVerify() {
+   document.getElementById('verifyImg').src='{$cmsroot}index.php?s=login/check_code/'+Math.random();
+}
+</script>
+</head>
+
+<body>
+<!-- site_header -->
+{$header}
+
+<!-- =searchbar= -->
+<div id="searchbar">
+<div class="inner">
+
+  <ul>
+  <form name="form" method="get" target="_blank" action="#" onsubmit="return do_search();">
+    <li class="bt">小说搜索</li>
+    <li class="input">
+      <input name="searchkey" id="skw" value="请输入书名进行搜索" style="font-size: 12px; color: rgb(51, 153, 0);" onblur="javascript:if(document.getElementById('skw').value=='') document.getElementById('skw').value='请输入书名进行搜索'" onfocus="javascript:if(document.getElementById('skw').value=='请输入书名进行搜索') document.getElementById('skw').value=''" type="text">
+    </li>
+    <li class="select">
+      <select name="searchtype" id="searchtype">
+		  <option selected="selected" value="articlename">书 名</option>
+      </select>
+    </li>
+    <li class="btn">
+        <input name="action" value="login" type="hidden">
+      <input name="input2" value="搜索" onclick="javascript:if(document.getElementById('skw').value=='请输入书名进行搜索') document.getElementById('skw').value=''" type="submit">
+    </li>
+</form>
+  </ul>
+  <div class="tag"> 热门小说：
+  <volist name="11,6,0" id="book1">
+  <a target="_blank" href="{:BU($book1, 'index')}" title="{$book1.book_name}">{$book1.book_name}</a> 
+  </volist>
+
+  </div>
+
+  </div>
+</div>
+
+<div class="wrapper">
+    <!--main-->
+    <div class="main">
+    	<div class="form">
+            <div class="form_title"><h2>用户注册</h2></div>
+            <div class="form_content">
+                <form action="{$cmsroot}index.php?s=register/register" method="post" id="user_login" onsubmit="return do_register();">
+                    <p>
+                        <label>账&nbsp;&nbsp;号：</label>
+                    	<input type="text" name="registe_name" id="registe_name" class="inputtext" />
+                    </p>
+                    <div style="clear:both;"></div>
+                    <p>
+                    	<label>密&nbsp;&nbsp;码：</label>
+                        <input type="password" name="registe_pwd" id="registe_pwd1" class="inputtext" />
+                    </p>
+                    <div style="clear:both;"></div>
+                    <p>
+                        <label>重复密码：</label>
+                        <input type="password" name="registe_verify_pwd" id="registe_pwd2" class="inputtext" />
+                    </p>
+                    <div style="clear:both;"></div>
+                    <p>
+                        <label>注册邮箱：</label>
+                        <input type="text" name="registe_email" id="registe_email" class="inputtext" />
+                    </p>
+                    <div style="clear:both;"></div>
+                    <p>
+                    	<label>验 证 码：</label>
+                        <input type="text" name="check_code" id="check_code" maxLength="4" class="inputtext2"/>  
+                       	<img style="cursor:pointer" title="刷新验证码" src="{$cmsroot}index.php?s=login/check_code" id="verifyImg" onclick="freshVerify()"/></p>
+                    <div style="clear:both;"></div> 
+                  	<p class="login_info"></p>
+                    <div class="submitdiv"><input type="submit" value="注册" /></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--end main-->
+</div>
+
+<!-- site_footer -->
+{$footer}
+</body>
+</html>

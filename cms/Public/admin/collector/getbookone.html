@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>单篇采集</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/collector.css" />
+    <script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-ui-1.8.6.custom.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/collector.js"></script>
+  </head>
+  <body>
+    <div id="rightTop">
+        <ul class="subnav">
+            <li><a href="javascript:window.history.back(-1);" class="btn3">采集器列表</a></li>
+        </ul>
+    </div>
+    <div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="main">
+        <div class="collector">
+          <div id="ct">
+              <p><label>电子书地址列表：</label><textarea cols="80" rows="3" class="add" id="book_url_list"></textarea></p>
+              <p style="color:#ff5400;">请输入小说URL列表，每条URL之间用“,”或换行分隔开</p>
+              <input type="hidden" id="collector_id" value="{$collector_id}">
+          </div>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tbody>
+                <tr id="runCollector" style="display: none;">
+                    <td colspan="5">
+                        <div class="st" title="采集器正在执行中...">
+                            <div class="title">采集器正在执行</div>
+                            <div id="progressbar"></div>
+                            <p><span id="showSpeed" style="display:none;">正在采集...</span></p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+       </div>
+        <div class="control">
+            <button id="runButton" onclick="checkRun();" class="formbtn4">开始采集</button>
+            <button id="reButton" onclick="window.location.href = '?s=admin/collector/listcollector'" class="formbtn4">返回列表</button>
+            <button id="stopButton" style="display: none;" onclick="window.location.reload();" class="formbtn4">停止采集</button>
+        </div>
+    </div>
+  </body>
+</html>
+<script type="text/javascript">
+
+    // 鼠标经过颜色变化
+    /*
+    var curColor = $(".add").css('background-color');
+    $(".add").mouseover(function(){ $(this).css('background-color', '#bbdbf1');});
+    $(".add").mouseout(function(){ $(this).css('background-color', curColor);});
+    */
+
+    function checkRun(){
+        var e = $("#book_url_list").val();
+        if(e == ""){
+            alert("请输入要采集的书籍URL列表");
+        }else{
+           runCollector();
+        }
+    }
+    // 全局变量定义
+    var timeHandle = "";
+    var strBookId = "";
+    var strChapterId = "";
+    var collectorId = $("#collector_id").val();
+    var curValue = "";
+    var nTest = 0;
+
+    /*
+     * 执行采集过程,整个过程用AJAX,用进度条实现与用户的交互
+     */
+    function runCollector(){
+        var book_url_list = $("#book_url_list").val();
+        // 显示进度条
+        $("#ct").hide();
+        $("#runButton").hide();
+        $("#reButton").hide();
+        $("#stopButton").show();
+        $("#runCollector").fadeIn();
+
+        $("#progressbar").progressbar({value: 0});
+
+        // 设置守护进程,监视整个采集过程
+        timeHandle = setInterval("setKeepWatch()",1000);
+        // 开始采集过程
+        // 分析当前填入的URL,把URL拆成数组
+        $("#showSpeed").html("正在分析URL");
+        $("#showSpeed").show();
+
+        book_url_list = book_url_list.replace(/\n/g,",");
+        book_url_list = book_url_list.replace(/,,/g,",");
+        var book_url_arr = book_url_list.split(",");
+        var countTemp = book_url_arr.length;
+        var strTemp = "";
+        for(var i = 0; i < countTemp; i++){
+            strTemp = book_url_arr[i];
+            if(strTemp != ''){
+                setFunction1(i + 1,strTemp,countTemp);
+            }
+        }
+    }
+
+    /**
+     * 采集书信息
+     * @param cId 采集器ID
+     * @param lId 书目列表ID
+     * @param sum 要采集的书目列表总数
+     */
+    function getBookOne(bUrl,sum){
+        var book_url = bUrl;
+        var sValue = 1 / sum * 20;
+        var url = "?s=admin/collector/getbookonecgi";
+        $.ajaxSetup({async: false});
+        $.get(
+              url,
+              {
+                  collector_id : collectorId,
+                  book_url : book_url
+              },
+              function(e){
+                  $("#progressbar").progressbar("value",$("#progressbar").progressbar("value") + sValue);
+                  $("#showSpeed").html("正在采集书电子书信息...(" + Math.round($("#progressbar").progressbar("value")) + "%)");
+                  strBookId += e;
+              }
+        );
+    }
+
+    /**
+     * 采集章节列表
+     * @param cId 采集器ID
+     * @param bId 电子书ID
+     * @param sum 要采集的电子书总数
+     */
+    function getBookChapter(bId,sum){
+        var book_id = bId;
+        var sValue = 1 / sum * 30;
+        var url = "?s=admin/collector/getbookchapter";
+        $.ajaxSetup({async: false});
+        $.get(
+              url,
+              {
+                  collector_id : collectorId,
+                  book_id : book_id
+              },
+              function(e){
+                  $("#progressbar").progressbar("value",$("#progressbar").progressbar("value") + sValue);
+                  $("#showSpeed").html("正在采集章节信息...(" + Math.round($("#progressbar").progressbar("value")) + "%)");
+                  strChapterId += e;
+              }
+        );
+    }
+
+    /**
+     * 采集文章内容
+     * @param cId 采集器ID
+     * @param bId 章节ID
+     * @param sum 要采集的章节的总数
+     */
+    function getBookContent(pId,sum){
+        var chapter_id = pId;
+        var sValue = 1 / sum * 50;
+        var url = "?s=admin/collector/getbookcontent";
+        $.ajaxSetup({async: false});
+        $.get(
+              url,
+              {
+                  collector_id : collectorId,
+                  chapter_id : chapter_id
+              },
+              function(e){
+                  $("#progressbar").progressbar("value",$("#progressbar").progressbar("value") + sValue);
+                  $("#showSpeed").html("正在采集文章内容...(" + Math.round($("#progressbar").progressbar("value")) + "%)");
+              }
+        );
+    }
+
+    /**
+     * 进度条守护线程，控制进度条的状态和任务的分配
+     */
+    function setKeepWatch(){
+        var tempValue = $("#progressbar").progressbar("value");
+
+        // 采集器执行过程检测
+        if(tempValue == curValue){
+            nTest += 1;
+        }else{
+            nTest = 0;
+        }
+
+        if(nTest > 100){
+            if(Math.round(tempValue) == 0){
+                $("#showSpeed").html("<font color='red'>输入URL有误，请检查之。。。</font>");
+            }else if(Math.round(tempValue) == 20){
+                $("#showSpeed").html("<font color='red'>章节采集规则有误，请检查之。。。</font>");
+            }else if(Math.round(tempValue) == 50){
+                $("#showSpeed").html("<font color='red'>章节内容规则有误，请检查之。。。</font>");
+            }else{
+                $("#showSpeed").html("<font color='red'>出现未知错误，建议先清空临时表再采集</font>");
+            }
+        }
+
+        // 进度条进行完成，任务完成，弹出完成对话框
+        if(tempValue == curValue && Math.round(tempValue) == 100){
+            if(confirm("采集器执行完成,是否跳转到临时库?") == true){
+                window.location.href = "?s=admin/temp/tempmanage";
+            }else{
+                window.location.reload();
+            }
+        }
+
+        // 进度条窗口关闭，重新刷新页面
+        if($("#runCollector").dialog("isOpen") == false){
+            window.location.reload();
+        }
+
+        // 开始执行采集章节列表的任务
+        if(tempValue == curValue && Math.round(tempValue) == 20){
+            var strBookIdarr = strBookId.split(",");
+            var countTemp = strBookIdarr.length - 1;
+            for(var i = 0; i < countTemp; i++){
+                strTemp = strBookIdarr[i];
+                setFunction2(i + 1,strTemp,countTemp);
+            }
+        }
+
+        // 开始执行采集章节内容的任务
+        if(tempValue == curValue && Math.round(tempValue) == 50){
+            var strChapterIdarr = strChapterId.split(",");
+            var countTemp = strChapterIdarr.length - 1;
+            for(var i = 0; i < countTemp; i++){
+                strTemp = strChapterIdarr[i];
+                setFunction3(i + 1,strTemp,countTemp);
+            }
+        }
+        curValue = $("#progressbar").progressbar("value");
+    }
+
+    // 以下是为了兼容IE的同步AJAX会卡死，用的线程模拟
+    function setFunction1(i,strTemp,countTemp){
+        setTimeout(function(){getBookOne(strTemp,countTemp);},i * 500);
+    }
+    function setFunction2(i,strTemp,countTemp){
+        setTimeout(function(){getBookChapter(strTemp,countTemp);},i * 500);
+    }
+    function setFunction3(i,strTemp,countTemp){
+      　setTimeout(function(){getBookContent(strTemp,countTemp);},i * 800);
+    }
+
+</script>

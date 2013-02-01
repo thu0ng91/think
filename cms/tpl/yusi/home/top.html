@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>排行榜 - {&system.site_name}</title>
+        <meta name="keywords" content="{&system.metakeywords}" />
+        <meta name="description" content="{&system.metadescription}" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/common.css" />
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/top.css" />
+        <script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+        <script type="text/javascript" src="{$tpldir}js/global.js"></script>
+    </head>
+
+    <body>
+        {$header}
+
+        <!--第一屏开始-->
+        <div class="top">
+            <div class="top_01"></div>
+            <div class="top_01">
+                <div class="top_01_fla"><a href="{:BU(11, 'top')}" target="_top">总点击榜</a></div>
+                <div class="top_01_fla"><a href="{:BU(12, 'top')}"> 月点击榜</a></div>
+                <div class="top_01_fla"><a href="{:BU(13, 'top')}"> 周点击榜</a></div>
+                <div class="top_01_fla"><a href="{:BU(21, 'top')}"> 总推荐榜</a></div>
+                <div class="top_01_fla"><a href="{:BU(22, 'top')}"> 月推荐榜</a></div>
+                <div class="top_01_fla"><a href="{:BU(23, 'top')}"> 周推荐榜</a></div>
+                <div class="top_01_fla"><a href="{:BU(32, 'top')}"> 总收藏榜</a></div>
+                <div class="top_01_fla"><a href="{:BU(31, 'top')}">总字数</a></div>
+                <div class="top_01_fla"><a href="{:BU(41, 'top')}">全本榜</a></div>
+                <div class="top_01_fla"><a href="{:BU(33, 'top')}">新书榜</a></div>
+            </div>
+            <div class="top_02">
+                <ul class="han">
+                    <li class="jg01">序号</li>
+                    <li class="jg02">类别</li>
+                    <li class="jg03"><div>书名</div></li>
+                    <li class="jg04">更新日期</li>
+                    <li class="jg05">最新章节</li>
+                    <li class="jg06">作者</li>
+                    <li class="jg07">{$type_name}</li>
+                    <li class="jg08">状态</li>
+                </ul>
+            </div>
+            <volist name="list" id="item">
+                <div class="top_0<if condition="$i%2 eq 1">1<else/>2</if>">
+                    <ul class="han">
+                        <li class="jg01">{$i|zeroFill=###,2}</li>
+                        <li class="jg02"><a href="{:BU($item, 'lists')}">{$item.sort_name}</a></li>
+                        <li class="jg03"><a href="{:BU($item, 'index')}">{$item.book_name}</a></li>
+                        <li class="jg04">{$item.last_update|date="Y-m-d",###}</li>
+                        <li class="jg05"><a href="{:BU($item, 'read')}">{$item.last_chapter}</a></li>
+                        <li class="jg06">{$item.author}</li>
+                        <li class="jg07"><if condition="$type_key eq 'post_time'">{$item.post_time|date="Y-m-d",###}<else />{$item.$type_key}</if></li>
+                        <li class="jg08"><if condition="$item.is_full eq 1">已完本<else />连载中</if></li>
+                    </ul>
+                </div>
+            </volist>
+        </div>
+
+        <div class="space01">&nbsp;</div>
+
+        {$footer}
+    </body>
+</html>

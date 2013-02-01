@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<style type="text/css">
+<!--
+body {background: #fcfdff}
+-->
+</style>
+</head>
+
+<body>
+    <div id="rightTop">
+        <ul class="subnav">
+            <li><a href="?s=admin/links/add" class="btn1">添加</a></li>
+            <li><a href="?s=admin/links" class="btn1">管理</a></li>
+        </ul>
+    </div>
+    <div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="tdare">
+        <table width="100%" cellpadding="0" cellspacing="0" border="1" class="dataTable">
+            <tr class="tatr1">
+                <th width="20" class="firstCell" align="left"></th>
+                <th width="20%" align="left">网站名称</th>
+                <th width="15%" align="left">网址</th>
+                <th width="15%" align="left">审核状态</th>
+                <th align="left">操作</th>
+            </tr>
+            <volist name="list" id="links">
+                <tr class="tatr2">
+                    <td  width="20" class="firstCell"><input type="checkbox" class="checkitem" value="{$links.id}" /></td>
+                    <td><a href="?s=admin/links/update/id/{$links.id}/" target="_blank">{$links.sitename}</a></td>
+                    <td>{$links.siteurl}</td>
+                    <td><eq name="links.status" value="0">不显示<else/>显示</eq></td>
+                    <td>
+                        <a href="?s=admin/links/update/id/{$links.id}/">编辑</a>
+                        <a href="?s=admin/links/delete/id/{$links.id}/" onclick="return confirm('确认删除吗?')">删除</a>
+                    </td>
+                </tr>
+            </volist>
+            <tr>
+                <td colspan="4">{$page}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

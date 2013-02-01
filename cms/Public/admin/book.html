@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/global.js"></script>
+</head>
+
+<body>
+	<div id="rightTop">
+	    <ul class="subnav">
+			<li><a href="?s=admin/book/add" class="btn1">添加书籍</a></li>
+			<li><a href="?s=admin/book" class="btn1">所有书籍</a></li>
+	    </ul>
+    </div>
+	<div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="tdare">
+        <table width="100%" cellpadding="0" cellspacing="0" border="1" class="dataTable">
+            <tr class="tatr1">
+                <th width="30" class="firstCell" align="left">
+                	<input type="checkbox" class="select_all" title="全选" />
+                </th>
+                <th width="60" align="left">编号</th>
+                <th width="20%" align="left">书名</th>
+                <th width="15%" align="left">作者</th>
+                <th width="140" align="left">加入时间</th>
+                <th width="80" align="left">已审核</th>
+                <th width="80" align="left">已显示</th>
+                <th width="50" align="left">删除</th>
+                <th width="100" align="left">编辑管理</th>
+                <th align="left">操作</th>
+            </tr>
+		<volist name="list" id="book">
+			<tr class="tatr2">
+				<td class="firstCell">
+					<input type="checkbox" name="id[]" value="{$book.book_id}" />
+				</td>
+				<td>{$book.book_id}</td>
+				<td><a href="?s=book/index/id/{$book.book_id}" target="_blank">{$book.book_name}</a></td>
+				<td>{$book.author}</td>
+				<td>{$book.post_time|date="Y-m-d H:i:s",###}</td>
+				<td class="td_flag"><if condition="$book.if_check eq 1">
+					<span class="s1">是　</span><a href="?s=admin/book/check/id/{$book.book_id}/value/0">取消</a><else />
+					<span class="s2">否　</span><a href="?s=admin/book/check/id/{$book.book_id}/value/1">审核</a></if>
+				</td>
+				<td class="td_flag"><if condition="$book.if_display eq 1">
+					<span class="s1">是　</span><a href="?s=admin/book/hide/id/{$book.book_id}/value/0">隐藏</a><else />
+					<span class="s2">否　</span><a href="?s=admin/book/hide/id/{$book.book_id}/value/1">显示</a></if>
+				</td>
+				<td class="td_flag">
+					<a href="?s=admin/book/delete/id/{$book.book_id}/" res="confirm">删除</a>
+				</td>
+				<td>
+					<a href="?s=admin/book/update/id/{$book.book_id}/">编辑</a>　
+					<a href="?s=admin/chapter/index/id/{$book.book_id}/">管理章节</a>
+				</td>
+				<td>
+					<a href="?s=admin/recommend/add/id/{$book.book_id}/">推荐</a>　
+					<a href="?s=admin/review/index/id/{$book.book_id}/">查看评论</a>
+				</td>
+			</tr>
+		</volist>
+			<tr>
+				<td class="firstCell">
+					<input type="checkbox" class="select_all" title="全选" />
+				</td>
+				<td>选中项：</td>
+				<td style="text-align:left" class="do_select">
+					<a href="?s=admin/book/check/value/1">审核</a> /
+					<a href="?s=admin/book/check/value/0">取消</a>　
+					<a href="?s=admin/book/hide/value/1">显示</a> /
+					<a href="?s=admin/book/hide/value/0">隐藏</a>　
+					<a href="?s=admin/book/delete" res="confirm">删除</a>
+				</td>
+				<td colspan="8" style="color:#f0f;text-align:left;">注意：删除书籍将同时删除所有的章节，若非必要请尽量用取消审核或隐藏来代替删除操作！</td>
+			</tr>
+			<tr>
+				<td colspan="4">&nbsp;</td>
+				<td colspan="8" style="text-align:left">{$page}</td>
+			</tr>
+		</table>
+	</div>
+	<script>select_all("id[]");</script>
+</body>
+</html>

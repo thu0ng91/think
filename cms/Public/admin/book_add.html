@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+</head>
+
+<body>
+	<div id="rightTop">
+	    <ul class="subnav">
+			<li><a href="?s=admin/book/add" class="btn1">添加书籍</a></li>
+			<li><a href="?s=admin/book" class="btn1">所有书籍</a></li>
+	    </ul>
+    </div>
+    <div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="info">
+		<form method="post" action="?s=admin/book/{$action}" enctype="multipart/form-data">
+			<input type="hidden" name="book_id" value="{$book.book_id}" />
+			<p><label>类别：</label>
+				<select name="sort_id" id="sort_id">
+				<volist name="book_sort" id="sort">
+					<option value="{$sort.sort_id}">{$sort.show_name}</option>
+				</volist>
+				</select>
+			</p>
+			<p><label>书名：</label>
+				<input type="text" name="book_name" value="{$book.book_name}" class="normal" />
+			</p>
+			<p><label>作者：</label>
+				<input type="text" name="author" value="{$book.author}" class="normal" />
+			</p>
+			<p><label>关键词：</label>
+				<input type="text" name="keywords" value="{$book.keywords}" class="normal" />
+			</p>
+			<p><label>书籍类型：</label>
+				<input type="radio" name="is_vip" value="0" checked="checked" /> 普通书籍
+				<input type="radio" name="is_vip" value="1" /> VIP书籍</p>
+			<p><label>授权状态：</label>
+				<input type="radio" name="is_power" value="1" /> 已授权　
+				<input type="radio" name="is_power" value="0" checked="checked" /> 暂未授权</p>
+			<p><label>首发状态：</label>
+				<input type="radio" name="is_first" value="1" /> 本站首发
+				<input type="radio" name="is_first" value="0" checked="checked" /> 他站首发</p>
+			<p><label>连载状态：</label>
+				<input type="radio" name="is_full" value="1" /> 已完本　
+				<input type="radio" name="is_full" value="0" checked="checked" /> 连载中　</p>
+			<p><label>封面图片：</label>
+				<input type="text" name="image_url" value="{$book.image_url}" class="pic" />
+				<input type="checkbox" name="down" value="1" /> 下载到本地
+			</p>
+			<p><label>&nbsp;</label>
+				<input type="file" name="upload" class="pic" />
+			</p>
+			<p><label>书籍简介：</label>
+				<textarea name="introduce" style="width:500px;height:200px;">{$book.introduce}</textarea>
+			</p>
+			<p class="submit"><input type="submit" value="提交" /></p>
+		</form>
+	</div>
+	<script type="text/javascript">
+		$('#sort_id').val('{$book.sort_id}');
+		$("input[name=is_vip][value={$book.is_vip}]").attr('checked', 'checked');
+		$("input[name=is_power][value={$book.is_power}]").attr('checked', 'checked');
+		$("input[name=is_first][value={$book.is_first}]").attr('checked', 'checked');
+		$("input[name=is_full][value={$book.is_full}]").attr('checked', 'checked');
+	</script>
+</body>
+</html>

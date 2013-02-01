@@ -1,0 +1,36 @@
+<volist name="list" id="item">
+<!--书评 开始-->
+<div class="break_01">&nbsp;</div>
+<div class="pl_question">
+	<p><a href="{$cmsroot}index.php?s=review/index/id/{$item.review_id}" target="_blank" id="sptitle_{$item.review_id}">{$item.subject}</a></p>
+</div>
+<div class="pl_questionnr">{$item.detail}</div>
+<div class="break_03">&nbsp;</div>
+<div class="fabiaonr">
+	发表人：<font color="#1573CA">{$item.poster}</font>&nbsp;&nbsp;&nbsp;&nbsp;
+	发表日期：<font color="#000000">{$item.post_time|date="Y-m-d H:i:s",###}</font>&nbsp;&nbsp;&nbsp;&nbsp;
+	点击数：<font color="#000000">{$item.view_num}</font>&nbsp;&nbsp;&nbsp;&nbsp;
+	回复数：<font color="#000000">{$item.reply_num}</font>
+</div>
+<div class="fabiaonr001">
+	<a href="javascript:;" onclick="$('#spreply_{$item.review_id}').show();"><font color="#1573CA">[ 回复 ]</font></a>&nbsp;
+	<a href="javascript:;" onclick="$('#sp_title').focus();"><font color="#1573CA">[ 快速发表 ]</font></a>
+</div>
+<div id="spreply_{$item.review_id}" style="display: none;">
+	<div class="break_04">&nbsp;</div>
+	<div class="tlq_answer">
+		<div class="break_04">&nbsp;</div>
+		<div><textarea id="sp_content_{$item.review_id}" class="tlq_answer_lynr"></textarea></div>
+		<div class="break_01">&nbsp;</div>
+		<div class="tlq_answer_hf">
+			<div class="tlq_answer_hf_l">
+				<a href="javascript:;" onclick="quick_reply({$item.review_id});">回 复</a>
+			</div>
+			<div class="tlq_answer_hf_r">
+				<a href="javascript:;" onclick="$('#spreply_{$item.review_id}').hide();">取 消</a>
+			</div>
+		</div>
+	</div>
+	<div class="break_04">&nbsp;</div>
+</div>
+</volist>

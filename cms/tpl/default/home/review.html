@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$review.subject} - {&system.site_name}</title>
+<meta name="keywords" content="{&system.metakeywords}" />
+<meta name="description" content="{&system.metadescription}" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/books.css">
+<script type="text/javascript" src="{$tplcms}js/jquery.js"></script>
+<script type="text/javascript" src="{$tplcms}js/global.js"></script>
+<script type="text/javascript" src="{$tplcms}js/book.js"></script>
+</head>
+
+<body>
+<div id="layout">
+	<div id="mainbody">
+		<include file="./tpl/default/header.html" />
+		<!--第二屏开始-->
+		<div class="fmy_hfq">
+			<div class="fmy_hfq_top">
+				<a href="{$cmsroot}">{&system.site_index}</a> &gt; 
+				<a href="{:BU($book,'lists')}">{$book.sort_name}</a> &gt; 
+				<a href="{:BU($book,'index')}">{$book.book_name}</a> &gt; 
+				书籍评论：{$review.subject}
+			</div>
+			<div class="fmy_hfq_bottom">
+		        <div class="fmy_hfq_bottomnr">
+					<div class="fmy_hfq_bottomnr_01">
+						<div class="fmy_hfq_bottomnr_01_left">
+							<a class="reply_url" href="javascript:;">回复</a> | 
+							本主题共有 <font color="#ff0000">{$review.reply_num}</font> 条跟帖
+						</div>
+						<div class="fmy_hfq_bottomnr_01_right">
+							<a href="{:BU($book,'index')}">返回小说首页</a>
+						</div>
+					</div>
+					<div class="fmy_hfq_bottomnr_02">
+						<span id="sptitle_{$review.review_id}">
+							{$review.subject}&nbsp;&nbsp;
+							<if condition="$review.if_good eq 1"><font color="#ff0000">[精华]</font>&nbsp;</if>
+							<if condition="$review.if_top eq 1"><font color="#ff0000">[置顶]</font>&nbsp;</if>
+						</span>
+						<span class="top_name">楼主</span>
+					</div>
+					<div class="fmy_hfq_bottomnr_03">{$review.detail|nl2br}</div>
+					<div class="fmy_hfq_bottomnr_04">
+						<div class="fmy_hfq_bottomnr_04_left">
+							<font color="#747474">发表人：{$review.poster}</font>
+						</div>
+						<div class="fmy_hfq_bottomnr_04_right">
+							<font color="#747474">发表时间：{$review.post_time|date="Y-m-d H:i:s",###}</font>
+							<a href="javascript:;" class="reply_url">回复</a>
+						</div>
+					</div>
+					<div id="replycontent">
+					<volist name="list" id="item">
+						<div class="fmy_hfq_bottomnr_05">
+							<div class="fmy_hfq_bottomnr_05_left">{$item.subject}</div>
+							<div class="fmy_hfq_bottomnr_05_center">
+							<present name="Think.cookie.admin_id">
+								<a href="javascript:;" onclick="reply_del({$item.reply_id})">删除</a>
+								<if condition="$item.if_display eq 1">
+								<a href="javascript:;" onclick="reply_show({$item.reply_id},0)">屏蔽</a>
+								<else />
+								<a href="javascript:;" onclick="reply_show({$item.reply_id},1)">显示</a>
+								</if>
+							<else />
+								&nbsp;
+							</present>
+							</div>
+							<div class="fmy_hfq_bottomnr_05_right">{$i} 楼</div>
+						</div>
+						<div class="fmy_hfq_bottomnr_06">
+						<if condition="$item.if_display eq 1">
+							{$item.detail|nl2br}
+						<else />
+							<span>该回复已被屏蔽</span>
+						</if>
+						</div>
+						<div class="fmy_hfq_bottomnr_07">
+							<div class="fmy_hfq_bottomnr_07_left">
+								<font color="#747474">发表人：{$item.poster}</font>
+							</div>
+							<div class="fmy_hfq_bottomnr_07_right">
+								<font color="#747474">发表时间：{$item.post_time|date="Y-m-d H:i:s",###}</font>
+								<a href="javascript:;" class="reply_url">回复</a>
+							</div>
+						</div>
+					</volist>
+					</div>
+					<div class="fmy_hfq_bottomnr_01">
+						<div class="fmy_hfq_bottomnr_01_left">
+							<a class="reply_url" href="javascript:;">回复</a> | 
+							本主题共有 {$page}
+						</div>
+						<div class="fmy_hfq_bottomnr_01_right">
+							<a href="{:BU($book,'index')}">返回小说首页</a>
+						</div>
+					</div>
+					<div class="break_04"></div>
+					<div style="border-top: 0px" class="tlq_answer">
+						<div class="break_04"></div>
+						<div><textarea id="sp_content_{$review.review_id}" class="tlq_answer_lynr need_login"></textarea></div>
+						<div class="break_01"></div>
+						<div class="tlq_answer_hf">
+							<div class="tlq_answer_hf_l">
+								<a href="javascript:;" id="submitsplink" onclick="quick_reply({$item.review_id});">回复</a>
+							</div>
+							<div class="tlq_answer_hf_r">
+								<a href="javascript:;" onclick="$('#sp_content').attr('value','');">取消</a>
+							</div>
+						</div>
+					</div>
+					<div class="break_04"></div>
+		        </div>
+			</div>
+		</div>
+		<!--封面页回复区结束-->
+		<div class="break_09"></div>
+		<include file="./tpl/default/footer.html" />
+	</div>
+</div>
+<script type="text/javascript">
+	$(".reply_url").click(function(){
+		$('#sp_content_{$review.review_id}').focus();
+	});
+	$(".need_login").focus(function(){ show_login(); });
+</script>
+</body>
+</html>
+

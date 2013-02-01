@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>资源库管理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/collector.css" />
+    <script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-ui-1.8.6.custom.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/collector.js"></script>
+  </head>
+  <body>
+    <div id="rightTop1">
+        <div class="tyl">
+            <!--<volist name="list1" id="vo">-->
+            <input class="formbtn3" type="button" onclick="window.location.href = '?s=admin/resource/listbook/rs_id/{$vo.rs_id}/type_id/{$vo.type_id}';" value="{$vo.type_name}" style="margin-bottom: 5px;"/> &nbsp;&nbsp;
+            <!--</volist>-->
+        </div>
+    </div>
+    <div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="main">
+      <div class="resource">
+         <div class="card" id="guide1">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <thead>
+                  <tr>
+                      <th style="width:30px;min-width: 30px;"><input type="checkbox" id="checkAll" onclick="setCheckAll();"/></th>
+                      <th>书名</th>
+                      <th>作者</th>
+                      <th>类型</th>
+                      <th>总字数</th>
+                      <th>状态</th>
+                      <th>操作</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <!--<volist name="list" id="vo">-->
+                  <tr id ="Booklist{$vo.book_id}" class="trcss">
+                      <td style="width:30px;min-width: 30px;"><input class="checkBox" type="checkbox" id="check{$vo.book_id}" value="{$vo.book_id}" /></td>
+                      <td onclick="showBookInfo('{$vo.book_id}')" style=" cursor:pointer;">{$vo.book_name}</td>
+                      <td onclick="showBookInfo('{$vo.book_id}')" style=" cursor:pointer;">{$vo.book_man}</td>
+                      <td onclick="showBookInfo('{$vo.book_id}')" style=" cursor:pointer;">{$vo.type_name}</td>
+                      <td onclick="showBookInfo('{$vo.book_id}')" style=" cursor:pointer;">{$vo.book_sum}</td>
+                      <td>{$vo.state}</td>
+                      <td>[<a href="?s=admin/resource/putbook/book_id/{$vo.book_id}{$way}">{$vo.state2}</a>]</td>
+                  </tr>
+                  <tr id ="BookInfo{$vo.book_id}" style="display:none;">
+                      <td colspan="6" style="text-align: left;">
+                        <p style=" text-align: right;padding-right: 40px;">[<a href="?s=admin/resource/listchapter/book_id/{$vo.book_id}/rs_id/{$rs_id}">查看章节</a>]</p>
+                        <ul>
+                            <li><b>书名:</b>{$vo.book_name}</li>
+                            <li><b>类型:</b>{$vo.type_name}</li>
+                            <li><b>关键字:</b>{$vo.book_key}</li>
+                            <li><b>封面图片:</b><img alt="封面图" src="{$vo.book_affix}" /></li>
+                            <li><b>内容简介:</b>{$vo.book_introduce}</li>
+                            <li><b>内容摘要:</b>{$vo.book_abstract}</li>
+                            <li><b>作者:</b>{$vo.book_man}</li>
+                            <li><b>最后更新:</b>{$vo.book_date}</li>
+                            <li><b>总字数:</b>{$vo.book_sum}</li>
+                            <li><b>本书地址:</b>{$vo.book_url}</li>
+                        </ul>
+                      </td>
+                  </tr>
+                  <!--</volist>-->
+              </tbody>
+            </table>
+            <div style=" text-align: center;">{$page1}</div>
+            <div class="control">
+                <input class="formbtn4" type="button" onclick="putSelect();" value="入库选中"/> &nbsp;&nbsp; <input class="formbtn4" type="button" onclick="putSelectAll();" value="全部入库"/>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script type="text/javascript">
+
+    // 鼠标经过颜色变化
+    var curColor = $(".trcss").css('background-color');
+    $(".trcss").mouseover(function(){ $(this).css('background-color', '#bbdbf1');});
+    $(".trcss").mouseout(function(){ $(this).css('background-color', curColor);});
+
+    // 显示\隐藏电子书信息
+    function showBookInfo(id){
+        var eInfo = $("#BookInfo" + id);
+        if(eInfo.css("display") == "none"){
+            eInfo.fadeIn();
+        }else{
+            eInfo.fadeOut();
+        }
+    }
+
+    // 勾选全选
+    function setCheckAll(){
+        var e = $("#checkAll").attr("checked");
+        for(i = 0; i < $(".checkBox").length; i++){
+            if(e == true){
+                $(".checkBox")[i].checked = true;
+            }else{
+                $(".checkBox")[i].checked = false;
+            }
+        }
+    }
+
+    // 入库选中的书
+    function putSelect(){
+        var strBookId = "";
+        for(i = 0; i < $(".checkBox").length; i++){
+            if($(".checkBox")[i].checked == true){
+                strBookId += $(".checkBox")[i].value + ","
+            }
+        }
+        window.location.href = "?s=admin/resource/putbook/book_id/" + strBookId + "{$way}";
+    }
+
+    // 入库全部
+    function putSelectAll(){
+        window.location.href = "?s=admin/resource/putbook/book_id/all{$way}";
+    }
+
+</script>

@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/index.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+<script type="text/javascript" src="{$tpldir}js/global.js"></script>
+</head>
+
+<body>
+<!-- site_header -->
+{$header}
+
+<!--main-->
+<div id="main">
+	<!--main_left-->
+	<div id="main_l">
+    	<div id="left_t"><span class="hot_com">热门&nbsp;&nbsp;推荐</span></div>
+      	<div class="left_content">
+            <div class="v_content">
+            	<div class="v_content_list">
+                	<ul>
+                	<volist name="21,4,0" id="book">
+                    	<li class="list_pic">
+                    		<a href="{:BU($book, 'index')}"><img src="{$book.image_url}" alt="{$book.book_name}" width="100" height="145" /></a>
+                    	</li>
+                    	<li class="list_txt" style="width:220px;">
+                    		<span>{$book.book_name}</span><br />{$book.introduce}
+                    	</li>
+                	</volist>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--main_right-->
+    <div id="main_r">
+    	<div class="tab_menu">
+        	<ul>
+            	<li class="selected">最新</li>
+                <li>最热</li>
+                <li>全本</li>
+            </ul>
+        </div>
+        <div class="tab_content" style="clear:both;">
+        	<ul>
+        	<volist name="33,8,0" id="book">
+                <li class="txt_info <if condition="$i eq 1">selected</if>">
+                	<div class="txt_title">
+                		<span class="name">{$i|zeroFill=###,2}. {$book.book_name}</span>
+                		<span class="author">{$book.author}</span>
+                	</div>
+                	<div class="txt_content">
+                    	<img src="{$book.image_url}" alt="{$book.book_name}" /><p>{$book.introduce}</p><a href="{:BU($book, 'index')}">详情</a><a href="{:BU($book, 'down')}">下载</a><br class="clear" />
+                    </div>
+                </li>
+        	</volist>
+            </ul>
+            <ul class="hide">
+			<volist name="11,8,0" id="book">
+                <li class="txt_info <if condition="$i eq 1">selected</if>">
+                	<div class="txt_title">
+                		<span class="name">{$i|zeroFill=###,2}. {$book.book_name}</span>
+                		<span class="author">{$book.author}</span>
+                	</div>
+                	<div class="txt_content">
+                    	<img src="{$book.image_url}" alt="{$book.book_name}" /><p>{$book.introduce}</p><a href="{:BU($book, 'index')}">详情</a><a href="{:BU($book, 'down')}">下载</a>
+                    </div>
+                </li>
+        	</volist>
+            </ul>
+            <ul class="hide">
+			<volist name="41,8,0" id="book">
+                <li class="txt_info <if condition="$i eq 1">selected</if>">
+                	<div class="txt_title">
+                		<span class="name">{$i|zeroFill=###,2}. {$book.book_name}</span>
+                		<span class="author">{$book.author}</span>
+                	</div>
+                	<div class="txt_content">
+                    	<img src="{$book.image_url}" alt="{$book.book_name}" /><p>{$book.introduce}</p><a href="{:BU($book, 'index')}">详情</a><a href="{:BU($book, 'down')}">下载</a><br class="clear" />
+                    </div>
+                </li>
+        	</volist>
+            </ul>
+        </div>
+    </div>
+    <div id="master_commend">
+    	<span class="commend">编辑推荐</span>
+        <ul class="book_list">
+        <volist name="99,20,4" id="book">
+        	<li class="<if condition="$i/2 eq 1">even<else/>odd</if>">
+        		<a href="{:BU($book, 'index')}">{$book.book_name}</a>
+        	</li>
+        </volist>
+        </ul>
+    </div>
+    <div id="novel_update">
+    	<span class="update">最近更新</span>
+        <ul class="book_list">
+        <volist name="34,20,0" id="book">
+        	<li class="<if condition="$i/2 eq 1">even<else/>odd</if>">
+        		<span class="title">
+        			[<a href="{:BU($book, 'index')}">{$book.book_name}</a>]&nbsp;
+        			<a href="{:BU($book, 'read')}">{$book.last_chapter}</a>
+        		</span>
+        		<span class="writer">{$book.author}</span>
+        		<span class="day">{$book.last_update|date="m-d",###}</span>
+        	</li>
+        </volist>
+        </ul>
+    </div>
+    <div id="new_book">
+    	<span class="books">最新入库</span>
+        <ul class="book_list">
+        <volist name="33,20,0" id="book">
+        	<li class="<if condition="$i/2 eq 1">even<else/>odd</if>">
+        		<span class="title"><a href="{:BU($book, 'index')}">{$book.book_name}</a></span>
+        		<span class="writer">{$book.author}</span>
+        		<span class="day">{$book.post_time|date="m-d",###}</span>
+        	</li>
+        </volist>
+        </ul>
+    </div>
+    <br class="clear" />
+</div>
+<!--end main-->
+
+<!-- site_footer -->
+{$footer}
+<script>$(function(){ change_tab(); }); </script>
+</body>
+</html>

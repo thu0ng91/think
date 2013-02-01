@@ -1,0 +1,1 @@
+document.write('<a href="/code/index.php?s=ajax/ads/id/3" target="_blank" title=""><img src="/code/files/ads/images/ad_02.gif" width="468" height="60" /></a>');

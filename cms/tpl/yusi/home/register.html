@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>会员注册 - {&system.site_name}</title>
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/common.css"/>
+        <link rel="stylesheet" type="text/css" href="{$tpldir}css/registration.css"/>
+        <script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+        <script type="text/javascript" src="{$tpldir}js/global.js"></script>
+    </head>
+
+    <body>
+        {$header}
+
+        <!--注册部分开始-->
+        <form method="post" action="{$cmsroot}index.php?s=register/register" id="user_login" onsubmit="return do_register();">
+            <div class="registrationpage01">
+                <div class="registrationpagespace01">&nbsp;</div>
+                <div class="registrationpage02d">
+                    <table width="650" border="0" cellspacing="3" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td width="113" height="32" valign="middle"><div align="right">电子邮箱：</div></td>
+                                <td width="537" valign="middle">
+                                    <div style="float:left;"><input type="text" name="registe_email" class="nornal" id="registe_email" /></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="32" valign="middle"><div align="right">性别：</div></td>
+                                <td valign="middle">
+                                    <input type="radio" name="registe_sex" value="0" checked="checked"/> 男性
+                                    <input type="radio" name="registe_sex" value="1"/> 女性
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="32" valign="middle"><div align="right">用户名：</div></td>
+                                <td valign="middle">
+                                    <input type="text" class="nornal" name="registe_name" id="registe_name" />&nbsp;
+                                    <span id="div_userNameReg" align="left">建议填写便于记忆的用户名。</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="32" valign="middle"><div align="right">密码：</div></td>
+                                <td valign="middle">
+                                    <input type="password" class="nornal" name="registe_pwd" id="registe_pwd" />
+                                    <span id="div_userPass" align="left">&nbsp;5-16个字符组成，推荐使用英文字母加数字组合</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="32" valign="middle"><div align="right">请再次输入密码：</div></td>
+                                <td valign="middle"><input type="password" class="nornal" name="registe_verify_pwd" id="registe_verify_pwd" /></td>
+                            </tr>
+                            <tr>
+                                <td height="32" valign="middle"><div align="right">验证码：</div></td>
+                                <td valign="middle">
+                                    <input type="text" class="rcode" name="check_code" id="check_code" />
+                                    <img title="刷新验证码" src="{$cmsroot}index.php?s=register/check_code" id="verifyImg" onClick="freshVerify()" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="32" valign="middle"><div align="right">&nbsp;</div></td>
+                                <td valign="middle">
+                                    <input type="image" value="提交注册信息" src="{$tpldir}images/reg.gif"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="registrationpagespace01">&nbsp;</div> 
+            </div>
+        </form>
+
+        <div class="space01">&nbsp;</div>
+
+        <!-- 广告段2开始 -->
+        <div class="ads">
+            <div class="ads_left"><script type="text/javascript" src="/cms/files/ads/1.js"></script></div>
+            <div class="ads_right"><script type="text/javascript" src="/cms/files/ads/3.js"></script></div>
+        </div>
+        <!-- 广告段2结束 -->
+
+        <div class="space01">&nbsp;</div>
+
+        {$footer}
+    </body>
+</html>

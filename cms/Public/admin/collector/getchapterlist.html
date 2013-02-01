@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>临时库管理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/collector.css" />
+    <script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-ui-1.8.6.custom.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/collector.js"></script>
+  </head>
+  <body>
+    <div id="rightTop">
+        <ul class="subnav">
+            <li><a href="?s=admin/temp/tempmanage" class="btn3">返回书目列表</a></li>
+        </ul>
+    </div>
+    <div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="main">
+      <div class="chapter">
+          <div class="chapterTitle">
+            <h1>{$book_name} - 章节列表</h1>
+          </div>
+          <div class="chapterlist">
+            <ul>
+                <!--<volist name="list" id="vo">-->
+                <li class="cobx"><a href="?s=admin/temp/getchaptercontent/book_id/{$vo.book_id}/chapter_id/{$vo.chapter_id}">{$vo.chapter_name}</a></li>
+                <!--</volist>-->
+            </ul>
+         </div>
+     </div>
+     <div style="clear: both;"></div>
+     <div class="control">
+        <button id="reButton" onclick="window.location.href = '?s=admin/temp/tempmanage';" class="formbtn4">书目列表</button>
+     </div>
+    </div>
+  </body>
+</html>

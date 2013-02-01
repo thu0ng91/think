@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><empty name="sort">书籍搜索<else />{$sort.sort_name}</empty> - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/home.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+<script type="text/javascript" src="{$tpldir}js/global.js"></script>
+</head>
+
+<body>
+<!-- site_header -->
+{$header}
+
+<!--main-->
+<div id="main">
+	<div id="main_left">
+    	<div id="left_list">
+            <span class="new_list">
+				<a href="{$cmsroot}">首页</a> ->
+            <empty name="sort">
+            	书籍搜索：{$keyword}<else />{$sort.sort_name}
+            </empty>
+            </span>
+            <ul class="book_list">
+            	<li class="list_one list_title">
+	            	<span class="book_name">书名</span>
+	            	<span class="book_update">最新章节</span>
+	            	<span class="book_time">更新时间</span>
+	            	<span class="book_writer">作者</span>
+	            	<span class="book_count">完成字数</span>
+	            	<span class="book_status">连载状态</span>
+            	</li>
+            <volist name="list" id="item">
+            	<li class="list_one">
+	            	<span class="book_name"><a href="{:BU($item, 'index')}">{$item.book_name}</a></span>
+	            	<span class="book_update"><a href="{:BU($item, 'read')}">{$item.last_chapter}</a></span>
+	            	<span class="book_time">{$item.last_update|date="Y-m-d",###}</span>
+	            	<span class="book_writer">{$item.author}</span>
+	            	<span class="book_count">{$item.total_size}</span>
+	            	<span class="book_status"><if condition="$item.is_full eq 1">已完本<else />连载中</if></span>
+            	</li>
+            </volist>
+            </ul>
+        </div>
+        <div class="select_links">{$page}</div>
+    </div>
+    <div id="main_right">
+         <div class="tab_content">
+        	<span class="recommend_title">本类热门推荐</span>
+			<ul>
+			<volist name="11,3,$sort.sort_id" id="item">
+				<li class="txt_info">
+					{$i}.{$item.book_name}<span class="author">{$item.book_author}</span>
+                	<div class="txt_content">
+                    	<img src="{$item.image_url}" alt="{$item.book_name}" />
+                    	<p>{$item.introduce}</p>
+                    	<a href="{:BU($item, 'index')}">详情</a>
+                    	<a href="{:BU($item, 'down')}">下载</a><br class="clear" />
+                    </div>
+                </li>
+        	</volist>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--end main-->
+
+<!-- site_footer -->
+{$footer}
+</body>
+</html>

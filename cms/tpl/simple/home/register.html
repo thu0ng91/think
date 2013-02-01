@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title} - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/home.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+<script type="text/javascript" src="{$tpldir}js/global.js"></script>
+<script LANGUAGE="JavaScript">
+ //重载验证码
+function freshVerify() {
+   document.getElementById('verifyImg').src='{$cmsroot}index.php?s=register/check_code/'+Math.random();
+}
+</script>
+</head>
+
+<body>
+<!-- site_header -->
+{$header}
+
+<!--main-->
+<div id="main">
+    <form action="{$cmsroot}index.php?s=register/register" method="post" id="user_login" onsubmit="return do_register();">
+        <h2>用户注册</h2>
+        <p>
+            <label>账号：</label>
+            <input type="text" name="registe_name" id="registe_name" />
+        </p>
+        <p>
+            <label>密码：</label>
+            <input type="password" name="registe_pwd" id="registe_pwd1" />
+        </p>
+        <p>
+            <label>重复密码：</label>
+            <input type="password" name="registe_verify_pwd" id="registe_pwd2" />
+        </p>
+        <p>
+            <label>注册邮箱：</label>
+            <input type="text" name="registe_email" id="registe_email" />
+        </p>
+        <p>
+            <label>验证码：</label>
+            <input type="text" name="check_code" class="checktext" id="check_code" maxLength="4"/>  　
+            <img style="cursor:pointer" title="刷新验证码" src="{$cmsroot}index.php?s=register/check_code" id="verifyImg" onClick="freshVerify()"/>
+        </p>
+        <p class="login_info"></p>
+        <div><input type="submit" value="注册" /></div>
+    </form>
+</div>
+<!--end main-->
+
+<!-- site_footer -->
+{$footer}
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/index.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+<script type="text/javascript" src="{$tpldir}js/index.js"></script>
+</head>
+<body>
+<!-- site_header -->
+{$header}
+
+<!-- =searchbar= -->
+<div id="searchbar">
+<div class="inner">
+
+  <ul>
+  <form name="form" method="get" target="_blank" action="#" onsubmit="return do_search();">
+    <li class="bt">小说搜索</li>
+    <li class="input">
+      <input name="searchkey" id="skw" value="请输入书名进行搜索" style="font-size: 12px; color: rgb(51, 153, 0);" onblur="javascript:if(document.getElementById('skw').value=='') document.getElementById('skw').value='请输入书名进行搜索'" onfocus="javascript:if(document.getElementById('skw').value=='请输入书名进行搜索') document.getElementById('skw').value=''" type="text">
+    </li>
+    <li class="select">
+      <select name="searchtype" id="searchtype">
+		  <option selected="selected" value="articlename">书 名</option>
+      </select>
+    </li>
+    <li class="btn">
+        <input name="action" value="login" type="hidden">
+      <input name="input2" value="搜索" onclick="javascript:if(document.getElementById('skw').value=='请输入书名进行搜索') document.getElementById('skw').value=''" type="submit">
+    </li>
+</form>
+  </ul>
+  <div class="tag"> 热门小说：
+  <volist name="11,6,0" id="book">
+  <a target="_blank" href="{:BU($book, 'index')}" title="{$book.book_name}">{$book.book_name}</a> 
+  </volist>
+
+  </div>
+
+  </div>
+</div>
+
+    <div class="hguide">
+        <span class="new_list">
+        	<a href="{$cmsroot}">首页</a> -> 修改用户
+        </span>
+    </div>
+    
+<!--main-->
+<div class="wrapper">
+	<div class="main">
+        <div class="main_left">
+            <div class="mod_title">
+                <span class="title">功能列表</span><span class="par">相关用户功能</span> 
+            </div>
+            <div class="tab_content">
+                <ul>
+                    <li class="txt_info">
+                        <a href="?s=user/user/update">用户信息</a>
+                    </li>
+                    <li class="txt_info">
+                        <a href="?s=user/favor">用户收藏夹</a>
+                    </li> 
+                </ul>
+            </div>
+        </div>
+        <div class="main_right">
+            <div class="focus_title"><strong>用户信息修改</strong></div>
+            <div id="left_list">
+                <form action="?s=user/user/do_update" method="post">
+                    <p><input type="hidden" name="id" value="{$user.id}" /></p>
+                    <p><label>用户名: </label>{$user.user_name}</p>
+                    <br/>
+                    <p>--用户信息如下-- </p><br/>
+                    <p><label>用户密码: </label><input type="text" name="user_pwd"/></p>
+                    <p style="clear:both;"></p>
+                    <p><label>确认密码: </label><input type="text" name="user_dpwd"/></p>
+                    <p style="clear:both;"></p>
+                    <p><label>真实姓名: </label><input type="text" name="real_name" value="{$info.real_name}"/></p>
+                    <p style="clear:both;"></p>
+                    <p><label>昵称: </label><input type="text" name="nickname" value="{$user.nickname}"/></p>
+                    <p style="clear:both;"></p>
+                    <p><label>性别: </label> <!--{$info.sex}-->
+                    <input type="radio" name="sex" value="0" checked="checked" />女
+                    <input type="radio" name="sex" value="1" />男</p>
+                    <p style="clear:both;"></p>
+                    <!-- <p><label>密码提示问题: </label>{$info.pwd_quiz}</p>-->
+                    <!-- <p><label>密码提示答案: </label>{$info.pwd_answer}</p>-->
+                    <!-- <p><label>密码保护问题: </label>{$info.pwd_protect_quiz}</p>-->
+                    <!-- <p><label>密码保护答案: </label>{$info.pwd_protect_answer}</p>-->
+                    <p><label>MSN: </label><input type="text" name="msn" value="{$info.msn}"/></p>
+                    <p style="clear:both;"></p>
+                    <p><label>qq: </label><input type="text" name="qq" value="{$info.qq}"/></p>
+                    <p style="clear:both;"></p>
+                    <p><label>生日: </label><input type="text" name="birthday" value="{$info.birthday}"/></p>
+                    <p style="clear:both;"></p>
+                    <p><label>地址: </label><input type="text" name="address" value="{$info.address}"/></p>
+                    <p style="clear:both;"></p>
+                    <!-- <p><label>积分: </label><input type="text" name="accumulate" value="{$info.accumulate}"/></p>-->
+                    <!-- <p><label>VIP金额: </label><input type="text" name="vip_money" value="{$info.vip_money}"/></p>-->
+                    <!-- <p><label>发帖数量: </label><input type="text" name="post_nums" value="{$info.post_nums}"/></p>-->
+                    <!-- <p><label>收藏书数量: </label><input type="text" name="collecte_nums" value="{$info.collecte_nums}"/></p>-->
+                    <!-- <p><label>注册时间: </label><input type="text" name="register_time" value="{$info.register_time}"/></p>-->
+                    <p><label>来自: </label><input type="text" name="come_from" value="{$info.come_from}"/></p>
+                    <p style="clear:both;"></p>
+                    <br/>
+                    <p class="submitdiv"><input type="submit" value="提交" /><input type="submit" value="取消" /></p>
+                </form>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+	</div>
+</div>
+<!--end main-->
+
+<!-- site_footer -->
+{$footer}
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网站管理</title>
+<link href="__PUBLIC__/css/admin.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/{$user_js}" charset="utf-8"></script>
+<script type="text/javascript" src="__PUBLIC__/js/index.js" charset="utf-8"></script>
+<style type="text/css">
+body { background: url('__PUBLIC__/images/content.gif') repeat-y; }
+</style>
+</head>
+
+<body>
+<div class="back_nav">
+	<div class="back_nav_list">
+	
+	</div>
+	<div class="shadow"></div>
+	<div class="close_float"><img src="__PUBLIC__/images/close2.gif" /></div>
+</div>
+<div id="head">
+    <div id="logo"><img src="__PUBLIC__/images/admin.jpg" /></div>
+    <div id="menu">
+    	<span>您好，<strong>{$admin_name}</strong>
+	    	<a href="?s=admin/login/logout">[退出]</a>
+	    	<a href="__ROOT__/" target="_blank">[网站首页]</a>
+    	</span>
+    </div>
+    <ul id="nav"></ul>
+    <div id="headBg"></div>
+</div>
+<div id="content">
+    <div id="left">
+        <div id="leftMenus">
+            <dl id="submenu">
+                <dt><a class="ico1" id="submenuTitle" href="javascript:;"></a></dt>
+            </dl>
+         </div>
+    </div>
+    <div id="right">
+        <iframe frameborder="0" style="display:none;" width="100%" id="workspace"></iframe>
+    </div>
+</div>
+</body>
+</html>

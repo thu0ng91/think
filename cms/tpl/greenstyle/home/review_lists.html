@@ -1,0 +1,19 @@
+<volist name="list" id="item">
+<div class="review_item">
+	<div class="review_01">
+		<span class="re_subject">{$item.subject}</span>
+		<span class="re_author">{$item.poster}</span>
+	</div>
+	<div class="review_02">{$item.detail}</div>
+	<div class="review_03">
+		<span class="re_ip">{$item.post_ip}</span>
+		<span class="re_time">{$item.post_time|date="Y-m-d H:i:s",###}</span>
+		<span class="re_lists">
+			<a href="javascript:;" onclick="show_reply({$item.review_id}, false)">回复列表</a>({$item.reply_num})
+		</span>
+		<span class="re_post">
+			<a href="javascript:;" onclick="show_reply({$item.review_id}, true)">回复</a>
+		</span>
+	</div>
+</div>
+</volist>

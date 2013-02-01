@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv='Refresh' content='{$waitSecond};URL={$jumpUrl}'/>
+        <title>系统提示</title>
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+        <script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+        <style>
+            <!--
+            body {background: none}
+            h1 {font-size: 12px; color: #444; line-height: 55px; background: url('__PUBLIC__/images/welcome_h1.gif'); padding-left: 2%}
+            dl {line-height: 40px; background: url('__PUBLIC__/images/welcome.gif') no-repeat left 10px; padding-left: 40px; margin: 35px 0 45px 15%}
+            dt {color: #009de6}
+            dd {color: #444;}
+            a {color: #06c}
+            a:hover {color: #09f}
+            p {color: #999; border-top: 1px solid #cbe4f5; text-align: center; padding-top: 20px;}
+            -->
+        </style>
+    </head>
+
+    <body>
+        <tagLib name="html" />
+        <h1>系统提示</h1>
+        <dl>
+            <dt>{$msgTitle_hide}{$message}</dt>
+            <dd>若不选择将自动跳转</dd>
+            <dd><a href="{$jumpUrl}" class="forward">返回来源URL</a></dd>
+        </dl>
+        <p>Copyright 2010 BookCMS.COM,All rights reserved.</p>
+    </body>
+</html>

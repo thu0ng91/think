@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/user.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+</head>
+
+<body>
+    <p><input type="hidden" name="id" value="{$user.id}" /></p>
+    <p><label>您的登录用户名：</label>{$user.user_name}</p>
+    <br/>
+    <p><label>--用户信息如下-- </label></p><br/>
+    <!-- 用户密码不显示 <p><label>用户密码：</label>{$user.group_name}</p>-->
+    <p><label>真实姓名: </label>{$info.real_name}</p>
+    <p><label>昵称: </label> {$user.nickname}</p>
+    <p><label>性别: </label>{$info.sex}</p>
+    <!-- <p><label>密码提示问题: </label>{$info.pwd_quiz}</p>-->
+    <!-- <p><label>密码提示答案: </label>{$info.pwd_answer}</p>-->
+    <!-- <p><label>密码保护问题: </label>{$info.pwd_protect_quiz}</p>-->
+    <!-- <p><label>密码保护答案: </label>{$info.pwd_protect_answer}</p>-->
+    <p><label>MSN: </label> {$info.msn}</p>
+    <p><label>qq: </label>{$info.qq}</p>
+    <p><label>生日: </label>{$info.birthday}</p>
+    <p><label>地址: </label>{$info.address}</p>
+    <p><label>积分: </label>{$info.accumulate}</p>
+    <p><label>VIP金额: </label>{$info.vip_money}</p>
+    <p><label>发帖数量: </label>{$info.post_nums}</p>
+    <p><label>收藏书数量: </label>{$info.collecte_nums}</p>
+    <p><label>注册时间: </label>{$info.register_time}</p>
+    <p><label>来自: </label>{$info.come_from}</p>
+    <br/>
+    <ul class="set_menu">
+        <li><a href="?s=user/user/update">修改用户信息</a></li>
+    </ul>
+</body>
+</html>

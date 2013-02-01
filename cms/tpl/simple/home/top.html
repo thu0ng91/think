@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>排行榜 - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tpldir}css/home.css" />
+<script type="text/javascript" src="{$tpldir}js/jquery.js"></script>
+<script type="text/javascript" src="{$tpldir}js/global.js"></script>
+</head>
+
+<body>
+<!-- site_header -->
+{$header}
+
+<!--main-->
+<div id="main">
+	<ul class="top_menu">
+		<li><a href="{:BU(11, 'top')}">总点击榜</a></li>
+		<li><a href="{:BU(12, 'top')}">月点击榜</a></li>
+		<li><a href="{:BU(13, 'top')}">周点击榜</a></li>
+		<li><a href="{:BU(21, 'top')}">总推荐榜</a></li>
+		<li><a href="{:BU(22, 'top')}">月推荐榜</a></li>
+		<li><a href="{:BU(23, 'top')}">周推荐榜</a></li>
+		<li><a href="{:BU(32, 'top')}">总收藏</a></li>
+		<li><a href="{:BU(31, 'top')}">总字数</a></li>
+		<li><a href="{:BU(41, 'top')}">全本榜</a></li>
+		<li><a href="{:BU(33, 'top')}">新书榜</a></li>
+	</ul>
+	<table width="100%" cellpadding="0" cellspacing="0" border="1" class="normal">
+		<tr class="th_left" height="30">
+			<th width="5%">排名</th><th width="10%">分类</th>
+			<th width="20%">小说名称</th><th width="25%">最新章节</th>
+			<th width="10%">更新时间</th><th width="10%">作者</th>
+			<th width="10%">{$type_name}</th>
+			<th width="10%">状态</th>
+		</tr>
+<volist name="list" id="book">
+		<tr>
+			<td>{$i}</td>
+			<td><a href="{:BU($book, 'lists')}">{$book.sort_name}</a></td>
+			<td><a href="{:BU($book, 'index')}">{$book.book_name}</a></td>
+			<td><a href="{:BU($book, 'read')}">{$book.last_chapter}</a></td>
+			<td>{$book.last_update|date="Y-m-d",###}</td>
+			<td>{$book.author}</td>
+			<td><if condition="$type_key eq 'post_time'">{$book.post_time|date="Y-m-d",###}<else />{$book.$type_key}</if></td>
+			<td><if condition="$book.is_full eq 1">已完本<else />连载中</if></td>
+		</tr>
+</volist>
+	</table>
+</div>
+<!--end main-->
+
+<!-- site_footer -->
+{$footer}
+</body>
+</html>

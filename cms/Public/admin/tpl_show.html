@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>模板管理</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/default.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/global.js"></script>
+</head>
+
+<body>
+    <div id="rightTop">
+	    <ul class="subnav">
+			<li><a href="?s=admin/style" class="btn1">网站风格</a></li>
+			<li><a href="?s=admin/tpl/show/id/{$style.sid}" class="btn1">{$style.name}</a></li>
+			<li><a href="?s=admin/tpl/add/id/{$style.sid}" class="btn1">添加模板</a></li>
+		</ul>
+	</div>
+	<div class="mrightTop">
+		<ul class="set_menu" style="padding-top:1px;">
+			<li><a href="javascript:;" res="global" class="selected">全局页面</a></li>
+			<li><a href="javascript:;" res="home">前台页面</a></li>
+			<li><a href="javascript:;" res="user">后台页面</a></li>
+			<li><a href="javascript:;" res="css">css文件</a></li>
+			<li><a href="javascript:;" res="js">js文件</a></li>
+		</ul>
+    </div>
+
+<div class="themes_list" id="themes_global">
+	<p class="head">
+		<span>全局页面列表 (<a href="?s=admin/tpl/add/id/{$style.sid}/group/global">添加模板</a>)</span>
+	</p>
+	<div class="tdare">
+        <table width="100%" cellpadding="0" cellspacing="0" border="1" class="dataTable">
+            <tr class="tatr1">
+                <th width="20" class="firstCell" align="left"></th>
+                <th width="20%" align="left">模板名称</th>
+                <th width="20%" align="left">文件名称</th>
+                <th width="10%" align="left">编辑</th>
+                <th align="left">删除</th>
+            </tr>
+		<volist name="global" id="tpl">
+			<tr class="tatr2">
+				<td class="firstCell">&nbsp;</td>
+				<td>{$tpl.note}</td>
+				<td>{$tpl.file}</td>
+				<td><a href="?s=admin/tpl/update/id/{$tpl.tid}">编辑模板</a></td>
+				<td>
+				<if condition="$tpl.is_system neq 1">
+					<a href="?s=admin/tpl/delete/id/{$tpl.tid}" onclick="return confirm('确认删除（不删除文件）？');">删除列表</a>
+					<a href="?s=admin/tpl/delete/id/{$tpl.tid}/all/1" onclick="return confirm('确认删除模板（含文件）？');">删除模板</a>
+				<else />
+					&nbsp;
+				</if>
+				</td>
+			</tr>
+		</volist>
+		</table>
+	</div>
+</div>
+
+<div class="themes_list" id="themes_home" style="display:none">
+	<p class="head">
+		<span>前台页面列表 (<a href="?s=admin/tpl/add/id/{$style.sid}/group/home">添加模板</a>)</span>
+	</p>
+	<div class="tdare">
+        <table width="100%" cellpadding="0" cellspacing="0" border="1" class="dataTable">
+            <tr class="tatr1">
+                <th width="20" class="firstCell" align="left"></th>
+                <th width="20%" align="left">模板名称</th>
+                <th width="20%" align="left">文件名称</th>
+                <th width="10%" align="left">编辑</th>
+                <th align="left">删除</th>
+            </tr>
+		<volist name="home" id="tpl">
+			<tr class="tatr2">
+				<td class="firstCell">&nbsp;</td>
+				<td>{$tpl.note}</td>
+				<td>{$tpl.file}</td>
+				<td><a href="?s=admin/tpl/update/id/{$tpl.tid}">编辑模板</a></td>
+				<td>
+				<if condition="$tpl.is_system neq 1">
+					<a href="?s=admin/tpl/delete/id/{$tpl.tid}" onclick="return confirm('确认删除（不删除文件）？');">删除列表</a>
+					<a href="?s=admin/tpl/delete/id/{$tpl.tid}/all/1" onclick="return confirm('确认删除模板（含文件）？');">删除模板</a>
+				<else />
+					&nbsp;
+				</if>
+				</td>
+			</tr>
+		</volist>
+		</table>
+	</div>
+</div>
+
+<div class="themes_list" id="themes_user" style="display:none">
+	<p class="head">
+		<span>后台页面列表 (<a href="?s=admin/tpl/add/id/{$style.sid}/group/user">添加模板</a>)</span>
+	</p>
+	<div class="tdare">
+        <table width="100%" cellpadding="0" cellspacing="0" border="1" class="dataTable">
+            <tr class="tatr1">
+                <th width="20" class="firstCell" align="left"></th>
+                <th width="20%" align="left">模板名称</th>
+                <th width="20%" align="left">文件名称</th>
+                <th width="10%" align="left">编辑</th>
+                <th align="left">删除</th>
+            </tr>
+		<volist name="user" id="tpl">
+			<tr class="tatr2">
+				<td class="firstCell">&nbsp;</td>
+				<td>{$tpl.note}</td>
+				<td>{$tpl.file}</td>
+				<td><a href="?s=admin/tpl/update/id/{$tpl.tid}">编辑模板</a></td>
+				<td>
+				<if condition="$tpl.is_system neq 1">
+					<a href="?s=admin/tpl/delete/id/{$tpl.tid}" onclick="return confirm('确认删除（不删除文件）？');">删除列表</a>
+					<a href="?s=admin/tpl/delete/id/{$tpl.tid}/all/1" onclick="return confirm('确认删除模板（含文件）？');">删除模板</a>
+				<else />
+					&nbsp;
+				</if>
+				</td>
+			</tr>
+		</volist>
+		</table>
+	</div>
+</div>
+
+<div class="themes_list" id="themes_css" style="display:none">
+	<p class="head">
+		<span>css文件列表 (<a href="?s=admin/tpl/add/id/{$style.sid}/group/css">添加模板</a>)</span>
+	</p>
+	<div class="tdare">
+        <table width="100%" cellpadding="0" cellspacing="0" border="1" class="dataTable">
+            <tr class="tatr1">
+                <th width="20" class="firstCell" align="left"></th>
+                <th width="20%" align="left">模板名称</th>
+                <th width="20%" align="left">文件名称</th>
+                <th width="10%" align="left">编辑</th>
+                <th align="left">删除</th>
+            </tr>
+		<volist name="css" id="tpl">
+			<tr class="tatr2">
+				<td class="firstCell">&nbsp;</td>
+				<td>{$tpl.note}</td>
+				<td>{$tpl.file}</td>
+				<td><a href="?s=admin/tpl/update/id/{$tpl.tid}">编辑模板</a></td>
+				<td>
+				<if condition="$tpl.is_system neq 1">
+					<a href="?s=admin/tpl/delete/id/{$tpl.tid}" onclick="return confirm('确认删除（保留文件）？');">删除列表</a>
+					<a href="?s=admin/tpl/delete/id/{$tpl.tid}/all/1" onclick="return confirm('确认删除模板（含文件）？');">删除模板</a>
+				<else />
+					&nbsp;
+				</if>
+				</td>
+			</tr>
+		</volist>
+		</table>
+	</div>
+</div>
+
+<div class="themes_list" id="themes_js" style="display:none">
+	<p class="head">
+		<span>js文件列表 (<a href="?s=admin/tpl/add/id/{$style.sid}/group/js">添加模板</a>)</span>
+	</p>
+	<div class="tdare">
+        <table width="100%" cellpadding="0" cellspacing="0" border="1" class="dataTable">
+            <tr class="tatr1">
+                <th width="20" class="firstCell" align="left"></th>
+                <th width="20%" align="left">模板名称</th>
+                <th width="20%" align="left">文件名称</th>
+                <th width="10%" align="left">编辑</th>
+                <th align="left">删除</th>
+            </tr>
+		<volist name="js" id="tpl">
+			<tr class="tatr2">
+				<td class="firstCell">&nbsp;</td>
+				<td>{$tpl.note}</td>
+				<td>{$tpl.file}</td>
+				<td><a href="?s=admin/tpl/update/id/{$tpl.tid}">编辑模板</a></td>
+				<td>
+				<if condition="$tpl.is_system neq 1">
+					<a href="?s=admin/tpl/delete/id/{$tpl.tid}" onclick="return confirm('确认删除（不删除文件）？');">删除列表</a>
+					<a href="?s=admin/tpl/delete/id/{$tpl.tid}/all/1" onclick="return confirm('确认删除模板（含文件）？');">删除模板</a>
+				<else />
+					&nbsp;
+				</if>
+				</td>
+			</tr>
+		</volist>
+		</table>
+	</div>
+</div>
+<script>
+$(function(){
+	$(".set_menu li a").click(function(){
+		$('.themes_list').css('display', 'none');
+		$(".set_menu li a").removeClass('selected');
+		$(this).addClass('selected');
+		$('#themes_'+$(this).attr('res')).css('display', 'block');
+	});
+});
+</script>
+</body>
+</html>

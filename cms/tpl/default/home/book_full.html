@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>全文阅读 - {$book.book_name} - {&system.site_name}</title>
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/full.css">
+<script type="text/javascript" src="{$tplcms}js/jquery.js"></script>
+<script type="text/javascript" src="{$tplcms}js/global.js"></script>
+<script type="text/javascript" src="{$tplcms}js/book.js"></script>
+</head>
+
+<body>
+	<div class="volume_contents">
+		<div class="qwyd_spacer01"></div>
+		<div class="qwyd_top">
+			<a href="{$cmsroot}">{&system.site_index}</a>　|　
+			<a href="javascript:;" onclick="add_to_favor({$book.book_id}, 0);">加入收藏</a>　|　
+			<a href="javascript:;" onclick="add_recommend({$book.book_id});">投推荐票</a>　|　
+			<a href="javascript:;" onclick="open_favor();">打开书架</a>　|　
+			<a href="{:BU($book, 'index')}">返回书页</a>　|　
+			<a href="{:BU($book, 'menu')}">返回书目</a>
+		</div>
+		<div class="qwyd_bt">{$book.book_name}</div>
+		<div class="qwyd_auth">
+			<div style="width: 180px; float: left">作者：{$book.author}</div>
+			<div style="width:770px; float: right">
+				<script type="text/javascript" src="{$tplcms}js/read_set.js"></script>
+			</div>
+		</div>
+		<div id="txt_contents">
+			<!--拷贝开始-->
+			<ul>
+		<volist name="list" id="item">
+			<if condition="$item.chapter_type eq 1">
+				<if condition="$i neq 1"><li class="mulu"></li></if>
+				<li class="mulu01">{$item.chapter_name}</li>
+			<else />
+				<li class="mulu_sub"><a href="{:BU($book, 'full')}#{$key}">{$item.chapter_name}</a></li>
+			</if>
+		</volist>
+			</ul>
+	<volist name="list" id="item">
+		<if condition="$item.chapter_type eq 0">
+			<a name="{$key}"></a>
+			<div class="title"><h1>{$item.chapter_name}</h1></div>
+			<div class="contents_txt">{$item.chapter_detail|nl2br}</div>
+		</if>
+	</volist>
+			<!--拷贝结束-->
+		</div>
+		<!--bottom  start!!-->
+		<div class="qwyd_03">&nbsp;</div>
+		<div class="thanks">感谢作者受权发布　共同保护作者权益</div>
+		<!--bottom  stop!!-->
+	</div>
+</div>
+<script type="text/javascript">$(function(){ initRead(true); }); </script>
+</body>
+</html>

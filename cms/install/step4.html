@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>BookCms 安装向导</title>
+<link href="css/install.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="css/jquery.js"></script>
+<script type="text/javascript" src="css/global.js"></script>
+</head>
+
+<body>
+
+<div id="box">
+    <div class="box_top"></div>
+    <div class="main">
+        <div class="top">
+            <h1 title="BookCms 安装向导"><a href="http://www.bookcms.com/" target="_blank"></a></h1>
+            <p>您好，很高兴您能选用BookCms</p>
+        </div>
+        <h2>
+            <span class="num">04.</span>
+            <span class="title">显示安装结果</span>
+            <span class="title_intro">显示BookCms的安装结果</span>
+        </h2>
+        <div class="step4"></div>
+        <div class="agreement2">
+            <div class="text2" id="detail">
+	            <?=$status?>
+            </div>
+            <div class="accede2" id="message" style="display: block; ">
+            	<div class="message"><?=$errormsg?></div>
+            </div>
+        </div>
+        <div class="btn">
+        	<input type="hidden" id="result" value="<?=$checked?>" />
+            <input type="button" class="button" value="上一步" onclick="window.history.go(-1)" id="go_back" />
+            <input type="button" class="button mr10" value="网站首页" onclick="window.location.href='../'" id="go_home" />
+            <input type="button" class="button" value="网站后台" onclick="window.location.href='../?s=admin/'" id="go_admin" />
+         </div>
+        <div class="foot">© 2010 - <a href="http://www.bookcms.com/" target="_blank"><span>BookCms Inc.</span></a></div>
+        <div class="clear"></div>
+    </div>
+    <div class="box_bottom"></div>
+    <div class="clear"></div>
+</div>
+<script type="text/javascript">$(function(){ step4(); });</script>
+</body>
+</html>

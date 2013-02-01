@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin.css" />
+
+<style type="text/css">
+<!--
+body {background: #fcfdff}
+-->
+</style>
+</head>
+
+<body>
+    <div id="rightTop">
+        <ul class="subnav">
+            <li><a href="?s=admin/user/add" class="btn1">添加</a></li>
+            <li><a href="?s=admin/user/user_list" class="btn1">管理</a></li>
+        </ul>
+    </div>
+    <div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="tdare">
+        <table width="100%" cellpadding="0" cellspacing="0" border="1" class="dataTable">
+            <tr class="tatr1">
+                <th class="firstCell" align="left">ID</th>
+                <th align="left">账号</th>
+                <th align="left">用户组</th>
+                <th align="left">电子邮件</th>
+                <th align="left">昵称</th>
+                <th align="left">最后登陆时间</th>
+                <th align="left">最后登录IP</th>
+                <th align="left">是否已经激活</th>
+                <th align="left">操作</th>
+            </tr>
+            <volist name="list" id="user">
+                <tr class="tatr2">
+                    <td class="firstCell" align="left">{$user.id}</td>
+                    <td align="left"><a href="?s=admin/user/info/id/{$user.id}/">{$user.user_name}</a></td>
+                    <td align="left">{$user.group_name}</td>
+                    <td align="left">{$user.email}</td>
+                    <td align="left">{$user.nickname}</td>
+                    <td align="left">{$user.last_login|date="Y-m-d H:i:s",###}</td>
+                    <td align="left">{$user.last_login_ip}</td>
+                    <td align="left"><if condition="$user.is_activation eq 1">已激活<else /><span>未激活</span></if></td>
+                    <td>
+                        <a href="?s=admin/user/update/id/{$user.id}/">编辑</a>
+                        <a href="?s=admin/user/delete/id/{$user.id}/" onclick="return confirm('确认删除吗?')">删除</a>
+                    </td>
+                </tr>
+            </volist>
+                <tr>
+                    <td colspan="9">{$page}</td>
+                </tr>
+        </table>
+    </div>
+</body>
+</html>

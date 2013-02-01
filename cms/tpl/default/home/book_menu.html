@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$book.book_name} - {&system.site_name}</title>
+<meta name="keywords" content="{&system.metakeywords}" />
+<meta name="description" content="{&system.metadescription}" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/default.css" />
+<link rel="stylesheet" type="text/css" href="{$tplcms}css/chapter.css">
+<script type="text/javascript" src="{$tplcms}js/jquery.js"></script>
+<script type="text/javascript" src="{$tplcms}js/global.js"></script>
+</head>
+
+<body>
+<div id="layout">
+	<div id="mainbody">
+		<include file="./tpl/default/header.html" />
+		<!--第二屏开始-->
+		<!--头部-->
+		<div class="contentsa">
+			<div class="contentsa_l"><img src="{$tplcms}images/contentspage02.gif"></div>
+			<div class="contentsa_l">
+				{:SN($book)}
+				<a href="{:BU($book, 'index')}">{$book.book_name}</a>
+				<font color="#999999">(书号{$book.book_id})</font>
+			</div>
+			<div class="contentsa_r"><img src="{$tplcms}images/contentspage03.gif"></div>
+			<div class="contentsa_r">
+				<if condition="C('book.read_full') eq 1"><a href="{:BU($book, 'full')}">全文阅读</a> | </if>
+				<a href="javascript:;" onclick="add_to_favor({$book.book_id}, 0);">加入收藏</a> | 
+				<a href="javascript:;" onclick="open_favor();">打开书架</a> | 
+				<a href="{:BU($book, 'index')}">返回书页</a>
+			</div>
+		</div>
+		<!--底部-->
+		<div class="contentsb">
+			<div class="break_04"></div>
+			<div class="contentsbtit">{$book.book_name}</div>
+			<div class="contentsb02">
+				小说作者：{$book.author}　
+				最新更新：<a href="{:BU($book, 'read')}">{$book.last_chapter}</a>　
+				{$book.last_update|date="Y-m-d H:i:s",###}
+			</div>
+			<div class="break_04"></div>
+			<!--
+			<div class="contentsb03">
+				<div class="contentsb03_l">作品相关介绍</div>
+			</div>
+			<div class="contentsb04">{$book.introduce|nl2br}</div>
+			<div class="bookdetail"></div>
+			-->
+		<volist name="volume" id="vo">
+			<div class="contentsb03">
+				<div class="contentsb03_l">{$vo.chapter_name}
+				<if condition="($vo.chapter_id gt 0) AND (C('book.read_volume') eq 1)">
+		    		[ <a href="{:BU($book, 'read', $vo)}">分卷阅读</a> ]
+		    	</if>
+				</div>
+			</div>
+			<div class="bookdetail">
+			<volist name="chapter[$vo[chapter_id]]" id="item">
+				<if condition="$i%3 eq 1"><ul></if>
+					<li class="s{$i%3}">
+						<a href="{:BU($book, 'read', $item)}" title="字数：{$item.chapter_size}">{$item.chapter_name}</a>
+						<if condition="$item.is_vip eq 1"><span>Vip</span></if>
+					</li>
+				<if condition="$i%3 eq 0"></ul></if>
+			</volist>
+			</div>
+		</volist>
+		</div>
+		
+		<div class="break_04"></div>
+		<div class="contentsc"><img src="{$tplcms}images/contentspage06.gif"></div>
+		<div class="contentsd">
+			<div class="break_04"></div>
+			<div id="th_loverzt" class="contentsdnr">
+			<volist name="11,3,$book[sort_id]" id="item">
+				<div class="contentsdnr_zp">
+	            	<div class="contentsdnr_zp_left">
+	            		<a href="{:BU($item,'index')}"><img src="{$item.image_url}" alt="{$item.book_name}"></a>
+	            	</div>
+					<div class="contentsdnr_zp_right">
+						<div class="contentsdnr_zp_righttit">
+							<a href="{:BU($item,'index')}">{$item.book_name}</a>
+						</div>
+						<div class="contentsdnr_zp_rightauther">{$item.author}著</div>
+						<div class="contentsdnr_zp_rightsm">
+							小说类别：<font color="#000000">{$item.sort_name}</font>
+						</div>
+						<div class="contentsdnr_zp_rightsm">
+							本月点击：<font color="#000000">{$item.month_visit}</font>
+						</div>
+						<div class="contentsdnr_zp_rightsm">
+							本月推荐：<font color="#000000">{$item.month_vote}</font>
+						</div>
+					</div>
+				</div>
+			</volist>
+			</div>
+			<div class="break_04"></div>
+		</div>
+		
+		<div class="break_09"></div>
+		<include file="./tpl/default/footer.html" />
+	</div>
+</div>
+</body>
+</html>
+

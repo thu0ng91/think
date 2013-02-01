@@ -1,0 +1,48 @@
+<!--head-->
+<div id="head">
+	<ul>
+    	<li class="list_01">
+			
+    	</li>
+        <li class="list_02" id="user_info"></li>
+    </ul>
+</div>
+<!--end head-->
+
+<!--logo search-->
+<div id="logo_search">
+	<div id="logo">
+    	<a href="{$cmsroot}"><img src="{$tpldir}images/logo.jpg" alt="logo" /></a>
+    </div>
+    <div id="search">
+   		<form action="#" method="get" onsubmit="return do_search();">
+        	<select name="type">
+        		<option value="1">书名</option>
+            </select>
+            <input type="text" name="keyword" id="keyword" />
+            <input type="submit" value="搜&nbsp;&nbsp;索" class="submit" />
+        </form>
+    </div>
+    <div id="hot">
+    	
+    </div>
+</div>
+<!--end logo search-->
+
+<!--navigation-->
+<div id="nav">
+	<ul>
+    	<li><a href="{$cmsroot}">首页</a></li>
+	<volist name="sorts" id="item">
+		<li><a href="{:BU($item, 'lists')}">{$item.sort_name}</a></li>
+	</volist>
+		<li style="background:none;"><a href="{:BU(11, 'top')}">排行榜</a></li>
+    </ul>
+</div>
+<!--end navigation-->
+
+<!--banner-->
+<div id="banner">
+	
+</div>
+<!--end banner-->

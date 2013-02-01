@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>跳转页面</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/collector.css" />
+    <script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-ui-1.8.6.custom.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/collector.js"></script>
+  </head>
+  <body>
+    <div id="rightTop">
+        <ul class="subnav">
+            <li><a href="?s=admin/collector" class="btn3">采集器管理</a></li>
+            <li><a href="?s=admin/temp" class="btn3">临时库管理</a></li>
+            <li><a href="?s=admin/resource" class="btn3">资源库管理</a></li>
+        </ul>
+    </div>
+    <div class="mrightTop">
+        <div class="fontr"></div>
+    </div>
+    <div class="main">
+      <div class="jump">
+         <h1>{$jumpInfo}</h1>
+         <p id="info"></p>
+         <button id="reButton" onclick="runJump();" class="formbtn4">快速跳转</button>
+         <input type="hidden" value="{$jumpUrl}" id="jumpUrl">
+         <input type="hidden" value="{$jumpTime}" id="jumpTime">
+      </div>
+    </div>
+  </body>
+</html>
+<script type="text/javascript">
+
+    // 设置全局的计时器
+    var jumpTime = $("#jumpTime").val();
+    var Timer = setInterval("setTime();",1000);
+
+    // 跳转函数
+    function runJump(){
+        var url = $("#jumpUrl").val();
+        window.location.href = url;
+    }
+
+    // 倒数计时器
+    function setTime(){
+        if(jumpTime == 0){
+            clearInterval(Timer);
+            runJump();
+        }
+        $("#info").html("页面将在<font color='red'>" + jumpTime + "</font>秒后跳转...");
+        jumpTime -= 1;
+    }
+
+    $("#info").html("页面将在<font color='red'>" + jumpTime + "</font>秒后跳转...");
+
+</script>
